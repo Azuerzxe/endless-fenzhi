@@ -67,6 +67,18 @@
             37
         ],
         "next": [
+            "抛花前点波"
+        ]
+    },
+    "抛花前点波": {
+        "action": "Click",
+        "target": [
+            1235,
+            217
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
             "frame_wj_抛花1"
         ]
     },
@@ -75,6 +87,7 @@
         "begin": "种植物_初始化_第一个槽位",
         "end": "种植物_初始化_格子1_9",
         "pre_delay": 100,
+        // "repeat": 3,
         "post_delay": 100,
         "duration": 100,
         "next": [
