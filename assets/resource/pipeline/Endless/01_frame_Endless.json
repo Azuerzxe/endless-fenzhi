@@ -67,18 +67,6 @@
             37
         ],
         "next": [
-            "抛花前点波"
-        ]
-    },
-    "抛花前点波": {
-        "action": "Click",
-        "target": [
-            1235,
-            217
-        ],
-        "pre_delay": 0,
-        "post_delay": 0,
-        "next": [
             "frame_wj_抛花1"
         ]
     },
@@ -116,7 +104,7 @@
             1140,
             405
         ],
-        "repeat": 30,
+        "repeat": 40,
         "repeat_delay": 5,
         "pre_delay": 0,
         "post_delay": 0,
