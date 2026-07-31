@@ -574,10 +574,7 @@
             "重开",
             "[JumpBack]检查突发情况"
         ],
-        "focus": {
-            "color": "#FFD700",
-            "message": "芜湖赢了"
-        },
+        "focus": "[color:Gold]芜湖赢了[/color]",
     },
     "游戏失败": {
         "recognition": "TemplateMatch",

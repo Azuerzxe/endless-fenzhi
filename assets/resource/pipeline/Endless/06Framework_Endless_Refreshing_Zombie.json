@@ -11,10 +11,7 @@
                 ]
             },
         },
-        "focus": {
-            "color": "#9B59B6",
-            "message": "识别到霹雳舞僵尸"
-        },
+        "focus": "[color:DeepSkyBlue]等待超时，疑似僵尸变野或其他情况，重开[/color]",
         "next": [
             "frame_wj_识别僵尸_重开"
         ]

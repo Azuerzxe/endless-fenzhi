@@ -21,10 +21,7 @@
             "method": 5
         },
         "action": "Click",
-        "focus": {
-            "color": "#1E90FF",
-            "message": "点击日常"
-        },
+        "focus": "[color:DeepSkyBlue]点击日常[/color]",
         "next": [
             "旅行原木_点击旅行原木",
             "旅行原木_点击日常"
@@ -35,10 +32,7 @@
         "template": [
             "Travel_Wood/旅行原木.png"
         ],
-        "focus": {
-            "color": "#1E90FF",
-            "message": "点击旅行原木"
-        },
+        "focus": "[color:DeepSkyBlue]点击旅行原木[/color]",
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
@@ -53,10 +47,7 @@
             "朕收下了"
         ],
         "post_wait_freezes": 1000,
-        "focus": {
-            "color": "#1E90FF",
-            "message": "朕收下了"
-        },
+        "focus": "[color:Orange]朕收下了[/color]",
         "action": "Click",
         "next": [
             "旅行原木_朕收下了",
@@ -69,10 +60,7 @@
         "template": [
             "Travel_Wood/宝箱.png"
         ],
-        "focus": {
-            "color": "#1E90FF",
-            "message": "领取宝箱"
-        },
+        "focus": "[color:Gold]领取宝箱[/color]",
         "action": "Click",
         "repeat": 3,
         "repeat_delay": 200,

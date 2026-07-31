@@ -1,9 +1,6 @@
 {
     "原大_不可使用": {
-        "focus": {
-            "color": "#E74C3C",
-            "message": "当前世界不可用此阵容！"
-        },
+        "focus": "[color:Red]当前世界不可用此阵容！[/color]",
         "action": "StopTask"
     },
     "原大_无尽": {

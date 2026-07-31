@@ -23,10 +23,7 @@
             104
         ],
         "action": "Click",
-        "focus": {
-            "color": "#1E90FF",
-            "message": "点击商店"
-        },
+        "focus": "[color:DeepSkyBlue]点击商店[/color]",
         "next": [
             "潘妮秘宝_点击秘宝",
             "潘妮秘宝_点击商店"
@@ -43,10 +40,7 @@
             914,
             673
         ],
-        "focus": {
-            "color": "#1E90FF",
-            "message": "点击秘宝"
-        },
+        "focus": "[color:DeepSkyBlue]点击秘宝[/color]",
         "action": "Click",
         "next": [
             "潘妮秘宝_普通宝物",
@@ -58,10 +52,7 @@
         "expected": [
             "获得"
         ],
-        "focus": {
-            "color": "#1E90FF",
-            "message": "尝试领取普通宝物"
-        },
+        "focus": "[color:Orange]尝试领取普通宝物[/color]",
         "roi": [
             186,
             590,
@@ -144,10 +135,7 @@
         "expected": [
             "获得"
         ],
-        "focus": {
-            "color": "#1E90FF",
-            "message": "尝试领取稀有宝物",
-        },
+        "focus": "[color:Purple]尝试领取稀有宝物[/color]",
         "roi": [
             559,
             603,
@@ -276,10 +264,7 @@
             134,
             56
         ],
-        "focus": {
-            "color": "#1E90FF",
-            "message": "领取装扮宝箱"
-        },
+        "focus": "[color:Gold]领取装扮宝箱[/color]",
         "action": "Click",
         "next": [
             "潘妮秘宝_装扮宝箱_确定"

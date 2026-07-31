@@ -171,10 +171,7 @@
         "template": [
             "Land_gong_two/暂停.png"
         ],
-        "focus": {
-            "color": "#1E90FF",
-            "message": "等待超时，疑似僵尸变野或其他情况，重开"
-        },
+        "focus": "[color:DeepSkyBlue]等待超时，疑似僵尸变野或其他情况，重开[/color]",
         "roi": [
             1180,
             4,

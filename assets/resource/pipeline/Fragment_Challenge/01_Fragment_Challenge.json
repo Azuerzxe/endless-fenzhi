@@ -198,10 +198,7 @@
         ]
     },
     "碎片挑战_已完成": {
-        "focus": {
-            "color": "#1E90FF",
-            "message": "碎片挑战已完成"
-        },
+        "focus": "[color:Green]碎片挑战已完成[/color]"
     },
     "巨人危机_难度选择": {
         "recognition": "TemplateMatch",
@@ -329,10 +326,7 @@
             "碎片挑战类型": "点击碎片挑战_邪恶入侵"
         },
         "action": "Click",
-        "focus": {
-            "color": "#1E90FF",
-            "message": "巨人危机次数已用完"
-        },
+        "focus": "[color:Red]巨人危机次数已用完[/color]",
         "next": [
             "没有选到准备退出"
         ]
@@ -352,10 +346,7 @@
             "确定"
         ],
         "action": "Click",
-        "focus": {
-            "color": "#1E90FF",
-            "message": "邪恶入侵次数已用完"
-        },
+        "focus": "[color:Red]邪恶入侵次数已用完[/color]",
         "next": [
             "没有选到准备退出"
         ]
@@ -450,10 +441,7 @@
         "expected": [
             ""
         ],
-        "focus": {
-            "color": "#1E90FF",
-            "message": "这不是正常的回执信息喵，你卡了一个神奇的bug喵"
-        },
+        "focus": "[color:Red]这不是正常的回执信息喵，你...[/color]",
         "next": [
             "期望植物_开始游戏"
         ]
