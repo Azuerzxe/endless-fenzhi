@@ -86,7 +86,7 @@
         "max_hit": 3,
         "focus": {
             "color": "#1E90FF",
-            "match": "领取第一个宝藏"
+            "message": "领取第一个宝藏"
         },
         "expected": [
             "^领取$"
@@ -107,7 +107,7 @@
         "max_hit": 3,
         "focus": {
             "color": "#1E90FF",
-            "match": "领取第二个宝藏"
+            "message": "领取第二个宝藏"
         },
         "expected": [
             "^领取$"
@@ -128,7 +128,7 @@
         "max_hit": 3,
         "focus": {
             "color": "#1E90FF",
-            "match": "领取第三个宝藏"
+            "message": "领取第三个宝藏"
         },
         "expected": [
             "^领取$"

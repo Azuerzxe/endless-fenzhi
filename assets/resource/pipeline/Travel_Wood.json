@@ -23,7 +23,7 @@
         "action": "Click",
         "focus": {
             "color": "#1E90FF",
-            "match": "点击日常"
+            "message": "点击日常"
         },
         "next": [
             "旅行原木_点击旅行原木",
@@ -37,7 +37,7 @@
         ],
         "focus": {
             "color": "#1E90FF",
-            "match": "点击旅行原木"
+            "message": "点击旅行原木"
         },
         "action": "Click",
         "post_wait_freezes": 1000,
@@ -55,7 +55,7 @@
         "post_wait_freezes": 1000,
         "focus": {
             "color": "#1E90FF",
-            "match": "朕收下了"
+            "message": "朕收下了"
         },
         "action": "Click",
         "next": [
@@ -71,7 +71,7 @@
         ],
         "focus": {
             "color": "#1E90FF",
-            "match": "领取宝箱"
+            "message": "领取宝箱"
         },
         "action": "Click",
         "repeat": 3,

@@ -25,7 +25,7 @@
         "action": "Click",
         "focus": {
             "color": "#1E90FF",
-            "match": "点击商店"
+            "message": "点击商店"
         },
         "next": [
             "潘妮秘宝_点击秘宝",
@@ -45,7 +45,7 @@
         ],
         "focus": {
             "color": "#1E90FF",
-            "match": "点击秘宝"
+            "message": "点击秘宝"
         },
         "action": "Click",
         "next": [
@@ -60,7 +60,7 @@
         ],
         "focus": {
             "color": "#1E90FF",
-            "match": "尝试领取普通宝物"
+            "message": "尝试领取普通宝物"
         },
         "roi": [
             186,
@@ -146,7 +146,7 @@
         ],
         "focus": {
             "color": "#1E90FF",
-            "match": "尝试领取稀有宝物",
+            "message": "尝试领取稀有宝物",
         },
         "roi": [
             559,
@@ -278,7 +278,7 @@
         ],
         "focus": {
             "color": "#1E90FF",
-            "match": "领取装扮宝箱"
+            "message": "领取装扮宝箱"
         },
         "action": "Click",
         "next": [
