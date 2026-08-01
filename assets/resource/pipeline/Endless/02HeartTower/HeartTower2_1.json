@@ -7,19 +7,19 @@
         ]
     },
     "2_xinta1_识别开始战斗": {
-        "recognition": "TemplateMatch",
-        "template": "xinta/开始战斗.png",
+        "recognition": "OCR",
+        "expected": "开始战斗",
         "roi": [
-            1590,
-            970,
-            301,
-            88
+            1060,
+            647,
+            201,
+            59
         ],
         "threshold": 0.75,
         "action": "Click",
         "target": [
-            1149,
-            590
+            766,
+            393
         ],
         "next": [
             "2_点击配队1"
@@ -28,8 +28,8 @@
     "2_点击配队1": {
         "action": "Click",
         "target": [
-            292,
-            327
+            195,
+            218
         ],
         "next": [
             "2_xinta1_点击开始游戏"
@@ -38,8 +38,8 @@
     "2_xinta1_点击开始游戏": {
         "action": "Click",
         "target": [
-            1709,
-            1006
+            1139,
+            671
         ],
         "next": [
             "2_种蓓蕾"
@@ -48,31 +48,31 @@
     "2_种蓓蕾": {
         "recognition": "ColorMatch",
         "roi": [
-            700,
-            1004,
-            40,
-            40
+            467,
+            669,
+            27,
+            27
         ],
         "method": 4,
         "lower": [
-            148,
-            213,
-            8
+            156,
+            223,
+            16
         ],
         "upper": [
-            168,
-            233,
-            28
+            156,
+            223,
+            16
         ],
         "timeout": 10000,
         "action": "Swipe",
         "begin": [
-            104,
-            500
+            69,
+            333
         ],
         "end": [
-            703,
-            221
+            469,
+            147
         ],
         "pre_delay": 0,
         "post_delay": 0,
@@ -84,12 +84,12 @@
     "2_种蓓蕾2": {
         "action": "Swipe",
         "begin": [
-            104,
-            500
+            69,
+            333
         ],
         "end": [
-            848,
-            239
+            565,
+            159
         ],
         "duration": 100,
         "pre_delay": 0,
@@ -101,12 +101,12 @@
     "2_种蓓蕾3": {
         "action": "Swipe",
         "begin": [
-            104,
-            500
+            69,
+            333
         ],
         "end": [
-            985,
-            216
+            657,
+            144
         ],
         "duration": 100,
         "pre_delay": 0,
