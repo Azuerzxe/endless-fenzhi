@@ -5,7 +5,8 @@
                 "/assets/resource/pipeline/**/*.json",
                 "/install/resource/pipeline/**/*.json",
                 "/assets/resource/pipeline/**/*.jsonc",
-                "/install/resource/pipeline/**/*.jsonc"
+                "/install/resource/pipeline/**/*.jsonc",
+                "/assets/resource/task/**/*.json"
             ],
             "url": "/deps/tools/pipeline.schema.json"
         },

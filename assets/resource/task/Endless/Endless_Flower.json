@@ -43,204 +43,56 @@
             ]
         },
         "1花位置": {
-            "type": "select",
-            "label": "1花位置",
-            "cases": [
-                {
-                    "name": "9-1",
-                    "label": "9-1",
-                    "pipeline_override": {
-                        "frame_wj_抛花1": {
-                            "end": "种植物_初始化_格子9_1"
-                        },
-                        "frame_wj_boss_抛花1": {
-                            "end": "种植物_初始化_格子9_1"
-                        }
-                    }
-                },
-                {
-                    "name": "9-2",
-                    "label": "9-2",
-                    "pipeline_override": {
-                        "frame_wj_抛花1": {
-                            "end": "种植物_初始化_格子9_2"
-                        },
-                        "frame_wj_boss_抛花1": {
-                            "end": "种植物_初始化_格子9_2"
-                        }
-                    }
-                },
-                {
-                    "name": "2-1",
-                    "label": "2-1",
-                    "pipeline_override": {
-                        "frame_wj_抛花1": {
-                            "end": "种植物_初始化_格子2_1"
-                        },
-                        "frame_wj_boss_抛花1": {
-                            "end": "种植物_初始化_格子2_1"
-                        }
-                    }
-                },
-                {
-                    "name": "2-2",
-                    "label": "2-2",
-                    "pipeline_override": {
-                        "frame_wj_抛花1": {
-                            "end": "种植物_初始化_格子2_2"
-                        },
-                        "frame_wj_boss_抛花1": {
-                            "end": "种植物_初始化_格子2_2"
-                        }
-                    }
-                },
-                {
-                    "name": "2-3",
-                    "label": "2-3",
-                    "pipeline_override": {
-                        "frame_wj_抛花1": {
-                            "end": "种植物_初始化_格子2_3"
-                        },
-                        "frame_wj_boss_抛花1": {
-                            "end": "种植物_初始化_格子2_3"
-                        }
-                    }
-                },
-                {
-                    "name": "2-4",
-                    "label": "2-4",
-                    "pipeline_override": {
-                        "frame_wj_抛花1": {
-                            "end": "种植物_初始化_格子2_4"
-                        },
-                        "frame_wj_boss_抛花1": {
-                            "end": "种植物_初始化_格子2_4"
-                        }
-                    }
-                },
-                {
-                    "name": "2-5",
-                    "label": "2-5",
-                    "pipeline_override": {
-                        "frame_wj_抛花1": {
-                            "end": "种植物_初始化_格子2_5"
-                        },
-                        "frame_wj_boss_抛花1": {
-                            "end": "种植物_初始化_格子2_5"
-                        }
-                    }
-                }
-                // {
-                //     "name": "自定义抛1花坐标",
-                //     "option": [
-                //         "自定义抛1花坐标x",
-                //         "自定义抛1花坐标y"
-                //     ]
-                // }
-            ]
-        },
-        "自定义抛1花坐标x": {
             "type": "input",
-            "label": "自定义抛1花坐标x",
+            "label": "行列坐标",
             "inputs": [
                 {
-                    "name": "滑动时间",
-                    "pipeline_type": "int",
-                    "default": "50",
-                    "verify": "^(0|[1-9]\\d{0,2}|1[0-1]\\d{2}|12[0-7]\\d|1280)$"
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "9",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$"
                 }
-            ]
+            ],
+            "pipeline_override": {
+                "frame_wj_抛花1": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                },
+                "frame_wj_boss_抛花1": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
         },
-        "自定义抛1花坐标y": {},
         "2花位置": {
-            "type": "select",
-            "label": "2花位置",
-            "cases": [
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
                 {
-                    "name": "9-1",
-                    "label": "9-1",
-                    "pipeline_override": {
-                        "frame_wj_抛花2": {
-                            "end": "种植物_初始化_格子9_1"
-                        },
-                        "frame_wj_boss_抛花2": {
-                            "end": "种植物_初始化_格子9_1"
-                        }
-                    }
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "9",
+                    "verify": "^[1-9]$"
                 },
                 {
-                    "name": "9-2",
-                    "label": "9-2",
-                    "pipeline_override": {
-                        "frame_wj_抛花2": {
-                            "end": "种植物_初始化_格子9_2"
-                        },
-                        "frame_wj_boss_抛花2": {
-                            "end": "种植物_初始化_格子9_2"
-                        }
-                    }
-                },
-                {
-                    "name": "2-1",
-                    "label": "2-1",
-                    "pipeline_override": {
-                        "frame_wj_抛花2": {
-                            "end": "种植物_初始化_格子2_1"
-                        },
-                        "frame_wj_boss_抛花2": {
-                            "end": "种植物_初始化_格子2_1"
-                        }
-                    }
-                },
-                {
-                    "name": "2-2",
-                    "label": "2-2",
-                    "pipeline_override": {
-                        "frame_wj_抛花2": {
-                            "end": "种植物_初始化_格子2_2"
-                        },
-                        "frame_wj_boss_抛花2": {
-                            "end": "种植物_初始化_格子2_2"
-                        }
-                    }
-                },
-                {
-                    "name": "2-3",
-                    "label": "2-3",
-                    "pipeline_override": {
-                        "frame_wj_抛花2": {
-                            "end": "种植物_初始化_格子2_3"
-                        },
-                        "frame_wj_boss_抛花2": {
-                            "end": "种植物_初始化_格子2_3"
-                        }
-                    }
-                },
-                {
-                    "name": "2-4",
-                    "label": "2-4",
-                    "pipeline_override": {
-                        "frame_wj_抛花2": {
-                            "end": "种植物_初始化_格子2_4"
-                        },
-                        "frame_wj_boss_抛花2": {
-                            "end": "种植物_初始化_格子2_4"
-                        }
-                    }
-                },
-                {
-                    "name": "2-5",
-                    "label": "2-5",
-                    "pipeline_override": {
-                        "frame_wj_抛花2": {
-                            "end": "种植物_初始化_格子2_5"
-                        },
-                        "frame_wj_boss_抛花2": {
-                            "end": "种植物_初始化_格子2_5"
-                        }
-                    }
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$"
                 }
-            ]
-        }
-    }
+            ],
+            "pipeline_override": {
+                "frame_wj_抛花2": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                },
+                "frame_wj_boss_抛花2": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+    },
 }
