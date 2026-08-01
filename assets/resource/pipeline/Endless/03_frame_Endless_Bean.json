@@ -2,7 +2,7 @@
     "frame_wj_boss_喂豆5-3": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子3_5",
+        "end": "种植物_初始化_格子5_3",
         "pre_delay": 0,
         "post_delay": 3000,
         "timeout": 600000,
@@ -15,7 +15,7 @@
     "frame_wj_boss_喂豆4-3": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子3_4",
+        "end": "种植物_初始化_格子4_3",
         "pre_delay": 0,
         "post_delay": 3000,
         "timeout": 600000,
@@ -41,7 +41,7 @@
     "frame_wj_boss_喂豆2-3": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子3_2",
+        "end": "种植物_初始化_格子2_3",
         "pre_delay": 0,
         "post_delay": 3000,
         "timeout": 600000,
@@ -54,7 +54,7 @@
     "frame_wj_boss_喂豆1-3": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子3_1",
+        "end": "种植物_初始化_格子1_3",
         "pre_delay": 0,
         "post_delay": 3000,
         "timeout": 600000,
@@ -67,7 +67,7 @@
     "frame_wj_boss_喂豆6-2": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子2_6",
+        "end": "种植物_初始化_格子6_2",
         "pre_delay": 0,
         "post_delay": 3000,
         "timeout": 600000,
@@ -80,7 +80,7 @@
     "frame_wj_boss_喂豆5-2": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子2_5",
+        "end": "种植物_初始化_格子5_2",
         "pre_delay": 0,
         "post_delay": 3000,
         "timeout": 600000,
@@ -93,7 +93,7 @@
     "frame_wj_boss_喂豆4-2": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子2_4",
+        "end": "种植物_初始化_格子4_2",
         "pre_delay": 0,
         "post_delay": 3000,
         "timeout": 600000,
@@ -106,7 +106,7 @@
     "frame_wj_boss_喂豆6-4": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子4_6",
+        "end": "种植物_初始化_格子6_4",
         "pre_delay": 0,
         "post_delay": 3000,
         "timeout": 600000,
@@ -119,7 +119,7 @@
     "frame_wj_boss_喂豆5-4": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子4_5",
+        "end": "种植物_初始化_格子5_4",
         "pre_delay": 0,
         "post_delay": 3000,
         "timeout": 600000,
@@ -145,7 +145,7 @@
     "frame_wj_喂豆4-3": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子3_4",
+        "end": "种植物_初始化_格子4_3",
         "pre_delay": 100,
         "post_delay": 1000,
         "timeout": 600000,
@@ -171,7 +171,7 @@
     "frame_wj_喂豆2-3": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子3_2",
+        "end": "种植物_初始化_格子2_3",
         "pre_delay": 100,
         "post_delay": 1000,
         "timeout": 600000,
@@ -184,7 +184,7 @@
     "frame_wj_喂豆1-3": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子3_1",
+        "end": "种植物_初始化_格子1_3",
         "pre_delay": 100,
         "post_delay": 1000,
         "timeout": 600000,
@@ -197,7 +197,7 @@
     "frame_wj_喂豆5-2": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子2_5",
+        "end": "种植物_初始化_格子5_2",
         "pre_delay": 100,
         "post_delay": 1000,
         "timeout": 600000,
@@ -210,7 +210,7 @@
     "frame_wj_喂豆4-2": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子2_4",
+        "end": "种植物_初始化_格子4_2",
         "pre_delay": 100,
         "post_delay": 1000,
         "timeout": 600000,
@@ -223,7 +223,7 @@
     "frame_wj_喂豆3-2": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子2_3",
+        "end": "种植物_初始化_格子3_2",
         "pre_delay": 100,
         "post_delay": 1000,
         "timeout": 600000,
@@ -249,7 +249,7 @@
     "frame_wj_喂豆1-2": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子2_1",
+        "end": "种植物_初始化_格子1_2",
         "pre_delay": 100,
         "post_delay": 1000,
         "timeout": 600000,
@@ -262,7 +262,7 @@
     "frame_wj_喂豆5-4": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子4_5",
+        "end": "种植物_初始化_格子5_4",
         "pre_delay": 100,
         "post_delay": 1000,
         "timeout": 600000,
@@ -288,7 +288,7 @@
     "frame_wj_喂豆3-4": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子4_3",
+        "end": "种植物_初始化_格子3_4",
         "pre_delay": 100,
         "post_delay": 1000,
         "timeout": 600000,
@@ -301,7 +301,7 @@
     "frame_wj_喂豆2-4": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子4_2",
+        "end": "种植物_初始化_格子2_4",
         "pre_delay": 100,
         "post_delay": 1000,
         "timeout": 600000,
@@ -314,7 +314,7 @@
     "frame_wj_喂豆1-4": {
         "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
-        "end": "种植物_初始化_格子4_1",
+        "end": "种植物_初始化_格子1_4",
         "pre_delay": 100,
         "post_delay": 1000,
         "timeout": 600000,
@@ -323,5 +323,5 @@
             "frame_wj_识别结算",
             "frame_wj_点波"
         ]
-    },
+    }
 }
