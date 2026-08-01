@@ -940,7 +940,7 @@
             568
         ],
         "pre_delay": 0,
-        "post_delay": 250,
+        "post_delay": 900,
         "next": [
             "xinta3_点波"
         ]
