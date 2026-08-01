@@ -1,0 +1,7 @@
+{
+    "HeartTowerEntry2": {
+    "action": "DoNothing",
+    "next": ["2_1关"]      
+    }
+
+}

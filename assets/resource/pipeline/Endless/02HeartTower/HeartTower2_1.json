@@ -1,0 +1,352 @@
+{
+    "2_1关": {
+        "action": "DoNothing",
+        "timeout": 60000,
+        "next": [
+            "2_xinta1_识别开始战斗"
+        ]
+    },
+    "2_xinta1_识别开始战斗": {
+        "recognition": "TemplateMatch",
+        "template": "xinta/开始战斗.png",
+        "roi": [
+            1590,
+            970,
+            301,
+            88
+        ],
+        "threshold": 0.75,
+        "action": "Click",
+        "target": [
+            1149,
+            590
+        ],
+        "next": [
+            "2_点击配队1"
+        ]
+    },
+    "2_点击配队1": {
+        "action": "Click",
+        "target": [
+            292,
+            327
+        ],
+        "next": [
+            "2_xinta1_点击开始游戏"
+        ]
+    },
+    "2_xinta1_点击开始游戏": {
+        "action": "Click",
+        "target": [
+            1709,
+            1006
+        ],
+        "next": [
+            "2_种蓓蕾"
+        ]
+    },
+    "2_种蓓蕾": {
+        "recognition": "ColorMatch",
+        "roi": [
+            700,
+            1004,
+            40,
+            40
+        ],
+        "method": 4,
+        "lower": [
+            148,
+            213,
+            8
+        ],
+        "upper": [
+            168,
+            233,
+            28
+        ],
+        "timeout": 10000,
+        "action": "Swipe",
+        "begin": [
+            104,
+            500
+        ],
+        "end": [
+            703,
+            221
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_种蓓蕾2"
+        ]
+    },
+    "2_种蓓蕾2": {
+        "action": "Swipe",
+        "begin": [
+            104,
+            500
+        ],
+        "end": [
+            848,
+            239
+        ],
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "2_种蓓蕾3"
+        ]
+    },
+    "2_种蓓蕾3": {
+        "action": "Swipe",
+        "begin": [
+            104,
+            500
+        ],
+        "end": [
+            985,
+            216
+        ],
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "2_种香蕉1"
+        ]
+    },
+    "2_种香蕉1": {
+        "action": "Swipe",
+        "begin": [
+            104,
+            200
+        ],
+        "end": [
+            705,
+            555
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_种香蕉2"
+        ]
+    },
+    "2_种香蕉2": {
+        "action": "Swipe",
+        "begin": [
+            104,
+            200
+        ],
+        "end": [
+            989,
+            555
+        ],
+        "duration": 100,
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "2_种香蕉3"
+        ]
+    },
+    "2_种香蕉3": {
+        "action": "Swipe",
+        "begin": [
+            104,
+            200
+        ],
+        "end": [
+            842,
+            555
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_种牛蒡"
+        ]
+    },
+    "2_种牛蒡": {
+        "action": "Swipe",
+        "begin": [
+            104,
+            800
+        ],
+        "end": [
+            1116,
+            538
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_球果1"
+        ]
+    },
+    "2_球果1": {
+        "action": "Click",
+        "target": [
+            246,
+            391
+        ],
+        "next": [
+            "2_球果2"
+        ]
+    },
+    "2_球果2": {
+        "action": "Click",
+        "target": [
+            246,
+            391
+        ],
+        "next": [
+            "2_种球果"
+        ]
+    },
+    "2_种球果": {
+        "action": "Swipe",
+        "begin": [
+            104,
+            400
+        ],
+        "end": [
+            839,
+            722
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_种豆藤"
+        ]
+    },
+    "2_种豆藤": {
+        "action": "Swipe",
+        "begin": [
+            104,
+            300
+        ],
+        "end": [
+            838,
+            545
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_种大哥1"
+        ]
+    },
+    "2_种大哥1": {
+        "action": "Swipe",
+        "begin": [
+            104,
+            700
+        ],
+        "end": [
+            1116,
+            390
+        ],
+        "duration": 100,
+        "next": [
+            "2_种大哥2"
+        ]
+    },
+    "2_种大哥2": {
+        "action": "Swipe",
+        "begin": [
+            104,
+            700
+        ],
+        "end": [
+            1124,
+            722
+        ],
+        "duration": 100,
+        "next": [
+            "2_xinta1_点波"
+        ]
+    },
+    "2_xinta1_点波": {
+        "action": "Click",
+        "target": [
+            1838,
+            328
+        ],
+        "max_hit": 20,
+        "post_delay": 10,
+        "pre_delay": 10,
+        "next": [
+            "2_xinta1_点波",
+            "2_xinta1_点葫芦"
+        ]
+    },
+    "2_xinta1_点葫芦": {
+        "action": "Click",
+        "target": [
+            1129,
+            1005
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "2_xinta1_开葫芦"
+        ]
+    },
+    "2_xinta1_开葫芦": {
+        "action": "Click",
+        "target": [
+            1001,
+            851
+        ],
+        "pre_delay": 200,
+        "post_delay": 200,
+        "next": [
+            "2_种电豌1"
+        ]
+    },
+    "2_种电豌1": {
+        "action": "Swipe",
+        "begin": [
+            104,
+            600
+        ],
+        "end": [
+            1116,
+            390
+        ],
+        "duration": 100,
+        "next": [
+            "2_种电豌2"
+        ]
+    },
+    "2_种电豌2": {
+        "action": "Swipe",
+        "begin": [
+            104,
+            600
+        ],
+        "end": [
+            1124,
+            722
+        ],
+        "duration": 100,
+        "next": [
+            "2_xinta1_识别结算"
+        ]
+    },
+    "2_xinta1_识别结算": {
+        "recognition": "OCR",
+        "roi": [
+            1074,
+            931,
+            268,
+            75
+        ],
+        "expected": "继续挑战",
+        "action": "Click",
+        "next": [
+            "2_2关"
+        ]
+    }
+}

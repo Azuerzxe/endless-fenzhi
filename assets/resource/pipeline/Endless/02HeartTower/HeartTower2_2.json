@@ -1,0 +1,441 @@
+{
+    "2_2关": {
+        "action": "DoNothing",
+        "timeout": 60000,
+        "next": [
+            "2_xinta2_识别开始战斗"
+        ]
+    },
+    "2_xinta2_识别开始战斗": {
+        "recognition": "TemplateMatch",
+        "template": "xinta/开始战斗.png",
+        "roi": [
+            1590,
+            970,
+            301,
+            88
+        ],
+        "threshold": 0.75,
+        "action": "Click",
+        "target": [
+            1149,
+            590
+        ],
+        "next": [
+            "2_点击配队2"
+        ]
+    },
+    "2_点击配队2": {
+        "action": "Click",
+        "target": [
+            299,
+            664
+        ],
+        "next": [
+            "2_xinta2_点击开始游戏"
+        ]
+    },
+    "2_xinta2_点击开始游戏": {
+        "action": "Click",
+        "target": [
+            1709,
+            1006
+        ],
+        "next": [
+            "2_xinta2_判断是否进入关内"
+        ]
+    },
+    "2_xinta2_判断是否进入关内": {
+        "recognition": "ColorMatch",
+        "roi": [
+            700,
+            1004,
+            40,
+            40
+        ],
+        "method": 4,
+        "lower": [
+            148,
+            213,
+            8
+        ],
+        "upper": [
+            168,
+            233,
+            28
+        ],
+        "timeout": 10000,
+        "action": "DoNothing",
+        "next": [
+            "2_xinta2_抛花1"
+        ]
+    },
+    "2_xinta2_抛花1": {
+        "action": "swipe",
+        "begin": [
+            100,
+            200
+        ],
+        "end": [
+            700,
+            875
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_抛花2"
+        ]
+    },
+    "2_xinta2_抛花2": {
+        "action": "swipe",
+        "begin": [
+            100,
+            200
+        ],
+        "end": [
+            835,
+            869
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_抛花3"
+        ]
+    },
+    "2_xinta2_抛花3": {
+        "action": "swipe",
+        "begin": [
+            100,
+            200
+        ],
+        "end": [
+            1100,
+            858
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_抛花4"
+        ]
+    },
+    "2_xinta2_抛花4": {
+        "action": "swipe",
+        "begin": [
+            100,
+            200
+        ],
+        "end": [
+            701,
+            699
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_抛花5"
+        ]
+    },
+    "2_xinta2_抛花5": {
+        "action": "swipe",
+        "begin": [
+            100,
+            200
+        ],
+        "end": [
+            983,
+            871
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_守卫菇1"
+        ]
+    },
+    "2_xinta2_守卫菇1": {
+        "action": "swipe",
+        "begin": [
+            100,
+            400
+        ],
+        "end": [
+            841,
+            391
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_守卫菇2"
+        ]
+    },
+    "2_xinta2_守卫菇2": {
+        "action": "swipe",
+        "begin": [
+            100,
+            400
+        ],
+        "end": [
+            1257,
+            565
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_喂豆守卫菇1"
+        ]
+    },
+    "2_xinta2_喂豆守卫菇1": {
+        "action": "swipe",
+        "begin": [
+            919,
+            1021
+        ],
+        "end": [
+            841,
+            391
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_喂豆守卫菇2"
+        ]
+    },
+    "2_xinta2_喂豆守卫菇2": {
+        "action": "swipe",
+        "begin": [
+            919,
+            1021
+        ],
+        "end": [
+            1257,
+            565
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_瓷砖1"
+        ]
+    },
+    "2_xinta2_瓷砖1": {
+        "action": "swipe",
+        "begin": [
+            100,
+            500
+        ],
+        "end": [
+            842,
+            727
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_瓷砖2"
+        ]
+    },
+    "2_xinta2_瓷砖2": {
+        "action": "swipe",
+        "begin": [
+            100,
+            500
+        ],
+        "end": [
+            829,
+            565
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_瓷砖3"
+        ]
+    },
+    "2_xinta2_瓷砖3": {
+        "action": "swipe",
+        "begin": [
+            100,
+            500
+        ],
+        "end": [
+            1110,
+            554
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_塔黄1"
+        ]
+    },
+    "2_xinta2_塔黄1": {
+        "action": "swipe",
+        "begin": [
+            100,
+            900
+        ],
+        "end": [
+            842,
+            234
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_塔黄2"
+        ]
+    },
+    "2_xinta2_塔黄2": {
+        "action": "swipe",
+        "begin": [
+            100,
+            900
+        ],
+        "end": [
+            978,
+            214
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_铲守卫菇1"
+        ]
+    },
+    "2_xinta2_铲守卫菇1": {
+        "action": "swipe",
+        "begin": [
+            1832,
+            1013
+        ],
+        "end": [
+            848,
+            397
+        ],
+        "pre_delay": 3000,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_铲守卫菇2"
+        ]
+    },
+    "2_xinta2_铲守卫菇2": {
+        "action": "swipe",
+        "begin": [
+            1832,
+            1013
+        ],
+        "end": [
+            1256,
+            547
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_种心叶兰1"
+        ]
+    },
+    "2_xinta2_种心叶兰1": {
+        "action": "swipe",
+        "begin": [
+            100,
+            800
+        ],
+        "end": [
+            968,
+            388
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_种塔黄3"
+        ]
+    },
+    "2_xinta2_种塔黄3": {
+        "action": "swipe",
+        "begin": [
+            100,
+            900
+        ],
+        "end": [
+            852,
+            404
+        ],
+        "pre_delay": 1000,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_种心叶兰2"
+        ]
+    },
+    "2_xinta2_种心叶兰2": {
+        "action": "swipe",
+        "begin": [
+            100,
+            800
+        ],
+        "end": [
+            966,
+            721
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "2_xinta2_喂豆球果"
+        ]
+    },
+    "2_xinta2_喂豆球果": {
+        "action": "swipe",
+        "begin": [
+            922,
+            1022
+        ],
+        "end": [
+            842,
+            727
+        ],
+        "pre_delay": 0,
+        "post_delay": 2000,
+        "duration": 100,
+        "next": [
+            "2_xinta2_点波"
+        ]
+    },
+    "2_xinta2_点波": {
+        "action": "Click",
+        "target": [
+            1838,
+            328
+        ],
+        "max_hit": 30,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "2_xinta2_点波",
+            "2_xinta2_识别结算"
+        ]
+    },
+    "2_xinta2_识别结算": {
+        "recognition": "OCR",
+        "roi": [
+            1074,
+            931,
+            268,
+            75
+        ],
+        "expected": "继续挑战",
+        "action": "Click",
+        "next": [
+            "2_3_149关"
+        ]
+    }
+}
