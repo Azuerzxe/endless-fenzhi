@@ -2,6 +2,24 @@
     "Frame_Wj_Entry": {
         "action": "DoNothing",
         "next": [
+            "Frame_Wj_Entry_1"
+        ]
+    },
+    "Frame_Wj_Entry_1": {
+        "action": "DoNothing",
+        "next": [
+            "Frame_Wj_Entry_3"
+        ]
+    },
+    "Frame_Wj_Entry_3": { //防冲突
+        "action": "DoNothing",
+        "next": [
+            "Frame_Wj_Entry_2"
+        ]
+    },
+    "Frame_Wj_Entry_2": {
+        "action": "DoNothing",
+        "next": [
             "frame_wj_过渡"
         ]
     },
