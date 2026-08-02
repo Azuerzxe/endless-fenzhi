@@ -7,13 +7,15 @@
         ]
     },
     "2_xinta2_识别开始战斗": {
-        "recognition": "TemplateMatch",
-        "template": "xinta/开始战斗.png",
+        "recognition": "OCR",
+        "expected": [
+            "开始战斗"
+        ],
         "roi": [
-            1038,
-            630,
-            230,
-            84
+            1060,
+            647,
+            201,
+            59
         ],
         "threshold": 0.75,
         "action": "Click",
@@ -30,10 +32,10 @@
     "2_点击配队2": {
         "action": "Click",
         "target": [
-            197,
-            390,
-            0,
-            1
+            199,
+            425,
+            4,
+            4
         ],
         "next": [
             "2_xinta2_点击开始游戏"
@@ -88,7 +90,7 @@
         ]
     },
     "2_xinta2_抛花2": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_第一个槽位",
         "end": "种植物_初始化_格子2_5",
         "pre_delay": 0,
@@ -99,7 +101,7 @@
         ]
     },
     "2_xinta2_抛花3": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_第一个槽位",
         "end": "种植物_初始化_格子3_5",
         "pre_delay": 0,
@@ -110,7 +112,7 @@
         ]
     },
     "2_xinta2_抛花4": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_第一个槽位",
         "end": "种植物_初始化_格子4_5",
         "pre_delay": 0,
@@ -121,7 +123,7 @@
         ]
     },
     "2_xinta2_抛花5": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_第一个槽位",
         "end": "种植物_初始化_格子1_4",
         "pre_delay": 0,
@@ -132,7 +134,7 @@
         ]
     },
     "2_xinta2_守卫菇1": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_第三个槽位",
         "end": "种植物_初始化_格子2_2",
         "pre_delay": 0,
@@ -143,7 +145,7 @@
         ]
     },
     "2_xinta2_守卫菇2": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_第三个槽位",
         "end": "种植物_初始化_格子5_3",
         "pre_delay": 0,
@@ -154,7 +156,7 @@
         ]
     },
     "2_xinta2_喂豆守卫菇1": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
         "end": "种植物_初始化_格子2_2",
         "pre_delay": 0,
@@ -165,7 +167,7 @@
         ]
     },
     "2_xinta2_喂豆守卫菇2": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
         "end": "种植物_初始化_格子5_3",
         "pre_delay": 0,
@@ -176,7 +178,7 @@
         ]
     },
     "2_xinta2_瓷砖1": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
         "end": "种植物_初始化_格子2_4",
         "pre_delay": 0,
@@ -187,7 +189,7 @@
         ]
     },
     "2_xinta2_瓷砖2": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
         "end": "种植物_初始化_格子2_3",
         "pre_delay": 0,
@@ -198,7 +200,7 @@
         ]
     },
     "2_xinta2_瓷砖3": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
         "end": "种植物_初始化_格子4_3",
         "pre_delay": 0,
@@ -209,7 +211,7 @@
         ]
     },
     "2_xinta2_塔黄1": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_第八个槽位",
         "end": "种植物_初始化_格子2_1",
         "pre_delay": 0,
@@ -220,7 +222,7 @@
         ]
     },
     "2_xinta2_塔黄2": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_第八个槽位",
         "end": "种植物_初始化_格子3_1",
         "pre_delay": 0,
@@ -231,7 +233,7 @@
         ]
     },
     "2_xinta2_铲守卫菇1": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_铲子位置",
         "end": "种植物_初始化_格子2_2",
         "pre_delay": 3000,
@@ -242,7 +244,7 @@
         ]
     },
     "2_xinta2_铲守卫菇2": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_铲子位置",
         "end": "种植物_初始化_格子2_2",
         "pre_delay": 0,
@@ -253,7 +255,7 @@
         ]
     },
     "2_xinta2_种心叶兰1": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_第七个槽位",
         "end": "种植物_初始化_格子3_2",
         "pre_delay": 0,
@@ -264,9 +266,9 @@
         ]
     },
     "2_xinta2_种塔黄3": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_第八个槽位",
-        "end": "种植物_初始化_格子2_3",
+        "end": "种植物_初始化_格子2_2",
         "pre_delay": 1000,
         "post_delay": 0,
         "duration": 100,
@@ -275,7 +277,7 @@
         ]
     },
     "2_xinta2_种心叶兰2": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_第七个槽位",
         "end": "种植物_初始化_格子3_4",
         "pre_delay": 0,
@@ -286,7 +288,7 @@
         ]
     },
     "2_xinta2_喂豆球果": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": "种植物_初始化_能量豆位置",
         "end": "种植物_初始化_格子2_4",
         "pre_delay": 0,
