@@ -10,16 +10,18 @@
         "recognition": "TemplateMatch",
         "template": "xinta/开始战斗.png",
         "roi": [
-            1590,
-            970,
-            301,
-            88
+            1038,
+            630,
+            230,
+            84
         ],
         "threshold": 0.75,
         "action": "Click",
         "target": [
-            1149,
-            590
+            758,
+            383,
+            6,
+            6
         ],
         "next": [
             "2_点击配队2"
@@ -28,8 +30,10 @@
     "2_点击配队2": {
         "action": "Click",
         "target": [
-            299,
-            664
+            197,
+            390,
+            0,
+            1
         ],
         "next": [
             "2_xinta2_点击开始游戏"
@@ -38,8 +42,10 @@
     "2_xinta2_点击开始游戏": {
         "action": "Click",
         "target": [
-            1709,
-            1006
+            1149,
+            676,
+            6,
+            1
         ],
         "next": [
             "2_xinta2_判断是否进入关内"
@@ -48,10 +54,10 @@
     "2_xinta2_判断是否进入关内": {
         "recognition": "ColorMatch",
         "roi": [
-            700,
-            1004,
-            40,
-            40
+            467,
+            669,
+            27,
+            27
         ],
         "method": 4,
         "lower": [
@@ -71,7 +77,7 @@
         ]
     },
     "2_xinta2_抛花1": {
-        "action": "swipe",
+        "action": "Swipe",
         "begin": [
             100,
             200
