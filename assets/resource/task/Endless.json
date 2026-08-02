@@ -400,7 +400,6 @@
                     "name": "Yes",
                     "option": [
                         "多少秒后种魔甘",
-                        "魔甘后是否重开",
                         "使用三叶草",
                         "魔甘高级选项"
                     ],
@@ -426,7 +425,8 @@
                     "option": [
                         "魔甘前使用能量豆",
                         "甜薯种植位置",
-                        "飓风甘蓝种植位置"
+                        "飓风甘蓝种植位置",
+                        "魔甘后是否重开"
                     ]
                 }
             ]
@@ -441,7 +441,7 @@
                 {
                     "name": "No",
                     "pipeline_override": {
-                        "结算-重开识别": {
+                        "无尽框架_结算超时_重开_暂停": {
                             "enabled": false
                         }
                     }
@@ -937,66 +937,6 @@
                                 "frame_wj_boss_喂豆5-3"
                             ]
                         },
-                        "frame_wj_boss_喂豆4-3": {
-                            "next": [
-                                "frame_wj_boss_过渡_相机神器2",
-                                "frame_wj_boss_喂豆4-3"
-                            ]
-                        },
-                        "frame_wj_boss_喂豆3-3": {
-                            "next": [
-                                "frame_wj_boss_过渡_相机神器2",
-                                "frame_wj_boss_喂豆3-3"
-                            ]
-                        },
-                        "frame_wj_boss_喂豆2-3": {
-                            "next": [
-                                "frame_wj_boss_过渡_相机神器2",
-                                "frame_wj_boss_喂豆2-3"
-                            ]
-                        },
-                        "frame_wj_boss_喂豆1-3": {
-                            "next": [
-                                "frame_wj_boss_过渡_相机神器2",
-                                "frame_wj_boss_喂豆1-3"
-                            ]
-                        },
-                        "frame_wj_boss_喂豆6-2": {
-                            "next": [
-                                "frame_wj_boss_过渡_相机神器2",
-                                "frame_wj_boss_喂豆6-2"
-                            ]
-                        },
-                        "frame_wj_boss_喂豆5-2": {
-                            "next": [
-                                "frame_wj_boss_过渡_相机神器2",
-                                "frame_wj_boss_喂豆5-2"
-                            ]
-                        },
-                        "frame_wj_boss_喂豆4-2": {
-                            "next": [
-                                "frame_wj_boss_过渡_相机神器2",
-                                "frame_wj_boss_喂豆4-2"
-                            ]
-                        },
-                        "frame_wj_boss_喂豆6-4": {
-                            "next": [
-                                "frame_wj_boss_过渡_相机神器2",
-                                "frame_wj_boss_喂豆6-4"
-                            ]
-                        },
-                        "frame_wj_boss_喂豆5-4": {
-                            "next": [
-                                "frame_wj_boss_过渡_相机神器2",
-                                "frame_wj_boss_喂豆5-4"
-                            ]
-                        },
-                        "frame_wj_boss_喂豆4-4": {
-                            "next": [
-                                "frame_wj_boss_过渡_相机神器2",
-                                "frame_wj_boss_喂豆4-4"
-                            ]
-                        }
                     }
                 }
             ]
@@ -1077,410 +1017,46 @@
             ]
         },
         "fw_boss关喂豆间隔": {
-            "type": "select",
-            "label": "boss关喂豆间隔",
-            "cases": [
+            "type": "input",
+            "inputs": [
                 {
-                    "name": "2秒",
-                    "label": "2秒",
-                    "pipeline_override": {
-                        "frame_wj_boss_喂豆5-3": {
-                            "post_delay": 2000
-                        },
-                        "frame_wj_boss_喂豆4-3": {
-                            "post_delay": 2000
-                        },
-                        "frame_wj_boss_喂豆3-3": {
-                            "post_delay": 2000
-                        },
-                        "frame_wj_boss_喂豆2-3": {
-                            "post_delay": 2000
-                        },
-                        "frame_wj_boss_喂豆1-3": {
-                            "post_delay": 2000
-                        },
-                        "frame_wj_boss_喂豆6-2": {
-                            "post_delay": 2000
-                        },
-                        "frame_wj_boss_喂豆5-2": {
-                            "post_delay": 2000
-                        },
-                        "frame_wj_boss_喂豆4-2": {
-                            "post_delay": 2000
-                        },
-                        "frame_wj_boss_喂豆6-4": {
-                            "post_delay": 2000
-                        },
-                        "frame_wj_boss_喂豆5-4": {
-                            "post_delay": 2000
-                        },
-                        "frame_wj_boss_喂豆4-4": {
-                            "post_delay": 2000
-                        }
-                    }
-                },
-                {
-                    "name": "3秒",
-                    "label": "3秒",
-                    "pipeline_override": {
-                        "frame_wj_boss_喂豆5-3": {
-                            "post_delay": 3000
-                        },
-                        "frame_wj_boss_喂豆4-3": {
-                            "post_delay": 3000
-                        },
-                        "frame_wj_boss_喂豆3-3": {
-                            "post_delay": 3000
-                        },
-                        "frame_wj_boss_喂豆2-3": {
-                            "post_delay": 3000
-                        },
-                        "frame_wj_boss_喂豆1-3": {
-                            "post_delay": 3000
-                        },
-                        "frame_wj_boss_喂豆6-2": {
-                            "post_delay": 3000
-                        },
-                        "frame_wj_boss_喂豆5-2": {
-                            "post_delay": 3000
-                        },
-                        "frame_wj_boss_喂豆4-2": {
-                            "post_delay": 3000
-                        },
-                        "frame_wj_boss_喂豆6-4": {
-                            "post_delay": 3000
-                        },
-                        "frame_wj_boss_喂豆5-4": {
-                            "post_delay": 3000
-                        },
-                        "frame_wj_boss_喂豆4-4": {
-                            "post_delay": 3000
-                        }
-                    }
-                },
-                {
-                    "name": "4秒",
-                    "label": "4秒",
-                    "pipeline_override": {
-                        "frame_wj_boss_喂豆5-3": {
-                            "post_delay": 4000
-                        },
-                        "frame_wj_boss_喂豆4-3": {
-                            "post_delay": 4000
-                        },
-                        "frame_wj_boss_喂豆3-3": {
-                            "post_delay": 4000
-                        },
-                        "frame_wj_boss_喂豆2-3": {
-                            "post_delay": 4000
-                        },
-                        "frame_wj_boss_喂豆1-3": {
-                            "post_delay": 4000
-                        },
-                        "frame_wj_boss_喂豆6-2": {
-                            "post_delay": 4000
-                        },
-                        "frame_wj_boss_喂豆5-2": {
-                            "post_delay": 4000
-                        },
-                        "frame_wj_boss_喂豆4-2": {
-                            "post_delay": 4000
-                        },
-                        "frame_wj_boss_喂豆6-4": {
-                            "post_delay": 4000
-                        },
-                        "frame_wj_boss_喂豆5-4": {
-                            "post_delay": 4000
-                        },
-                        "frame_wj_boss_喂豆4-4": {
-                            "post_delay": 4000
-                        }
-                    }
-                },
-                {
-                    "name": "5秒",
-                    "label": "5秒",
-                    "pipeline_override": {
-                        "frame_wj_boss_喂豆5-3": {
-                            "post_delay": 5000
-                        },
-                        "frame_wj_boss_喂豆4-3": {
-                            "post_delay": 5000
-                        },
-                        "frame_wj_boss_喂豆3-3": {
-                            "post_delay": 5000
-                        },
-                        "frame_wj_boss_喂豆2-3": {
-                            "post_delay": 5000
-                        },
-                        "frame_wj_boss_喂豆1-3": {
-                            "post_delay": 5000
-                        },
-                        "frame_wj_boss_喂豆6-2": {
-                            "post_delay": 5000
-                        },
-                        "frame_wj_boss_喂豆5-2": {
-                            "post_delay": 5000
-                        },
-                        "frame_wj_boss_喂豆4-2": {
-                            "post_delay": 5000
-                        },
-                        "frame_wj_boss_喂豆6-4": {
-                            "post_delay": 5000
-                        },
-                        "frame_wj_boss_喂豆5-4": {
-                            "post_delay": 5000
-                        },
-                        "frame_wj_boss_喂豆4-4": {
-                            "post_delay": 5000
-                        }
-                    }
-                },
-                {
-                    "name": "6秒",
-                    "label": "6秒",
-                    "pipeline_override": {
-                        "frame_wj_boss_喂豆5-3": {
-                            "post_delay": 6000
-                        },
-                        "frame_wj_boss_喂豆4-3": {
-                            "post_delay": 6000
-                        },
-                        "frame_wj_boss_喂豆3-3": {
-                            "post_delay": 6000
-                        },
-                        "frame_wj_boss_喂豆2-3": {
-                            "post_delay": 6000
-                        },
-                        "frame_wj_boss_喂豆1-3": {
-                            "post_delay": 6000
-                        },
-                        "frame_wj_boss_喂豆6-2": {
-                            "post_delay": 6000
-                        },
-                        "frame_wj_boss_喂豆5-2": {
-                            "post_delay": 6000
-                        },
-                        "frame_wj_boss_喂豆4-2": {
-                            "post_delay": 6000
-                        },
-                        "frame_wj_boss_喂豆6-4": {
-                            "post_delay": 6000
-                        },
-                        "frame_wj_boss_喂豆5-4": {
-                            "post_delay": 6000
-                        },
-                        "frame_wj_boss_喂豆4-4": {
-                            "post_delay": 6000
-                        }
-                    }
-                },
-                {
-                    "name": "7秒",
-                    "label": "7秒",
-                    "pipeline_override": {
-                        "frame_wj_boss_喂豆5-3": {
-                            "post_delay": 7000
-                        },
-                        "frame_wj_boss_喂豆4-3": {
-                            "post_delay": 7000
-                        },
-                        "frame_wj_boss_喂豆3-3": {
-                            "post_delay": 7000
-                        },
-                        "frame_wj_boss_喂豆2-3": {
-                            "post_delay": 7000
-                        },
-                        "frame_wj_boss_喂豆1-3": {
-                            "post_delay": 7000
-                        },
-                        "frame_wj_boss_喂豆6-2": {
-                            "post_delay": 7000
-                        },
-                        "frame_wj_boss_喂豆5-2": {
-                            "post_delay": 7000
-                        },
-                        "frame_wj_boss_喂豆4-2": {
-                            "post_delay": 7000
-                        },
-                        "frame_wj_boss_喂豆6-4": {
-                            "post_delay": 7000
-                        },
-                        "frame_wj_boss_喂豆5-4": {
-                            "post_delay": 7000
-                        },
-                        "frame_wj_boss_喂豆4-4": {
-                            "post_delay": 7000
-                        }
-                    }
-                },
-                {
-                    "name": "8秒",
-                    "label": "8秒",
-                    "pipeline_override": {
-                        "frame_wj_boss_喂豆5-3": {
-                            "post_delay": 8000
-                        },
-                        "frame_wj_boss_喂豆4-3": {
-                            "post_delay": 8000
-                        },
-                        "frame_wj_boss_喂豆3-3": {
-                            "post_delay": 8000
-                        },
-                        "frame_wj_boss_喂豆2-3": {
-                            "post_delay": 8000
-                        },
-                        "frame_wj_boss_喂豆1-3": {
-                            "post_delay": 8000
-                        },
-                        "frame_wj_boss_喂豆6-2": {
-                            "post_delay": 8000
-                        },
-                        "frame_wj_boss_喂豆5-2": {
-                            "post_delay": 8000
-                        },
-                        "frame_wj_boss_喂豆4-2": {
-                            "post_delay": 8000
-                        },
-                        "frame_wj_boss_喂豆6-4": {
-                            "post_delay": 8000
-                        },
-                        "frame_wj_boss_喂豆5-4": {
-                            "post_delay": 8000
-                        },
-                        "frame_wj_boss_喂豆4-4": {
-                            "post_delay": 8000
-                        }
-                    }
+                    "name": "豪秒",
+                    "pipeline_type": "int",
+                    "default": "15000",
+                    "verify": ""
                 }
-            ]
+            ],
+            "pipeline_override": {
+                "frame_wj_boss_喂豆5-3": {
+                    "post_delay": "{豪秒}"
+                },
+            }
         },
         "fw_boss关喂豆位置": {
-            "type": "select",
-            "label": "boss关喂豆位置",
-            "cases": [
+            "type": "input",
+            "label": "喂豆位置",
+            "description": "输入行列坐标，格式：列-行（例如 5-3）",
+            "inputs": [
                 {
-                    "name": "1-3",
-                    "label": "1-3",
-                    "pipeline_override": {
-                        "frame_wj_boss_过渡": {
-                            "next": [
-                                "frame_wj_boss_喂豆1-3"
-                            ]
-                        }
-                    }
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9的数字"
                 },
                 {
-                    "name": "2-3",
-                    "label": "2-3",
-                    "pipeline_override": {
-                        "frame_wj_boss_过渡": {
-                            "next": [
-                                "frame_wj_boss_喂豆2-3"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "3-3",
-                    "label": "3-3",
-                    "pipeline_override": {
-                        "frame_wj_boss_过渡": {
-                            "next": [
-                                "frame_wj_boss_喂豆3-3"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "4-3",
-                    "label": "4-3",
-                    "pipeline_override": {
-                        "frame_wj_boss_过渡": {
-                            "next": [
-                                "frame_wj_boss_喂豆4-3"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "5-3",
-                    "label": "5-3",
-                    "pipeline_override": {
-                        "frame_wj_boss_过渡": {
-                            "next": [
-                                "frame_wj_boss_喂豆5-3"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "6-2",
-                    "label": "6-2",
-                    "pipeline_override": {
-                        "frame_wj_boss_过渡": {
-                            "next": [
-                                "frame_wj_boss_喂豆6-2"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "5-2",
-                    "label": "5-2",
-                    "pipeline_override": {
-                        "frame_wj_boss_过渡": {
-                            "next": [
-                                "frame_wj_boss_喂豆5-2"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "4-2",
-                    "label": "4-2",
-                    "pipeline_override": {
-                        "frame_wj_boss_过渡": {
-                            "next": [
-                                "frame_wj_boss_喂豆4-2"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "6-4",
-                    "label": "6-4",
-                    "pipeline_override": {
-                        "frame_wj_boss_过渡": {
-                            "next": [
-                                "frame_wj_boss_喂豆6-4"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "5-4",
-                    "label": "5-4",
-                    "pipeline_override": {
-                        "frame_wj_boss_过渡": {
-                            "next": [
-                                "frame_wj_boss_喂豆5-4"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "4-4",
-                    "label": "4-4",
-                    "pipeline_override": {
-                        "frame_wj_boss_过渡": {
-                            "next": [
-                                "frame_wj_boss_喂豆4-4"
-                            ]
-                        }
-                    }
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "3",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5的数字"
                 }
-            ]
+            ],
+            "pipeline_override": {
+                "frame_wj_boss_喂豆5-3": {
+                    "end": "种植物_初始化_格子{列}_{行}",
+                },
+            }
         },
         "小关是否加速": {
             "type": "switch",
@@ -1694,190 +1270,30 @@
             ]
         },
         "小关喂豆位置": {
-            "type": "select",
+            "type": "input",
             "label": "喂豆位置",
-            "cases": [
+            "description": "输入行列坐标，格式：列-行（例如 5-3）",
+            "inputs": [
                 {
-                    "name": "5-3",
-                    "label": "5-3",
-                    "pipeline_override": {
-                        "frame_wj_过渡3": {
-                            "next": [
-                                "frame_wj_识别结算",
-                                "frame_wj_喂豆5-3"
-                            ]
-                        }
-                    }
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9的数字"
                 },
                 {
-                    "name": "4-3",
-                    "label": "4-3",
-                    "pipeline_override": {
-                        "frame_wj_过渡3": {
-                            "next": [
-                                "frame_wj_识别结算",
-                                "frame_wj_喂豆4-3"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "3-3",
-                    "label": "3-3",
-                    "pipeline_override": {
-                        "frame_wj_过渡3": {
-                            "next": [
-                                "frame_wj_识别结算",
-                                "frame_wj_喂豆3-3"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "2-3",
-                    "label": "2-3",
-                    "pipeline_override": {
-                        "frame_wj_过渡3": {
-                            "next": [
-                                "frame_wj_识别结算",
-                                "frame_wj_喂豆2-3"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "1-3",
-                    "label": "1-3",
-                    "pipeline_override": {
-                        "frame_wj_过渡3": {
-                            "next": [
-                                "frame_wj_识别结算",
-                                "frame_wj_喂豆1-3"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "5-2",
-                    "label": "5-2",
-                    "pipeline_override": {
-                        "frame_wj_过渡3": {
-                            "next": [
-                                "frame_wj_识别结算",
-                                "frame_wj_喂豆5-2"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "4-2",
-                    "label": "4-2",
-                    "pipeline_override": {
-                        "frame_wj_过渡3": {
-                            "next": [
-                                "frame_wj_识别结算",
-                                "frame_wj_喂豆4-2"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "3-2",
-                    "label": "3-2",
-                    "pipeline_override": {
-                        "frame_wj_过渡3": {
-                            "next": [
-                                "frame_wj_识别结算",
-                                "frame_wj_喂豆3-2"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "2-2",
-                    "label": "2-2",
-                    "pipeline_override": {
-                        "frame_wj_过渡3": {
-                            "next": [
-                                "frame_wj_识别结算",
-                                "frame_wj_喂豆2-2"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "1-2",
-                    "label": "1-2",
-                    "pipeline_override": {
-                        "frame_wj_过渡3": {
-                            "next": [
-                                "frame_wj_识别结算",
-                                "frame_wj_喂豆1-2"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "5-4",
-                    "label": "5-4",
-                    "pipeline_override": {
-                        "frame_wj_过渡3": {
-                            "next": [
-                                "frame_wj_识别结算",
-                                "frame_wj_喂豆5-4"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "4-4",
-                    "label": "4-4",
-                    "pipeline_override": {
-                        "frame_wj_过渡3": {
-                            "next": [
-                                "frame_wj_识别结算",
-                                "frame_wj_喂豆4-4"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "3-4",
-                    "label": "3-4",
-                    "pipeline_override": {
-                        "frame_wj_过渡3": {
-                            "next": [
-                                "frame_wj_识别结算",
-                                "frame_wj_喂豆3-4"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "2-4",
-                    "label": "2-4",
-                    "pipeline_override": {
-                        "frame_wj_过渡3": {
-                            "next": [
-                                "frame_wj_识别结算",
-                                "frame_wj_喂豆2-4"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "1-4",
-                    "label": "1-4",
-                    "pipeline_override": {
-                        "frame_wj_过渡3": {
-                            "next": [
-                                "frame_wj_识别结算",
-                                "frame_wj_喂豆1-4"
-                            ]
-                        }
-                    }
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "3",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5的数字"
                 }
-            ]
+            ],
+            "pipeline_override": {
+                "frame_wj_喂豆5-3": {
+                    "end": "种植物_初始化_格子{列}_{行}",
+                },
+            }
         },
         "小关喂豆间隔": {
             "type": "select",
