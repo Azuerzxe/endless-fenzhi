@@ -81,7 +81,7 @@
                 {
                     "name": "行",
                     "pipeline_type": "string",
-                    "default": "1",
+                    "default": "2",
                     "verify": "^[1-5]$"
                 }
             ],
