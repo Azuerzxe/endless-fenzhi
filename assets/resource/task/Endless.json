@@ -337,9 +337,17 @@
                     "label": "第1关",
                     "pipeline_override": {
                         "HeartTowerEntry": {
+                            "anchor": {
+                                "初始化": "1关"
+                            },
                             "next": [
-                                "1关"
+                                "种植物_初始化_植物位置"
                             ]
+                        },
+                        "HeartTowerEntry2": {
+                            "anchor": {
+                                "初始化": "2_1关"
+                            },
                         }
                     }
                 },
@@ -348,9 +356,14 @@
                     "label": "第2关",
                     "pipeline_override": {
                         "HeartTowerEntry": {
-                            "next": [
-                                "2关"
-                            ]
+                            "anchor": {
+                                "初始化": "2关"
+                            },
+                        },
+                        "HeartTowerEntry2": {
+                            "anchor": {
+                                "初始化": "2_2关"
+                            },
                         }
                     }
                 },
@@ -359,9 +372,14 @@
                     "label": "第3~149关",
                     "pipeline_override": {
                         "HeartTowerEntry": {
-                            "next": [
-                                "3_149关"
-                            ]
+                            "anchor": {
+                                "初始化": "3_149关"
+                            },
+                        },
+                        "HeartTowerEntry2": {
+                            "anchor": {
+                                "初始化": "2_3_149关"
+                            },
                         }
                     }
                 }

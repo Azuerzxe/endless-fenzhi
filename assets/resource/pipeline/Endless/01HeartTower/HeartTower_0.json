@@ -1,8 +1,11 @@
 {
     "HeartTowerEntry": {
         "action": "DoNothing",
+        "anchor": {
+            "初始化": "1关"
+        },
         "next": [
-            "1关"
+            "种植物_初始化_植物位置"
         ]
     }
 }
