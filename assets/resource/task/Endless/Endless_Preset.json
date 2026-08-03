@@ -184,6 +184,11 @@
                 },
                 {
                     "name": "塔黄香蕉(无心叶兰)",
+                    "description": "卡槽见公告,需月卡,香蕉和瓷砖一定不要带装扮(天空无尽无法使用此阵容)",
+                    "option": [
+                        "tower_banana_boss关是否切换喂豆间隔",
+                        "tower_banana_小关是否切换喂豆间隔"
+                    ],
                     "pipeline_override": {
                         "无尽挑战_埃及": {
                             "next": [
