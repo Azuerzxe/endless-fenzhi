@@ -289,10 +289,8 @@ jobs:
       - name: Write changelog to announcement file
         run: |
           mkdir -p announcement
-          TAG="${{ needs.meta.outputs.tag }}"
           echo "${{ steps.git-cliff.outputs.content }}" > announcement/CHANGES.md
-          cp announcement/CHANGES.md announcement/${TAG}.md
-          echo "Announcement file created: announcement/${TAG}.md"
+         
 
       - name: Upload announcement artifact
         uses: actions/upload-artifact@v4
