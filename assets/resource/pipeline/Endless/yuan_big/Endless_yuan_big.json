@@ -5,8 +5,11 @@
     },
     "原大_无尽": {
         "action": "DoNothing",
+        "anchor": {
+            "初始化": "原大_过渡"
+        },
         "next": [
-            "原大_过渡"
+            "种植物_初始化_植物位置"
         ]
     },
     "原大_识别开始战斗": {
@@ -57,15 +60,9 @@
         ]
     },
     "原大_抛花1": {
-        "action": "swipe",
-        "begin": [
-            67,
-            133
-        ],
-        "end": [
-            1209,
-            149
-        ],
+        "action": "Swipe",
+        "begin": "种植物_初始化_第一个槽位",
+        "end": "种植物_初始化_格子9_1",
         "pre_delay": 0,
         "post_delay": 100,
         "duration": 100,
@@ -74,17 +71,11 @@
         ]
     },
     "原大_抛花2": {
-        "action": "swipe",
-        "begin": [
-            67,
-            133
-        ],
-        "end": [
-            1182,
-            273
-        ],
+        "action": "Swipe",
+        "begin": "种植物_初始化_第一个槽位",
+        "end": "种植物_初始化_格子9_2",
         "pre_delay": 0,
-        "post_delay": 5000,
+        "post_delay": 1000,
         "duration": 100,
         "timeout": -1,
         "next": [
@@ -108,17 +99,11 @@
     "原大_大哥滑动1": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            56,
-            263
-        ],
-        "end": [
-            471,
-            589
-        ],
+        "begin": "种植物_初始化_第三个槽位",
+        "end": "种植物_初始化_格子1_5",
         "duration": 100,
         "pre_delay": 0,
-        "post_delay": 0,
+        "post_delay": 1000,
         "next": [
             "原大_大哥滑动2"
         ]
@@ -126,17 +111,11 @@
     "原大_大哥滑动2": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            256
-        ],
-        "end": [
-            472,
-            476
-        ],
+        "begin": "种植物_初始化_第三个槽位",
+        "end": "种植物_初始化_格子1_4",
         "duration": 100,
         "pre_delay": 0,
-        "post_delay": 0,
+        "post_delay": 1000,
         "next": [
             "原大_大哥滑动3"
         ]
@@ -144,17 +123,11 @@
     "原大_大哥滑动3": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            73,
-            256
-        ],
-        "end": [
-            469,
-            368
-        ],
+        "begin": "种植物_初始化_第三个槽位",
+        "end": "种植物_初始化_格子1_3",
         "duration": 100,
         "pre_delay": 0,
-        "post_delay": 0,
+        "post_delay": 1000,
         "next": [
             "原大_原豌滑动1"
         ]
@@ -162,14 +135,8 @@
     "原大_原豌滑动1": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            55,
-            401
-        ],
-        "end": [
-            469,
-            588
-        ],
+        "begin": "种植物_初始化_第五个槽位",
+        "end": "种植物_初始化_格子1_5",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -180,14 +147,8 @@
     "原大_原豌滑动2": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            55,
-            401
-        ],
-        "end": [
-            472,
-            486
-        ],
+        "begin": "种植物_初始化_第五个槽位",
+        "end": "种植物_初始化_格子1_4",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -198,14 +159,8 @@
     "原大_原豌滑动3": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            55,
-            401
-        ],
-        "end": [
-            470,
-            372
-        ],
+        "begin": "种植物_初始化_第五个槽位",
+        "end": "种植物_初始化_格子1_3",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -233,17 +188,11 @@
             18
         ],
         "action": "Swipe",
-        "begin": [
-            73,
-            263
-        ],
-        "end": [
-            469,
-            261
-        ],
+        "begin": "种植物_初始化_第三个槽位",
+        "end": "种植物_初始化_格子1_2",
         "duration": 100,
         "pre_delay": 0,
-        "post_delay": 0,
+        "post_delay": 1000,
         "next": [
             "原大_原豌滑动4"
         ]
@@ -251,14 +200,8 @@
     "原大_原豌滑动4": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            55,
-            401
-        ],
-        "end": [
-            470,
-            267
-        ],
+        "begin": "种植物_初始化_第五个槽位",
+        "end": "种植物_初始化_格子1_2",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -286,17 +229,11 @@
             18
         ],
         "action": "Swipe",
-        "begin": [
-            59,
-            260
-        ],
-        "end": [
-            470,
-            150
-        ],
+        "begin": "种植物_初始化_第三个槽位",
+        "end": "种植物_初始化_格子1_1",
         "duration": 100,
         "pre_delay": 0,
-        "post_delay": 0,
+        "post_delay": 1000,
         "next": [
             "原大_原豌滑动5"
         ]
@@ -304,14 +241,8 @@
     "原大_原豌滑动5": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            55,
-            401
-        ],
-        "end": [
-            461,
-            154
-        ],
+        "begin": "种植物_初始化_第五个槽位",
+        "end": "种植物_初始化_格子1_1",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -331,23 +262,123 @@
         "post_delay": 0,
         "next": [
             "原大_识别结算",
-            "原大_自选滑动"
+            "原大_芦荟滑动1"
         ]
     },
-    "原大_自选滑动": {
-        "recognition": "DirectHit",
+    "原大_卡7_补植物1": {
         "action": "Swipe",
-        "begin": [
-            68,
-            533
-        ],
-        "end": [
-            847,
-            352
-        ],
-        "duration": 100,
+        "begin": "种植物_初始化_第七个槽位",
+        "end": [],
         "pre_delay": 0,
         "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "原大_卡7_补植物2"
+        ]
+    },
+    "原大_卡7_补植物2": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第七个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "原大_卡7_补植物3"
+        ]
+    },
+    "原大_卡7_补植物3": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第七个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "原大_卡7_补植物4"
+        ]
+    },
+    "原大_卡7_补植物4": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第七个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "原大_卡7_补植物5"
+        ]
+    },
+    "原大_卡7_补植物5": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第七个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "原大_卡8_过渡"
+        ]
+    },
+    "原大_卡8_过渡": {
+        "action": "DoNothing",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "原大_卡8_补植物1"
+        ]
+    },
+    "原大_卡8_补植物1": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第八个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "原大_卡8_补植物2"
+        ]
+    },
+    "原大_卡8_补植物2": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第八个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "原大_卡8_补植物3"
+        ]
+    },
+    "原大_卡8_补植物3": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第八个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "原大_卡8_补植物4"
+        ]
+    },
+    "原大_卡8_补植物4": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第八个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "duration": 100,
+        "next": [
+            "原大_卡8_补植物5"
+        ]
+    },
+    "原大_卡8_补植物5": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第八个槽位",
+        "end": [],
+        "pre_delay": 200,
+        "post_delay": 200,
+        "duration": 500,
         "next": [
             "原大_芦荟滑动1"
         ]
@@ -355,14 +386,8 @@
     "原大_芦荟滑动1": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            470
-        ],
-        "end": [
-            663,
-            268
-        ],
+        "begin": "种植物_初始化_第六个槽位",
+        "end": "种植物_初始化_格子3_2",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -373,14 +398,8 @@
     "原大_芦荟滑动2": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            470
-        ],
-        "end": [
-            661,
-            588
-        ],
+        "begin": "种植物_初始化_第六个槽位",
+        "end": "种植物_初始化_格子3_5",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -391,14 +410,8 @@
     "原大_芦荟滑动3": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            470
-        ],
-        "end": [
-            921,
-            141
-        ],
+        "begin": "种植物_初始化_第六个槽位",
+        "end": "种植物_初始化_格子6_1",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -409,14 +422,8 @@
     "原大_芦荟滑动4": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            470
-        ],
-        "end": [
-            933,
-            471
-        ],
+        "begin": "种植物_初始化_第六个槽位",
+        "end": "种植物_初始化_格子6_4",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -427,14 +434,8 @@
     "原大_桑葚滑动1": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            186
-        ],
-        "end": [
-            566,
-            153
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子2_1",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -445,14 +446,8 @@
     "原大_桑葚滑动2": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            68,
-            189
-        ],
-        "end": [
-            565,
-            259
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子2_2",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -464,14 +459,8 @@
     "原大_桑葚滑动3": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            56,
-            188
-        ],
-        "end": [
-            566,
-            376
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子2_3",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -482,14 +471,8 @@
     "原大_桑葚滑动4": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            186
-        ],
-        "end": [
-            561,
-            495
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子2_4",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -500,14 +483,8 @@
     "原大_桑葚滑动5": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            68,
-            186
-        ],
-        "end": [
-            561,
-            590
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子2_5",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -518,14 +495,8 @@
     "原大_桑葚滑动6": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            191
-        ],
-        "end": [
-            663,
-            470
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子3_1",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -536,14 +507,8 @@
     "原大_桑葚滑动7": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            189
-        ],
-        "end": [
-            667,
-            363
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子3_3",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -554,14 +519,8 @@
     "原大_桑葚滑动8": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            60,
-            194
-        ],
-        "end": [
-            655,
-            151
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子3_4",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -572,14 +531,8 @@
     "原大_桑葚滑动9": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            73,
-            187
-        ],
-        "end": [
-            746,
-            146
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子4_1",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -590,14 +543,8 @@
     "原大_桑葚滑动10": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            194
-        ],
-        "end": [
-            745,
-            256
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子4_2",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -608,14 +555,8 @@
     "原大_桑葚滑动11": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            194
-        ],
-        "end": [
-            749,
-            356
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子4_3",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -626,14 +567,8 @@
     "原大_桑葚滑动12": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            194
-        ],
-        "end": [
-            749,
-            478
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子4_4",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -645,14 +580,8 @@
     "原大_桑葚滑动13": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            194
-        ],
-        "end": [
-            760,
-            590
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子4_5",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -663,14 +592,8 @@
     "原大_桑葚滑动14": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            194
-        ],
-        "end": [
-            856,
-            596
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子5_1",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -681,14 +604,8 @@
     "原大_桑葚滑动15": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            194
-        ],
-        "end": [
-            854,
-            467
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子5_2",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -699,14 +616,8 @@
     "原大_桑葚滑动16": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            194
-        ],
-        "end": [
-            561,
-            363
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子5_3",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -717,14 +628,8 @@
     "原大_桑葚滑动17": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            194
-        ],
-        "end": [
-            846,
-            262
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子5_4",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -735,14 +640,8 @@
     "原大_桑葚滑动18": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            194
-        ],
-        "end": [
-            835,
-            143
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子5_5",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -753,14 +652,8 @@
     "原大_桑葚滑动19": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            194
-        ],
-        "end": [
-            924,
-            250
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子6_2",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -771,14 +664,8 @@
     "原大_桑葚滑动20": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            194
-        ],
-        "end": [
-            937,
-            361
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子6_3",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -789,14 +676,8 @@
     "原大_桑葚滑动21": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            194
-        ],
-        "end": [
-            923,
-            583
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子6_4",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -807,14 +688,8 @@
     "原大_桑葚滑动22": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            194
-        ],
-        "end": [
-            1021,
-            585
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子7_1",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -826,14 +701,8 @@
     "原大_桑葚滑动23": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            194
-        ],
-        "end": [
-            1031,
-            471
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子7_2",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -844,14 +713,8 @@
     "原大_桑葚滑动24": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            194
-        ],
-        "end": [
-            1033,
-            361
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子7_3",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -862,14 +725,8 @@
     "原大_桑葚滑动25": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            194
-        ],
-        "end": [
-            1029,
-            259
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子7_4",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -880,14 +737,8 @@
     "原大_桑葚滑动26": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            194
-        ],
-        "end": [
-            1020,
-            148
-        ],
+        "begin": "种植物_初始化_第二个槽位",
+        "end": "种植物_初始化_格子7_5",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -926,14 +777,8 @@
     "原大_毒藤滑动1": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            67,
-            328
-        ],
-        "end": [
-            566,
-            153
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子2_1",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -944,14 +789,8 @@
     "原大_毒藤滑动2": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            333
-        ],
-        "end": [
-            565,
-            259
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子2_2",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -962,14 +801,8 @@
     "原大_毒藤滑动3": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            61,
-            333
-        ],
-        "end": [
-            566,
-            376
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子2_3",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -980,14 +813,8 @@
     "原大_毒藤滑动4": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            334
-        ],
-        "end": [
-            561,
-            495
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子2_4",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -999,14 +826,8 @@
     "原大_毒藤滑动5": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            61,
-            336
-        ],
-        "end": [
-            561,
-            590
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子2_5",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1017,14 +838,8 @@
     "原大_毒藤滑动6": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            60,
-            331
-        ],
-        "end": [
-            663,
-            470
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子3_1",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1035,14 +850,8 @@
     "原大_毒藤滑动7": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            65,
-            334
-        ],
-        "end": [
-            667,
-            363
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子3_3",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1053,14 +862,8 @@
     "原大_毒藤滑动8": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            69,
-            331
-        ],
-        "end": [
-            655,
-            151
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子3_4",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1071,14 +874,8 @@
     "原大_毒藤滑动9": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            69,
-            333
-        ],
-        "end": [
-            746,
-            146
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子4_1",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1089,14 +886,8 @@
     "原大_毒藤滑动10": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            68,
-            333
-        ],
-        "end": [
-            745,
-            256
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子4_2",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1107,14 +898,8 @@
     "原大_毒藤滑动11": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            67,
-            330
-        ],
-        "end": [
-            749,
-            356
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子4_3",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1125,14 +910,8 @@
     "原大_毒藤滑动12": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            335
-        ],
-        "end": [
-            749,
-            478
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子4_4",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1143,14 +922,8 @@
     "原大_毒藤滑动13": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            73,
-            330
-        ],
-        "end": [
-            760,
-            590
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子4_5",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1161,14 +934,8 @@
     "原大_毒藤滑动14": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            60,
-            329
-        ],
-        "end": [
-            856,
-            596
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子5_1",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1180,14 +947,8 @@
     "原大_毒藤滑动15": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            74,
-            334
-        ],
-        "end": [
-            854,
-            467
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子5_2",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1198,14 +959,8 @@
     "原大_毒藤滑动16": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            64,
-            335
-        ],
-        "end": [
-            847,
-            352
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子5_3",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1216,14 +971,8 @@
     "原大_毒藤滑动17": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            73,
-            331
-        ],
-        "end": [
-            846,
-            262
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子5_4",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1234,14 +983,8 @@
     "原大_毒藤滑动18": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            61,
-            332
-        ],
-        "end": [
-            835,
-            143
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子5_5",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1252,14 +995,8 @@
     "原大_毒藤滑动19": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            61,
-            335
-        ],
-        "end": [
-            938,
-            256
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子6_2",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1270,14 +1007,8 @@
     "原大_毒藤滑动20": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            328
-        ],
-        "end": [
-            937,
-            361
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子6_3",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1288,14 +1019,8 @@
     "原大_毒藤滑动21": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            73,
-            327
-        ],
-        "end": [
-            941,
-            583
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子6_4",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1306,14 +1031,8 @@
     "原大_毒藤滑动22": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            65,
-            331
-        ],
-        "end": [
-            1021,
-            585
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子7_1",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1324,14 +1043,8 @@
     "原大_毒藤滑动23": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            71,
-            329
-        ],
-        "end": [
-            1031,
-            471
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子7_2",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1342,14 +1055,8 @@
     "原大_毒藤滑动24": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            57,
-            328
-        ],
-        "end": [
-            1033,
-            361
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子7_3",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1360,14 +1067,8 @@
     "原大_毒藤滑动25": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            68,
-            333
-        ],
-        "end": [
-            1029,
-            259
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子7_4",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1378,14 +1079,8 @@
     "原大_毒藤滑动26": {
         "recognition": "DirectHit",
         "action": "Swipe",
-        "begin": [
-            69,
-            333
-        ],
-        "end": [
-            1020,
-            148
-        ],
+        "begin": "种植物_初始化_第四个槽位",
+        "end": "种植物_初始化_格子7_5",
         "duration": 100,
         "pre_delay": 0,
         "post_delay": 0,
@@ -1429,7 +1124,7 @@
         "timeout": -1,
         "next": [
             "原大_识别boss关",
-            "原大_识别开始战斗",
+            "原大_识别开始战斗"
         ]
     },
     "原大_识别boss关": {
@@ -1452,7 +1147,125 @@
         ],
         "rate_limit": 10,
         "next": [
+            "原大_神器补给_查看"
+        ]
+    },
+    "原大_神器补给_查看": {
+        "action": "Click",
+        "target": [
+            999,
+            351,
+            11,
+            29
+        ],
+        "pre_delay": 2000,
+        "next": [
+            "原大_神器补给_判断是否有神器"
+        ]
+    },
+    "原大_神器补给_判断是否有神器": {
+        "action": "DoNothing",
+        "pre_delay": 1000,
+        "post_delay": 0,
+        "next": [
+            "原大_神器补给_全部植物",
+            "原大_神器补给_橙色植物",
+            "原大_神器补给_蓝色植物",
+            "原大_神器补给_紫色植物",
             "原大_补给"
+        ]
+    },
+    "原大_神器补给_全部植物": {
+        "recognition": "OCR",
+        "expected": "全部植物",
+        "roi": [
+            194,
+            237,
+            909,
+            80
+        ],
+        "action": "Click",
+        "pre_delay": 1000,
+        "next": [
+            "原大_神器补给_确定1"
+        ]
+    },
+    "原大_神器补给_橙色植物": {
+        "recognition": "OCR",
+        "expected": "橙色植物",
+        "roi": [
+            194,
+            237,
+            909,
+            80
+        ],
+        "action": "Click",
+        "pre_delay": 1000,
+        "next": [
+            "原大_神器补给_确定1"
+        ]
+    },
+    "原大_神器补给_蓝色植物": {
+        "recognition": "OCR",
+        "expected": "蓝色植物",
+        "roi": [
+            194,
+            237,
+            909,
+            80
+        ],
+        "action": "Click",
+        "pre_delay": 1000,
+        "next": [
+            "原大_神器补给_确定1"
+        ]
+    },
+    "原大_神器补给_紫色植物": {
+        "recognition": "OCR",
+        "expected": "紫色植物",
+        "roi": [
+            194,
+            237,
+            909,
+            80
+        ],
+        "action": "Click",
+        "pre_delay": 1000,
+        "next": [
+            "原大_神器补给_确定1"
+        ]
+    },
+    "原大_神器补给_确定1": {
+        "action": "Click",
+        "target": [
+            631,
+            609
+        ],
+        "pre_delay": 1000,
+        "next": [
+            "原大_神器补给_确定2"
+        ]
+    },
+    "原大_神器补给_确定2": {
+        "action": "Click",
+        "target": [
+            631,
+            609
+        ],
+        "pre_delay": 2000,
+        "next": [
+            "原大_神器补给_确定3"
+        ]
+    },
+    "原大_神器补给_确定3": {
+        "action": "Click",
+        "target": [
+            631,
+            609
+        ],
+        "pre_delay": 2000,
+        "next": [
+            "原大_boss_识别开始"
         ]
     },
     "原大_补给": {
@@ -1597,26 +1410,20 @@
             37
         ],
         "next": [
-            "原大_boss_喂豆5-3"
+            "原大_boss_喂豆"
         ]
     },
-    "原大_boss_喂豆5-3": {
-        "action": "swipe",
-        "begin": [
-            615,
-            681
-        ],
-        "end": [
-            835,
-            369
-        ],
+    "原大_boss_喂豆": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_能量豆位置",
+        "end": [],
         "pre_delay": 100,
         "post_delay": 3000,
         "timeout": -1,
         "duration": 100,
         "next": [
             "原大_boss_识别结算",
-            "原大_boss_喂豆5-3"
+            "原大_boss_喂豆"
         ]
     },
     "原大_boss_识别结算": {
