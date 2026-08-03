@@ -51,7 +51,8 @@
         "./resource/task/Endless/frame_custom.json",
         "./resource/task/Endless/Endless_Flower.json",
         "./resource/task/Endless/Endless_Patch_Plants.json",
-        "./resource/task/Endless/Endless_Preset.json"
+        "./resource/task/Endless/Endless_Preset.json",
+        "./resource/task/Endless/Endless_Preset_Option.json"
     ],
     "task": [
         {
