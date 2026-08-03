@@ -237,11 +237,11 @@
             }
         },
         "frame_wj_custom_使用铲子1": {
-            "type": "select",
+            "type": "switch",
             "label": "铲子1",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子1": {
@@ -250,7 +250,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子1": {
@@ -289,11 +289,11 @@
             }
         },
         "frame_wj_custom_使用铲子2": {
-            "type": "select",
+            "type": "switch",
             "label": "铲子2",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子2": {
@@ -302,7 +302,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子2": {
@@ -341,11 +341,11 @@
             }
         },
         "frame_wj_custom_使用铲子3": {
-            "type": "select",
+            "type": "switch",
             "label": "铲子3",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子3": {
@@ -354,7 +354,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子3": {
@@ -393,11 +393,11 @@
             }
         },
         "frame_wj_custom_使用铲子4": {
-            "type": "select",
+            "type": "switch",
             "label": "铲子4",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子4": {
@@ -406,7 +406,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子4": {
@@ -445,11 +445,11 @@
             }
         },
         "frame_wj_custom_使用铲子5": {
-            "type": "select",
+            "type": "switch",
             "label": "铲子5",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子5": {
@@ -458,7 +458,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子5": {
@@ -497,11 +497,11 @@
             }
         },
         "frame_wj_custom_使用铲子6": {
-            "type": "select",
+            "type": "switch",
             "label": "铲子6",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子6": {
@@ -510,7 +510,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子6": {
@@ -549,11 +549,11 @@
             }
         },
         "frame_wj_custom_使用铲子7": {
-            "type": "select",
+            "type": "switch",
             "label": "铲子7",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子7": {
@@ -562,7 +562,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子7": {
@@ -601,11 +601,11 @@
             }
         },
         "frame_wj_custom_使用铲子8": {
-            "type": "select",
+            "type": "switch",
             "label": "铲子8",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子8": {
@@ -614,7 +614,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子8": {
@@ -653,11 +653,11 @@
             }
         },
         "frame_wj_custom_使用铲子9": {
-            "type": "select",
+            "type": "switch",
             "label": "铲子9",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子9": {
@@ -666,7 +666,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子9": {
@@ -705,11 +705,11 @@
             }
         },
         "frame_wj_custom_使用铲子10": {
-            "type": "select",
+            "type": "switch",
             "label": "铲子10",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子10": {
@@ -718,7 +718,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "pipeline_override": {
                         "frame_wj_custom_2_使用铲子10": {
@@ -757,11 +757,11 @@
             }
         },
         "frame_wj_custom_种守卫菇位置1": {
-            "type": "select",
+            "type": "switch",
             "label": "种守卫菇_位置1",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_custom_2_种守卫菇1": {
@@ -777,7 +777,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "pipeline_override": {
                         "frame_wj_custom_2_种守卫菇1": {
@@ -829,11 +829,11 @@
             }
         },
         "frame_wj_custom_种守卫菇位置2": {
-            "type": "select",
+            "type": "switch",
             "label": "种守卫菇_位置2",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_custom_2_种守卫菇2": {
@@ -849,7 +849,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "pipeline_override": {
                         "frame_wj_custom_2_种守卫菇2": {
@@ -901,11 +901,11 @@
             }
         },
         "frame_wj_custom_种守卫菇位置3": {
-            "type": "select",
+            "type": "switch",
             "label": "种守卫菇_位置3",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_custom_2_种守卫菇3": {
@@ -921,7 +921,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "pipeline_override": {
                         "frame_wj_custom_2_种守卫菇3": {
@@ -973,11 +973,11 @@
             }
         },
         "frame_wj_custom_种守卫菇位置4": {
-            "type": "select",
+            "type": "switch",
             "label": "种守卫菇_位置4",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_custom_2_种守卫菇4": {
@@ -993,7 +993,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "pipeline_override": {
                         "frame_wj_custom_2_种守卫菇4": {
@@ -1045,11 +1045,11 @@
             }
         },
         "frame_wj_custom_种守卫菇位置5": {
-            "type": "select",
+            "type": "switch",
             "label": "种守卫菇_位置5",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_custom_2_种守卫菇5": {
@@ -1065,7 +1065,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "pipeline_override": {
                         "frame_wj_custom_2_种守卫菇5": {
@@ -1117,12 +1117,12 @@
             }
         },
         "frame_wj_custom_喂豆位置": {
-            "type": "select",
+            "type": "switch",
             "label": "喂豆位置",
             "description": "布阵结束后进行喂豆的位置",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_custom_喂豆1": {
@@ -1133,7 +1133,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "pipeline_override": {
                         "frame_wj_custom_喂豆1": {
@@ -1174,11 +1174,11 @@
             }
         },
         "frame_wj_boss_custom_喂豆位置": {
-            "type": "select",
+            "type": "switch",
             "label": "boss关喂豆位置",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_custom_boss_喂豆1": {
@@ -1189,7 +1189,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "pipeline_override": {
                         "frame_wj_custom_boss_喂豆1": {

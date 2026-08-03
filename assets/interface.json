@@ -38,24 +38,30 @@
         }
     ],
     "import": [
+        // 根目录 task 下的通用功能
         "./resource/task/plants_explore_debris.json",
         "./resource/task/fragment_challenge.json",
         "./resource/task/get_gold_coins.json",
         "./resource/task/Start_game.json",
         "./resource/task/Secret_realm.json",
-        "./resource/task/Endless.json",
         "./resource/task/pair_duel.json",
         "./resource/task/mini_tools.json",
         "./resource/task/test.json",
         "./resource/task/video_card.json",
-        "./resource/task/Endless/frame_custom.json",
-        "./resource/task/Endless/Endless_Flower.json",
-        "./resource/task/Endless/Endless_Patch_Plants.json",
-        "./resource/task/Endless/endless_plant.json", // 植物配置（原大/心叶兰塔黄/塔黄香蕉）
-        "./resource/task/Endless/endless_heart_tower.json", // 心塔阵型
-        "./resource/task/Endless/endless_auto_loop.json", // 全自动循环开关
-        "./resource/task/Endless/Endless_Preset_Option.json",
-        "./resource/task/Endless/Endless.json"
+        // Endless 子目录
+        "./resource/task/Endless/Endless.json", // 顶层入口
+        "./resource/task/Endless/Endless_plant.json", // 预设选择器
+        "./resource/task/Endless/Endless_auto_loop.json", // 全自动循环
+        // framework 通用模块
+        "./resource/task/Endless/framework/custom/frame_custom.json", // 自定义布阵
+        "./resource/task/Endless/framework/frame/Flower.json", // 抛花
+        "./resource/task/Endless/framework/frame/Patch_Plants.json", // 补植物
+        "./resource/task/Endless/framework/frame/Magic_Gan.json", // 魔甘收尾
+        "./resource/task/Endless/framework/frame/option.json", // 其他通用选项
+        // preset 预设
+        "./resource/task/Endless/preset/yuan_big/preset_yuan_big.json", // 原大桑葚
+        "./resource/task/Endless/preset/heart_tower/preset_heart_tower.json", // 心叶兰塔黄
+        "./resource/task/Endless/preset/banana_tower/preset_banana_tower.json" // 塔黄香蕉
     ],
     "task": [
         {

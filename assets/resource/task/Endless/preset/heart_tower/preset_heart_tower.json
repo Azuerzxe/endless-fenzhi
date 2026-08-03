@@ -210,6 +210,65 @@
                     }
                 }
             ]
-        }
+        },
+        "起始关卡选择": {
+            "type": "select",
+            "label": "起始关卡",
+            "description": "选择要打的关卡",
+            "default_case": "1关",
+            "cases": [
+                {
+                    "name": "1关",
+                    "label": "第1关",
+                    "pipeline_override": {
+                        "HeartTowerEntry": {
+                            "anchor": {
+                                "初始化": "1关"
+                            },
+                            "next": [
+                                "种植物_初始化_植物位置"
+                            ]
+                        },
+                        "HeartTowerEntry2": {
+                            "anchor": {
+                                "初始化": "2_1关"
+                            },
+                        }
+                    }
+                },
+                {
+                    "name": "2关",
+                    "label": "第2关",
+                    "pipeline_override": {
+                        "HeartTowerEntry": {
+                            "anchor": {
+                                "初始化": "2关"
+                            },
+                        },
+                        "HeartTowerEntry2": {
+                            "anchor": {
+                                "初始化": "2_2关"
+                            },
+                        }
+                    }
+                },
+                {
+                    "name": "3-149关",
+                    "label": "第3~149关",
+                    "pipeline_override": {
+                        "HeartTowerEntry": {
+                            "anchor": {
+                                "初始化": "3_149关"
+                            },
+                        },
+                        "HeartTowerEntry2": {
+                            "anchor": {
+                                "初始化": "2_3_149关"
+                            },
+                        }
+                    }
+                }
+            ]
+        },
     }
 }

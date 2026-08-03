@@ -1,0 +1,636 @@
+{
+    "option": {
+        "fw_boss_是否开相机神器": {
+            "type": "switch",
+            "label": "boss关是否开相机神器复原植物",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_boss_过渡_相机神器1": {
+                            "next": [
+                                "frame_wj_boss_过渡"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {
+                        "frame_wj_boss_过渡_相机神器1": {
+                            "next": [
+                                "frame_wj_boss_相机神器_复制1"
+                            ]
+                        },
+                        "frame_wj_boss_喂豆5-3": {
+                            "next": [
+                                "frame_wj_boss_过渡_相机神器2",
+                                "frame_wj_boss_喂豆5-3"
+                            ]
+                        },
+                    }
+                }
+            ]
+        },
+        "fw_boss_补给智能选取": {
+            "type": "switch",
+            "label": "补给智能选取",
+            "description": "优先级: 神器->全部植物->橙色植物->蓝色植物->紫色植物",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {
+                        "frame_wj_识别boss关": {
+                            "next": [
+                                "frame_wj_神器补给_查看"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "fw_boss关是否需要喂豆": {
+            "type": "switch",
+            "label": "boss关是否需要喂豆",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_boss_过渡": {
+                            "next": [
+                                "frame_wj_boss_识别结算"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "fw_boss关喂豆位置",
+                        "fw_boss关喂豆间隔"
+                    ]
+                }
+            ]
+        },
+        "fw_boss关是否加速": {
+            "type": "switch",
+            "label": "boss关是否加速",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_boss_判断是否进入关内": {
+                            "action": "DoNothing",
+                            "next": [
+                                "frame_wj_boss_抛花1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {
+                        "frame_wj_boss_判断是否进入关内": {
+                            "action": "click"
+                        }
+                    }
+                }
+            ]
+        },
+        "fw_boss关喂豆间隔": {
+            "type": "input",
+            "inputs": [
+                {
+                    "name": "豪秒",
+                    "pipeline_type": "int",
+                    "default": "4000",
+                    "verify": ""
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_boss_喂豆5-3": {
+                    "post_delay": "{豪秒}"
+                },
+            }
+        },
+        "fw_boss关喂豆位置": {
+            "type": "input",
+            "label": "喂豆位置",
+            "description": "输入行列坐标，格式：列-行（例如 5-3）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9的数字"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "3",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5的数字"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_boss_喂豆5-3": {
+                    "end": "种植物_初始化_格子{列}_{行}",
+                },
+            }
+        },
+        "小关是否加速": {
+            "type": "switch",
+            "label": "小关是否加速",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_判断是否进入关内": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {
+                        "frame_wj_判断是否进入关内": {
+                            "action": "click"
+                        }
+                    }
+                }
+            ]
+        },
+        "小关是否喂豆": {
+            "type": "switch",
+            "label": "小关是否喂豆",
+            "description": "布好阵了在开,不然种不了植物.喂豆间隔不要太快了,不然容易没豆",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_点波2": {
+                            "next": [
+                                "frame_wj_识别结算",
+                                "frame_wj_点波"
+                            ]
+                        },
+                        "frame_wj_捡花1": {
+                            "next": [
+                                "frame_wj_点波"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "是否开局喂豆球果",
+                        "小关喂豆位置",
+                        "小关喂豆间隔"
+                    ]
+                }
+            ]
+        },
+        "是否开局喂豆球果": {
+            "type": "select",
+            "label": "是否喂豆球果",
+            "cases": [
+                {
+                    "name": "否",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_捡花1": {
+                            "next": [
+                                "frame_wj_点波"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "5-3",
+                    "label": "5-3",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "4-3",
+                    "label": "4-3",
+                    "pipeline_override": {
+                        "frame_wj_捡花1": {
+                            "next": [
+                                "frame_wj_喂豆球果(4-3)"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-3",
+                    "label": "3-3",
+                    "pipeline_override": {
+                        "frame_wj_捡花1": {
+                            "next": [
+                                "frame_wj_喂豆球果(3-3)"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2-3",
+                    "label": "2-3",
+                    "pipeline_override": {
+                        "frame_wj_捡花1": {
+                            "next": [
+                                "frame_wj_喂豆球果(2-3)"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "1-3",
+                    "label": "1-3",
+                    "pipeline_override": {
+                        "frame_wj_捡花1": {
+                            "next": [
+                                "frame_wj_喂豆球果(1-3)"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "4-2",
+                    "label": "4-2",
+                    "pipeline_override": {
+                        "frame_wj_捡花1": {
+                            "next": [
+                                "frame_wj_喂豆球果(4-2)"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-2",
+                    "label": "3-2",
+                    "pipeline_override": {
+                        "frame_wj_捡花1": {
+                            "next": [
+                                "frame_wj_喂豆球果(3-2)"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2-2",
+                    "label": "2-2",
+                    "pipeline_override": {
+                        "frame_wj_捡花1": {
+                            "next": [
+                                "frame_wj_喂豆球果(2-2)"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "1-2",
+                    "label": "1-2",
+                    "pipeline_override": {
+                        "frame_wj_捡花1": {
+                            "next": [
+                                "frame_wj_喂豆球果(1-2)"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "4-4",
+                    "label": "4-4",
+                    "pipeline_override": {
+                        "frame_wj_捡花1": {
+                            "next": [
+                                "frame_wj_喂豆球果(4-4)"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "3-4",
+                    "label": "3-4",
+                    "pipeline_override": {
+                        "frame_wj_捡花1": {
+                            "next": [
+                                "frame_wj_喂豆球果(3-4)"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2-4",
+                    "label": "2-4",
+                    "pipeline_override": {
+                        "frame_wj_捡花1": {
+                            "next": [
+                                "frame_wj_喂豆球果(2-4)"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "1-4",
+                    "label": "1-4",
+                    "pipeline_override": {
+                        "frame_wj_捡花1": {
+                            "next": [
+                                "frame_wj_喂豆球果(1-4)"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "小关喂豆位置": {
+            "type": "input",
+            "label": "喂豆位置",
+            "description": "输入行列坐标，格式：列-行（例如 5-3）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9的数字"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "3",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5的数字"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_喂豆5-3": {
+                    "end": "种植物_初始化_格子{列}_{行}",
+                },
+            }
+        },
+        "小关喂豆间隔": {
+            "type": "select",
+            "label": "喂豆间隔",
+            "cases": [
+                {
+                    "name": "4秒",
+                    "label": "4秒",
+                    "pipeline_override": {
+                        "frame_wj_划飞弹": {
+                            "repeat": 26
+                        },
+                        "frame_wj_划飞弹2": {
+                            "repeat": 26
+                        },
+                        "frame_wj_划飞弹3": {
+                            "repeat": 26
+                        },
+                        "frame_wj_划飞弹4": {
+                            "repeat": 26
+                        },
+                        "frame_wj_划飞弹5": {
+                            "repeat": 26
+                        }
+                    }
+                },
+                {
+                    "name": "5秒",
+                    "label": "5秒",
+                    "pipeline_override": {
+                        "frame_wj_划飞弹": {
+                            "repeat": 30
+                        },
+                        "frame_wj_划飞弹2": {
+                            "repeat": 30
+                        },
+                        "frame_wj_划飞弹3": {
+                            "repeat": 30
+                        },
+                        "frame_wj_划飞弹4": {
+                            "repeat": 30
+                        },
+                        "frame_wj_划飞弹5": {
+                            "repeat": 30
+                        }
+                    }
+                },
+                {
+                    "name": "8秒",
+                    "label": "8秒",
+                    "pipeline_override": {
+                        "frame_wj_划飞弹": {
+                            "repeat": 50
+                        },
+                        "frame_wj_划飞弹2": {
+                            "repeat": 50
+                        },
+                        "frame_wj_划飞弹3": {
+                            "repeat": 50
+                        },
+                        "frame_wj_划飞弹4": {
+                            "repeat": 50
+                        },
+                        "frame_wj_划飞弹5": {
+                            "repeat": 50
+                        }
+                    }
+                },
+                {
+                    "name": "16秒",
+                    "label": "16秒",
+                    "pipeline_override": {
+                        "frame_wj_划飞弹": {
+                            "repeat": 100
+                        },
+                        "frame_wj_划飞弹2": {
+                            "repeat": 100
+                        },
+                        "frame_wj_划飞弹3": {
+                            "repeat": 100
+                        },
+                        "frame_wj_划飞弹4": {
+                            "repeat": 100
+                        },
+                        "frame_wj_划飞弹5": {
+                            "repeat": 100
+                        }
+                    }
+                },
+                {
+                    "name": "24秒",
+                    "label": "24秒",
+                    "pipeline_override": {
+                        "frame_wj_划飞弹": {
+                            "repeat": 150
+                        },
+                        "frame_wj_划飞弹2": {
+                            "repeat": 150
+                        },
+                        "frame_wj_划飞弹3": {
+                            "repeat": 150
+                        },
+                        "frame_wj_划飞弹4": {
+                            "repeat": 150
+                        },
+                        "frame_wj_划飞弹5": {
+                            "repeat": 150
+                        }
+                    }
+                },
+                {
+                    "name": "32秒",
+                    "label": "32秒",
+                    "pipeline_override": {
+                        "frame_wj_划飞弹": {
+                            "repeat": 200
+                        },
+                        "frame_wj_划飞弹2": {
+                            "repeat": 200
+                        },
+                        "frame_wj_划飞弹3": {
+                            "repeat": 200
+                        },
+                        "frame_wj_划飞弹4": {
+                            "repeat": 200
+                        },
+                        "frame_wj_划飞弹5": {
+                            "repeat": 200
+                        }
+                    }
+                },
+                {
+                    "name": "40秒",
+                    "label": "40秒",
+                    "pipeline_override": {
+                        "frame_wj_划飞弹": {
+                            "repeat": 250
+                        },
+                        "frame_wj_划飞弹2": {
+                            "repeat": 250
+                        },
+                        "frame_wj_划飞弹3": {
+                            "repeat": 250
+                        },
+                        "frame_wj_划飞弹4": {
+                            "repeat": 250
+                        },
+                        "frame_wj_划飞弹5": {
+                            "repeat": 250
+                        }
+                    }
+                },
+                {
+                    "name": "60秒",
+                    "label": "60秒",
+                    "pipeline_override": {
+                        "frame_wj_划飞弹": {
+                            "repeat": 375
+                        },
+                        "frame_wj_划飞弹2": {
+                            "repeat": 375
+                        },
+                        "frame_wj_划飞弹3": {
+                            "repeat": 375
+                        },
+                        "frame_wj_划飞弹4": {
+                            "repeat": 375
+                        },
+                        "frame_wj_划飞弹5": {
+                            "repeat": 375
+                        }
+                    }
+                },
+                {
+                    "name": "80秒",
+                    "label": "80秒",
+                    "pipeline_override": {
+                        "frame_wj_划飞弹": {
+                            "repeat": 500
+                        },
+                        "frame_wj_划飞弹2": {
+                            "repeat": 500
+                        },
+                        "frame_wj_划飞弹3": {
+                            "repeat": 500
+                        },
+                        "frame_wj_划飞弹4": {
+                            "repeat": 500
+                        },
+                        "frame_wj_划飞弹5": {
+                            "repeat": 500
+                        }
+                    }
+                },
+                {
+                    "name": "100秒",
+                    "label": "100秒",
+                    "pipeline_override": {
+                        "frame_wj_划飞弹": {
+                            "repeat": 625
+                        },
+                        "frame_wj_划飞弹2": {
+                            "repeat": 625
+                        },
+                        "frame_wj_划飞弹3": {
+                            "repeat": 625
+                        },
+                        "frame_wj_划飞弹4": {
+                            "repeat": 625
+                        },
+                        "frame_wj_划飞弹5": {
+                            "repeat": 625
+                        }
+                    }
+                }
+            ]
+        },
+        "刷掉僵尸": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "option": [
+                        "刷新僵尸的类别"
+                    ]
+                }
+            ]
+        },
+        "刷新僵尸的类别": {
+            "description": "该功能还是测试性质，启用时很可能会出现诸多不稳定的bug，暂时不要在无人值守的情况下开启！",
+            "type": "checkbox",
+            "cases": [
+                {
+                    "name": "霹雳舞僵尸",
+                    "pipeline_override": {
+                        "frame_wj_识别霹雳舞僵尸": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
