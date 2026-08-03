@@ -59,11 +59,11 @@
             ]
         },
         "卡槽2_1": {
-            "type": "select",
+            "type": "switch",
             "label": "第1个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡2_补植物1": {
@@ -72,7 +72,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽2_1坐标"
@@ -104,11 +104,11 @@
             }
         },
         "卡槽2_2": {
-            "type": "select",
+            "type": "switch",
             "label": "第2个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡2_补植物2": {
@@ -117,7 +117,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽2_2坐标"
@@ -149,11 +149,11 @@
             }
         },
         "卡槽2_3": {
-            "type": "select",
+            "type": "switch",
             "label": "第3个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡2_补植物3": {
@@ -162,7 +162,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽2_3坐标"
@@ -194,11 +194,11 @@
             }
         },
         "卡槽2_4": {
-            "type": "select",
+            "type": "switch",
             "label": "第4个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡2_补植物4": {
@@ -207,7 +207,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽2_4坐标"
@@ -239,11 +239,11 @@
             }
         },
         "卡槽2_5": {
-            "type": "select",
+            "type": "switch",
             "label": "第5个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡2_补植物5": {
@@ -252,7 +252,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽2_5坐标"
@@ -312,11 +312,11 @@
             ]
         },
         "卡槽3_1": {
-            "type": "select",
+            "type": "switch",
             "label": "第1个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡3_补植物1": {
@@ -325,7 +325,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽3_1坐标"
@@ -357,11 +357,11 @@
             }
         },
         "卡槽3_2": {
-            "type": "select",
+            "type": "switch",
             "label": "第2个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡3_补植物2": {
@@ -370,7 +370,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽3_2坐标"
@@ -402,11 +402,11 @@
             }
         },
         "卡槽3_3": {
-            "type": "select",
+            "type": "switch",
             "label": "第3个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡3_补植物3": {
@@ -415,7 +415,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽3_3坐标"
@@ -447,11 +447,11 @@
             }
         },
         "卡槽3_4": {
-            "type": "select",
+            "type": "switch",
             "label": "第4个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡3_补植物4": {
@@ -460,7 +460,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽3_4坐标"
@@ -492,11 +492,11 @@
             }
         },
         "卡槽3_5": {
-            "type": "select",
+            "type": "switch",
             "label": "第5个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡3_补植物5": {
@@ -505,7 +505,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽3_5坐标"
@@ -565,11 +565,11 @@
             ]
         },
         "卡槽4_1": {
-            "type": "select",
+            "type": "switch",
             "label": "第1个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡4_补植物1": {
@@ -578,7 +578,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽4_1坐标"
@@ -610,11 +610,11 @@
             }
         },
         "卡槽4_2": {
-            "type": "select",
+            "type": "switch",
             "label": "第2个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡4_补植物2": {
@@ -623,7 +623,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽4_2坐标"
@@ -655,11 +655,11 @@
             }
         },
         "卡槽4_3": {
-            "type": "select",
+            "type": "switch",
             "label": "第3个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡4_补植物3": {
@@ -668,7 +668,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽4_3坐标"
@@ -700,11 +700,11 @@
             }
         },
         "卡槽4_4": {
-            "type": "select",
+            "type": "switch",
             "label": "第4个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡4_补植物4": {
@@ -713,7 +713,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽4_4坐标"
@@ -745,11 +745,11 @@
             }
         },
         "卡槽4_5": {
-            "type": "select",
+            "type": "switch",
             "label": "第5个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡4_补植物5": {
@@ -758,7 +758,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽4_5坐标"
@@ -818,11 +818,11 @@
             ]
         },
         "卡槽5_1": {
-            "type": "select",
+            "type": "switch",
             "label": "第1个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡5_补植物1": {
@@ -831,7 +831,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽5_1坐标"
@@ -863,11 +863,11 @@
             }
         },
         "卡槽5_2": {
-            "type": "select",
+            "type": "switch",
             "label": "第2个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡5_补植物2": {
@@ -876,7 +876,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽5_2坐标"
@@ -908,11 +908,11 @@
             }
         },
         "卡槽5_3": {
-            "type": "select",
+            "type": "switch",
             "label": "第3个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡5_补植物3": {
@@ -921,7 +921,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽5_3坐标"
@@ -953,11 +953,11 @@
             }
         },
         "卡槽5_4": {
-            "type": "select",
+            "type": "switch",
             "label": "第4个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡5_补植物4": {
@@ -966,7 +966,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽5_4坐标"
@@ -998,11 +998,11 @@
             }
         },
         "卡槽5_5": {
-            "type": "select",
+            "type": "switch",
             "label": "第5个植物补哪",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_卡5_补植物5": {
@@ -1011,7 +1011,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "卡槽5_5坐标"
@@ -1072,11 +1072,11 @@
             ]
         },
         "铲除植物1": {
-            "type": "select",
+            "type": "switch",
             "label": "第1个铲除的植物",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_铲植物1": {
@@ -1085,7 +1085,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "铲除植物1坐标"
@@ -1117,11 +1117,11 @@
             }
         },
         "铲除植物2": {
-            "type": "select",
+            "type": "switch",
             "label": "第2个铲除的植物",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_铲植物2": {
@@ -1130,7 +1130,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "铲除植物2坐标"
@@ -1162,11 +1162,11 @@
             }
         },
         "铲除植物3": {
-            "type": "select",
+            "type": "switch",
             "label": "第3个铲除的植物",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_铲植物3": {
@@ -1175,7 +1175,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "铲除植物3坐标"
@@ -1207,11 +1207,11 @@
             }
         },
         "铲除植物4": {
-            "type": "select",
+            "type": "switch",
             "label": "第4个铲除的植物",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_铲植物4": {
@@ -1220,7 +1220,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "铲除植物4坐标"
@@ -1252,11 +1252,11 @@
             }
         },
         "铲除植物5": {
-            "type": "select",
+            "type": "switch",
             "label": "第5个铲除的植物",
             "cases": [
                 {
-                    "name": "否",
+                    "name": "No",
                     "label": "否",
                     "pipeline_override": {
                         "frame_wj_铲植物5": {
@@ -1265,7 +1265,7 @@
                     }
                 },
                 {
-                    "name": "选择位置",
+                    "name": "Yes",
                     "label": "选择位置",
                     "option": [
                         "铲除植物5坐标"
