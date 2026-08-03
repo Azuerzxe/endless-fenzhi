@@ -281,6 +281,20 @@ jobs:
           OUTPUT: CHANGES.md
           GITHUB_REPO: ${{ github.repository }}
 
+      - name: Write changelog to announcement file
+        run: |
+          mkdir -p announcement
+          TAG="${{ needs.meta.outputs.tag }}"
+          echo "${{ steps.git-cliff.outputs.content }}" > announcement/CHANGES.md
+          cp announcement/CHANGES.md announcement/${TAG}.md
+          echo "Announcement file created: announcement/${TAG}.md"
+
+      - name: Upload announcement artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: announcement
+          path: announcement/
+     
       - name: Debug changelog output
         run: |
           echo "CHANGES.md 内容:"
@@ -309,6 +323,11 @@ jobs:
         with:
           path: assets
 
+      - uses: actions/download-artifact@v4
+        with:
+          name: announcement
+          path: announcement
+
       - run: |
           cd assets
           for f in *; do
@@ -317,7 +336,9 @@ jobs:
 
       - uses: softprops/action-gh-release@v2
         with:
-          files: assets/*
+          files: |
+            assets/*
+            announcement/*
           tag_name: ${{ needs.meta.outputs.tag }}
           body: ${{ needs.changelog.outputs.release_body }}
           draft: false
