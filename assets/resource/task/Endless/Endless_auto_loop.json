@@ -1,0 +1,35 @@
+{
+    "option": {
+        "无尽全自动循环": {
+            "type": "switch",
+            "label": "无尽全自动循环",
+            "description": "打一遍后自动花钻石刷新重新打",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否"
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {
+                        "xinta3_过渡": {
+                            "next": [
+                                "xinta3_识别开始战斗",
+                                "xinta3_识别boss关",
+                                "wujin_返回"
+                            ]
+                        },
+                        "2_xinta3_过渡": {
+                            "next": [
+                                "2_xinta3_识别开始战斗",
+                                "2_xinta3_识别boss关",
+                                "wujin_返回"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
