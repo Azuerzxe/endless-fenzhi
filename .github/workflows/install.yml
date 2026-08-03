@@ -10,7 +10,7 @@ on:
 
 env:
   MFAA_VERSION: v2.13.0
-  MAA_FRAMEWORK_VERSION: v5.10.4
+  MAA_FRAMEWORK_VERSION: v5.12.3
 
 jobs:
   meta:
@@ -281,7 +281,6 @@ jobs:
           OUTPUT: CHANGES.md
           GITHUB_REPO: ${{ github.repository }}
 
-      # ========== 修改点：将 announcement 放到 resource/announcement ==========
       - name: Write changelog to announcement file
         run: |
           mkdir -p resource/announcement
@@ -290,7 +289,6 @@ jobs:
           cp resource/announcement/CHANGES.md resource/announcement/${TAG}.md
           echo "Announcement file created: resource/announcement/${TAG}.md"
 
-      # ========== 新增：提交并推送公告文件到仓库 ==========
       - name: Commit and push announcement file to repository
         run: |
           git config user.name 'github-actions[bot]'
@@ -299,7 +297,6 @@ jobs:
           git commit -m "docs: add announcement for ${{ needs.meta.outputs.tag }} [skip ci]"
           git push
 
-      # ========== 上传 artifact 路径也要改为 resource/announcement ==========
       - name: Upload announcement artifact
         uses: actions/upload-artifact@v4
         with:
@@ -337,7 +334,19 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: announcement
-          path: announcement   # 这里下载后放在 announcement 目录，但内容实际来自 resource/announcement，不过不影响
+          path: announcement
+
+      # ========== 新增步骤：将公告文件复制到每个平台的 resource/announcement 目录 ==========
+      - name: Copy announcement to each platform's resource directory
+        run: |
+          for platform_dir in assets/*/; do
+            if [ -d "$platform_dir" ]; then
+              echo "Copying announcement to $platform_dir"
+              mkdir -p "${platform_dir}resource/announcement"
+              cp -r announcement/* "${platform_dir}resource/announcement/"
+            fi
+          done
+      # ====================================================================================
 
       - run: |
           cd assets
