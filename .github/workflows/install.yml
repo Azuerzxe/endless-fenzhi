@@ -281,20 +281,31 @@ jobs:
           OUTPUT: CHANGES.md
           GITHUB_REPO: ${{ github.repository }}
 
+      # ========== 修改点：将 announcement 放到 resource/announcement ==========
       - name: Write changelog to announcement file
         run: |
-          mkdir -p announcement
+          mkdir -p resource/announcement
           TAG="${{ needs.meta.outputs.tag }}"
-          echo "${{ steps.git-cliff.outputs.content }}" > announcement/CHANGES.md
-          cp announcement/CHANGES.md announcement/${TAG}.md
-          echo "Announcement file created: announcement/${TAG}.md"
+          echo "${{ steps.git-cliff.outputs.content }}" > resource/announcement/CHANGES.md
+          cp resource/announcement/CHANGES.md resource/announcement/${TAG}.md
+          echo "Announcement file created: resource/announcement/${TAG}.md"
 
+      # ========== 新增：提交并推送公告文件到仓库 ==========
+      - name: Commit and push announcement file to repository
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add resource/announcement/
+          git commit -m "docs: add announcement for ${{ needs.meta.outputs.tag }} [skip ci]"
+          git push
+
+      # ========== 上传 artifact 路径也要改为 resource/announcement ==========
       - name: Upload announcement artifact
         uses: actions/upload-artifact@v4
         with:
           name: announcement
-          path: announcement/
-     
+          path: resource/announcement/
+
       - name: Debug changelog output
         run: |
           echo "CHANGES.md 内容:"
@@ -326,7 +337,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: announcement
-          path: announcement
+          path: announcement   # 这里下载后放在 announcement 目录，但内容实际来自 resource/announcement，不过不影响
 
       - run: |
           cd assets
