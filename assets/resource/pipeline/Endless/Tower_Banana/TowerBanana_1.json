@@ -100,26 +100,29 @@
         ]
     },
     "tower_banana_检查2": {
-        "recognition": "ColorMatch",
-        "lower": [
-            23,
-            46,
-            31
-        ],
-        "upper": [
-            43,
-            66,
-            51
-        ],
-        "roi": [
-            637,
-            219,
-            12,
-            10
-        ],
+        "recognition": {
+            "type": "FeatureMatch",
+            "param": {
+                "template": "Tower_Banana/瓷砖.png",
+                "roi": [
+                    609,
+                    225,
+                    82,
+                    75
+                ],
+                "detector": "SIFT",
+                "ratio": 0.6,
+                "count": 4
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": true
+            }
+        },
         "pre_delay": 0,
         "post_delay": 0,
-        "duration": 100,
         "next": [
             "tower_banana_香蕉5"
         ]
