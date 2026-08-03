@@ -343,7 +343,7 @@
         "pre_delay": 2000,
         "timeout": -1,
         "next": [
-            "frame_wj_custom_2_boss_识别结算"
+            "frame_wj_过渡3"
         ]
     },
     "frame_wj_custom_2_是否使用铲子2": {
@@ -400,7 +400,7 @@
         "post_delay": 0,
         "timeout": -1,
         "next": [
-            "frame_wj_custom_2_boss_识别结算"
+            "frame_wj_过渡3"
         ]
     },
     "frame_wj_custom_2_boss_识别结算": {
