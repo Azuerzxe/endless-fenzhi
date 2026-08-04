@@ -103,7 +103,7 @@
         "recognition": {
             "type": "FeatureMatch",
             "param": {
-                "template": "Tower_Banana/瓷砖.png",
+                "template": "Endless/Tower_Banana/瓷砖.png",
                 "roi": [
                     609,
                     225,

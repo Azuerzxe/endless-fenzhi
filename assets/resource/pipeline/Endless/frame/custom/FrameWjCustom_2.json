@@ -75,7 +75,7 @@
     },
     "frame_wj_custom_2_找守卫菇": {
         "recognition": "TemplateMatch",
-        "template": "frame/守卫菇.png",
+        "template": "Endless/frame/custom/守卫菇.png",
         "roi": [
             143,
             393,
