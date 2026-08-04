@@ -1,5 +1,6 @@
 {
     "识别能量花位置": {
+        "max_hit": 1,
         "enabled": false,
         "recognition": "TemplateMatch",
         "template": [
@@ -17,6 +18,7 @@
         ]
     },
     "识别魔音位置": {
+        "max_hit": 1,
         "enabled": false,
         "recognition": "TemplateMatch",
         "template": [
@@ -33,6 +35,7 @@
         ]
     }, //提前识别魔音甜菜在哪个槽位
     "识别甘蓝位置": {
+        "max_hit": 1,
         "recognition": "TemplateMatch",
         "template": [
             "Endless/frame/甘蓝.png"
@@ -48,6 +51,7 @@
         ]
     }, //提前识别甘兰在哪个槽位
     "识别甜薯位置": {
+        "max_hit": 1,
         "recognition": "TemplateMatch",
         "template": [
             "Endless/frame/甜薯.png"
@@ -63,12 +67,8 @@
             "无尽框架_识别完毕"
         ]
     }, //提前识别甜薯在哪个槽位
-    "无尽框架_识别完毕": {
-        "next": [
-            "frame_wj_点击开始战斗"
-        ]
-    },
     "识别三叶草位置": {
+        "max_hit": 1,
         "enabled": false,
         "recognition": "TemplateMatch",
         "template": [
@@ -84,4 +84,9 @@
             "无尽框架_识别完毕"
         ]
     }, //提前识别三叶草在哪个槽位
+    "无尽框架_识别完毕": {
+        "next": [
+            "frame_wj_过渡"
+        ]
+    },
 }
