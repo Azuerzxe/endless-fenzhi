@@ -52,7 +52,7 @@
         "expected": [
             "获得"
         ],
-        "focus": "[color:Orange]尝试领取普通宝物[/color]",
+        "focus": "尝试领取普通宝物",
         "roi": [
             186,
             590,
