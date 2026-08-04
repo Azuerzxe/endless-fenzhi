@@ -157,6 +157,8 @@
         "action": "Click",
         "pre_delay": 2000,
         "post_delay": 0,
-        "next": []
+        "next": [
+            "无尽挑战_前置检查"
+        ]
     }
 }

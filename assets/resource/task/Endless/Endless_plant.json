@@ -100,8 +100,7 @@
                         "起始关卡选择",
                         "心塔阵型选择",
                         "boss关喂豆间隔",
-                        "HeartTower_小关喂豆间隔",
-                        "无尽全自动循环"
+                        "HeartTower_小关喂豆间隔"
                     ],
                     "pipeline_override": {
                         "无尽挑战_埃及": {

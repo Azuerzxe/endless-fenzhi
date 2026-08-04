@@ -26,7 +26,21 @@
                                 "2_xinta3_识别boss关",
                                 "wujin_返回"
                             ]
-                        }
+                        },
+                        "tower_banana_过渡": {
+                            "next": [
+                                "tower_banana_识别开始战斗",
+                                "tower_banana_识别boss关",
+                                "wujin_返回"
+                            ]
+                        },
+                        "原大_过渡": {
+                            "next": [
+                                "原大_识别boss关",
+                                "原大_识别开始战斗",
+                                "wujin_返回"
+                            ]
+                        },
                     }
                 }
             ]
