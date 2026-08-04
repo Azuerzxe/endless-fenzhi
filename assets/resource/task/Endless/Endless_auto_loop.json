@@ -41,6 +41,13 @@
                                 "wujin_返回"
                             ]
                         },
+                        "frame_wj_过渡": {
+                            "next": [
+                                "frame_wj_识别boss关",
+                                "frame_wj_识别开始战斗",
+                                "wujin_返回"
+                            ]
+                        },
                     }
                 }
             ]
