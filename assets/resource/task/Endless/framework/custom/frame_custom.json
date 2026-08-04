@@ -195,7 +195,13 @@
                 {
                     "name": "No",
                     "label": "否",
-                    "pipeline_override": {}
+                    "pipeline_override": {
+                        "frame_wj_custom_2_识别开始战斗": {
+                            "next": [
+                                "frame_wj_识别开始战斗"
+                            ]
+                        },
+                    }
                 },
                 {
                     "name": "Yes",
