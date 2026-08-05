@@ -10,7 +10,7 @@ on:
 
 env:
   MFAA_VERSION: v2.13.0
-  MAA_FRAMEWORK_VERSION: v5.12.3
+  MAA_FRAMEWORK_VERSION: v5.12.2
 
 jobs:
   meta:
