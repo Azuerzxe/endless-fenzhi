@@ -3,6 +3,15 @@
         "timeout": 1000,
         "next": []
     },
+    "打开pvz_自定义包": {
+        "timeout": 180000,
+        "action": "StartApp",
+        "package": "",
+        "post_delay": 50,
+        "next": [
+            "点击登录"
+        ]
+    },
     "打开pvz_华为": {
         "timeout": 180000,
         "action": "StartApp",
@@ -162,6 +171,15 @@
         ]
     },
     // ==========关闭渠道服任务（StopApp），默认禁用 ==========
+    "关闭pvz_自定义包": {
+        "enabled": false,
+        "timeout": 180000,
+        "action": "StopApp",
+        "package": "",
+        "next": [
+            "打开pvz_自定义包"
+        ]
+    },
     "关闭pvz_华为": {
         "enabled": false,
         "timeout": 180000,
