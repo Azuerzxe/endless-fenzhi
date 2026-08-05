@@ -7,7 +7,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "",
-        "post_delay": 50,
+        "post_delay": 400,
         "next": [
             "点击登录"
         ]
@@ -16,7 +16,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthdhwct",
-        "post_delay": 50,
+        "post_delay": 400,
         "next": [
             "点击登录"
         ]
@@ -25,7 +25,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthdlx",
-        "post_delay": 50,
+        "post_delay": 400,
         "next": [
             "点击登录"
         ]
@@ -34,7 +34,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthd360",
-        "post_delay": 50,
+        "post_delay": 400,
         "next": [
             "点击登录"
         ]
@@ -43,7 +43,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthduc",
-        "post_delay": 50,
+        "post_delay": 400,
         "next": [
             "点击登录",
             "开始游戏"
@@ -53,7 +53,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthdop",
-        "post_delay": 50,
+        "post_delay": 400,
         "next": [
             "点击登录",
             "开始游戏"
@@ -63,7 +63,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.tencent.tmgp.pvz2hdtxyyb",
-        "post_delay": 50,
+        "post_delay": 400,
         "next": [
             "点击登录_应用宝_qq"
         ]
@@ -72,7 +72,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.tencent.tmgp.pvz2hdtxyyb",
-        "post_delay": 50,
+        "post_delay": 400,
         "next": [
             "点击登录_应用宝_微信"
         ]
@@ -81,7 +81,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthd.bilibili",
-        "post_delay": 50,
+        "post_delay": 400,
         "next": [
             "点击登录",
             "开始游戏"
@@ -91,7 +91,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthdbbg",
-        "post_delay": 50,
+        "post_delay": 400,
         "next": [
             "点击登录",
             "开始游戏"
@@ -101,7 +101,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthd.honor",
-        "post_delay": 50,
+        "post_delay": 400,
         "next": [
             "点击登录",
             "开始游戏"
@@ -111,7 +111,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthdbk",
-        "post_delay": 50,
+        "post_delay": 400,
         "next": [
             "点击登录"
         ]
@@ -120,7 +120,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthd.g.baidu",
-        "post_delay": 50,
+        "post_delay": 400,
         "next": [
             "点击登录"
         ]
@@ -129,7 +129,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthdbazhang",
-        "post_delay": 50,
+        "post_delay": 400,
         "next": [
             "点击登录"
         ]
@@ -138,7 +138,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthdbk",
-        "post_delay": 50,
+        "post_delay": 400,
         "next": [
             "点击登录"
         ]
@@ -147,7 +147,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthdbk",
-        "post_delay": 50,
+        "post_delay": 400,
         "next": [
             "点击登录_taptap"
         ]
@@ -156,7 +156,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthd4399",
-        "post_delay": 50,
+        "post_delay": 400,
         "next": [
             "点击登录"
         ]
