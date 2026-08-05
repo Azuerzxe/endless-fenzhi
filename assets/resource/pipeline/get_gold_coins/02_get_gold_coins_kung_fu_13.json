@@ -127,7 +127,7 @@
         "post_wait_freezes": 1000,
         "next": [
             "功夫13_定位",
-            "功夫13_进入关卡"
+            "功夫13_寻找关卡特征"
         ]
     },
     "功夫13_定位": {
@@ -151,22 +151,29 @@
             445
         ],
         "end_hold": 100,
-        "repeat": 3,
         "repeat_delay": 100,
+        "max_hit": 100,
+        "next": [
+            "功夫13_寻找关卡特征",
+            "功夫13_找13关"
+        ]
+    },
+    "功夫13_寻找关卡特征": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "get_gold_coins/功夫巨人关卡特征.png"
+        ],
         "next": [
             "功夫13_进入关卡"
         ]
     },
     "功夫13_进入关卡": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "get_gold_coins/功夫-13.png"
-        ],
-        "roi": [
-            489,
-            386,
-            447,
-            215
+        "target": "功夫13_寻找关卡特征",
+        "target_offset": [
+            67,
+            307,
+            -157,
+            -101
         ],
         "action": "Click",
         "post_wait_freezes": 300,
