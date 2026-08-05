@@ -29,87 +29,20 @@
     "准备卡双赢": {
         "action": "DoNothing",
         "next": [
-            "下拉栏第一次"
+            "返回桌面"
         ]
     },
-    "下拉栏第一次": {
-        "action": "Swipe",
-        "pre_delay": 10,
-        "post_delay": 10,
-        "begin": [
-            665,
-            1,
-            1,
-            1
-        ],
-        "end": [
-            770,
-            460,
-            1,
-            1
-        ],
-        "next": [
-            "下拉栏第二次"
-        ]
-    },
-    "下拉栏第二次": {
-        "pre_delay": 10,
-        "action": "Swipe",
+    "返回桌面": {
+        "action": "ClickKey",
         "post_delay": 4500,
-        "begin": [
-            665,
-            1,
-            1,
-            1
-        ],
-        "end": [
-            770,
-            456,
-            1,
-            1
-        ],
+        "key": 3,
         "next": [
-            "下拉栏返回"
+            "返回游戏"
         ]
     },
-    "下拉栏返回": {
-        "action": "Swipe",
-        "pre_delay": 10,
-        "post_delay": 100,
-        "begin": [
-            770,
-            456,
-            1,
-            1
-        ],
-        "end": [
-            665,
-            1,
-            1,
-            1
-        ],
+    "返回游戏": {
         "next": [
-            "下拉栏返回2"
-        ]
-    },
-    "下拉栏返回2": {
-        "action": "Swipe",
-        "pre_delay": 10,
-        "post_delay": 0,
-        "repeat": 4,
-        "repeat_delay": 0,
-        "duration": 10,
-        "begin": [
-            628,
-            699
-        ],
-        "end": [
-            628,
-            10
-        ],
-        "next": [
-            "识别是否掉血",
-            "下拉栏第一次"
+            "选择渠道服"
         ]
     },
     "识别是否掉血": {
@@ -138,7 +71,7 @@
         ],
         "inverse": true,
         "post_delay": 0,
-        "pre_delay": 0,
+        "pre_delay": 200,
         "next": [
             "放置远程一号位植物1",
             "放置近战一号位植物1"

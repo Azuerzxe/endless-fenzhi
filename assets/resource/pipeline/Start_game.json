@@ -7,7 +7,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthdhwct",
-        "post_delay": 16000,
+        "post_delay": 50,
         "next": [
             "点击登录"
         ]
@@ -16,7 +16,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthdlx",
-        "post_delay": 16000,
+        "post_delay": 50,
         "next": [
             "点击登录"
         ]
@@ -25,7 +25,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthd360",
-        "post_delay": 16000,
+        "post_delay": 50,
         "next": [
             "点击登录"
         ]
@@ -34,7 +34,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthduc",
-        "post_delay": 16000,
+        "post_delay": 50,
         "next": [
             "点击登录",
             "开始游戏"
@@ -44,7 +44,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthdop",
-        "post_delay": 16000,
+        "post_delay": 50,
         "next": [
             "点击登录",
             "开始游戏"
@@ -54,7 +54,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.tencent.tmgp.pvz2hdtxyyb",
-        "post_delay": 16000,
+        "post_delay": 50,
         "next": [
             "点击登录_应用宝_qq"
         ]
@@ -63,7 +63,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.tencent.tmgp.pvz2hdtxyyb",
-        "post_delay": 16000,
+        "post_delay": 50,
         "next": [
             "点击登录_应用宝_微信"
         ]
@@ -72,7 +72,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthd.bilibili",
-        "post_delay": 16000,
+        "post_delay": 50,
         "next": [
             "点击登录",
             "开始游戏"
@@ -82,7 +82,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthdbbg",
-        "post_delay": 16000,
+        "post_delay": 50,
         "next": [
             "点击登录",
             "开始游戏"
@@ -92,7 +92,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthd.honor",
-        "post_delay": 16000,
+        "post_delay": 50,
         "next": [
             "点击登录",
             "开始游戏"
@@ -102,7 +102,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthdbk",
-        "post_delay": 16000,
+        "post_delay": 50,
         "next": [
             "点击登录"
         ]
@@ -111,7 +111,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthd.g.baidu",
-        "post_delay": 16000,
+        "post_delay": 50,
         "next": [
             "点击登录"
         ]
@@ -120,7 +120,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthdbazhang",
-        "post_delay": 16000,
+        "post_delay": 50,
         "next": [
             "点击登录"
         ]
@@ -129,7 +129,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthdbk",
-        "post_delay": 16000,
+        "post_delay": 50,
         "next": [
             "点击登录"
         ]
@@ -138,7 +138,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthdbk",
-        "post_delay": 16000,
+        "post_delay": 50,
         "next": [
             "点击登录_taptap"
         ]
@@ -147,7 +147,7 @@
         "timeout": 180000,
         "action": "StartApp",
         "package": "com.popcap.pvz2cthd4399",
-        "post_delay": 16000,
+        "post_delay": 50,
         "next": [
             "点击登录"
         ]
@@ -161,7 +161,7 @@
             "点击登录_XM"
         ]
     },
-    // ========== 新增：关闭渠道服任务（StopApp），默认禁用 ==========
+    // ==========关闭渠道服任务（StopApp），默认禁用 ==========
     "关闭pvz_华为": {
         "enabled": false,
         "timeout": 180000,
@@ -506,7 +506,7 @@
             }
         ],
         "action": "Click",
-        "post_delay": 10000,
+        "post_delay": 5000,
         "next": [
             "关闭广告通用",
             "开始游戏",
@@ -520,7 +520,7 @@
             "Start_game/小米进入游戏时的广告叉.png"
         ],
         "action": "Click",
-        "post_delay": 10000,
+        "post_delay": 5000,
         "next": [
             "开始游戏",
             "小米_下次再说"
@@ -533,7 +533,7 @@
             "Start_game/小米里的绑定账号_下次再说.png"
         ],
         "action": "Click",
-        "post_delay": 10000,
+        "post_delay": 5000,
         "next": [
             "开始游戏",
             "关闭广告通用",
@@ -582,7 +582,7 @@
             "Start_game/覆盖存档_确定.png"
         ],
         "action": "Click",
-        "post_delay": 10000,
+        "post_delay": 5000,
         "next": [
             "关闭公告",
             "使用云端进度"
