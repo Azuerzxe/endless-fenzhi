@@ -46,7 +46,6 @@
         ]
     },
     "识别是否掉血": {
-        "timeout": 100,
         "recognition": "Or",
         "any_of": [
             {
@@ -71,7 +70,7 @@
         ],
         "inverse": true,
         "post_delay": 0,
-        "pre_delay": 200,
+        "pre_delay": 400,
         "next": [
             "放置远程一号位植物1",
             "放置近战一号位植物1"

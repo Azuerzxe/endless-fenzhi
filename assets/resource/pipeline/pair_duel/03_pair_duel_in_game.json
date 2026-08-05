@@ -1,6 +1,6 @@
 {
     "放置远程一号位植物1": {
-        "post_delay": 0,
+        "post_delay": 20,
         "pre_delay": 0,
         "enabled": false,
         "action": "Click",
@@ -27,7 +27,7 @@
         ]
     },
     "放置近战一号位植物1": {
-        "post_delay": 0,
+        "post_delay": 20,
         "pre_delay": 0,
         "enabled": false,
         "action": "Click",
