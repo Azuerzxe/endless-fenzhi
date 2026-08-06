@@ -29,13 +29,13 @@
             "inputs": [
                 {
                     "name": "喂豆间隔",
-                    "label": "喂豆间隔(单位毫秒)",
+                    "label": "秒",
                     "verify": "^([1-9][0-9][0-9][0-9])$"
                 }
             ],
             "pipeline_override": {
                 "tower_banana_boss_喂豆胆小姑2": {
-                    "pre_delay": "{喂豆间隔}"
+                    "pre_delay": "{喂豆间隔}000"
                 }
             }
         },
