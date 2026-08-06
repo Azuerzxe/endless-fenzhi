@@ -134,15 +134,15 @@
             "type": "input",
             "inputs": [
                 {
-                    "name": "毫秒",
+                    "name": "秒",
                     "pipeline_type": "int",
-                    "default": "4000",
+                    "default": "4",
                     "verify": ""
                 }
             ],
             "pipeline_override": {
                 "frame_wj_boss_喂豆5-3": {
-                    "post_delay": "{毫秒}"
+                    "post_delay": "{秒}000"
                 },
             }
         },
