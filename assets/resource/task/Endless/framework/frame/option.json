@@ -134,7 +134,7 @@
             "type": "input",
             "inputs": [
                 {
-                    "name": "豪秒",
+                    "name": "毫秒",
                     "pipeline_type": "int",
                     "default": "4000",
                     "verify": ""
@@ -142,7 +142,7 @@
             ],
             "pipeline_override": {
                 "frame_wj_boss_喂豆5-3": {
-                    "post_delay": "{豪秒}"
+                    "post_delay": "{毫秒}"
                 },
             }
         },
