@@ -223,7 +223,6 @@
         "post_delay": 10,
         "pre_delay": 10,
         "next": [
-            "2_xinta1_点波",
             "2_xinta1_点葫芦"
         ]
     },
