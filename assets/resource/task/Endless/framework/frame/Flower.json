@@ -6,6 +6,18 @@
                 {
                     "name": "No",
                     "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_boss_判断是否进入关内": {
+                            "next": [
+                                "frame_wj_boss_过渡_相机神器1"
+                            ]
+                        },
+                        "frame_wj_判断是否进入关内": {
+                            "next": [
+                                "frame_wj_捡花1"
+                            ]
+                        }
+                    }
                 },
                 {
                     "name": "Yes",
@@ -26,11 +38,6 @@
                     "name": "No",
                     "label": "否",
                     "pipeline_override": {
-                        "frame_wj_boss_判断是否进入关内": {
-                            "next": [
-                                "frame_wj_boss_过渡_相机神器1"
-                            ]
-                        },
                         "frame_wj_判断是否进入关内": {
                             "next": [
                                 "frame_wj_捡花1"
@@ -112,6 +119,13 @@
                 {
                     "name": "No",
                     "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_boss_判断是否进入关内": {
+                            "next": [
+                                "frame_wj_boss_过渡_相机神器1"
+                            ]
+                        },
+                    }
                 },
                 {
                     "name": "Yes",
