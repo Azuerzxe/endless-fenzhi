@@ -44,7 +44,7 @@
             "inputs": [
                 {
                     "name": "毫秒",
-                    "default": "400",
+                    "default": "2000",
                     "pipeline_type": "int",
                     "verify": "^[1-9]\\d{0,}$"
                 }

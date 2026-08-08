@@ -167,18 +167,18 @@
         },
         "多少秒后种魔甘": {
             "type": "input",
-            "description": "左边旗子升起后，等待怪全部出完（然后种魔甘）的时间，毫秒为单位，默认15000毫秒",
+            "description": "左边旗子升起后，等待怪全部出完（然后种魔甘）的时间，秒为单位，默认15秒",
             "inputs": [
                 {
-                    "name": "豪秒",
+                    "name": "秒",
                     "pipeline_type": "int",
-                    "default": "15000",
+                    "default": "15",
                     "verify": ""
                 }
             ],
             "pipeline_override": {
                 "魔甘收尾": {
-                    "post_delay": "{豪秒}"
+                    "post_delay": "{秒}000"
                 }
             }
         },

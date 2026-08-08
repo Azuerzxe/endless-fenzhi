@@ -499,7 +499,7 @@
         "expected": [
             "继续"
         ],
-        "repeat": 5,
+        "repeat": 10,
         "roi": [
             583,
             621,
@@ -520,6 +520,10 @@
         ],
     },
     "埃及1_重开十次": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "get_gold_coins/埃及的房子特征.png"
+        ],
         "pre_wait_freezes": {
             "time": 1000,
             "timeout": 15000,
