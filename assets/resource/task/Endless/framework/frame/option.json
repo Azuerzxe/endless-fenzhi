@@ -230,12 +230,17 @@
             ]
         },
         "是否开局喂豆球果": {
-            "type": "select",
-            "label": "是否喂豆球果",
+            "type": "switch",
+            "label": "是否开局喂豆球果",
             "cases": [
                 {
-                    "name": "否",
-                    "label": "否",
+                    "name": "Yes",
+                    "option": [
+                        "喂豆球果"
+                    ]
+                },
+                {
+                    "name": "No",
                     "pipeline_override": {
                         "frame_wj_捡花1": {
                             "next": [
@@ -243,145 +248,31 @@
                             ]
                         }
                     }
-                },
-                {
-                    "name": "5-3",
-                    "label": "5-3",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "4-3",
-                    "label": "4-3",
-                    "pipeline_override": {
-                        "frame_wj_捡花1": {
-                            "next": [
-                                "frame_wj_喂豆球果(4-3)"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "3-3",
-                    "label": "3-3",
-                    "pipeline_override": {
-                        "frame_wj_捡花1": {
-                            "next": [
-                                "frame_wj_喂豆球果(3-3)"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "2-3",
-                    "label": "2-3",
-                    "pipeline_override": {
-                        "frame_wj_捡花1": {
-                            "next": [
-                                "frame_wj_喂豆球果(2-3)"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "1-3",
-                    "label": "1-3",
-                    "pipeline_override": {
-                        "frame_wj_捡花1": {
-                            "next": [
-                                "frame_wj_喂豆球果(1-3)"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "4-2",
-                    "label": "4-2",
-                    "pipeline_override": {
-                        "frame_wj_捡花1": {
-                            "next": [
-                                "frame_wj_喂豆球果(4-2)"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "3-2",
-                    "label": "3-2",
-                    "pipeline_override": {
-                        "frame_wj_捡花1": {
-                            "next": [
-                                "frame_wj_喂豆球果(3-2)"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "2-2",
-                    "label": "2-2",
-                    "pipeline_override": {
-                        "frame_wj_捡花1": {
-                            "next": [
-                                "frame_wj_喂豆球果(2-2)"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "1-2",
-                    "label": "1-2",
-                    "pipeline_override": {
-                        "frame_wj_捡花1": {
-                            "next": [
-                                "frame_wj_喂豆球果(1-2)"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "4-4",
-                    "label": "4-4",
-                    "pipeline_override": {
-                        "frame_wj_捡花1": {
-                            "next": [
-                                "frame_wj_喂豆球果(4-4)"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "3-4",
-                    "label": "3-4",
-                    "pipeline_override": {
-                        "frame_wj_捡花1": {
-                            "next": [
-                                "frame_wj_喂豆球果(3-4)"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "2-4",
-                    "label": "2-4",
-                    "pipeline_override": {
-                        "frame_wj_捡花1": {
-                            "next": [
-                                "frame_wj_喂豆球果(2-4)"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "1-4",
-                    "label": "1-4",
-                    "pipeline_override": {
-                        "frame_wj_捡花1": {
-                            "next": [
-                                "frame_wj_喂豆球果(1-4)"
-                            ]
-                        }
-                    }
                 }
             ]
+        },
+        "喂豆球果": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_喂豆球果": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
         },
         "小关喂豆位置": {
             "type": "input",
