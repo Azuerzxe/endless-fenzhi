@@ -989,6 +989,67 @@
             "frame_wj_custom_识别boss关"
         ]
     },
+    "frame_wj_custom_点切换编队前期": {
+        "recognition": "OCR",
+        "roi": [
+            739,
+            397,
+            54,
+            37
+        ],
+        "expected": [
+            "配队"
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "frame_wj_custom_切换编队前期",
+            "frame_wj_custom_滑动寻找编队前期"
+        ]
+    },
+    "frame_wj_custom_切换编队前期": {
+        "recognition": "OCR",
+        "roi": [
+            131,
+            135,
+            55,
+            537
+        ],
+        "threshold": 0.2,
+        "action": "Click",
+        "expected": [],
+        "next": [
+            "frame_wj_custom_点回植物前期"
+        ]
+    },
+    "frame_wj_custom_滑动寻找编队前期": {
+        "action": "Swipe",
+        "begin": [
+            447,
+            535,
+            4,
+            1
+        ],
+        "end": [
+            450,
+            147,
+            1,
+            7
+        ],
+        "end_hold": 100,
+        "duration": 200,
+        "post_wait_freezes": 100,
+        "next": [
+            "frame_wj_custom_切换编队前期",
+            "frame_wj_custom_滑动寻找编队前期"
+        ]
+    },
+    "frame_wj_custom_点回植物前期": {
+        "next": [
+            "frame_wj_custom_识别开始战斗",
+            "frame_wj_custom_识别boss关"
+        ]
+    },
     "frame_wj_custom_识别boss关": {
         "recognition": "ColorMatch",
         "lower": [
