@@ -499,7 +499,8 @@
         "expected": [
             "继续"
         ],
-        "repeat": 10,
+        "repeat": 5,
+        "repeat_delay": 100,
         "roi": [
             583,
             621,

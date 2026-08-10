@@ -53,10 +53,18 @@
         "threshold": 0.75,
         "timeout": -1,
         "next": [
-            "frame_wj_custom_2_下8"
+            "frame_wj_custom_2_下8槽"
         ]
     },
-    "frame_wj_custom_2_下8": {
+    "frame_wj_custom_点切换编队": {},
+    "frame_wj_custom_切换编队": {},
+    "frame_wj_custom_滑动寻找编队": {},
+    "frame_wj_custom_点回植物": {
+        "next": [
+            "frame_wj_custom_2_下8槽"
+        ]
+    },
+    "frame_wj_custom_2_下8槽": {
         "action": "Click",
         "target": [
             67,
