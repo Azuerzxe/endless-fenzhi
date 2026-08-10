@@ -20,8 +20,10 @@
                         }
                     },
                     "option": [
+                        "frame_wj_custom_前期使用编队",
                         "frame_wj_custom_从boss关选卡界面开始",
                         "frame_wj_custom_回到后期",
+                        "frame_wj_custom_回到后期切换编队",
                         "frame_wj_custom_是否种守卫菇",
                         "frame_wj_custom_布完阵是否喂豆",
                         "frame_wj_custom_boss关是否喂豆",
@@ -38,6 +40,63 @@
                     ]
                 }
             ]
+        },
+        "frame_wj_custom_前期使用编队": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No",
+                },
+                {
+                    "name": "Yes",
+                    "option": [
+                        "frame_wj_custom_前期切换到第几编队"
+                    ],
+                    "pipeline_override": {
+                        "frame_wj_custom_过渡": {
+                            "next": [
+                                "frame_wj_custom_点切换编队"
+                            ]
+                        },
+                        "frame_wj_custom_点回植物": {
+                            "next": [
+                                "frame_wj_custom_识别开始战斗",
+                                "frame_wj_custom_识别boss关"
+                            ]
+                        },
+                        "frame_wj_custom_点切换编队": {
+                            "next": [
+                                "frame_wj_custom_切换编队前期",
+                                "frame_wj_custom_滑动寻找编队"
+                            ]
+                        },
+                        "frame_wj_custom_滑动寻找编队": {
+                            "next": [
+                                "frame_wj_custom_切换编队前期",
+                                "frame_wj_custom_滑动寻找编队"
+                            ]
+                        },
+                    }
+                }
+            ]
+        },
+        "frame_wj_custom_前期切换到第几编队": {
+            "type": "input",
+            "label": "第几编队",
+            "inputs": [
+                {
+                    "name": "编队",
+                    "label": "编队(1-5)",
+                    "verify": "^[1-6]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_切换编队前期": {
+                    "expected": [
+                        "{编队}"
+                    ]
+                }
+            }
         },
         "frame_wj_custom_从boss关选卡界面开始": {
             "type": "switch",
@@ -195,13 +254,6 @@
                 {
                     "name": "No",
                     "label": "否",
-                    "pipeline_override": {
-                        "frame_wj_custom_2_识别开始战斗": {
-                            "next": [
-                                "frame_wj_识别开始战斗"
-                            ]
-                        },
-                    }
                 },
                 {
                     "name": "Yes",
@@ -211,7 +263,17 @@
                             "next": [
                                 "frame_wj_custom_2_Entry"
                             ]
-                        }
+                        },
+                        "frame_wj_custom_点回植物": {
+                            "next": [
+                                "frame_wj_custom_2_下8槽"
+                            ]
+                        },
+                        "frame_wj_custom_2_识别开始战斗": {
+                            "next": [
+                                "frame_wj_custom_2_下8槽"
+                            ]
+                        },
                     },
                     "option": [
                         "frame_wj_custom_种守卫菇位置1",
@@ -238,6 +300,45 @@
                 "frame_wj_custom_判断是否种守卫菇": {
                     "expected": [
                         "第{关卡}"
+                    ]
+                }
+            }
+        },
+        "frame_wj_custom_回到后期切换编队": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No",
+                },
+                {
+                    "name": "Yes",
+                    "option": [
+                        "frame_wj_custom_切换到第几编队"
+                    ],
+                    "pipeline_override": {
+                        "frame_wj_custom_2_识别开始战斗": {
+                            "next": [
+                                "frame_wj_custom_点切换编队"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "frame_wj_custom_切换到第几编队": {
+            "type": "input",
+            "label": "第几编队",
+            "inputs": [
+                {
+                    "name": "编队",
+                    "label": "编队(1-5)",
+                    "verify": "^[1-6]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_切换编队": {
+                    "expected": [
+                        "{编队}"
                     ]
                 }
             }
