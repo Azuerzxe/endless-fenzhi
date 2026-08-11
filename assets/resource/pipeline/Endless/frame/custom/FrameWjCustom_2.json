@@ -85,6 +85,7 @@
         "threshold": 0.2,
         "action": "Click",
         "expected": [],
+        "post_delay": 500,
         "next": [
             "frame_wj_custom_点回植物"
         ]
@@ -93,17 +94,13 @@
         "action": "Swipe",
         "begin": [
             447,
-            535,
-            4,
-            1
+            535
         ],
         "end": [
-            450,
-            147,
-            1,
-            7
+            447,
+            435
         ],
-        "end_hold": 100,
+        "end_hold": 500,
         "duration": 200,
         "post_wait_freezes": 100,
         "next": [
