@@ -53,7 +53,7 @@
                         "frame_wj_custom_前期切换到第几编队"
                     ],
                     "pipeline_override": {
-                        "frame_wj_custom_过渡": {
+                        "frame_wj_custom_Entry": {
                             "next": [
                                 "frame_wj_custom_点切换编队前期"
                             ]
