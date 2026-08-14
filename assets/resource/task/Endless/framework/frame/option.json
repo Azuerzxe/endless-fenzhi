@@ -16,7 +16,7 @@
                                 "识别三叶草位置",
                                 "frame_wj_boss_识别开始"
                             ]
-                        },
+                        }
                     }
                 }
             ]
@@ -50,7 +50,7 @@
                                 "frame_wj_boss_过渡_相机神器2",
                                 "frame_wj_boss_喂豆5-3"
                             ]
-                        },
+                        }
                     }
                 }
             ]
@@ -98,7 +98,8 @@
                     "label": "是",
                     "option": [
                         "fw_boss关喂豆位置",
-                        "fw_boss关喂豆间隔"
+                        "fw_boss关喂豆间隔",
+                        "fw_boss关额外喂豆位置"
                     ]
                 }
             ]
@@ -132,23 +133,24 @@
         },
         "fw_boss关喂豆间隔": {
             "type": "input",
+            "label": "喂豆1间隔",
             "inputs": [
                 {
-                    "name": "秒",
+                    "name": "毫秒",
                     "pipeline_type": "int",
-                    "default": "4",
-                    "verify": ""
+                    "default": "4000",
+                    "verify": "^([1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|[1-9][0-9][0-9][0-9][0-9])$"
                 }
             ],
             "pipeline_override": {
                 "frame_wj_boss_喂豆5-3": {
-                    "post_delay": "{秒}000"
-                },
+                    "post_delay": "{毫秒}"
+                }
             }
         },
         "fw_boss关喂豆位置": {
             "type": "input",
-            "label": "喂豆位置",
+            "label": "喂豆1位置",
             "description": "输入行列坐标，格式：列-行（例如 5-3）",
             "inputs": [
                 {
@@ -168,8 +170,76 @@
             ],
             "pipeline_override": {
                 "frame_wj_boss_喂豆5-3": {
-                    "end": "种植物_初始化_格子{列}_{行}",
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "fw_boss关额外喂豆位置": {
+            "type": "switch",
+            "label": "额外的喂豆位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {}
                 },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {
+                        "frame_wj_boss_喂豆2": {
+                            "enabled": true
+                        }
+                    },
+                    "option": [
+                        "fw_boss关喂豆2间隔",
+                        "fw_boss关喂豆2位置"
+                    ]
+                }
+            ]
+        },
+        "fw_boss关喂豆2间隔": {
+            "type": "input",
+            "label": "喂豆2间隔",
+            "description": "喂豆结束后回到喂豆1",
+            "inputs": [
+                {
+                    "name": "毫秒",
+                    "pipeline_type": "int",
+                    "default": "4000",
+                    "verify": "^([1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|[1-9][0-9][0-9][0-9][0-9])$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_boss_喂豆2": {
+                    "post_delay": "{毫秒}"
+                }
+            }
+        },
+        "fw_boss关喂豆2位置": {
+            "type": "input",
+            "label": "喂豆2位置",
+            "description": "输入行列坐标，格式：列-行（例如 5-3）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9的数字"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "3",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5的数字"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_boss_喂豆2": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
             }
         },
         "小关是否加速": {
@@ -296,8 +366,8 @@
             ],
             "pipeline_override": {
                 "frame_wj_喂豆5-3": {
-                    "end": "种植物_初始化_格子{列}_{行}",
-                },
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
             }
         },
         "小关喂豆间隔": {
