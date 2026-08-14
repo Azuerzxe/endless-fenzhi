@@ -371,220 +371,36 @@
             }
         },
         "小关喂豆间隔": {
-            "type": "select",
-            "label": "喂豆间隔",
-            "cases": [
+            "type": "input",
+            "label": "喂豆间隔（秒）",
+            "description": "输入总时长（秒），将动态调整所有划飞弹的滑动次数",
+            "inputs": [
                 {
-                    "name": "4秒",
-                    "label": "4秒",
-                    "pipeline_override": {
-                        "frame_wj_划飞弹": {
-                            "repeat": 26
-                        },
-                        "frame_wj_划飞弹2": {
-                            "repeat": 26
-                        },
-                        "frame_wj_划飞弹3": {
-                            "repeat": 26
-                        },
-                        "frame_wj_划飞弹4": {
-                            "repeat": 26
-                        },
-                        "frame_wj_划飞弹5": {
-                            "repeat": 26
-                        }
-                    }
-                },
-                {
-                    "name": "5秒",
-                    "label": "5秒",
-                    "pipeline_override": {
-                        "frame_wj_划飞弹": {
-                            "repeat": 30
-                        },
-                        "frame_wj_划飞弹2": {
-                            "repeat": 30
-                        },
-                        "frame_wj_划飞弹3": {
-                            "repeat": 30
-                        },
-                        "frame_wj_划飞弹4": {
-                            "repeat": 30
-                        },
-                        "frame_wj_划飞弹5": {
-                            "repeat": 30
-                        }
-                    }
-                },
-                {
-                    "name": "8秒",
-                    "label": "8秒",
-                    "pipeline_override": {
-                        "frame_wj_划飞弹": {
-                            "repeat": 50
-                        },
-                        "frame_wj_划飞弹2": {
-                            "repeat": 50
-                        },
-                        "frame_wj_划飞弹3": {
-                            "repeat": 50
-                        },
-                        "frame_wj_划飞弹4": {
-                            "repeat": 50
-                        },
-                        "frame_wj_划飞弹5": {
-                            "repeat": 50
-                        }
-                    }
-                },
-                {
-                    "name": "16秒",
-                    "label": "16秒",
-                    "pipeline_override": {
-                        "frame_wj_划飞弹": {
-                            "repeat": 100
-                        },
-                        "frame_wj_划飞弹2": {
-                            "repeat": 100
-                        },
-                        "frame_wj_划飞弹3": {
-                            "repeat": 100
-                        },
-                        "frame_wj_划飞弹4": {
-                            "repeat": 100
-                        },
-                        "frame_wj_划飞弹5": {
-                            "repeat": 100
-                        }
-                    }
-                },
-                {
-                    "name": "24秒",
-                    "label": "24秒",
-                    "pipeline_override": {
-                        "frame_wj_划飞弹": {
-                            "repeat": 150
-                        },
-                        "frame_wj_划飞弹2": {
-                            "repeat": 150
-                        },
-                        "frame_wj_划飞弹3": {
-                            "repeat": 150
-                        },
-                        "frame_wj_划飞弹4": {
-                            "repeat": 150
-                        },
-                        "frame_wj_划飞弹5": {
-                            "repeat": 150
-                        }
-                    }
-                },
-                {
-                    "name": "32秒",
-                    "label": "32秒",
-                    "pipeline_override": {
-                        "frame_wj_划飞弹": {
-                            "repeat": 200
-                        },
-                        "frame_wj_划飞弹2": {
-                            "repeat": 200
-                        },
-                        "frame_wj_划飞弹3": {
-                            "repeat": 200
-                        },
-                        "frame_wj_划飞弹4": {
-                            "repeat": 200
-                        },
-                        "frame_wj_划飞弹5": {
-                            "repeat": 200
-                        }
-                    }
-                },
-                {
-                    "name": "40秒",
-                    "label": "40秒",
-                    "pipeline_override": {
-                        "frame_wj_划飞弹": {
-                            "repeat": 250
-                        },
-                        "frame_wj_划飞弹2": {
-                            "repeat": 250
-                        },
-                        "frame_wj_划飞弹3": {
-                            "repeat": 250
-                        },
-                        "frame_wj_划飞弹4": {
-                            "repeat": 250
-                        },
-                        "frame_wj_划飞弹5": {
-                            "repeat": 250
-                        }
-                    }
-                },
-                {
-                    "name": "60秒",
-                    "label": "60秒",
-                    "pipeline_override": {
-                        "frame_wj_划飞弹": {
-                            "repeat": 375
-                        },
-                        "frame_wj_划飞弹2": {
-                            "repeat": 375
-                        },
-                        "frame_wj_划飞弹3": {
-                            "repeat": 375
-                        },
-                        "frame_wj_划飞弹4": {
-                            "repeat": 375
-                        },
-                        "frame_wj_划飞弹5": {
-                            "repeat": 375
-                        }
-                    }
-                },
-                {
-                    "name": "80秒",
-                    "label": "80秒",
-                    "pipeline_override": {
-                        "frame_wj_划飞弹": {
-                            "repeat": 500
-                        },
-                        "frame_wj_划飞弹2": {
-                            "repeat": 500
-                        },
-                        "frame_wj_划飞弹3": {
-                            "repeat": 500
-                        },
-                        "frame_wj_划飞弹4": {
-                            "repeat": 500
-                        },
-                        "frame_wj_划飞弹5": {
-                            "repeat": 500
-                        }
-                    }
-                },
-                {
-                    "name": "100秒",
-                    "label": "100秒",
-                    "pipeline_override": {
-                        "frame_wj_划飞弹": {
-                            "repeat": 625
-                        },
-                        "frame_wj_划飞弹2": {
-                            "repeat": 625
-                        },
-                        "frame_wj_划飞弹3": {
-                            "repeat": 625
-                        },
-                        "frame_wj_划飞弹4": {
-                            "repeat": 625
-                        },
-                        "frame_wj_划飞弹5": {
-                            "repeat": 625
+                    "name": "seconds",
+                    "pipeline_type": "string",
+                    "default": "4",
+                    "verify": "^(\\d+(\\.\\d+)?)$",
+                    "pattern_msg": "请输入有效数字，如 4 或 4.5"
+                }
+            ],
+            "pipeline_override": {
+                "修改滑飞弹的repeat": {
+                    "action": {
+                        "param": {
+                            "custom_action_param": {
+                                "seconds": "{seconds}",
+                                "nodes": [
+                                    "frame_wj_划飞弹",
+                                    "frame_wj_划飞弹2",
+                                    "frame_wj_划飞弹3",
+                                    "frame_wj_划飞弹4",
+                                    "frame_wj_划飞弹5"
+                                ]
+                            }
                         }
                     }
                 }
-            ]
+            }
         },
         "刷掉僵尸": {
             "type": "switch",
