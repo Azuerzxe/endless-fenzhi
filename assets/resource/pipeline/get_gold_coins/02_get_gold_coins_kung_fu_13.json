@@ -308,6 +308,7 @@
         ],
         "action": "Click",
         "pre_delay": 100,
+        "repeat_delay": 200,
         "repeat": 3,
         "next": [
             "功夫13_重开",
@@ -329,22 +330,54 @@
             "功夫13_寻找关卡特征"
         ]
     },
+    // 修改后的“重开十次”节点 - 使用 DirectHit 计数，不依赖界面识别
     "功夫13_重开十次": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "back_to_home/主界面特征.png"
-        ],
-        "green_mask": true,
-        "threshold": [
-            0.7
-        ],
-        "method": 10001,
-        "action": "DoNothing",
-        "pre_wait_freezes": 1000,
-        "focus": "重开",
+        "recognition": "DirectHit",
         "max_hit": 10,
+        "action": "DoNothing",
+        "focus": "重开",
         "next": [
-            "功夫13_寻找关卡特征"
+            "功夫13_寻找关卡特征",
+            "功夫13_跳过计数结算"
+        ]
+    },
+    "功夫13_跳过计数结算": {
+        "recognition": "OCR",
+        "expected": [
+            "继续"
+        ],
+        "roi": [
+            554,
+            595,
+            162,
+            90
+        ],
+        "action": "Click",
+        "pre_delay": 100,
+        "repeat_delay": 200,
+        "repeat": 3,
+        "next": [
+            "功夫13_寻找关卡特征",
+            "功夫13_跳过计数结算"
+        ]
+    },
+    "功夫13_返回": {
+        "recognition": "OCR",
+        "expected": [
+            "继续"
+        ],
+        "roi": [
+            554,
+            595,
+            162,
+            90
+        ],
+        "action": "Click",
+        "pre_delay": 100,
+        "repeat_delay": 200,
+        "repeat": 3,
+        "next": [
+            "确认当前是否在主界面"
         ]
     },
     //功夫世界街机神器刷胜场
