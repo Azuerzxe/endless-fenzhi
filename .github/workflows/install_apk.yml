@@ -130,6 +130,12 @@ jobs:
         run: |
           echo "sdk.dir=$ANDROID_HOME" > local.properties
 
+      # ===== 修复 writePiManifest 目录缺失 =====
+      - name: Create required directory for writePiManifest
+        working-directory: maafwapp
+        run: |
+          mkdir -p app/build/generated/piAssets/pi
+
       - name: Build Debug APK
         working-directory: maafwapp
         run: |
