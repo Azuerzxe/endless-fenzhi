@@ -2,15 +2,42 @@ name: Build MaaFwApp APK with this resource
 
 on:
   push:
-    tags:
-      - 'v*'                # 推送 v1.0.0 等标签时触发
-  workflow_dispatch:        # 也支持手动触发
+    branches:
+      - main
+    # 移除 tags 触发，改为检测 commit message
+  workflow_dispatch:        # 保留手动触发
 
 permissions:
   contents: write
 
 jobs:
+  check_version:
+    runs-on: ubuntu-latest
+    outputs:
+      is_release: ${{ steps.check.outputs.is_release }}
+      tag: ${{ steps.check.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - id: check
+        run: |
+          is_release=false
+          tag=""
+          FIRST_LINE=$(echo "${{ github.event.head_commit.message }}" | head -n1)
+          if [[ "$FIRST_LINE" =~ ^v[0-9]+\.[0-9]+\.[0-9]+ ]]; then
+            VERSION=$(echo "$FIRST_LINE" | grep -oE '^v[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.]+)?')
+            if [ -n "$VERSION" ]; then
+              is_release=true
+              tag="$VERSION"
+            fi
+          fi
+          echo "is_release=$is_release" >> $GITHUB_OUTPUT
+          echo "tag=$tag" >> $GITHUB_OUTPUT
+
   build:
+    needs: check_version
+    if: needs.check_version.outputs.is_release == 'true' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
 
     steps:
@@ -49,15 +76,15 @@ jobs:
 
       - name: Accept Android licenses
         run: |
-          yes | sdkmanager --licenses
+          yes | sdkmanager --licenses || true
 
-      # 7. 下载 MaaFramework 库（在 maafwapp 目录中执行）
+      # 7. 下载 MaaFramework 库
       - name: Download MaaFramework libraries
         working-directory: maafwapp
         run: |
           python scripts/setup_maa_framework.py
 
-      # 8. 生成配方文件（指向 ../resource）
+      # 8. 生成配方文件
       - name: Create pi profile
         working-directory: maafwapp
         run: |
@@ -91,7 +118,7 @@ jobs:
             label: PVZ 助手
           EOF
 
-      # 9. 构建 Python Agent（如果有 requirements.txt）
+      # 9. 构建 Python Agent
       - name: Build Python Agent
         working-directory: maafwapp
         run: |
@@ -123,7 +150,7 @@ jobs:
         run: |
           ./gradlew :app:assembleRelease
 
-      # 13. 上传 APK 作为 Artifact（便于下载）
+      # 13. 上传 APK 作为 Artifact
       - name: Upload APKs as artifact
         uses: actions/upload-artifact@v4
         with:
@@ -132,13 +159,17 @@ jobs:
             maafwapp/app/build/outputs/apk/debug/*.apk
             maafwapp/app/build/outputs/apk/release/*.apk
 
-      # 14. 如果是由 tag 触发的，则创建 Release 并附上 APK
+      # 14. 如果是由 commit message 触发的版本，创建 Release
       - name: Create Release
-        if: startsWith(github.ref, 'refs/tags/')
+        if: needs.check_version.outputs.is_release == 'true'
         uses: softprops/action-gh-release@v1
         with:
           files: |
             maafwapp/app/build/outputs/apk/debug/*.apk
             maafwapp/app/build/outputs/apk/release/*.apk
+          tag_name: ${{ needs.check_version.outputs.tag }}
+          name: ${{ needs.check_version.outputs.tag }}
+          draft: false
+          prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
