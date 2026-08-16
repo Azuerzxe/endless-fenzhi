@@ -4,8 +4,7 @@ on:
   push:
     branches:
       - main
-    # 移除 tags 触发，改为检测 commit message
-  workflow_dispatch:        # 保留手动触发
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -41,36 +40,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. 检出资源项目（当前仓库）
       - name: Checkout resource
         uses: actions/checkout@v4
         with:
           path: resource
 
-      # 2. 克隆 MaaFwApp 官方仓库
       - name: Clone MaaFwApp
         run: |
           git clone https://github.com/Aliothmoon/MaaFwApp.git maafwapp
 
-      # 3. 设置 JDK 17
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
 
-      # 4. 设置 Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      # 5. 安装 Python 依赖
       - name: Install Python dependencies
         run: |
           pip install requests pyyaml
 
-      # 6. 设置 Android SDK
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
@@ -78,18 +71,16 @@ jobs:
         run: |
           yes | sdkmanager --licenses || true
 
-      # 7. 下载 MaaFramework 库
       - name: Download MaaFramework libraries
         working-directory: maafwapp
         run: |
           python scripts/setup_maa_framework.py
 
-      # 8. 生成配方文件
       - name: Create pi profile
         working-directory: maafwapp
         run: |
           cat > my-pvz-profile.yaml << 'EOF'
-          assets: "$(pwd)/../resource"
+          assets: "$GITHUB_WORKSPACE/resource"
           include:
             - interface.json
             - tasks/**
@@ -102,7 +93,7 @@ jobs:
             - LICENSE
           exclude: []
           agent:
-            sourceDir: "$(pwd)/../resource/agent-dist"
+            sourceDir: "$GITHUB_WORKSPACE/resource/agent-dist"
             abi: [arm64-v8a]
             runtimes:
               - location: bundle
@@ -118,7 +109,11 @@ jobs:
             label: PVZ 助手
           EOF
 
-      # 9. 构建 Python Agent
+      - name: Set PI_PROFILE environment variable
+        working-directory: maafwapp
+        run: |
+          echo "PI_PROFILE=$(pwd)/my-pvz-profile.yaml" >> $GITHUB_ENV
+
       - name: Build Python Agent
         working-directory: maafwapp
         run: |
@@ -130,27 +125,22 @@ jobs:
               --exclude onnxruntime || true
           fi
 
-      # 10. 创建 local.properties
       - name: Create local.properties
         working-directory: maafwapp
         run: |
           echo "sdk.dir=$ANDROID_HOME" > local.properties
-          echo "pi.profile=$(pwd)/my-pvz-profile.yaml" >> local.properties
 
-      # 11. 构建 Debug APK
       - name: Build Debug APK
         working-directory: maafwapp
         run: |
           chmod +x gradlew
           ./gradlew :app:assembleDebug
 
-      # 12. 构建 Release APK（未签名）
       - name: Build Release APK (unsigned)
         working-directory: maafwapp
         run: |
           ./gradlew :app:assembleRelease
 
-      # 13. 上传 APK 作为 Artifact
       - name: Upload APKs as artifact
         uses: actions/upload-artifact@v4
         with:
@@ -159,7 +149,6 @@ jobs:
             maafwapp/app/build/outputs/apk/debug/*.apk
             maafwapp/app/build/outputs/apk/release/*.apk
 
-      # 14. 如果是由 commit message 触发的版本，创建 Release
       - name: Create Release
         if: needs.check_version.outputs.is_release == 'true'
         uses: softprops/action-gh-release@v1
