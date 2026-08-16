@@ -1,0 +1,144 @@
+name: Build MaaFwApp APK with this resource
+
+on:
+  push:
+    tags:
+      - 'v*'                # 推送 v1.0.0 等标签时触发
+  workflow_dispatch:        # 也支持手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. 检出资源项目（当前仓库）
+      - name: Checkout resource
+        uses: actions/checkout@v4
+        with:
+          path: resource
+
+      # 2. 克隆 MaaFwApp 官方仓库
+      - name: Clone MaaFwApp
+        run: |
+          git clone https://github.com/Aliothmoon/MaaFwApp.git maafwapp
+
+      # 3. 设置 JDK 17
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      # 4. 设置 Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 5. 安装 Python 依赖
+      - name: Install Python dependencies
+        run: |
+          pip install requests pyyaml
+
+      # 6. 设置 Android SDK
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Accept Android licenses
+        run: |
+          yes | sdkmanager --licenses
+
+      # 7. 下载 MaaFramework 库（在 maafwapp 目录中执行）
+      - name: Download MaaFramework libraries
+        working-directory: maafwapp
+        run: |
+          python scripts/setup_maa_framework.py
+
+      # 8. 生成配方文件（指向 ../resource）
+      - name: Create pi profile
+        working-directory: maafwapp
+        run: |
+          cat > my-pvz-profile.yaml << 'EOF'
+          assets: "$(pwd)/../resource"
+          include:
+            - interface.json
+            - tasks/**
+            - resource/**
+            - resource_*/**
+            - data/**
+            - locales/**
+            - agent/**
+            - CONTACT
+            - LICENSE
+          exclude: []
+          agent:
+            sourceDir: "$(pwd)/../resource/agent-dist"
+            abi: [arm64-v8a]
+            runtimes:
+              - location: bundle
+                executable: bin/python3
+                args: [-u, agent/main.py]
+                env:
+                  PYTHONHOME: "{bundle}/prefix"
+                  PYTHONPATH: "{bundle}/site-packages/pure.zip:{bundle}/site-packages"
+                  LD_LIBRARY_PATH: "{bundle}/prefix/lib:{bundle}/site-packages/chaquopy/lib:{nativeLibs}"
+                  MAAFW_BINARY_PATH: "{nativeLibs}"
+          app:
+            id: pvz
+            label: PVZ 助手
+          EOF
+
+      # 9. 构建 Python Agent（如果有 requirements.txt）
+      - name: Build Python Agent
+        working-directory: maafwapp
+        run: |
+          if [ -f ../resource/requirements.txt ]; then
+            python scripts/build_agent_bundle.py \
+              --out ../resource/agent-dist \
+              --requirements ../resource/requirements.txt \
+              --extra-index-url https://chaquo.com/pypi-13.1/ \
+              --exclude onnxruntime || true
+          fi
+
+      # 10. 创建 local.properties
+      - name: Create local.properties
+        working-directory: maafwapp
+        run: |
+          echo "sdk.dir=$ANDROID_HOME" > local.properties
+          echo "pi.profile=$(pwd)/my-pvz-profile.yaml" >> local.properties
+
+      # 11. 构建 Debug APK
+      - name: Build Debug APK
+        working-directory: maafwapp
+        run: |
+          chmod +x gradlew
+          ./gradlew :app:assembleDebug
+
+      # 12. 构建 Release APK（未签名）
+      - name: Build Release APK (unsigned)
+        working-directory: maafwapp
+        run: |
+          ./gradlew :app:assembleRelease
+
+      # 13. 上传 APK 作为 Artifact（便于下载）
+      - name: Upload APKs as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: MaaFwApp-PVZ-APKs
+          path: |
+            maafwapp/app/build/outputs/apk/debug/*.apk
+            maafwapp/app/build/outputs/apk/release/*.apk
+
+      # 14. 如果是由 tag 触发的，则创建 Release 并附上 APK
+      - name: Create Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            maafwapp/app/build/outputs/apk/debug/*.apk
+            maafwapp/app/build/outputs/apk/release/*.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
