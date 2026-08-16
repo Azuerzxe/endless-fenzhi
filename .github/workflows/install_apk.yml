@@ -76,10 +76,11 @@ jobs:
         run: |
           python scripts/setup_maa_framework.py
 
+      # ===== 关键修复：去掉 << 'EOF' 的单引号，让变量展开 =====
       - name: Create pi profile
         working-directory: maafwapp
         run: |
-          cat > my-pvz-profile.yaml << 'EOF'
+          cat > my-pvz-profile.yaml << EOF
           assets: "$GITHUB_WORKSPACE/resource"
           include:
             - interface.json
@@ -130,7 +131,6 @@ jobs:
         run: |
           echo "sdk.dir=$ANDROID_HOME" > local.properties
 
-      # ===== 修复 writePiManifest 目录缺失 =====
       - name: Create required directory for writePiManifest
         working-directory: maafwapp
         run: |
