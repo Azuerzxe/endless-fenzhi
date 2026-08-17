@@ -42,7 +42,8 @@
         "./resource/task/plants_explore_debris.json",
         "./resource/task/fragment_challenge.json",
         "./resource/task/get_gold_coins.json",
-        "./resource/task/Start_game.json",
+        "./resource/task/Start_game/Start_game.json",
+        "./resource/task/Start_game/Start_game_too.json",
         "./resource/task/Secret_realm.json",
         "./resource/task/pair_duel.json",
         "./resource/task/mini_tools.json",
@@ -316,6 +317,15 @@
             "description": "清理多余的日志,节省空间"
         },
         {
+            "name": "登录其他渠道服",
+            "entry": "选择渠道服_其他",
+            "option": [
+                "渠道服_其他"
+            ],
+            "default_check": false,
+            "description": "登录其他渠道服"
+        },
+        {
             "name": "dbug（不要开启）",
             "entry": "创意庭院_删除关卡_点刷罐子"
         }
@@ -451,260 +461,5 @@
                 },
             }
         },
-        "存档覆盖进度": {
-            "type": "select",
-            "cases": [
-                {
-                    "name": "云端进度"
-                },
-                {
-                    "name": "本地进度",
-                    "pipeline_override": {
-                        "开始游戏": {
-                            "next": [
-                                "开始游戏",
-                                "使用本地进度",
-                                "关闭公告"
-                            ]
-                        },
-                    }
-                }
-            ]
-        },
-        "自定义包名": {
-            "type": "input",
-            "inputs": [
-                {
-                    "name": "包名",
-                    "label": "自己游戏的包名"
-                }
-            ],
-            "pipeline_override": {
-                "打开pvz_自定义包": {
-                    "package": "{包名}"
-                },
-                "关闭pvz_自定义包": {
-                    "package": "{包名}"
-                }
-            }
-        },
-        "渠道服": {
-            "type": "select",
-            "description": "选择你要进入的渠道服",
-            "cases": [
-                {
-                    "name": "自定义包名",
-                    "option": [
-                        "自定义包名"
-                    ],
-                    "pipeline_override": {
-                        "选择渠道服": {
-                            "next": [
-                                "关闭pvz_自定义包",
-                                "打开pvz_自定义包"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "联想",
-                    "pipeline_override": {
-                        "选择渠道服": {
-                            "next": [
-                                "关闭pvz_联想",
-                                "打开pvz_联想"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "4399",
-                    "pipeline_override": {
-                        "选择渠道服": {
-                            "next": [
-                                "关闭pvz_4399",
-                                "打开pvz_4399"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "小米",
-                    "pipeline_override": {
-                        "选择渠道服": {
-                            "next": [
-                                "关闭pvz_XM",
-                                "打开pvz_XM"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "应用宝",
-                    "option": [
-                        "登录方式"
-                    ]
-                },
-                {
-                    "name": "b服",
-                    "pipeline_override": {
-                        "选择渠道服": {
-                            "next": [
-                                "关闭pvz_b服",
-                                "打开pvz_b服"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "荣耀",
-                    "pipeline_override": {
-                        "选择渠道服": {
-                            "next": [
-                                "关闭pvz_荣耀",
-                                "打开pvz_荣耀"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "vivo",
-                    "pipeline_override": {
-                        "选择渠道服": {
-                            "next": [
-                                "关闭pvz_vivo",
-                                "打开pvz_vivo"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "九游",
-                    "pipeline_override": {
-                        "选择渠道服": {
-                            "next": [
-                                "关闭pvz_九游",
-                                "打开pvz_九游"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "OPPO",
-                    "pipeline_override": {
-                        "选择渠道服": {
-                            "next": [
-                                "关闭pvz_OPPO",
-                                "打开pvz_OPPO"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "好游快报",
-                    "pipeline_override": {
-                        "选择渠道服": {
-                            "next": [
-                                "关闭pvz_好游快报",
-                                "打开pvz_好游快报"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "百度",
-                    "pipeline_override": {
-                        "选择渠道服": {
-                            "next": [
-                                "关闭pvz_百度",
-                                "打开pvz_百度"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "360",
-                    "pipeline_override": {
-                        "选择渠道服": {
-                            "next": [
-                                "关闭pvz_360",
-                                "打开pvz_360"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "华为",
-                    "pipeline_override": {
-                        "选择渠道服": {
-                            "next": [
-                                "关闭pvz_华为",
-                                "打开pvz_华为"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "7723",
-                    "pipeline_override": {
-                        "选择渠道服": {
-                            "next": [
-                                "关闭pvz_7723",
-                                "打开pvz_7723"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "taptap",
-                    "pipeline_override": {
-                        "选择渠道服": {
-                            "next": [
-                                "关闭pvz_taptap",
-                                "打开pvz_taptap"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "官服",
-                    "pipeline_override": {
-                        "选择渠道服": {
-                            "next": [
-                                "关闭pvz_官服",
-                                "打开pvz_官服"
-                            ]
-                        }
-                    }
-                }
-            ]
-        },
-        "登录方式": {
-            "type": "select",
-            "cases": [
-                {
-                    "name": "qq登录",
-                    "pipeline_override": {
-                        "选择渠道服": {
-                            "next": [
-                                "关闭pvz_应用宝_qq",
-                                "打开pvz_应用宝_qq"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "微信登录",
-                    "pipeline_override": {
-                        "选择渠道服": {
-                            "next": [
-                                "关闭pvz_应用宝_微信",
-                                "打开pvz_应用宝_微信"
-                            ]
-                        }
-                    }
-                }
-            ]
-        }
     }
 }
