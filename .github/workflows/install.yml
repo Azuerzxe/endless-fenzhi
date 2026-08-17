@@ -1,356 +1,209 @@
-name: Build and Release
+name: Build and Release APK
 
 on:
   push:
     branches:
       - main
-    tags:
-      - 'v*'
   workflow_dispatch:
 
-env:
-  MFAA_VERSION: v2.13.0
-  MAA_FRAMEWORK_VERSION: v5.12.2
+permissions:
+  contents: write
 
 jobs:
-  meta:
+  check_version:
     runs-on: ubuntu-latest
     outputs:
-      tag: ${{ steps.set_tag.outputs.tag }}
-      is_release: ${{ steps.set_tag.outputs.is_release }}
-      is_prerelease: ${{ steps.set_tag.outputs.is_prerelease }}
+      is_release: ${{ steps.check.outputs.is_release }}
+      tag: ${{ steps.check.outputs.tag }}
+      version_tag: ${{ steps.check.outputs.version_tag }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v6
-        with:
-          python-version: "3.12"
-      - id: set_tag
+      - id: check
         run: |
           is_release=false
-          is_prerelease=false
           tag=""
-
-          # 只处理 push 到 main 分支的事件(commit 触发)
-          if [[ "${{ github.event_name }}" == "push" && "${{ github.ref }}" == "refs/heads/main" ]]; then
-            FIRST_LINE=$(echo "${{ github.event.head_commit.message }}" | head -n1)
-            if [[ "$FIRST_LINE" =~ ^v[0-9]+\.[0-9]+\.[0-9]+ ]]; then
-              VERSION=$(echo "$FIRST_LINE" | grep -oE '^v[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.]+)?')
-              if [ -n "$VERSION" ]; then
-                is_release=true
-                tag="$VERSION"
-                if [[ "$VERSION" =~ -(alpha|beta|rc|pre|preview) ]]; then
-                  is_prerelease=true
-                fi
-              fi
+          FIRST_LINE=$(echo "${{ github.event.head_commit.message }}" | head -n1)
+          if [[ "$FIRST_LINE" =~ ^v[0-9]+\.[0-9]+\.[0-9]+ ]]; then
+            VERSION=$(echo "$FIRST_LINE" | grep -oE '^v[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.]+)?')
+            if [ -n "$VERSION" ]; then
+              is_release=true
+              tag="$VERSION"
             fi
           fi
-
-          # 无有效版本号时生成 CI 标签(不发布)
           if [ -z "$tag" ]; then
-            tag="ci-$(date +%y%m%d)"
+            tag="ci-$(date +%Y%m%d-%H%M)"
           fi
-
-          echo "tag=$tag" >> $GITHUB_OUTPUT
           echo "is_release=$is_release" >> $GITHUB_OUTPUT
-          echo "is_prerelease=$is_prerelease" >> $GITHUB_OUTPUT
+          echo "tag=$tag" >> $GITHUB_OUTPUT
+          echo "version_tag=$tag" >> $GITHUB_OUTPUT
 
-  create_tag:
-    needs: meta
-    if: ${{ needs.meta.outputs.is_release == 'true' }}
+  build:
+    needs: check_version
+    if: needs.check_version.outputs.is_release == 'true' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Create and push tag
-        run: |
-          TAG="${{ needs.meta.outputs.tag }}"
-          # 检查远程是否已存在该 tag
-          if git ls-remote --tags origin | grep -q "refs/tags/${TAG}$"; then
-            echo "Tag ${TAG} already exists remotely, skipping creation."
-          else
-            git tag "${TAG}"
-            git push origin "${TAG}"
-            echo "Tag ${TAG} created and pushed."
-          fi
-
-  install:
-    needs: [meta, changelog]
-    runs-on: ${{ matrix.runner }}
-    strategy:
-      matrix:
-        include:
-          - os: win
-            arch: x86_64
-            runner: windows-latest
-          - os: win
-            arch: aarch64
-            runner: windows-11-arm
-          - os: macos
-            arch: x86_64
-            runner: macos-15-intel
-          - os: macos
-            arch: aarch64
-            runner: macos-latest
-          - os: linux
-            arch: x86_64
-            runner: ubuntu-latest
-          - os: linux
-            arch: aarch64
-            runner: ubuntu-latest
-      fail-fast: false
 
     steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: true
-      - name: Download announcement artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: announcement
-          path: assets/resource/announcement
-      - uses: actions/setup-python@v6
-        with:
-          python-version: "3.12"
-
-      - name: Download MaaFramework
-        uses: robinraju/release-downloader@v1
-        with:
-          repository: MaaXYZ/MaaFramework
-          fileName: "MAA-${{ matrix.os }}-${{ matrix.arch }}*"
-          tag: ${{ env.MAA_FRAMEWORK_VERSION }}
-          out-file-path: "deps"
-          extract: true
-
-      - name: Debug deps content
-        shell: bash
-        run: |
-          echo "Current directory:"
-          pwd
-          echo "deps directory content:"
-          ls -la deps/
-          echo "deps/bin exists? $([ -d deps/bin ] && echo YES || echo NO)"
-
-      - name: Download MFAAvalonia
-        if: matrix.os != 'android'
-        id: download_mfa
-        uses: robinraju/release-downloader@v1
-        with:
-          repository: MaaXYZ/MFAAvalonia
-          fileName: "MFAAvalonia-*-${{ (matrix.os == 'win' && 'win') || (matrix.os == 'macos' && 'osx') || (matrix.os == 'linux' && 'linux') }}-${{ (matrix.arch == 'x86_64' && 'x64') || (matrix.arch == 'aarch64' && 'arm64') }}*"
-          tag: ${{ env.MFAA_VERSION }}
-          out-file-path: "MFA"
-          extract: true
-
-      - name: Modify MFAAvalonia exe icon
-        if: matrix.os == 'win' && matrix.arch == 'x86_64'
-        shell: bash
-        run: |
-          curl -L https://github.com/electron/rcedit/releases/download/v2.0.0/rcedit-x64.exe -o rcedit.exe
-          ./rcedit.exe "MFA/MFAAvalonia.exe" --set-icon "docs/imgs/logo.ico"
-
-      - name: Clean up MFAAvalonia archive
-        if: matrix.os != 'android'
-        shell: bash
-        run: |
-          ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mfa.outputs.downloaded_files)[0] }}"
-          rm -f "${ARCHIVE_FILE_PATH}"
-          echo "Archive cleanup command executed for MFAAvalonia."
-
-      - name: Remove built-in runtime in MFA
-        if: matrix.os != 'android'
-        shell: bash
-        run: |
-          rm -rf MFA/runtimes
-
-      - name: Setup Embed Python
-        if: matrix.os != 'linux' && matrix.os != 'android'
-        shell: bash
-        run: |
-          python tools/ci/setup_embed_python.py ${{ matrix.os }} ${{ matrix.arch }}
-          if [[ "${{ matrix.os }}" == "macos" ]]; then
-            EMBED_PYTHON_PATH="./install/python/bin/python3"
-            if [ -f "$EMBED_PYTHON_PATH" ]; then
-              chmod +x "$EMBED_PYTHON_PATH"
-            else
-              echo "Warning: Embedded Python executable not found at $EMBED_PYTHON_PATH. Skipping chmod."
-            fi
-          fi
-
-      - name: Fix permissions on unix
-        if: matrix.os != 'win'
-        shell: bash
-        run: |
-          if [ -d "./install/python/bin" ]; then
-            chmod +x ./install/python/bin/* 2>/dev/null || true
-          fi
-          if [ -d "./install" ]; then
-            find ./install -type f -name "*.sh" -exec chmod +x {} \; 2>/dev/null || true
-          fi
-
-      - name: Install on unix
-        if: matrix.os != 'win'
-        shell: bash
-        run: |
-          if [[ "${{ matrix.os }}" != "android" ]]; then
-            if [ -d "MFA" ]; then
-              echo "Copying MFA files to install directory..."
-              mkdir -p install
-              rsync -av --ignore-existing MFA/ install/
-              echo "MFA files copied successfully."
-            else
-              echo "MFA directory not found, skipping copy."
-            fi
-          else
-            echo "Skipping copy MFA for Android."
-          fi
-
-          cd tools/
-          python -m pip install -r ./requirements.txt
-          python ./install.py ${{ needs.meta.outputs.tag }} ${{ matrix.os }} ${{ matrix.arch }}
-          cd ..
-
-      - name: Install on windows
-        if: matrix.os == 'win'
-        shell: bash
-        run: |
-          echo "=== Debug before install.py ==="
-          ls -la deps/
-          ls -la deps/bin/ || echo "deps/bin not found"
-          echo "=== End debug ==="
-
-          if [[ "${{ matrix.os }}" != "android" ]]; then
-            if [ -d "MFA" ]; then
-              echo "Copying MFA files to install directory..."
-              mkdir -p install
-              cp -r MFA/* install/
-              echo "MFA files copied successfully."
-            else
-              echo "MFA directory not found, skipping copy."
-            fi
-          else
-            echo "Skipping copy MFA for Android."
-          fi
-
-          cd tools/
-          python -m pip install -r ./requirements.txt
-          python ./install.py ${{ needs.meta.outputs.tag }} ${{ matrix.os }} ${{ matrix.arch }}
-          cd ..
-
-      - name: Download Python dependencies on Windows
-        if: matrix.os == 'win'
-        shell: bash
-        run: |
-          python tools/ci/download_deps.py --deps-dir ./install/python/Lib/site-packages --os ${{ matrix.os }} --arch ${{ matrix.arch }}
-
-      - name: Download Python dependencies on macOS
-        if: matrix.os == 'macos'
-        shell: bash
-        run: |
-          python tools/ci/download_deps.py --deps-dir ./install/python/lib/python3.12/site-packages --os ${{ matrix.os }} --arch ${{ matrix.arch }}
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: MaaPVZ-${{ matrix.os }}-${{ matrix.arch }}
-          path: "install"
-
-  changelog:
-    name: Generate changelog
-    needs: [meta, create_tag]
-    runs-on: ubuntu-latest
-    outputs:
-      release_body: ${{ steps.git-cliff.outputs.content }}
-    steps:
-      - name: Checkout
+      - name: Checkout resource
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-          ref: ${{ github.ref }}
+          path: resource
 
-      - name: Fetch all tags (to ensure new tag is available)
-        run: git fetch --tags
-
-      - name: Generate a changelog
-        uses: orhun/git-cliff-action@v4
-        id: git-cliff
-        with:
-          config: .github/cliff.toml
-          # 正式版：使用 tag-pattern 只匹配正式版标签，包含所有从上一个正式版以来的提交
-          # 预发布版：正常生成，只包含从上一个标签以来的提交
-          args: >-
-            -vv --latest --strip header
-            ${{ needs.meta.outputs.is_prerelease == 'false' && '--tag-pattern "^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9]{6}-[a-f0-9]{7,})?$"' || '' }}
-        env:
-          OUTPUT: CHANGES.md
-          GITHUB_REPO: ${{ github.repository }}
-
-      - name: Write changelog to announcement file
+      - name: Clone MaaFwApp
         run: |
-          mkdir -p announcement
-          echo "${{ steps.git-cliff.outputs.content }}" > announcement/CHANGES.md
-         
+          git clone https://github.com/Aliothmoon/MaaFwApp.git maafwapp
 
-      - name: Upload announcement artifact
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: |
+          pip install requests pyyaml
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Accept Android licenses
+        run: |
+          yes | sdkmanager --licenses || true
+
+      - name: Download MaaFramework libraries
+        working-directory: maafwapp
+        run: |
+          python scripts/setup_maa_framework.py
+
+      - name: Copy all assets to resource root
+        working-directory: maafwapp
+        run: |
+          if [ -d ../resource/assets ]; then
+            cp -r ../resource/assets/* ../resource/
+            echo "All assets copied to resource root:"
+            ls -la ../resource/
+          else
+            echo "Error: assets directory not found in resource/"
+            exit 1
+          fi
+
+      # ===== 从 MaaResource 获取 Android 兼容的 OCR 模型 =====
+      - name: Download OCR models from MaaResource
+        working-directory: maafwapp
+        run: |
+          echo "Downloading OCR models from MaaResource (Android compatible)..."
+          git clone --depth 1 --filter=blob:none --sparse \
+            https://github.com/MaaXYZ/MaaResource.git /tmp/maa-resource
+          cd /tmp/maa-resource
+          git sparse-checkout set model
+          if [ -d model ]; then
+            cp -r model ../resource/
+            echo "✅ OCR models copied to ../resource/model/"
+            ls -la ../resource/model/
+          else
+            echo "❌ Error: model directory not found in MaaResource"
+            exit 1
+          fi
+          rm -rf /tmp/maa-resource
+
+      - name: Create pi profile
+        working-directory: maafwapp
+        run: |
+          cat > my-pvz-profile.yaml << EOF
+          assets: "$GITHUB_WORKSPACE/resource"
+          include:
+            - interface.json
+            - tasks/**
+            - resource/**
+            - resource_*/**
+            - data/**
+            - locales/**
+            - agent/**
+            - docs/imgs/**
+            - model/**
+            - CONTACT
+            - LICENSE
+          exclude: []
+          agent:
+            sourceDir: "$GITHUB_WORKSPACE/resource/agent-dist"
+            abi: [arm64-v8a]
+            runtimes:
+              - location: bundle
+                executable: bin/python3
+                args: [-u, agent/main.py]
+                env:
+                  PYTHONHOME: "{bundle}/prefix"
+                  PYTHONPATH: "{bundle}/site-packages/pure.zip:{bundle}/site-packages"
+                  LD_LIBRARY_PATH: "{bundle}/prefix/lib:{bundle}/site-packages/chaquopy/lib:{nativeLibs}"
+                  MAAFW_BINARY_PATH: "{nativeLibs}"
+          app:
+            id: pvz
+            label: Maapvz
+            icon: ../resource/docs/imgs/PVZAA.png
+          EOF
+
+      - name: Set PI_PROFILE environment variable
+        working-directory: maafwapp
+        run: |
+          echo "PI_PROFILE=$(pwd)/my-pvz-profile.yaml" >> $GITHUB_ENV
+
+      - name: Build Python Agent
+        working-directory: maafwapp
+        run: |
+          if [ -f ../resource/requirements.txt ]; then
+            python scripts/build_agent_bundle.py \
+              --out ../resource/agent-dist \
+              --requirements ../resource/requirements.txt \
+              --extra-index-url https://chaquo.com/pypi-13.1/ \
+              --exclude onnxruntime || true
+          fi
+
+      - name: Create local.properties
+        working-directory: maafwapp
+        run: |
+          echo "sdk.dir=$ANDROID_HOME" > local.properties
+
+      - name: Create required directory for writePiManifest
+        working-directory: maafwapp
+        run: |
+          mkdir -p app/build/generated/piAssets/pi
+
+      - name: Build Debug APK
+        working-directory: maafwapp
+        run: |
+          chmod +x gradlew
+          ./gradlew :app:assembleDebug
+
+      - name: Rename APK with version tag
+        working-directory: maafwapp
+        run: |
+          VERSION="${{ needs.check_version.outputs.version_tag }}"
+          if [[ "$VERSION" != v* ]] && [[ "$VERSION" != ci-* ]]; then
+            VERSION="v$VERSION"
+          fi
+          mv app/build/outputs/apk/debug/app-debug.apk "app/build/outputs/apk/debug/MaaPVZ-android-arm64-${VERSION}.apk"
+          echo "APK renamed to: MaaPVZ-android-arm64-${VERSION}.apk"
+
+      - name: Upload APK as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: announcement
-          path: announcement/
-     
-      - name: Debug changelog output
-        run: |
-          echo "CHANGES.md 内容:"
-          cat CHANGES.md
-          echo "git-cliff 输出变量 content:"
-          echo "${{ steps.git-cliff.outputs.content }}"
+          name: MaaPVZ-android-arm64-${{ needs.check_version.outputs.version_tag }}
+          path: maafwapp/app/build/outputs/apk/debug/MaaPVZ-*.apk
 
-      - name: Debug latest tag info
-        run: |
-          git tag -l --sort=-v:refname
-          latest_tag=$(git describe --tags --abbrev=0 2>/dev/null || echo "无标签")
-          echo "Latest tag (git describe): $latest_tag"
-
-  release:
-    if: ${{ needs.meta.outputs.is_release == 'true' }}
-    needs: [meta, install, changelog, create_tag]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Debug meta outputs
-        run: |
-          echo "is_release: ${{ needs.meta.outputs.is_release }}"
-          echo "is_prerelease: ${{ needs.meta.outputs.is_prerelease }}"
-          echo "tag: ${{ needs.meta.outputs.tag }}"
-
-      - uses: actions/download-artifact@v4
+      - name: Create Release (only for tags)
+        if: needs.check_version.outputs.is_release == 'true'
+        uses: softprops/action-gh-release@v1
         with:
-          path: assets
-
-      - uses: actions/download-artifact@v4
-        with:
-          name: announcement
-          path: announcement
-
-      - run: |
-          cd assets
-          for f in *; do
-            (cd $f && zip -r ../$f-${{ needs.meta.outputs.tag }}.zip .)
-          done
-
-      - uses: softprops/action-gh-release@v2
-        with:
-          files: |
-            assets/*
-            announcement/*
-          tag_name: ${{ needs.meta.outputs.tag }}
-          body: ${{ needs.changelog.outputs.release_body }}
+          files: maafwapp/app/build/outputs/apk/debug/MaaPVZ-*.apk
+          tag_name: ${{ needs.check_version.outputs.tag }}
+          name: ${{ needs.check_version.outputs.tag }}
           draft: false
-          prerelease: ${{ needs.meta.outputs.is_prerelease == 'true' }}
-
-      - name: Trigger MirrorChyanUploading
-        shell: bash
-        run: |
-          gh workflow run --repo $GITHUB_REPOSITORY mirrorchyan_release.yml -f tag=${{ needs.meta.outputs.tag }}
-          gh workflow run --repo $GITHUB_REPOSITORY mirrorchyan_release_note.yml -f tag=${{ needs.meta.outputs.tag }}
+          prerelease: true
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
