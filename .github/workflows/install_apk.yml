@@ -93,24 +93,27 @@ jobs:
             exit 1
           fi
 
-      # ===== 从 MaaResource 获取 Android 兼容的 OCR 模型 =====
-      - name: Download OCR models from MaaResource
+      # ===== 从 MaaResource ZIP 下载 OCR 模型 =====
+      - name: Download OCR models from MaaResource ZIP
         working-directory: maafwapp
         run: |
-          echo "Downloading OCR models from MaaResource (Android compatible)..."
-          git clone --depth 1 --filter=blob:none --sparse \
-            https://github.com/MaaXYZ/MaaResource.git /tmp/maa-resource
-          cd /tmp/maa-resource
-          git sparse-checkout set model
-          if [ -d model ]; then
-            cp -r model ../resource/
+          echo "Downloading OCR models from MaaResource ZIP..."
+          curl -L -o /tmp/maa-resource.zip \
+            https://github.com/MaaXYZ/MaaResource/archive/refs/heads/main.zip
+          unzip -q /tmp/maa-resource.zip -d /tmp/maa-resource
+          if [ -d /tmp/maa-resource/MaaResource-main/model ]; then
+            rm -rf ../resource/model
+            cp -r /tmp/maa-resource/MaaResource-main/model ../resource/
             echo "✅ OCR models copied to ../resource/model/"
+            echo "=== model directory contents ==="
             ls -la ../resource/model/
           else
-            echo "❌ Error: model directory not found in MaaResource"
+            echo "❌ Error: model directory not found in ZIP"
+            echo "=== Contents of /tmp/maa-resource/MaaResource-main ==="
+            ls -la /tmp/maa-resource/MaaResource-main/
             exit 1
           fi
-          rm -rf /tmp/maa-resource
+          rm -rf /tmp/maa-resource*
 
       - name: Create pi profile
         working-directory: maafwapp
