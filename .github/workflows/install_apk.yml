@@ -15,7 +15,6 @@ jobs:
     outputs:
       is_release: ${{ steps.check.outputs.is_release }}
       tag: ${{ steps.check.outputs.tag }}
-      # ===== 新增：输出 version_tag，供后续重命名使用 =====
       version_tag: ${{ steps.check.outputs.version_tag }}
     steps:
       - uses: actions/checkout@v4
@@ -33,7 +32,6 @@ jobs:
               tag="$VERSION"
             fi
           fi
-          # ===== 新增：如果没有 tag（手动触发），用 ci-日期 作为 fallback =====
           if [ -z "$tag" ]; then
             tag="ci-$(date +%Y%m%d-%H%M)"
           fi
@@ -83,7 +81,6 @@ jobs:
         run: |
           python scripts/setup_maa_framework.py
 
-      # ===== 复制整个 assets/ 目录到 resource/ 根目录 =====
       - name: Copy all assets to resource root
         working-directory: maafwapp
         run: |
@@ -128,7 +125,7 @@ jobs:
           app:
             id: pvz
             label: Maapvz
-            icon: docs/imgs/PVZAA.png
+            icon: ../resource/docs/imgs/PVZAA.png     # <--- 修改这里
           EOF
 
       - name: Set PI_PROFILE environment variable
@@ -163,27 +160,22 @@ jobs:
           chmod +x gradlew
           ./gradlew :app:assembleDebug
 
-      # ===== 新增：重命名 APK 为带版本号的格式 =====
       - name: Rename APK with version tag
         working-directory: maafwapp
         run: |
           VERSION="${{ needs.check_version.outputs.version_tag }}"
-          # 如果版本号以 v 开头则保留，否则加上 v 前缀（兼容 ci- 开头的 fallback）
           if [[ "$VERSION" != v* ]] && [[ "$VERSION" != ci-* ]]; then
             VERSION="v$VERSION"
           fi
-          # 重命名 APK
           mv app/build/outputs/apk/debug/app-debug.apk "app/build/outputs/apk/debug/MaaPVZ-android-arm64-${VERSION}.apk"
           echo "APK renamed to: MaaPVZ-android-arm64-${VERSION}.apk"
 
-      # ===== 修改：Artifact 上传重命名后的 APK =====
       - name: Upload APK as artifact
         uses: actions/upload-artifact@v4
         with:
           name: MaaPVZ-android-arm64-${{ needs.check_version.outputs.version_tag }}
           path: maafwapp/app/build/outputs/apk/debug/MaaPVZ-*.apk
 
-      # ===== 修改：Release 附件使用重命名后的 APK =====
       - name: Create Release (only for tags)
         if: needs.check_version.outputs.is_release == 'true'
         uses: softprops/action-gh-release@v1
