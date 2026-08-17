@@ -93,7 +93,7 @@ jobs:
             exit 1
           fi
 
-      # ===== 使用官方 CDN 下载 OCR 模型（稳定可靠） =====
+      # ===== 使用官方 CDN 下载 OCR 模型 =====
       - name: Download OCR models from official CDN
         working-directory: maafwapp
         run: |
@@ -101,7 +101,6 @@ jobs:
           MODEL_URL="https://download.maafw.xyz/MaaCommonAssets/OCR/ppocr_v6/ppocr_v6-small.zip"
           curl -L -o /tmp/ppocr.zip "$MODEL_URL"
           unzip -q /tmp/ppocr.zip -d /tmp/ppocr
-          # 检查解压后的目录结构，并复制到 resource/model/
           if [ -d /tmp/ppocr/model ]; then
             mkdir -p ../resource/model
             cp -r /tmp/ppocr/model/* ../resource/model/
@@ -111,19 +110,17 @@ jobs:
             cp -r /tmp/ppocr/ppocr_v6-small/* ../resource/model/
             echo "✅ OCR models copied from /tmp/ppocr/ppocr_v6-small/"
           else
-            # 直接复制所有内容（可能直接就是模型文件）
             mkdir -p ../resource/model
             cp -r /tmp/ppocr/* ../resource/model/
             echo "✅ OCR models copied from /tmp/ppocr/"
           fi
           rm -rf /tmp/ppocr*
-          # 验证模型文件是否存在
           echo "=== resource/model/ contents ==="
           ls -la ../resource/model/
           if [ -f ../resource/model/det.onnx ] || [ -f ../resource/model/rec.onnx ]; then
             echo "✅ Model files verified."
           else
-            echo "⚠️ Warning: det.onnx or rec.onnx not found, check structure."
+            echo "⚠️ Warning: det.onnx or rec.onnx not found."
           fi
 
       - name: Create pi profile
@@ -153,7 +150,7 @@ jobs:
                 args: [-u, agent/main.py]
                 env:
                   PYTHONHOME: "{bundle}/prefix"
-                  PYTHONPATH: "{bundle}/site-packages/pure.zip:{bundle}/site-packages}"
+                  PYTHONPATH: "{bundle}/site-packages/pure.zip:{bundle}/site-packages"
                   LD_LIBRARY_PATH: "{bundle}/prefix/lib:{bundle}/site-packages/chaquopy/lib:{nativeLibs}"
                   MAAFW_BINARY_PATH: "{nativeLibs}"
           app:
@@ -167,6 +164,7 @@ jobs:
         run: |
           echo "PI_PROFILE=$(pwd)/my-pvz-profile.yaml" >> $GITHUB_ENV
 
+      # ===== 构建 Python Agent（强制保留 numpy 和 pillow） =====
       - name: Build Python Agent
         working-directory: maafwapp
         run: |
@@ -175,7 +173,10 @@ jobs:
               --out ../resource/agent-dist \
               --requirements ../resource/requirements.txt \
               --extra-index-url https://chaquo.com/pypi-13.1/ \
-              --exclude onnxruntime || true
+              --exclude onnxruntime \
+              --keep numpy \
+              --require numpy \
+              --require pillow
           fi
 
       - name: Create local.properties
