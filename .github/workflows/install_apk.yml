@@ -16,6 +16,7 @@ jobs:
       is_release: ${{ steps.check.outputs.is_release }}
       tag: ${{ steps.check.outputs.tag }}
       version_tag: ${{ steps.check.outputs.version_tag }}
+      version_code: ${{ steps.version.outputs.version_code }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -38,6 +39,11 @@ jobs:
           echo "is_release=$is_release" >> $GITHUB_OUTPUT
           echo "tag=$tag" >> $GITHUB_OUTPUT
           echo "version_tag=$tag" >> $GITHUB_OUTPUT
+      # 计算 versionCode：使用 Git 提交总数（每次提交递增）
+      - id: version
+        run: |
+          VERSION_CODE=$(git rev-list --count HEAD)
+          echo "version_code=$VERSION_CODE" >> $GITHUB_OUTPUT
 
   build:
     needs: check_version
@@ -53,6 +59,19 @@ jobs:
       - name: Clone MaaFwApp
         run: |
           git clone https://github.com/Aliothmoon/MaaFwApp.git maafwapp
+
+      # ===== 临时修改 versionCode 和 versionName =====
+      - name: Override version in build.gradle.kts
+        working-directory: maafwapp
+        run: |
+          VERSION_CODE="${{ needs.check_version.outputs.version_code }}"
+          VERSION_NAME="${{ needs.check_version.outputs.version_tag }}"
+          # 替换 versionCode 和 versionName 行
+          sed -i "s/versionCode = .*/versionCode = $VERSION_CODE/" app/build.gradle.kts
+          sed -i "s/versionName = .*/versionName = \"$VERSION_NAME\"/" app/build.gradle.kts
+          echo "Set versionCode=$VERSION_CODE, versionName=$VERSION_NAME"
+          # 验证修改
+          grep -E "versionCode|versionName" app/build.gradle.kts
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -93,7 +112,6 @@ jobs:
             exit 1
           fi
 
-      # ===== 使用官方 CDN 下载 OCR 模型 =====
       - name: Download OCR models from official CDN
         working-directory: maafwapp
         run: |
@@ -101,27 +119,16 @@ jobs:
           MODEL_URL="https://download.maafw.xyz/MaaCommonAssets/OCR/ppocr_v6/ppocr_v6-small.zip"
           curl -L -o /tmp/ppocr.zip "$MODEL_URL"
           unzip -q /tmp/ppocr.zip -d /tmp/ppocr
+          mkdir -p ../resource/model
           if [ -d /tmp/ppocr/model ]; then
-            mkdir -p ../resource/model
             cp -r /tmp/ppocr/model/* ../resource/model/
-            echo "✅ OCR models copied from /tmp/ppocr/model/"
           elif [ -d /tmp/ppocr/ppocr_v6-small ]; then
-            mkdir -p ../resource/model
             cp -r /tmp/ppocr/ppocr_v6-small/* ../resource/model/
-            echo "✅ OCR models copied from /tmp/ppocr/ppocr_v6-small/"
           else
-            mkdir -p ../resource/model
             cp -r /tmp/ppocr/* ../resource/model/
-            echo "✅ OCR models copied from /tmp/ppocr/"
           fi
           rm -rf /tmp/ppocr*
-          echo "=== resource/model/ contents ==="
           ls -la ../resource/model/
-          if [ -f ../resource/model/det.onnx ] || [ -f ../resource/model/rec.onnx ]; then
-            echo "✅ Model files verified."
-          else
-            echo "⚠️ Warning: det.onnx or rec.onnx not found."
-          fi
 
       - name: Create pi profile
         working-directory: maafwapp
@@ -164,18 +171,31 @@ jobs:
         run: |
           echo "PI_PROFILE=$(pwd)/my-pvz-profile.yaml" >> $GITHUB_ENV
 
-      # ===== 构建 Python Agent（强制安装 numpy 和 pillow） =====
       - name: Build Python Agent
         working-directory: maafwapp
         run: |
           if [ -f ../resource/requirements.txt ]; then
+            echo "Step 1: Unpacking core with --no-deps..."
             python scripts/build_agent_bundle.py \
               --out ../resource/agent-dist \
               --requirements ../resource/requirements.txt \
               --extra-index-url https://chaquo.com/pypi-13.1/ \
               --exclude onnxruntime \
-              --require numpy \
-              --require pillow
+              --no-deps
+
+            BUNDLE_PATH="../resource/agent-dist/arm64-v8a/bundle"
+            if [ -d "$BUNDLE_PATH" ]; then
+              echo "Step 2: Manually installing dependencies..."
+              grep -v onnxruntime ../resource/requirements.txt > /tmp/requirements.txt
+              pip install --target "$BUNDLE_PATH/site-packages" \
+                -r /tmp/requirements.txt \
+                --extra-index-url https://chaquo.com/pypi-13.1/ \
+                --upgrade
+              echo "✅ Dependencies installed"
+            else
+              echo "❌ Bundle path not found"
+              exit 1
+            fi
           fi
 
       - name: Create local.properties
