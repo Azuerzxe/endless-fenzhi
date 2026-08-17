@@ -54,9 +54,6 @@ jobs:
         run: |
           git clone https://github.com/Aliothmoon/MaaFwApp.git maafwapp
 
-      # ===== 跳过版本更新（暂时避免失败） =====
-      # 版本号更新步骤已注释，后续可单独修复
-
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
@@ -135,7 +132,12 @@ jobs:
                 --extra-index-url https://chaquo.com/pypi-13.1/ \
                 --upgrade
               echo "✅ Dependencies installed"
-              ls -la "$BUNDLE_PATH/site-packages/"
+              
+              # ===== 将 site-packages 复制到 agent/ 目录 =====
+              echo "Step 3: Copying site-packages to agent/ for direct loading..."
+              cp -r "$BUNDLE_PATH/site-packages/"* ../resource/agent/
+              echo "✅ site-packages copied to agent/"
+              ls -la ../resource/agent/
             else
               echo "❌ Bundle path not found"
               exit 1
@@ -170,7 +172,7 @@ jobs:
                 args: [-u, agent/main.py]
                 env:
                   PYTHONHOME: "{bundle}/prefix"
-                  PYTHONPATH: "{bundle}/site-packages/pure.zip:{bundle}/site-packages}"
+                  PYTHONPATH: "{bundle}/site-packages:{bundle}/site-packages/pure.zip"
                   LD_LIBRARY_PATH: "{bundle}/prefix/lib:{bundle}/site-packages/chaquopy/lib:{nativeLibs}"
                   MAAFW_BINARY_PATH: "{nativeLibs}"
           app:
