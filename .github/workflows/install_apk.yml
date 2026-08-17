@@ -93,6 +93,32 @@ jobs:
             exit 1
           fi
 
+      # ===== 新增：下载 OCR 模型文件 =====
+      - name: Download OCR model files
+        working-directory: maafwapp
+        run: |
+          # 先从 .maa-cache 中查找模型
+          if [ -d .maa-cache/model ]; then
+            cp -r .maa-cache/model ../resource/
+            echo "OCR models copied from .maa-cache/model to resource/model/"
+          elif [ -d .maa-cache/resource/model ]; then
+            cp -r .maa-cache/resource/model ../resource/
+            echo "OCR models copied from .maa-cache/resource/model to resource/model/"
+          else
+            echo "model not found in .maa-cache, downloading from release..."
+            MODEL_URL="https://github.com/MaaXYZ/MaaFramework/releases/download/v5.12.3/MAA-android-aarch64-v5.12.3.zip"
+            curl -L -o /tmp/maa.zip "$MODEL_URL"
+            unzip -q /tmp/maa.zip -d /tmp/maa
+            if [ -d /tmp/maa/model ]; then
+              cp -r /tmp/maa/model ../resource/
+            elif [ -d /tmp/maa/resource/model ]; then
+              cp -r /tmp/maa/resource/model ../resource/
+            else
+              echo "Warning: model directory not found in downloaded release"
+            fi
+            rm -rf /tmp/maa*
+          fi
+
       - name: Create pi profile
         working-directory: maafwapp
         run: |
@@ -107,6 +133,7 @@ jobs:
             - locales/**
             - agent/**
             - docs/imgs/**
+            - model/**
             - CONTACT
             - LICENSE
           exclude: []
@@ -125,7 +152,7 @@ jobs:
           app:
             id: pvz
             label: Maapvz
-            icon: ../resource/docs/imgs/PVZAA.png     # <--- 修改这里
+            icon: ../resource/docs/imgs/PVZAA.png
           EOF
 
       - name: Set PI_PROFILE environment variable
