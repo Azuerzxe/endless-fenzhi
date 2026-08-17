@@ -58,7 +58,8 @@
     "旅行原木_领取宝箱": {
         "recognition": "TemplateMatch",
         "template": [
-            "Travel_Wood/宝箱.png"
+            "Travel_Wood/宝箱.png",
+            "Travel_Wood/宝箱2.png"
         ],
         "focus": "[color:Gold]领取宝箱[/color]",
         "action": "Click",
