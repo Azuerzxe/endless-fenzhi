@@ -111,6 +111,7 @@ jobs:
           rm -rf /tmp/ppocr*
           ls -la ../resource/model/
 
+      # ===== 修正版：排除 numpy，使用 core 自带的版本 =====
       - name: Build Python Agent
         working-directory: maafwapp
         run: |
@@ -126,8 +127,8 @@ jobs:
             BUNDLE_PATH="../resource/agent-dist/arm64-v8a/bundle"
             if [ -d "$BUNDLE_PATH" ]; then
               echo "Step 2: Installing Android ARM64 dependencies..."
-              # 排除不需要 pip 安装的包（maafw, maaagentbinary 已由 core 提供）
-              grep -vE "onnxruntime|maafw|maaagentbinary" ../resource/requirements.txt > /tmp/requirements.txt
+              # 排除不需要 pip 安装的包：onnxruntime、maafw、maaagentbinary、numpy
+              grep -vE "onnxruntime|maafw|maaagentbinary|numpy" ../resource/requirements.txt > /tmp/requirements.txt
               pip install \
                 --target "$BUNDLE_PATH/site-packages" \
                 -r /tmp/requirements.txt \
@@ -137,7 +138,6 @@ jobs:
                 --only-binary :all: \
                 --no-deps
               echo "✅ Dependencies installed to bundle/site-packages"
-              # 不复制到 agent/，保持纯净
               ls -la "$BUNDLE_PATH/site-packages/"
             else
               echo "❌ Bundle path not found"
