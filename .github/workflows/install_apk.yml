@@ -93,30 +93,24 @@ jobs:
             exit 1
           fi
 
-      # ===== 使用官方 CDN 下载 OCR 模型 =====
-      - name: Download OCR models from official CDN
+      # ===== 从 MaaResource 获取 Android 兼容的 OCR 模型 =====
+      - name: Download OCR models from MaaResource
         working-directory: maafwapp
         run: |
-          echo "Downloading OCR models from official CDN..."
-          MODEL_URL="https://download.maafw.xyz/MaaCommonAssets/OCR/ppocr_v6/ppocr_v6-small.zip"
-          curl -L -o /tmp/ppocr_v6-small.zip "$MODEL_URL"
-          unzip -q /tmp/ppocr_v6-small.zip -d /tmp/ppocr
-          # 查找解压后的模型目录
-          if [ -d /tmp/ppocr/model ]; then
-            cp -r /tmp/ppocr/model ../resource/
-            echo "✅ OCR models copied from /tmp/ppocr/model"
-          elif [ -d /tmp/ppocr/ppocr_v6-small ]; then
-            cp -r /tmp/ppocr/ppocr_v6-small ../resource/model
-            echo "✅ OCR models copied from /tmp/ppocr/ppocr_v6-small"
+          echo "Downloading OCR models from MaaResource (Android compatible)..."
+          git clone --depth 1 --filter=blob:none --sparse \
+            https://github.com/MaaXYZ/MaaResource.git /tmp/maa-resource
+          cd /tmp/maa-resource
+          git sparse-checkout set model
+          if [ -d model ]; then
+            cp -r model ../resource/
+            echo "✅ OCR models copied to ../resource/model/"
+            ls -la ../resource/model/
           else
-            mkdir -p ../resource/model
-            cp -r /tmp/ppocr/* ../resource/model/
-            echo "✅ OCR models copied from /tmp/ppocr/"
+            echo "❌ Error: model directory not found in MaaResource"
+            exit 1
           fi
-          rm -rf /tmp/ppocr*
-          # 验证
-          echo "=== resource/model/ contents ==="
-          ls -la ../resource/model/ || exit 1
+          rm -rf /tmp/maa-resource
 
       - name: Create pi profile
         working-directory: maafwapp
@@ -145,7 +139,7 @@ jobs:
                 args: [-u, agent/main.py]
                 env:
                   PYTHONHOME: "{bundle}/prefix"
-                  PYTHONPATH: "{bundle}/site-packages/pure.zip:{bundle}/site-packages}"
+                  PYTHONPATH: "{bundle}/site-packages/pure.zip:{bundle}/site-packages"
                   LD_LIBRARY_PATH: "{bundle}/prefix/lib:{bundle}/site-packages/chaquopy/lib:{nativeLibs}"
                   MAAFW_BINARY_PATH: "{nativeLibs}"
           app:
