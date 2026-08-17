@@ -59,7 +59,7 @@ jobs:
         run: |
           git clone https://github.com/Aliothmoon/MaaFwApp.git maafwapp
 
-      # ===== 使用 Perl 稳健覆盖版本 =====
+      # ===== 最终修复：全局替换 versionCode/versionName 赋值行 =====
       - name: Override version in build.gradle.kts
         working-directory: maafwapp
         run: |
@@ -67,7 +67,6 @@ jobs:
           VERSION_NAME="${{ needs.check_version.outputs.version_tag }}"
           BUILD_FILE="app/build.gradle.kts"
 
-          # 确保有值
           if [ -z "$VERSION_CODE" ]; then
             echo "❌ VERSION_CODE is empty."
             exit 1
@@ -77,33 +76,31 @@ jobs:
             exit 1
           fi
 
-          # 备份
           cp "$BUILD_FILE" "$BUILD_FILE.bak"
 
-          # 使用 Perl 进行多行非贪婪匹配，替换 defaultConfig 块内的版本号
-          perl -0777 -i -pe "
-            s/(defaultConfig\s*\{[^{}]*?)(versionCode\s*=\s*)[^\s;]*/\${1}\${2}$VERSION_CODE/s;
-            s/(defaultConfig\s*\{[^{}]*?)(versionName\s*=\s*)[^\s;]*/\${1}\${2}\"$VERSION_NAME\"/s;
-          " "$BUILD_FILE"
+          # 全局替换 versionCode = 数字
+          perl -0777 -i -pe 's/(versionCode\s*=\s*)\K[0-9]+/'"$VERSION_CODE"'/sg;' "$BUILD_FILE"
+          # 全局替换 versionName = "字符串"
+          perl -0777 -i -pe 's/(versionName\s*=\s*)\K"[^"]*"/"'"$VERSION_NAME"'"/sg;' "$BUILD_FILE"
 
-          # 显示更新后的 defaultConfig 块（用于调试）
-          echo "=== Updated defaultConfig block ==="
-          awk '/defaultConfig[[:space:]]*\{/{flag=1} flag{print} /}/{if(flag){print; exit}}' "$BUILD_FILE" || true
-
-          # 验证替换是否成功
           echo "=== Verification ==="
           grep -nE "versionCode[[:space:]]*=[[:space:]]*$VERSION_CODE|versionName[[:space:]]*=[[:space:]]*\"$VERSION_NAME\"" "$BUILD_FILE" || true
 
-          if grep -q "versionCode[[:space:]]*=[[:space:]]*$VERSION_CODE" "$BUILD_FILE"; then
+          if grep -qE "versionCode[[:space:]]*=[[:space:]]*$VERSION_CODE" "$BUILD_FILE"; then
             echo "✅ versionCode updated to $VERSION_CODE"
           else
             echo "❌ Failed to update versionCode"
+            echo "=== First 50 lines of build file for debugging ==="
+            head -50 "$BUILD_FILE"
             exit 1
           fi
-          if grep -q "versionName[[:space:]]*=[[:space:]]*\"$VERSION_NAME\"" "$BUILD_FILE"; then
+
+          if grep -qE "versionName[[:space:]]*=[[:space:]]*\"$VERSION_NAME\"" "$BUILD_FILE"; then
             echo "✅ versionName updated to $VERSION_NAME"
           else
             echo "❌ Failed to update versionName"
+            echo "=== First 50 lines of build file for debugging ==="
+            head -50 "$BUILD_FILE"
             exit 1
           fi
 
