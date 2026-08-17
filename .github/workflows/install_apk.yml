@@ -93,29 +93,38 @@ jobs:
             exit 1
           fi
 
-      # ===== 使用 git clone 获取 OCR 模型（公开仓库） =====
-      - name: Download OCR models from MaaResource (git clone)
+      # ===== 使用官方 CDN 下载 OCR 模型（稳定可靠） =====
+      - name: Download OCR models from official CDN
         working-directory: maafwapp
         run: |
-          echo "Cloning MaaResource (public repo)..."
-          # 清除可能影响认证的配置，并设置环境变量避免交互
-          git config --global --unset credential.helper || true
-          export GIT_ASKPASS=echo
-          export GIT_USERNAME=""
-          git clone --depth 1 --filter=blob:none --sparse \
-            https://github.com/MaaXYZ/MaaResource.git /tmp/maa-resource
-          cd /tmp/maa-resource
-          git sparse-checkout set model
-          if [ -d model ]; then
-            rm -rf ../resource/model
-            cp -r model ../resource/
-            echo "✅ OCR models copied to ../resource/model/"
-            ls -la ../resource/model/
+          echo "Downloading OCR models from official CDN..."
+          MODEL_URL="https://download.maafw.xyz/MaaCommonAssets/OCR/ppocr_v6/ppocr_v6-small.zip"
+          curl -L -o /tmp/ppocr.zip "$MODEL_URL"
+          unzip -q /tmp/ppocr.zip -d /tmp/ppocr
+          # 检查解压后的目录结构，并复制到 resource/model/
+          if [ -d /tmp/ppocr/model ]; then
+            mkdir -p ../resource/model
+            cp -r /tmp/ppocr/model/* ../resource/model/
+            echo "✅ OCR models copied from /tmp/ppocr/model/"
+          elif [ -d /tmp/ppocr/ppocr_v6-small ]; then
+            mkdir -p ../resource/model
+            cp -r /tmp/ppocr/ppocr_v6-small/* ../resource/model/
+            echo "✅ OCR models copied from /tmp/ppocr/ppocr_v6-small/"
           else
-            echo "❌ Error: model directory not found"
-            exit 1
+            # 直接复制所有内容（可能直接就是模型文件）
+            mkdir -p ../resource/model
+            cp -r /tmp/ppocr/* ../resource/model/
+            echo "✅ OCR models copied from /tmp/ppocr/"
           fi
-          rm -rf /tmp/maa-resource
+          rm -rf /tmp/ppocr*
+          # 验证模型文件是否存在
+          echo "=== resource/model/ contents ==="
+          ls -la ../resource/model/
+          if [ -f ../resource/model/det.onnx ] || [ -f ../resource/model/rec.onnx ]; then
+            echo "✅ Model files verified."
+          else
+            echo "⚠️ Warning: det.onnx or rec.onnx not found, check structure."
+          fi
 
       - name: Create pi profile
         working-directory: maafwapp
@@ -144,7 +153,7 @@ jobs:
                 args: [-u, agent/main.py]
                 env:
                   PYTHONHOME: "{bundle}/prefix"
-                  PYTHONPATH: "{bundle}/site-packages/pure.zip:{bundle}/site-packages"
+                  PYTHONPATH: "{bundle}/site-packages/pure.zip:{bundle}/site-packages}"
                   LD_LIBRARY_PATH: "{bundle}/prefix/lib:{bundle}/site-packages/chaquopy/lib:{nativeLibs}"
                   MAAFW_BINARY_PATH: "{nativeLibs}"
           app:
