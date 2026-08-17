@@ -93,27 +93,29 @@ jobs:
             exit 1
           fi
 
-      # ===== 从 MaaResource ZIP 下载 OCR 模型 =====
-      - name: Download OCR models from MaaResource ZIP
+      # ===== 使用 git clone 获取 OCR 模型（公开仓库） =====
+      - name: Download OCR models from MaaResource (git clone)
         working-directory: maafwapp
         run: |
-          echo "Downloading OCR models from MaaResource ZIP..."
-          curl -L -o /tmp/maa-resource.zip \
-            https://github.com/MaaXYZ/MaaResource/archive/refs/heads/main.zip
-          unzip -q /tmp/maa-resource.zip -d /tmp/maa-resource
-          if [ -d /tmp/maa-resource/MaaResource-main/model ]; then
+          echo "Cloning MaaResource (public repo)..."
+          # 清除可能影响认证的配置，并设置环境变量避免交互
+          git config --global --unset credential.helper || true
+          export GIT_ASKPASS=echo
+          export GIT_USERNAME=""
+          git clone --depth 1 --filter=blob:none --sparse \
+            https://github.com/MaaXYZ/MaaResource.git /tmp/maa-resource
+          cd /tmp/maa-resource
+          git sparse-checkout set model
+          if [ -d model ]; then
             rm -rf ../resource/model
-            cp -r /tmp/maa-resource/MaaResource-main/model ../resource/
+            cp -r model ../resource/
             echo "✅ OCR models copied to ../resource/model/"
-            echo "=== model directory contents ==="
             ls -la ../resource/model/
           else
-            echo "❌ Error: model directory not found in ZIP"
-            echo "=== Contents of /tmp/maa-resource/MaaResource-main ==="
-            ls -la /tmp/maa-resource/MaaResource-main/
+            echo "❌ Error: model directory not found"
             exit 1
           fi
-          rm -rf /tmp/maa-resource*
+          rm -rf /tmp/maa-resource
 
       - name: Create pi profile
         working-directory: maafwapp
