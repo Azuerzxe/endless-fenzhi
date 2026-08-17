@@ -111,6 +111,7 @@ jobs:
           rm -rf /tmp/ppocr*
           ls -la ../resource/model/
 
+      # ===== 修正版：只安装依赖到 site-packages，不复制到 agent/ =====
       - name: Build Python Agent
         working-directory: maafwapp
         run: |
@@ -125,19 +126,21 @@ jobs:
 
             BUNDLE_PATH="../resource/agent-dist/arm64-v8a/bundle"
             if [ -d "$BUNDLE_PATH" ]; then
-              echo "Step 2: Manually installing dependencies..."
+              echo "Step 2: Installing Android ARM64 dependencies..."
+              # 关键修正：强制下载 ARM64 轮子，不复制到 agent/
               grep -v onnxruntime ../resource/requirements.txt > /tmp/requirements.txt
-              pip install --target "$BUNDLE_PATH/site-packages" \
+              pip install \
+                --target "$BUNDLE_PATH/site-packages" \
                 -r /tmp/requirements.txt \
                 --extra-index-url https://chaquo.com/pypi-13.1/ \
-                --upgrade
-              echo "✅ Dependencies installed"
-              
-              # ===== 将 site-packages 复制到 agent/ 目录 =====
-              echo "Step 3: Copying site-packages to agent/ for direct loading..."
-              cp -r "$BUNDLE_PATH/site-packages/"* ../resource/agent/
-              echo "✅ site-packages copied to agent/"
-              ls -la ../resource/agent/
+                --platform android_arm64 \
+                --python-version 3.13 \
+                --only-binary :all: \
+                --no-deps
+              echo "✅ Dependencies installed to bundle/site-packages"
+              # ===== 🚨 删除下面这行，不要复制到 agent/ 目录！ =====
+              # cp -r "$BUNDLE_PATH/site-packages/"* ../resource/agent/
+              ls -la "$BUNDLE_PATH/site-packages/"
             else
               echo "❌ Bundle path not found"
               exit 1
