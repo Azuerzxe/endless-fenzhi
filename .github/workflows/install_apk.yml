@@ -59,7 +59,7 @@ jobs:
         run: |
           git clone https://github.com/Aliothmoon/MaaFwApp.git maafwapp
 
-      # ===== 修正后的版本覆盖 =====
+      # ===== 修正版本覆盖：匹配任意表达式（BuildVersion.code 等） =====
       - name: Override version in build.gradle.kts
         working-directory: maafwapp
         run: |
@@ -67,24 +67,30 @@ jobs:
           VERSION_NAME="${{ needs.check_version.outputs.version_tag }}"
           BUILD_FILE="app/build.gradle.kts"
           
-          # 备份
           cp "$BUILD_FILE" "$BUILD_FILE.bak"
           
-          # 只在 defaultConfig 块内替换
-          sed -i "/defaultConfig {/,/}/ s/\(versionCode[[:space:]]*=[[:space:]]*\)[0-9]*/\1$VERSION_CODE/" "$BUILD_FILE"
-          sed -i "/defaultConfig {/,/}/ s/\(versionName[[:space:]]*=[[:space:]]*\)\"[^\"]*\"/\1\"$VERSION_NAME\"/" "$BUILD_FILE"
+          # 匹配 versionCode = 后面的任意非空格字符（包括 BuildVersion.code）
+          sed -i "/defaultConfig {/,/}/ s/\(versionCode[[:space:]]*=[[:space:]]*\)[^ ]*/\1$VERSION_CODE/" "$BUILD_FILE"
+          # 匹配 versionName = 后面的任意非空格字符（包括 BuildVersion.name）
+          sed -i "/defaultConfig {/,/}/ s/\(versionName[[:space:]]*=[[:space:]]*\)[^ ]*/\1\"$VERSION_NAME\"/" "$BUILD_FILE"
           
-          # 验证
+          echo "=== Verified changes ==="
+          grep -E "versionCode|versionName" "$BUILD_FILE" || true
+          
           if grep -q "versionCode[[:space:]]*=[[:space:]]*$VERSION_CODE" "$BUILD_FILE"; then
             echo "✅ versionCode updated to $VERSION_CODE"
           else
-            echo "❌ Failed to update versionCode"
+            echo "❌ versionCode not found after replacement"
+            echo "--- Build file content (relevant lines) ---"
+            grep -E "versionCode|versionName" "$BUILD_FILE" || echo "No version lines found!"
             exit 1
           fi
           if grep -q "versionName[[:space:]]*=[[:space:]]*\"$VERSION_NAME\"" "$BUILD_FILE"; then
             echo "✅ versionName updated to $VERSION_NAME"
           else
-            echo "❌ Failed to update versionName"
+            echo "❌ versionName not found after replacement"
+            echo "--- Build file content (relevant lines) ---"
+            grep -E "versionCode|versionName" "$BUILD_FILE" || echo "No version lines found!"
             exit 1
           fi
 
