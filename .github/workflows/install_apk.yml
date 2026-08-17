@@ -1,4 +1,4 @@
-name: Build MaaFwApp APK with this resource
+name: Build and Release apk
 
 on:
   push:
@@ -76,15 +76,16 @@ jobs:
         run: |
           python scripts/setup_maa_framework.py
 
-      # ===== 关键：将 interface.json 从 assets/ 复制到资源根目录 =====
-      - name: Copy interface.json to root
+      # ===== 关键修复：复制整个 assets/ 目录到 resource/ 根目录 =====
+      - name: Copy all assets to resource root
         working-directory: maafwapp
         run: |
-          if [ -f ../resource/assets/interface.json ]; then
-            cp ../resource/assets/interface.json ../resource/interface.json
-            echo "interface.json copied to resource root"
+          if [ -d ../resource/assets ]; then
+            cp -r ../resource/assets/* ../resource/
+            echo "All assets copied to resource root:"
+            ls -la ../resource/
           else
-            echo "Error: interface.json not found in resource/assets/"
+            echo "Error: assets directory not found in resource/"
             exit 1
           fi
 
@@ -147,32 +148,26 @@ jobs:
         run: |
           mkdir -p app/build/generated/piAssets/pi
 
+      # ===== 只构建 Debug APK（已签名，可直接安装） =====
       - name: Build Debug APK
         working-directory: maafwapp
         run: |
           chmod +x gradlew
           ./gradlew :app:assembleDebug
 
-      - name: Build Release APK (unsigned)
-        working-directory: maafwapp
-        run: |
-          ./gradlew :app:assembleRelease
+      # ===== 不再构建 Release APK =====
 
-      - name: Upload APKs as artifact
+      - name: Upload Debug APK as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: MaaFwApp-PVZ-APKs
-          path: |
-            maafwapp/app/build/outputs/apk/debug/*.apk
-            maafwapp/app/build/outputs/apk/release/*.apk
+          name: MaaFwApp-PVZ-Debug-APK
+          path: maafwapp/app/build/outputs/apk/debug/*.apk
 
-      - name: Create Release
+      - name: Create Release (only for tags)
         if: needs.check_version.outputs.is_release == 'true'
         uses: softprops/action-gh-release@v1
         with:
-          files: |
-            maafwapp/app/build/outputs/apk/debug/*.apk
-            maafwapp/app/build/outputs/apk/release/*.apk
+          files: maafwapp/app/build/outputs/apk/debug/*.apk
           tag_name: ${{ needs.check_version.outputs.tag }}
           name: ${{ needs.check_version.outputs.tag }}
           draft: false
