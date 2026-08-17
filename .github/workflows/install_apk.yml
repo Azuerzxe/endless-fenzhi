@@ -150,7 +150,7 @@ jobs:
                 args: [-u, agent/main.py]
                 env:
                   PYTHONHOME: "{bundle}/prefix"
-                  PYTHONPATH: "{bundle}/site-packages/pure.zip:{bundle}/site-packages"
+                  PYTHONPATH: "{bundle}/site-packages/pure.zip:{bundle}/site-packages}"
                   LD_LIBRARY_PATH: "{bundle}/prefix/lib:{bundle}/site-packages/chaquopy/lib:{nativeLibs}"
                   MAAFW_BINARY_PATH: "{nativeLibs}"
           app:
@@ -164,7 +164,7 @@ jobs:
         run: |
           echo "PI_PROFILE=$(pwd)/my-pvz-profile.yaml" >> $GITHUB_ENV
 
-      # ===== 构建 Python Agent（强制保留 numpy 和 pillow） =====
+      # ===== 构建 Python Agent（强制安装 numpy 和 pillow） =====
       - name: Build Python Agent
         working-directory: maafwapp
         run: |
@@ -174,7 +174,6 @@ jobs:
               --requirements ../resource/requirements.txt \
               --extra-index-url https://chaquo.com/pypi-13.1/ \
               --exclude onnxruntime \
-              --keep numpy \
               --require numpy \
               --require pillow
           fi
