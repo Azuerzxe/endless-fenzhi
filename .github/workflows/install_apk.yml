@@ -59,69 +59,45 @@ jobs:
         run: |
           git clone https://github.com/Aliothmoon/MaaFwApp.git maafwapp
 
-      # ===== 健壮的版本覆盖（尝试所有可能的位置） =====
-      - name: Override version in build files
+      - name: Override version in build.gradle.kts
         working-directory: maafwapp
         run: |
           VERSION_CODE="${{ needs.check_version.outputs.version_code }}"
           VERSION_NAME="${{ needs.check_version.outputs.version_tag }}"
-
-          echo "Searching for version definitions..."
-          echo "=== Files containing 'versionCode' or 'versionName' ==="
-          grep -rn "versionCode\|versionName" . --include="*.gradle.kts" --include="*.properties" --include="*.kt" --include="*.gradle" | head -20 || echo "No matches found"
-
-          # 1. 尝试 gradle.properties
-          if [ -f gradle.properties ]; then
-            cp gradle.properties gradle.properties.bak
-            sed -i "s/^\(VERSION_CODE[[:space:]]*=\).*/\1 $VERSION_CODE/" gradle.properties
-            sed -i "s/^\(VERSION_NAME[[:space:]]*=\).*/\1 $VERSION_NAME/" gradle.properties
-            echo "✅ Updated gradle.properties"
-            grep -E "VERSION_(CODE|NAME)" gradle.properties || true
-          fi
-
-          # 2. 尝试 app/build.gradle.kts
           BUILD_FILE="app/build.gradle.kts"
-          if [ -f "$BUILD_FILE" ]; then
-            cp "$BUILD_FILE" "$BUILD_FILE.bak"
-            # 替换 defaultConfig 块内外的 versionCode/versionName
-            sed -i "s/\(versionCode[[:space:]]*=\).*/\1 $VERSION_CODE/g" "$BUILD_FILE"
-            sed -i "s/\(versionName[[:space:]]*=\).*/\1 \"$VERSION_NAME\"/g" "$BUILD_FILE"
-            echo "✅ Updated $BUILD_FILE"
-            grep -nE "versionCode|versionName" "$BUILD_FILE" || true
+
+          if [ -z "$VERSION_CODE" ]; then
+            echo "❌ VERSION_CODE is empty."
+            exit 1
+          fi
+          if [ -z "$VERSION_NAME" ]; then
+            echo "❌ VERSION_NAME is empty."
+            exit 1
           fi
 
-          # 3. 尝试 buildSrc 中的 Kotlin 文件
-          if [ -d buildSrc ]; then
-            find buildSrc -type f -name "*.kt" -exec sed -i "s/\(versionCode[[:space:]]*=\).*/\1 $VERSION_CODE/g" {} \; -exec sed -i "s/\(versionName[[:space:]]*=\).*/\1 \"$VERSION_NAME\"/g" {} \;
-            echo "✅ Updated buildSrc Kotlin files"
-          fi
+          cp "$BUILD_FILE" "$BUILD_FILE.bak"
 
-          # 4. 尝试根目录的 gradle 文件
-          for f in build.gradle.kts build.gradle; do
-            if [ -f "$f" ]; then
-              sed -i "s/\(versionCode[[:space:]]*=\).*/\1 $VERSION_CODE/g" "$f"
-              sed -i "s/\(versionName[[:space:]]*=\).*/\1 \"$VERSION_NAME\"/g" "$f"
-            fi
-          done
+          perl -0777 -i -pe 's/(versionCode\s*=\s*)\K[0-9]+/'"$VERSION_CODE"'/sg;' "$BUILD_FILE"
+          perl -0777 -i -pe 's/(versionName\s*=\s*)\K"[^"]*"/"'"$VERSION_NAME"'"/sg;' "$BUILD_FILE"
 
-          # 验证
           echo "=== Verification ==="
-          if grep -qr "VERSION_CODE.*$VERSION_CODE" . --include="*.properties" --include="*.gradle.kts" --include="*.kt" 2>/dev/null; then
-            echo "✅ versionCode $VERSION_CODE found in at least one file"
+          grep -nE "versionCode[[:space:]]*=[[:space:]]*$VERSION_CODE|versionName[[:space:]]*=[[:space:]]*\"$VERSION_NAME\"" "$BUILD_FILE" || true
+
+          if grep -qE "versionCode[[:space:]]*=[[:space:]]*$VERSION_CODE" "$BUILD_FILE"; then
+            echo "✅ versionCode updated to $VERSION_CODE"
           else
-            echo "⚠️ Could not find versionCode $VERSION_CODE in common files, but continuing (may still work)"
+            echo "❌ Failed to update versionCode"
+            head -50 "$BUILD_FILE"
+            exit 1
           fi
 
-          if grep -qr "versionName.*\"$VERSION_NAME\"" . --include="*.gradle.kts" --include="*.kt" 2>/dev/null; then
-            echo "✅ versionName $VERSION_NAME found in at least one file"
+          if grep -qE "versionName[[:space:]]*=[[:space:]]*\"$VERSION_NAME\"" "$BUILD_FILE"; then
+            echo "✅ versionName updated to $VERSION_NAME"
           else
-            echo "⚠️ Could not find versionName $VERSION_NAME in common files, but continuing"
+            echo "❌ Failed to update versionName"
+            head -50 "$BUILD_FILE"
+            exit 1
           fi
-
-          echo "=== Final check: build.gradle.kts lines containing version ==="
-          grep -nE "versionCode|versionName" app/build.gradle.kts || echo "No version lines in app/build.gradle.kts"
-          echo "=== Final check: gradle.properties lines ==="
-          grep -nE "VERSION_(CODE|NAME)" gradle.properties 2>/dev/null || echo "No VERSION_* in gradle.properties"
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -180,6 +156,42 @@ jobs:
           rm -rf /tmp/ppocr*
           ls -la ../resource/model/
 
+      - name: Build Python Agent
+        working-directory: maafwapp
+        run: |
+          if [ -f ../resource/requirements.txt ]; then
+            echo "Step 1: Unpacking core with --no-deps..."
+            python scripts/build_agent_bundle.py \
+              --out ../resource/agent-dist \
+              --requirements ../resource/requirements.txt \
+              --extra-index-url https://chaquo.com/pypi-13.1/ \
+              --exclude onnxruntime \
+              --no-deps
+
+            BUNDLE_PATH="../resource/agent-dist/arm64-v8a/bundle"
+            if [ -d "$BUNDLE_PATH" ]; then
+              echo "Step 2: Manually installing dependencies..."
+              grep -v onnxruntime ../resource/requirements.txt > /tmp/requirements.txt
+              pip install --target "$BUNDLE_PATH/site-packages" \
+                -r /tmp/requirements.txt \
+                --extra-index-url https://chaquo.com/pypi-13.1/ \
+                --upgrade
+              echo "✅ Dependencies installed"
+            else
+              echo "❌ Bundle path not found"
+              exit 1
+            fi
+          fi
+
+      # ===== 调试：确认 agent-dist 已生成 =====
+      - name: Debug agent-dist contents
+        working-directory: maafwapp
+        run: |
+          echo "=== agent-dist directory ==="
+          ls -la ../resource/agent-dist/ || echo "agent-dist not found!"
+          echo "=== site-packages contents ==="
+          ls -la ../resource/agent-dist/arm64-v8a/bundle/site-packages/ || echo "site-packages not found!"
+
       - name: Create pi profile
         working-directory: maafwapp
         run: |
@@ -193,6 +205,7 @@ jobs:
             - data/**
             - locales/**
             - agent/**
+            - agent-dist/**
             - docs/imgs/**
             - model/**
             - CONTACT
@@ -220,33 +233,6 @@ jobs:
         working-directory: maafwapp
         run: |
           echo "PI_PROFILE=$(pwd)/my-pvz-profile.yaml" >> $GITHUB_ENV
-
-      - name: Build Python Agent
-        working-directory: maafwapp
-        run: |
-          if [ -f ../resource/requirements.txt ]; then
-            echo "Step 1: Unpacking core with --no-deps..."
-            python scripts/build_agent_bundle.py \
-              --out ../resource/agent-dist \
-              --requirements ../resource/requirements.txt \
-              --extra-index-url https://chaquo.com/pypi-13.1/ \
-              --exclude onnxruntime \
-              --no-deps
-
-            BUNDLE_PATH="../resource/agent-dist/arm64-v8a/bundle"
-            if [ -d "$BUNDLE_PATH" ]; then
-              echo "Step 2: Manually installing dependencies..."
-              grep -v onnxruntime ../resource/requirements.txt > /tmp/requirements.txt
-              pip install --target "$BUNDLE_PATH/site-packages" \
-                -r /tmp/requirements.txt \
-                --extra-index-url https://chaquo.com/pypi-13.1/ \
-                --upgrade
-              echo "✅ Dependencies installed"
-            else
-              echo "❌ Bundle path not found"
-              exit 1
-            fi
-          fi
 
       - name: Create local.properties
         working-directory: maafwapp
