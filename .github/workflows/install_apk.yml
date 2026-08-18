@@ -94,7 +94,6 @@ jobs:
           fi
 
       # ===== 下载 OCR 模型到正确的路径：pi.zip/resource/model/ocr =====
-      # 因为 assets 指向 resource/，所以需要放到 resource/resource/model/ocr
       - name: Download OCR models from official CDN
         working-directory: maafwapp
         run: |
@@ -102,7 +101,6 @@ jobs:
           MODEL_URL="https://download.maafw.xyz/MaaCommonAssets/OCR/ppocr_v6/ppocr_v6-small.zip"
           curl -L -o /tmp/ppocr.zip "$MODEL_URL"
           unzip -q /tmp/ppocr.zip -d /tmp/ppocr
-          # 创建目标目录：resource/resource/model/ocr
           mkdir -p ../resource/resource/model/ocr
           if [ -d /tmp/ppocr/model ]; then
             cp -r /tmp/ppocr/model/* ../resource/resource/model/ocr/
@@ -121,7 +119,7 @@ jobs:
             exit 1
           fi
 
-      # ===== Build Python Agent（回滚到默认配置） =====
+      # ===== Build Python Agent =====
       - name: Build Python Agent
         working-directory: maafwapp
         run: |
@@ -199,11 +197,12 @@ jobs:
         run: |
           mkdir -p app/build/generated/piAssets/pi
 
+      # ===== 只打包 arm64-v8a 架构 =====
       - name: Build Debug APK
         working-directory: maafwapp
         run: |
           chmod +x gradlew
-          ./gradlew :app:assembleDebug
+          ./gradlew :app:assembleDebug -Pmaa.abi=arm64-v8a
 
       - name: Rename APK with version tag
         working-directory: maafwapp
