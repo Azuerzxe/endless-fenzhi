@@ -93,7 +93,7 @@ jobs:
             exit 1
           fi
 
-      # ===== 下载 OCR 模型到正确的路径 =====
+      # ===== 下载 OCR 模型到 resource/model/（正确路径） =====
       - name: Download OCR models from official CDN
         working-directory: maafwapp
         run: |
@@ -101,28 +101,27 @@ jobs:
           MODEL_URL="https://download.maafw.xyz/MaaCommonAssets/OCR/ppocr_v6/ppocr_v6-small.zip"
           curl -L -o /tmp/ppocr.zip "$MODEL_URL"
           unzip -q /tmp/ppocr.zip -d /tmp/ppocr
-          # 创建正确的目标目录：model/ocr/
-          mkdir -p ../resource/model/ocr
-          # 复制模型文件到 ocr 子目录
+          # 直接放到 resource/model/（不需要 ocr 子目录）
+          mkdir -p ../resource/model
           if [ -d /tmp/ppocr/model ]; then
-            cp -r /tmp/ppocr/model/* ../resource/model/ocr/
+            cp -r /tmp/ppocr/model/* ../resource/model/
           elif [ -d /tmp/ppocr/ppocr_v6-small ]; then
-            cp -r /tmp/ppocr/ppocr_v6-small/* ../resource/model/ocr/
+            cp -r /tmp/ppocr/ppocr_v6-small/* ../resource/model/
           else
-            cp -r /tmp/ppocr/* ../resource/model/ocr/
+            cp -r /tmp/ppocr/* ../resource/model/
           fi
           rm -rf /tmp/ppocr*
-          # 验证模型文件是否存在
-          echo "=== resource/model/ocr/ contents ==="
-          ls -la ../resource/model/ocr/
-          if [ -f ../resource/model/ocr/det.onnx ] && [ -f ../resource/model/ocr/rec.onnx ]; then
-            echo "✅ OCR models verified at resource/model/ocr/"
+          # 验证模型文件
+          echo "=== resource/model/ contents ==="
+          ls -la ../resource/model/
+          if [ -f ../resource/model/det.onnx ] && [ -f ../resource/model/rec.onnx ]; then
+            echo "✅ OCR models verified at resource/model/"
           else
-            echo "❌ OCR models not found at resource/model/ocr/"
+            echo "❌ OCR models not found at resource/model/"
             exit 1
           fi
 
-      # ===== Build Python Agent（回滚到最初能跑通的配置） =====
+      # ===== Build Python Agent（回滚到默认配置） =====
       - name: Build Python Agent
         working-directory: maafwapp
         run: |
@@ -134,12 +133,11 @@ jobs:
               --exclude onnxruntime
           fi
 
-      # ===== 准备 agent 脚本（确保只包含脚本，不混入运行时） =====
+      # ===== 准备 agent 脚本 =====
       - name: Prepare agent scripts
         working-directory: maafwapp
         run: |
           if [ -d ../resource/agent ]; then
-            # 清理可能混入的运行时文件
             rm -rf ../resource/agent/arm64-v8a 2>/dev/null || true
             rm -rf ../resource/agent/bundle 2>/dev/null || true
             rm -f ../resource/agent/bundle.zip 2>/dev/null || true
