@@ -54,17 +54,13 @@ jobs:
         run: |
           git clone https://github.com/Aliothmoon/MaaFwApp.git maafwapp
 
-      # ===== 尝试更新版本号（失败不中断） =====
       - name: Try update versionCode/versionName
         working-directory: maafwapp
         run: |
           VERSION_CODE="${{ needs.check_version.outputs.version_tag }}"
-          # 从 tag 中提取数字，例如 v0.4.6-beta.19 → 0.4.6
           VERSION_NAME="${{ needs.check_version.outputs.version_tag }}"
           BUILD_FILE="app/build.gradle.kts"
-          
           echo "Attempting to update versionCode and versionName..."
-          # 直接替换以 versionCode 和 versionName 开头的行
           sed -i "s/^[[:space:]]*versionCode[[:space:]]*=.*/versionCode = $VERSION_CODE/" "$BUILD_FILE" 2>/dev/null || true
           sed -i "s/^[[:space:]]*versionName[[:space:]]*=.*/versionName = \"$VERSION_NAME\"/" "$BUILD_FILE" 2>/dev/null || true
           echo "Version update attempted (ignoring errors)."
@@ -126,7 +122,6 @@ jobs:
           rm -rf /tmp/ppocr*
           ls -la ../resource/model/
 
-      # ===== 构建 Python Agent：只安装纯 Python 依赖 =====
       - name: Build Python Agent
         working-directory: maafwapp
         run: |
@@ -139,10 +134,17 @@ jobs:
               --exclude onnxruntime \
               --no-deps
 
+            # 处理 bundle.zip
+            if [ -f ../resource/agent/bundle.zip ]; then
+              echo "Found bundle.zip, extracting to agent-dist..."
+              mkdir -p ../resource/agent-dist
+              unzip -q ../resource/agent/bundle.zip -d ../resource/agent-dist
+              rm ../resource/agent/bundle.zip
+            fi
+
             BUNDLE_PATH="../resource/agent-dist/arm64-v8a/bundle"
             if [ -d "$BUNDLE_PATH" ]; then
-              echo "Step 2: Installing pure Python dependencies (excluding numpy, pillow, etc)..."
-              # 排除 core 已提供的包
+              echo "Step 2: Installing pure Python dependencies..."
               grep -vE "onnxruntime|maafw|maaagentbinary|numpy|pillow" ../resource/requirements.txt > /tmp/requirements.txt
               pip install \
                 --target "$BUNDLE_PATH/site-packages" \
@@ -153,12 +155,24 @@ jobs:
                 --only-binary :all: \
                 --no-deps
               echo "✅ Pure Python dependencies installed"
-              ls -la "$BUNDLE_PATH/site-packages/"
-            else
-              echo "❌ Bundle path not found"
-              exit 1
             fi
           fi
+
+      # ===== 准备 agent 脚本（不从 include 打包到 pi.zip） =====
+      - name: Prepare agent scripts
+        working-directory: maafwapp
+        run: |
+          # 从资源复制 agent 脚本到 resource/agent/
+          if [ -d ../resource/assets/agent ]; then
+            rm -rf ../resource/agent
+            cp -r ../resource/assets/agent ../resource/agent
+            echo "agent scripts copied from assets/agent"
+          elif [ -d ../resource/agent ]; then
+            echo "agent scripts already exist"
+          else
+            echo "⚠️ Warning: agent scripts not found"
+          fi
+          ls -la ../resource/agent/ 2>/dev/null || echo "agent/ not found"
 
       - name: Create pi profile
         working-directory: maafwapp
@@ -172,8 +186,6 @@ jobs:
             - resource_*/**
             - data/**
             - locales/**
-            - agent/**
-            - agent-dist/**
             - docs/imgs/**
             - model/**
             - CONTACT
