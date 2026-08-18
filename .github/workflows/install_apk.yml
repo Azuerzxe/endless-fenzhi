@@ -122,23 +122,43 @@ jobs:
           rm -rf /tmp/ppocr*
           ls -la ../resource/model/
 
-      # ===== Build Python Agent Runtime（生成完整的运行时目录） =====
-      - name: Build Python Agent Runtime
+      # ===== 准备业务脚本（清理运行时，只留脚本） =====
+      - name: Prepare agent scripts (clean runtime)
+        working-directory: maafwapp
+        run: |
+          if [ -d ../resource/assets/agent ]; then
+            # 删除旧的 resource/agent（如果存在）
+            rm -rf ../resource/agent
+            # 复制业务脚本到 resource/agent
+            cp -r ../resource/assets/agent ../resource/agent
+            # 删除可能混入的运行时目录或文件（确保只留脚本）
+            rm -rf ../resource/agent/arm64-v8a 2>/dev/null || true
+            rm -rf ../resource/agent/bundle 2>/dev/null || true
+            rm -f ../resource/agent/bundle.zip 2>/dev/null || true
+            echo "✅ Agent scripts prepared:"
+            ls -la ../resource/agent/
+          else
+            echo "❌ agent scripts not found in assets/agent"
+            exit 1
+          fi
+
+      # ===== 构建 Python Agent 运行时（输出到 agent-runtime） =====
+      - name: Build Python Agent Runtime (to agent-runtime)
         working-directory: maafwapp
         run: |
           if [ -f ../resource/requirements.txt ]; then
             echo "Building Python runtime..."
             python scripts/build_agent_bundle.py \
-              --out ../resource/agent \
+              --out ../resource/agent-runtime \
               --requirements ../resource/requirements.txt \
               --extra-index-url https://chaquo.com/pypi-13.1/ \
               --exclude onnxruntime \
               --no-deps
 
             # 验证 bundle 目录是否生成
-            if [ -d ../resource/agent/arm64-v8a/bundle ]; then
+            if [ -d ../resource/agent-runtime/arm64-v8a/bundle ]; then
               echo "✅ Python runtime bundle generated successfully"
-              ls -la ../resource/agent/arm64-v8a/bundle/
+              ls -la ../resource/agent-runtime/arm64-v8a/bundle/
             else
               echo "❌ bundle directory not found"
               exit 1
@@ -147,20 +167,7 @@ jobs:
             echo "⚠️ requirements.txt not found, skipping agent runtime build"
           fi
 
-      # ===== 准备业务脚本（放到 resource/assets/agent/） =====
-      - name: Prepare agent scripts
-        working-directory: maafwapp
-        run: |
-          if [ -d ../resource/assets/agent ]; then
-            echo "agent scripts are in assets/agent/"
-            ls -la ../resource/assets/agent/
-          elif [ -d ../resource/agent ]; then
-            echo "⚠️ agent scripts may be in resource/agent/, check"
-          else
-            echo "❌ agent scripts not found in assets/agent/"
-            exit 1
-          fi
-
+      # ===== 创建 pi 配置文件（包含 agent 段） =====
       - name: Create pi profile
         working-directory: maafwapp
         run: |
@@ -173,13 +180,24 @@ jobs:
             - resource_*/**
             - data/**
             - locales/**
-            - agent/**
+            - agent/**              # 业务脚本打包到 pi/agent
             - docs/imgs/**
             - model/**
             - CONTACT
             - LICENSE
           exclude: []
-          # 不配置 agent 段，MaaFwApp 会自动从 assets/agent/ 加载运行时
+          agent:
+            sourceDir: "$GITHUB_WORKSPACE/resource/agent-runtime"  # 运行时目录
+            abi: [arm64-v8a]
+            runtimes:
+              - location: bundle
+                executable: bin/python3
+                args: [-u, agent/main.py]      # 工作目录在资源解包根，pi/agent 被挂载到 agent/
+                env:
+                  PYTHONHOME: "{bundle}/prefix"
+                  PYTHONPATH: "{bundle}/site-packages:{bundle}/site-packages/pure.zip"
+                  LD_LIBRARY_PATH: "{bundle}/prefix/lib:{bundle}/site-packages/chaquopy/lib:{nativeLibs}"
+                  MAAFW_BINARY_PATH: "{nativeLibs}"
           app:
             id: pvz
             label: Maapvz
