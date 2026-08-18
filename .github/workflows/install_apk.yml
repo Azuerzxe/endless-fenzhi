@@ -122,75 +122,45 @@ jobs:
           rm -rf /tmp/ppocr*
           ls -la ../resource/model/
 
-      # ===== Build Python Agent 并正确放置 =====
-      - name: Build Python Agent
+      # ===== 构建 Python 运行时（放到 resource/agent/） =====
+      - name: Build Python Agent Runtime
         working-directory: maafwapp
         run: |
           if [ -f ../resource/requirements.txt ]; then
-            echo "Step 1: Unpacking core with --no-deps..."
+            echo "Building Python runtime (bundle.zip)..."
             python scripts/build_agent_bundle.py \
-              --out ../resource/agent-dist \
+              --out ../resource/agent \
               --requirements ../resource/requirements.txt \
               --extra-index-url https://chaquo.com/pypi-13.1/ \
               --exclude onnxruntime \
               --no-deps
 
-            # 修复：如果 agent/ 下有 arm64-v8a，移动到 agent-dist/
-            if [ -d ../resource/agent/arm64-v8a ] && [ ! -d ../resource/agent-dist ]; then
-              echo "Moving agent-dist from agent/ to agent-dist/..."
-              mv ../resource/agent ../resource/agent-dist
-            fi
-
-            # 修复：如果 agent/ 下有 bundle.zip，解压到 agent-dist/
+            # 验证 bundle.zip 是否存在
             if [ -f ../resource/agent/bundle.zip ]; then
-              echo "Found bundle.zip, extracting to agent-dist..."
-              mkdir -p ../resource/agent-dist
-              unzip -q ../resource/agent/bundle.zip -d ../resource/agent-dist
-              rm ../resource/agent/bundle.zip
-              rm -rf ../resource/agent 2>/dev/null || true
-            fi
-
-            BUNDLE_PATH="../resource/agent-dist/arm64-v8a/bundle"
-            if [ -d "$BUNDLE_PATH" ]; then
-              echo "Step 2: Installing pure Python dependencies..."
-              grep -vE "onnxruntime|maafw|maaagentbinary|numpy|pillow" ../resource/requirements.txt > /tmp/requirements.txt
-              pip install \
-                --target "$BUNDLE_PATH/site-packages" \
-                -r /tmp/requirements.txt \
-                --extra-index-url https://chaquo.com/pypi-13.1/ \
-                --platform android_arm64 \
-                --python-version 3.13 \
-                --only-binary :all: \
-                --no-deps
-              echo "✅ Pure Python dependencies installed"
-              ls -la "$BUNDLE_PATH/site-packages/"
+              echo "✅ bundle.zip generated successfully"
+              ls -la ../resource/agent/
             else
-              echo "❌ Bundle path not found"
+              echo "❌ bundle.zip not found"
               exit 1
             fi
+          else
+            echo "⚠️ requirements.txt not found, skipping agent runtime build"
           fi
 
-      # ===== 准备 agent 脚本（从资源复制） =====
+      # ===== 准备业务脚本（放到 resource/assets/agent/） =====
       - name: Prepare agent scripts
         working-directory: maafwapp
         run: |
           if [ -d ../resource/assets/agent ]; then
-            rm -rf ../resource/agent
-            cp -r ../resource/assets/agent ../resource/agent
-            echo "agent scripts copied from assets/agent"
+            # 确保 resource/agent/ 只包含运行时，业务脚本在 resource/assets/agent/
+            echo "agent scripts are in assets/agent/"
+            ls -la ../resource/assets/agent/
           elif [ -d ../resource/agent ]; then
-            echo "agent scripts already exist"
+            echo "⚠️ agent scripts may be in resource/agent/, but runtime also there, check"
           else
-            echo "⚠️ Warning: agent scripts not found"
-          fi
-          if [ ! -d ../resource/agent-dist ]; then
-            echo "❌ Error: agent-dist not found!"
+            echo "❌ agent scripts not found in assets/agent/"
             exit 1
           fi
-          echo "=== agent/ contents ==="
-          ls -la ../resource/agent/ 2>/dev/null || echo "agent/ not found"
-          echo "=== agent-dist/ contents ==="
-          ls -la ../resource/agent-dist/ 2>/dev/null || echo "agent-dist/ not found"
 
       - name: Create pi profile
         working-directory: maafwapp
@@ -204,23 +174,13 @@ jobs:
             - resource_*/**
             - data/**
             - locales/**
+            - agent/**
             - docs/imgs/**
             - model/**
             - CONTACT
             - LICENSE
           exclude: []
-          agent:
-            sourceDir: "$GITHUB_WORKSPACE/resource/agent-dist"
-            abi: [arm64-v8a]
-            runtimes:
-              - location: bundle
-                executable: bin/python3
-                args: [-u, agent/main.py]
-                env:
-                  PYTHONHOME: "{bundle}/prefix"
-                  PYTHONPATH: "{bundle}/site-packages:{bundle}/site-packages/pure.zip"
-                  LD_LIBRARY_PATH: "{bundle}/prefix/lib:{bundle}/site-packages/chaquopy/lib:{nativeLibs}"
-                  MAAFW_BINARY_PATH: "{nativeLibs}"
+          # 不配置 agent 段，MaaFwApp 会自动从 assets/agent/ 加载运行时
           app:
             id: pvz
             label: Maapvz
