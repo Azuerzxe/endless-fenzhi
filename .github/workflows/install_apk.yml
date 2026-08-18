@@ -122,41 +122,40 @@ jobs:
           rm -rf /tmp/ppocr*
           ls -la ../resource/model/
 
-      # ===== 构建 Python 运行时（放到 resource/agent/） =====
+      # ===== Build Python Agent Runtime（生成完整的运行时目录） =====
       - name: Build Python Agent Runtime
-  working-directory: maafwapp
-  run: |
-    if [ -f ../resource/requirements.txt ]; then
-      echo "Building Python runtime..."
-      python scripts/build_agent_bundle.py \
-        --out ../resource/agent \
-        --requirements ../resource/requirements.txt \
-        --extra-index-url https://chaquo.com/pypi-13.1/ \
-        --exclude onnxruntime \
-        --no-deps
+        working-directory: maafwapp
+        run: |
+          if [ -f ../resource/requirements.txt ]; then
+            echo "Building Python runtime..."
+            python scripts/build_agent_bundle.py \
+              --out ../resource/agent \
+              --requirements ../resource/requirements.txt \
+              --extra-index-url https://chaquo.com/pypi-13.1/ \
+              --exclude onnxruntime \
+              --no-deps
 
-      # 验证 bundle 目录是否生成
-      if [ -d ../resource/agent/arm64-v8a/bundle ]; then
-        echo "✅ Python runtime bundle generated successfully"
-        ls -la ../resource/agent/arm64-v8a/bundle/
-      else
-        echo "❌ bundle directory not found"
-        exit 1
-      fi
-    else
-      echo "⚠️ requirements.txt not found, skipping agent runtime build"
-    fi
+            # 验证 bundle 目录是否生成
+            if [ -d ../resource/agent/arm64-v8a/bundle ]; then
+              echo "✅ Python runtime bundle generated successfully"
+              ls -la ../resource/agent/arm64-v8a/bundle/
+            else
+              echo "❌ bundle directory not found"
+              exit 1
+            fi
+          else
+            echo "⚠️ requirements.txt not found, skipping agent runtime build"
+          fi
 
       # ===== 准备业务脚本（放到 resource/assets/agent/） =====
       - name: Prepare agent scripts
         working-directory: maafwapp
         run: |
           if [ -d ../resource/assets/agent ]; then
-            # 确保 resource/agent/ 只包含运行时，业务脚本在 resource/assets/agent/
             echo "agent scripts are in assets/agent/"
             ls -la ../resource/assets/agent/
           elif [ -d ../resource/agent ]; then
-            echo "⚠️ agent scripts may be in resource/agent/, but runtime also there, check"
+            echo "⚠️ agent scripts may be in resource/agent/, check"
           else
             echo "❌ agent scripts not found in assets/agent/"
             exit 1
