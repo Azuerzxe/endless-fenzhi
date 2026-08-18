@@ -124,28 +124,28 @@ jobs:
 
       # ===== 构建 Python 运行时（放到 resource/agent/） =====
       - name: Build Python Agent Runtime
-        working-directory: maafwapp
-        run: |
-          if [ -f ../resource/requirements.txt ]; then
-            echo "Building Python runtime (bundle.zip)..."
-            python scripts/build_agent_bundle.py \
-              --out ../resource/agent \
-              --requirements ../resource/requirements.txt \
-              --extra-index-url https://chaquo.com/pypi-13.1/ \
-              --exclude onnxruntime \
-              --no-deps
+  working-directory: maafwapp
+  run: |
+    if [ -f ../resource/requirements.txt ]; then
+      echo "Building Python runtime..."
+      python scripts/build_agent_bundle.py \
+        --out ../resource/agent \
+        --requirements ../resource/requirements.txt \
+        --extra-index-url https://chaquo.com/pypi-13.1/ \
+        --exclude onnxruntime \
+        --no-deps
 
-            # 验证 bundle.zip 是否存在
-            if [ -f ../resource/agent/bundle.zip ]; then
-              echo "✅ bundle.zip generated successfully"
-              ls -la ../resource/agent/
-            else
-              echo "❌ bundle.zip not found"
-              exit 1
-            fi
-          else
-            echo "⚠️ requirements.txt not found, skipping agent runtime build"
-          fi
+      # 验证 bundle 目录是否生成
+      if [ -d ../resource/agent/arm64-v8a/bundle ]; then
+        echo "✅ Python runtime bundle generated successfully"
+        ls -la ../resource/agent/arm64-v8a/bundle/
+      else
+        echo "❌ bundle directory not found"
+        exit 1
+      fi
+    else
+      echo "⚠️ requirements.txt not found, skipping agent runtime build"
+    fi
 
       # ===== 准备业务脚本（放到 resource/assets/agent/） =====
       - name: Prepare agent scripts
