@@ -54,17 +54,6 @@ jobs:
         run: |
           git clone https://github.com/Aliothmoon/MaaFwApp.git maafwapp
 
-      - name: Try update versionCode/versionName
-        working-directory: maafwapp
-        run: |
-          VERSION_CODE="${{ needs.check_version.outputs.version_tag }}"
-          VERSION_NAME="${{ needs.check_version.outputs.version_tag }}"
-          BUILD_FILE="app/build.gradle.kts"
-          echo "Attempting to update versionCode and versionName..."
-          sed -i "s/^[[:space:]]*versionCode[[:space:]]*=.*/versionCode = $VERSION_CODE/" "$BUILD_FILE" 2>/dev/null || true
-          sed -i "s/^[[:space:]]*versionName[[:space:]]*=.*/versionName = \"$VERSION_NAME\"/" "$BUILD_FILE" 2>/dev/null || true
-          echo "Version update attempted (ignoring errors)."
-
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
@@ -104,6 +93,7 @@ jobs:
             exit 1
           fi
 
+      # ===== 下载 OCR 模型 =====
       - name: Download OCR models from official CDN
         working-directory: maafwapp
         run: |
@@ -122,48 +112,33 @@ jobs:
           rm -rf /tmp/ppocr*
           ls -la ../resource/model/
 
-      # ===== 准备业务脚本（agent/ 已在 resource/ 根目录，无需复制） =====
-      - name: Prepare agent scripts (clean runtime)
-        working-directory: maafwapp
-        run: |
-          # 直接检查 ../resource/agent（因为 agent/ 与 assets/ 同级）
-          if [ -d ../resource/agent ]; then
-            # 清理可能混入的运行时文件（确保只留脚本）
-            rm -rf ../resource/agent/arm64-v8a 2>/dev/null || true
-            rm -rf ../resource/agent/bundle 2>/dev/null || true
-            rm -f ../resource/agent/bundle.zip 2>/dev/null || true
-            echo "✅ Agent scripts prepared:"
-            ls -la ../resource/agent/
-          else
-            echo "❌ agent scripts not found in resource/agent"
-            exit 1
-          fi
-
-      # ===== 构建 Python Agent 运行时（输出到 agent-runtime） =====
-      - name: Build Python Agent Runtime (to agent-runtime)
+      # ===== Build Python Agent（回滚到最初能跑通的配置） =====
+      - name: Build Python Agent
         working-directory: maafwapp
         run: |
           if [ -f ../resource/requirements.txt ]; then
-            echo "Building Python runtime..."
             python scripts/build_agent_bundle.py \
-              --out ../resource/agent-runtime \
+              --out ../resource/agent-dist \
               --requirements ../resource/requirements.txt \
               --extra-index-url https://chaquo.com/pypi-13.1/ \
-              --exclude onnxruntime \
-              --no-deps
-
-            if [ -d ../resource/agent-runtime/arm64-v8a/bundle ]; then
-              echo "✅ Python runtime bundle generated successfully"
-              ls -la ../resource/agent-runtime/arm64-v8a/bundle/
-            else
-              echo "❌ bundle directory not found"
-              exit 1
-            fi
-          else
-            echo "⚠️ requirements.txt not found, skipping agent runtime build"
+              --exclude onnxruntime
           fi
 
-      # ===== 创建 pi 配置文件（包含 agent 段） =====
+      # ===== 准备 agent 脚本（确保只包含脚本，不混入运行时） =====
+      - name: Prepare agent scripts
+        working-directory: maafwapp
+        run: |
+          if [ -d ../resource/agent ]; then
+            # 清理可能混入的运行时文件
+            rm -rf ../resource/agent/arm64-v8a 2>/dev/null || true
+            rm -rf ../resource/agent/bundle 2>/dev/null || true
+            rm -f ../resource/agent/bundle.zip 2>/dev/null || true
+            echo "✅ Agent scripts ready:"
+            ls -la ../resource/agent/
+          else
+            echo "⚠️ agent scripts not found, skipping"
+          fi
+
       - name: Create pi profile
         working-directory: maafwapp
         run: |
@@ -176,19 +151,20 @@ jobs:
             - resource_*/**
             - data/**
             - locales/**
-            - agent/**              # 业务脚本打包到 pi/agent
+            - agent/**
+            - agent-dist/**
             - docs/imgs/**
             - model/**
             - CONTACT
             - LICENSE
           exclude: []
           agent:
-            sourceDir: "$GITHUB_WORKSPACE/resource/agent-runtime"  # 运行时目录
+            sourceDir: "$GITHUB_WORKSPACE/resource/agent-dist"
             abi: [arm64-v8a]
             runtimes:
               - location: bundle
                 executable: bin/python3
-                args: [-u, agent/main.py]      # 工作目录在资源解压根，pi/agent 被挂载到 agent/
+                args: [-u, agent/main.py]
                 env:
                   PYTHONHOME: "{bundle}/prefix"
                   PYTHONPATH: "{bundle}/site-packages:{bundle}/site-packages/pure.zip"
