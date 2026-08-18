@@ -122,23 +122,20 @@ jobs:
           rm -rf /tmp/ppocr*
           ls -la ../resource/model/
 
-      # ===== 准备业务脚本（清理运行时，只留脚本） =====
+      # ===== 准备业务脚本（agent/ 已在 resource/ 根目录，无需复制） =====
       - name: Prepare agent scripts (clean runtime)
         working-directory: maafwapp
         run: |
-          if [ -d ../resource/assets/agent ]; then
-            # 删除旧的 resource/agent（如果存在）
-            rm -rf ../resource/agent
-            # 复制业务脚本到 resource/agent
-            cp -r ../resource/assets/agent ../resource/agent
-            # 删除可能混入的运行时目录或文件（确保只留脚本）
+          # 直接检查 ../resource/agent（因为 agent/ 与 assets/ 同级）
+          if [ -d ../resource/agent ]; then
+            # 清理可能混入的运行时文件（确保只留脚本）
             rm -rf ../resource/agent/arm64-v8a 2>/dev/null || true
             rm -rf ../resource/agent/bundle 2>/dev/null || true
             rm -f ../resource/agent/bundle.zip 2>/dev/null || true
             echo "✅ Agent scripts prepared:"
             ls -la ../resource/agent/
           else
-            echo "❌ agent scripts not found in assets/agent"
+            echo "❌ agent scripts not found in resource/agent"
             exit 1
           fi
 
@@ -155,7 +152,6 @@ jobs:
               --exclude onnxruntime \
               --no-deps
 
-            # 验证 bundle 目录是否生成
             if [ -d ../resource/agent-runtime/arm64-v8a/bundle ]; then
               echo "✅ Python runtime bundle generated successfully"
               ls -la ../resource/agent-runtime/arm64-v8a/bundle/
@@ -192,7 +188,7 @@ jobs:
             runtimes:
               - location: bundle
                 executable: bin/python3
-                args: [-u, agent/main.py]      # 工作目录在资源解包根，pi/agent 被挂载到 agent/
+                args: [-u, agent/main.py]      # 工作目录在资源解压根，pi/agent 被挂载到 agent/
                 env:
                   PYTHONHOME: "{bundle}/prefix"
                   PYTHONPATH: "{bundle}/site-packages:{bundle}/site-packages/pure.zip"
