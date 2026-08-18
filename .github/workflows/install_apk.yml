@@ -93,7 +93,8 @@ jobs:
             exit 1
           fi
 
-      # ===== 下载 OCR 模型到 resource/model/（正确路径） =====
+      # ===== 下载 OCR 模型到正确的路径：pi.zip/resource/model/ocr =====
+      # 因为 assets 指向 resource/，所以需要放到 resource/resource/model/ocr
       - name: Download OCR models from official CDN
         working-directory: maafwapp
         run: |
@@ -101,23 +102,22 @@ jobs:
           MODEL_URL="https://download.maafw.xyz/MaaCommonAssets/OCR/ppocr_v6/ppocr_v6-small.zip"
           curl -L -o /tmp/ppocr.zip "$MODEL_URL"
           unzip -q /tmp/ppocr.zip -d /tmp/ppocr
-          # 直接放到 resource/model/（不需要 ocr 子目录）
-          mkdir -p ../resource/model
+          # 创建目标目录：resource/resource/model/ocr
+          mkdir -p ../resource/resource/model/ocr
           if [ -d /tmp/ppocr/model ]; then
-            cp -r /tmp/ppocr/model/* ../resource/model/
+            cp -r /tmp/ppocr/model/* ../resource/resource/model/ocr/
           elif [ -d /tmp/ppocr/ppocr_v6-small ]; then
-            cp -r /tmp/ppocr/ppocr_v6-small/* ../resource/model/
+            cp -r /tmp/ppocr/ppocr_v6-small/* ../resource/resource/model/ocr/
           else
-            cp -r /tmp/ppocr/* ../resource/model/
+            cp -r /tmp/ppocr/* ../resource/resource/model/ocr/
           fi
           rm -rf /tmp/ppocr*
-          # 验证模型文件
-          echo "=== resource/model/ contents ==="
-          ls -la ../resource/model/
-          if [ -f ../resource/model/det.onnx ] && [ -f ../resource/model/rec.onnx ]; then
-            echo "✅ OCR models verified at resource/model/"
+          echo "=== resource/resource/model/ocr/ contents ==="
+          ls -la ../resource/resource/model/ocr/
+          if [ -f ../resource/resource/model/ocr/det.onnx ] && [ -f ../resource/resource/model/ocr/rec.onnx ]; then
+            echo "✅ OCR models verified at resource/resource/model/ocr/"
           else
-            echo "❌ OCR models not found at resource/model/"
+            echo "❌ OCR models not found at resource/resource/model/ocr/"
             exit 1
           fi
 
