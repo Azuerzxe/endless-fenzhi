@@ -122,10 +122,18 @@ jobs:
           rm -rf /tmp/ppocr*
           ls -la ../resource/model/
 
+      # ===== 构建 Python Agent =====
       - name: Build Python Agent
         working-directory: maafwapp
         run: |
           if [ -f ../resource/requirements.txt ]; then
+            # 1. 备份 agent 脚本（如果存在）
+            if [ -d ../resource/agent ]; then
+              mv ../resource/agent ../resource/agent_backup
+              echo "agent scripts backed up"
+            fi
+
+            # 2. 解压核心运行时到 agent-dist
             echo "Step 1: Unpacking core with --no-deps..."
             python scripts/build_agent_bundle.py \
               --out ../resource/agent-dist \
@@ -134,14 +142,27 @@ jobs:
               --exclude onnxruntime \
               --no-deps
 
-            # 处理 bundle.zip
+            # 3. 如果 bundle.zip 出现在 agent/，解压到 agent-dist 并删除
             if [ -f ../resource/agent/bundle.zip ]; then
               echo "Found bundle.zip, extracting to agent-dist..."
               mkdir -p ../resource/agent-dist
               unzip -q ../resource/agent/bundle.zip -d ../resource/agent-dist
               rm ../resource/agent/bundle.zip
+              # 如果 agent 目录空了就删除
+              rmdir ../resource/agent 2>/dev/null || true
             fi
 
+            # 4. 恢复 agent 脚本
+            if [ -d ../resource/agent_backup ]; then
+              rm -rf ../resource/agent
+              mv ../resource/agent_backup ../resource/agent
+              echo "agent scripts restored"
+            elif [ -d ../resource/assets/agent ]; then
+              cp -r ../resource/assets/agent ../resource/agent
+              echo "agent scripts copied from assets"
+            fi
+
+            # 5. 安装纯 Python 依赖到 site-packages
             BUNDLE_PATH="../resource/agent-dist/arm64-v8a/bundle"
             if [ -d "$BUNDLE_PATH" ]; then
               echo "Step 2: Installing pure Python dependencies..."
@@ -155,24 +176,12 @@ jobs:
                 --only-binary :all: \
                 --no-deps
               echo "✅ Pure Python dependencies installed"
+              ls -la "$BUNDLE_PATH/site-packages/"
+            else
+              echo "❌ Bundle path not found"
+              exit 1
             fi
           fi
-
-      # ===== 准备 agent 脚本（不从 include 打包到 pi.zip） =====
-      - name: Prepare agent scripts
-        working-directory: maafwapp
-        run: |
-          # 从资源复制 agent 脚本到 resource/agent/
-          if [ -d ../resource/assets/agent ]; then
-            rm -rf ../resource/agent
-            cp -r ../resource/assets/agent ../resource/agent
-            echo "agent scripts copied from assets/agent"
-          elif [ -d ../resource/agent ]; then
-            echo "agent scripts already exist"
-          else
-            echo "⚠️ Warning: agent scripts not found"
-          fi
-          ls -la ../resource/agent/ 2>/dev/null || echo "agent/ not found"
 
       - name: Create pi profile
         working-directory: maafwapp
@@ -186,6 +195,7 @@ jobs:
             - resource_*/**
             - data/**
             - locales/**
+            - agent/**
             - docs/imgs/**
             - model/**
             - CONTACT
