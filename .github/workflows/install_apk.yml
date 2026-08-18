@@ -93,7 +93,7 @@ jobs:
             exit 1
           fi
 
-      # ===== 下载 OCR 模型 =====
+      # ===== 下载 OCR 模型到正确的路径 =====
       - name: Download OCR models from official CDN
         working-directory: maafwapp
         run: |
@@ -101,16 +101,26 @@ jobs:
           MODEL_URL="https://download.maafw.xyz/MaaCommonAssets/OCR/ppocr_v6/ppocr_v6-small.zip"
           curl -L -o /tmp/ppocr.zip "$MODEL_URL"
           unzip -q /tmp/ppocr.zip -d /tmp/ppocr
-          mkdir -p ../resource/model
+          # 创建正确的目标目录：model/ocr/
+          mkdir -p ../resource/model/ocr
+          # 复制模型文件到 ocr 子目录
           if [ -d /tmp/ppocr/model ]; then
-            cp -r /tmp/ppocr/model/* ../resource/model/
+            cp -r /tmp/ppocr/model/* ../resource/model/ocr/
           elif [ -d /tmp/ppocr/ppocr_v6-small ]; then
-            cp -r /tmp/ppocr/ppocr_v6-small/* ../resource/model/
+            cp -r /tmp/ppocr/ppocr_v6-small/* ../resource/model/ocr/
           else
-            cp -r /tmp/ppocr/* ../resource/model/
+            cp -r /tmp/ppocr/* ../resource/model/ocr/
           fi
           rm -rf /tmp/ppocr*
-          ls -la ../resource/model/
+          # 验证模型文件是否存在
+          echo "=== resource/model/ocr/ contents ==="
+          ls -la ../resource/model/ocr/
+          if [ -f ../resource/model/ocr/det.onnx ] && [ -f ../resource/model/ocr/rec.onnx ]; then
+            echo "✅ OCR models verified at resource/model/ocr/"
+          else
+            echo "❌ OCR models not found at resource/model/ocr/"
+            exit 1
+          fi
 
       # ===== Build Python Agent（回滚到最初能跑通的配置） =====
       - name: Build Python Agent
