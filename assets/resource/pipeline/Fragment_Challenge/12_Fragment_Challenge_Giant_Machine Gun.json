@@ -14,6 +14,7 @@
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
+            "碎片挑战_植物阶数过低",
             "[Anchor]自动识别所需的对局配置"
         ]
     },
