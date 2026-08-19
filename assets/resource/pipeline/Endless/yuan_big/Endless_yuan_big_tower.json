@@ -1,0 +1,15 @@
+{
+    "原大_开棱镜塔": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            751,
+            675
+        ],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "[Anchor]下一个动作"
+        ]
+    },
+}

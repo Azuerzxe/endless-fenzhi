@@ -29,6 +29,29 @@
                 }
             ]
         },
+        "原大_是否开棱镜塔": {
+            "type": "switch",
+            "label": "小关是否棱镜塔",
+            "description": "需要自己携带棱镜塔",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {
+                        "原大_毒藤滑动26": {
+                            "next": [
+                                "原大_开棱镜塔"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "原大_boss关是否需要喂豆": {
             "type": "switch",
             "label": "boss关是否需要喂豆",
