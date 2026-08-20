@@ -101,8 +101,8 @@
         "action": "Swipe",
         "begin": "种植物_初始化_第三个槽位",
         "end": "种植物_初始化_格子1_5",
-        "duration": 100,
-        "pre_delay": 0,
+        "duration": 500,
+        "pre_delay": 500,
         "post_delay": 1000,
         "next": [
             "原大_大哥滑动2"
@@ -113,8 +113,8 @@
         "action": "Swipe",
         "begin": "种植物_初始化_第三个槽位",
         "end": "种植物_初始化_格子1_4",
-        "duration": 100,
-        "pre_delay": 0,
+        "duration": 500,
+        "pre_delay": 500,
         "post_delay": 1000,
         "next": [
             "原大_大哥滑动3"
@@ -125,8 +125,8 @@
         "action": "Swipe",
         "begin": "种植物_初始化_第三个槽位",
         "end": "种植物_初始化_格子1_3",
-        "duration": 100,
-        "pre_delay": 0,
+        "duration": 500,
+        "pre_delay": 500,
         "post_delay": 1000,
         "next": [
             "原大_原豌滑动1"
@@ -436,8 +436,8 @@
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
         "end": "种植物_初始化_格子2_1",
-        "duration": 100,
-        "pre_delay": 0,
+        "duration": 500,
+        "pre_delay": 500,
         "post_delay": 0,
         "next": [
             "原大_桑葚滑动2"
@@ -448,8 +448,8 @@
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
         "end": "种植物_初始化_格子2_2",
-        "duration": 100,
-        "pre_delay": 0,
+        "duration": 500,
+        "pre_delay": 500,
         "post_delay": 0,
         "next": [
             "原大_识别结算",
@@ -461,8 +461,8 @@
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
         "end": "种植物_初始化_格子2_3",
-        "duration": 100,
-        "pre_delay": 0,
+        "duration": 500,
+        "pre_delay": 500,
         "post_delay": 0,
         "next": [
             "原大_桑葚滑动4"
@@ -473,8 +473,8 @@
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
         "end": "种植物_初始化_格子2_4",
-        "duration": 100,
-        "pre_delay": 0,
+        "duration": 500,
+        "pre_delay": 500,
         "post_delay": 0,
         "next": [
             "原大_桑葚滑动5"
@@ -485,8 +485,8 @@
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
         "end": "种植物_初始化_格子2_5",
-        "duration": 100,
-        "pre_delay": 0,
+        "duration": 500,
+        "pre_delay": 500,
         "post_delay": 0,
         "next": [
             "原大_桑葚滑动6"
