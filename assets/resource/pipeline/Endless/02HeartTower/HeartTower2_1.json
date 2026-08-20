@@ -229,10 +229,10 @@
     "2_xinta1_点葫芦": {
         "action": "Click",
         "target": [
-            752,
-            675,
-            0,
-            1
+            749,
+            673,
+            7,
+            8
         ],
         "pre_delay": 0,
         "post_delay": 0,
@@ -243,10 +243,10 @@
     "2_xinta1_开葫芦": {
         "action": "Click",
         "target": [
-            824,
-            571,
-            1,
-            4
+            822,
+            570,
+            7,
+            9
         ],
         "pre_delay": 200,
         "post_delay": 200,
