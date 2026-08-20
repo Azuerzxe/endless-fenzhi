@@ -757,10 +757,7 @@
     },
     "frame_wj_boss_相机神器_复制1": {
         "action": "Click",
-        "target": [
-            755,
-            679
-        ],
+        "target": "神器_初始化_神器位置",
         "pre_delay": 0,
         "post_delay": 0,
         "timeout": 600000,
@@ -770,10 +767,7 @@
     },
     "frame_wj_boss_相机神器_复制2": {
         "action": "Click",
-        "target": [
-            703,
-            565
-        ],
+        "target": "神器_初始化_相机复制",
         "pre_delay": 0,
         "post_delay": 0,
         "timeout": 600000,
@@ -819,10 +813,7 @@
     },
     "frame_wj_boss_相机神器_粘贴1": {
         "action": "Click",
-        "target": [
-            755,
-            679
-        ],
+        "target": "神器_初始化_神器位置",
         "pre_delay": 0,
         "post_delay": 0,
         "timeout": 600000,
@@ -832,10 +823,7 @@
     },
     "frame_wj_boss_相机神器_粘贴2": {
         "action": "Click",
-        "target": [
-            791,
-            568
-        ],
+        "target": "神器_初始化_相机粘贴",
         "pre_delay": 0,
         "post_delay": 1500,
         "next": [

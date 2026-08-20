@@ -443,7 +443,7 @@
     "frame_wj_铲植物1": {
         "action": "Swipe",
         "begin": "种植物_初始化_铲子位置",
-        "end": [],
+        "end": "种植物_初始化_铲子位置",
         "pre_delay": 0,
         "post_delay": 10,
         "duration": 100,
@@ -454,7 +454,7 @@
     "frame_wj_铲植物2": {
         "action": "Swipe",
         "begin": "种植物_初始化_铲子位置",
-        "end": [],
+        "end": "种植物_初始化_铲子位置",
         "pre_delay": 0,
         "post_delay": 10,
         "duration": 100,
@@ -465,7 +465,7 @@
     "frame_wj_铲植物3": {
         "action": "Swipe",
         "begin": "种植物_初始化_铲子位置",
-        "end": [],
+        "end": "种植物_初始化_铲子位置",
         "pre_delay": 0,
         "post_delay": 10,
         "duration": 100,
@@ -476,7 +476,7 @@
     "frame_wj_铲植物4": {
         "action": "Swipe",
         "begin": "种植物_初始化_铲子位置",
-        "end": [],
+        "end": "种植物_初始化_铲子位置",
         "pre_delay": 0,
         "post_delay": 10,
         "duration": 100,
@@ -487,7 +487,7 @@
     "frame_wj_铲植物5": {
         "action": "Swipe",
         "begin": "种植物_初始化_铲子位置",
-        "end": [],
+        "end": "种植物_初始化_铲子位置",
         "pre_delay": 0,
         "post_delay": 10,
         "duration": 100,
