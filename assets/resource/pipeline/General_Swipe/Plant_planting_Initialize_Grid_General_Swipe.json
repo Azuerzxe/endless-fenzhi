@@ -806,6 +806,114 @@
         "post_delay": 0,
         "pre_delay": 0,
         "next": [
+            "神器_初始化_神器位置"
+        ]
+    },
+    "神器_初始化_神器位置": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {
+                "roi": [
+                    751,
+                    672,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "神器_初始化_葫芦小体型"
+        ]
+    },
+    "神器_初始化_葫芦小体型": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {
+                "roi": [
+                    664,
+                    573,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "神器_初始化_葫芦中体型"
+        ]
+    },
+    "神器_初始化_葫芦中体型": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {
+                "roi": [
+                    745,
+                    575,
+                    6,
+                    5
+                ]
+            }
+        },
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "神器_初始化_葫芦大体型"
+        ]
+    },
+    "神器_初始化_葫芦大体型": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {
+                "roi": [
+                    829,
+                    573,
+                    2,
+                    8
+                ]
+            }
+        },
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "神器_初始化_相机复制"
+        ]
+    },
+    "神器_初始化_相机复制": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {
+                "roi": [
+                    704,
+                    566,
+                    7,
+                    8
+                ]
+            }
+        },
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "神器_初始化_相机粘贴"
+        ]
+    },
+    "神器_初始化_相机粘贴": {
+        "recognition": {
+            "type": "DirectHit",
+            "param": {
+                "roi": [
+                    794,
+                    570,
+                    1,
+                    1
+                ]
+            }
+        },
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
             "[Anchor]初始化"
         ]
     },

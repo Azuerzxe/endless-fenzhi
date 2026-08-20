@@ -2,10 +2,7 @@
     "原大_开棱镜塔": {
         "recognition": "DirectHit",
         "action": "Click",
-        "target": [
-            751,
-            675
-        ],
+        "target": "神器_初始化_神器位置",
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
