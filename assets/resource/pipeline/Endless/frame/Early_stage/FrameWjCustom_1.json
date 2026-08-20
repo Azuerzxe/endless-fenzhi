@@ -108,7 +108,7 @@
         ],
         "next": [
             "frame_wj_custom_判断是否种守卫菇",
-            "frame_wj_custom_卡1_过渡"
+            "frame_wj_custom_球果_过渡"
         ]
     },
     "frame_wj_custom_判断是否种守卫菇": {
@@ -136,6 +136,14 @@
         "post_delay": 0,
         "next": [
             "frame_wj_custom_2_Entry"
+        ]
+    },
+    "frame_wj_custom_球果_过渡": {
+        "action": "DoNothing",
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡1_过渡"
         ]
     },
     "frame_wj_custom_卡1_过渡": {

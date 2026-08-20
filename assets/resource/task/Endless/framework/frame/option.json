@@ -312,7 +312,7 @@
                 {
                     "name": "No",
                     "pipeline_override": {
-                        "frame_wj_捡花1": {
+                        "frame_wj_球果_过渡": {
                             "next": [
                                 "frame_wj_点波"
                             ]
