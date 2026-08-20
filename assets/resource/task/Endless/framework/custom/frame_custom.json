@@ -27,6 +27,7 @@
                         "frame_wj_custom_是否种守卫菇",
                         "frame_wj_custom_布完阵是否喂豆",
                         "frame_wj_custom_boss关是否喂豆",
+                        "frame_wj_custom_球果切换形态",
                         "frame_wj_custom_是否使用铲子1",
                         "frame_wj_custom_是否使用铲子2",
                         "卡1种植",
@@ -98,6 +99,64 @@
                             "next": [
                                 "frame_wj_custom_boss_识别开始"
                             ]
+                        }
+                    }
+                }
+            ]
+        },
+        "frame_wj_custom_球果切换形态": {
+            "type": "switch",
+            "label": "球果是否需要切换形态",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {
+                        "frame_wj_custom_球果_过渡": {
+                            "next": [
+                                "frame_wj_custom_球果切换形态"
+                            ]
+                        }
+                    },
+                    "option": [
+                        "frame_wj_custom_球果位置"
+                    ]
+                }
+            ]
+        },
+        "frame_wj_custom_球果位置": {
+            "type": "select",
+            "label": "球果形态",
+            "cases": [
+                {
+                    "name": "恐龙形态",
+                    "label": "恐龙形态",
+                    "pipeline_override": {
+                        "frame_wj_custom_球果切换形态": {
+                            "repeat": 3
+                        }
+                    }
+                },
+                {
+                    "name": "幽灵马形态",
+                    "label": "幽灵马形态",
+                    "pipeline_override": {
+                        "frame_wj_custom_球果切换形态": {
+                            "repeat": 2
+                        }
+                    }
+                },
+                {
+                    "name": "水母形态",
+                    "label": "水母形态",
+                    "pipeline_override": {
+                        "frame_wj_custom_球果切换形态": {
+                            "repeat": 1
                         }
                     }
                 }

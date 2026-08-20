@@ -21,6 +21,7 @@
                         }
                     },
                     "option": [
+                        "frame_球果切换形态",
                         "frame_卡槽2_补植物",
                         "frame_卡槽3_补植物",
                         "frame_卡槽4_补植物",
@@ -30,6 +31,64 @@
                         "frame_卡槽8_补植物",
                         "铲除植物"
                     ]
+                }
+            ]
+        },
+        "frame_球果切换形态": {
+            "type": "switch",
+            "label": "球果是否需要切换形态",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "pipeline_override": {
+                        "frame_wj_捡花1": {
+                            "next": [
+                                "无尽框架_球果切换形态"
+                            ]
+                        }
+                    },
+                    "option": [
+                        "frame_球果位置"
+                    ]
+                }
+            ]
+        },
+        "frame_球果位置": {
+            "type": "select",
+            "label": "球果形态",
+            "cases": [
+                {
+                    "name": "恐龙形态",
+                    "label": "恐龙形态",
+                    "pipeline_override": {
+                        "无尽框架_球果切换形态": {
+                            "repeat": 3
+                        }
+                    }
+                },
+                {
+                    "name": "幽灵马形态",
+                    "label": "幽灵马形态",
+                    "pipeline_override": {
+                        "无尽框架_球果切换形态": {
+                            "repeat": 2
+                        }
+                    }
+                },
+                {
+                    "name": "水母形态",
+                    "label": "水母形态",
+                    "pipeline_override": {
+                        "无尽框架_球果切换形态": {
+                            "repeat": 1
+                        }
+                    }
                 }
             ]
         },
