@@ -263,12 +263,7 @@
     },
     "xinta1_点葫芦": {
         "action": "Click",
-        "target": [
-            749,
-            673,
-            7,
-            8
-        ],
+        "target": "神器_初始化_神器位置",
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
@@ -277,12 +272,7 @@
     },
     "xinta1_开葫芦": {
         "action": "Click",
-        "target": [
-            822,
-            570,
-            7,
-            9
-        ],
+        "target": "神器_初始化_葫芦小体型",
         "pre_delay": 200,
         "post_delay": 200,
         "next": [
