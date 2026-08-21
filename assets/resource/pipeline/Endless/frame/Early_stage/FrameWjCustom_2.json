@@ -272,7 +272,7 @@
         "begin": "种植物_初始化_能量豆位置",
         "end": [],
         "pre_delay": 0,
-        "post_delay": 0,
+        "post_delay": 2000,
         "next": [
             "frame_wj_custom_2_铲守卫菇1"
         ]
@@ -281,7 +281,6 @@
         "action": "Swipe",
         "begin": "种植物_初始化_铲子位置",
         "end": [],
-        "pre_delay": 2000,
         "next": [
             "frame_wj_custom_2_种守卫菇2"
         ]
@@ -301,7 +300,7 @@
         "begin": "种植物_初始化_能量豆位置",
         "end": [],
         "pre_delay": 0,
-        "post_delay": 0,
+        "post_delay": 2000,
         "next": [
             "frame_wj_custom_2_铲守卫菇2"
         ]
@@ -310,7 +309,6 @@
         "action": "Swipe",
         "begin": "种植物_初始化_铲子位置",
         "end": [],
-        "pre_delay": 2000,
         "next": [
             "frame_wj_custom_2_种守卫菇3"
         ]
@@ -330,7 +328,7 @@
         "begin": "种植物_初始化_能量豆位置",
         "end": [],
         "pre_delay": 0,
-        "post_delay": 0,
+        "post_delay": 2000,
         "next": [
             "frame_wj_custom_2_铲守卫菇3"
         ]
@@ -339,7 +337,6 @@
         "action": "Swipe",
         "begin": "种植物_初始化_铲子位置",
         "end": [],
-        "pre_delay": 2000,
         "next": [
             "frame_wj_custom_2_种守卫菇4"
         ]
@@ -359,7 +356,7 @@
         "begin": "种植物_初始化_能量豆位置",
         "end": [],
         "pre_delay": 0,
-        "post_delay": 0,
+        "post_delay": 2000,
         "next": [
             "frame_wj_custom_2_铲守卫菇4"
         ]
@@ -368,7 +365,6 @@
         "action": "Swipe",
         "begin": "种植物_初始化_铲子位置",
         "end": [],
-        "pre_delay": 2000,
         "next": [
             "frame_wj_custom_2_种守卫菇5"
         ]
@@ -388,7 +384,7 @@
         "begin": "种植物_初始化_能量豆位置",
         "end": [],
         "pre_delay": 0,
-        "post_delay": 0,
+        "post_delay": 2000,
         "next": [
             "frame_wj_custom_2_铲守卫菇5"
         ]
@@ -397,7 +393,6 @@
         "action": "Swipe",
         "begin": "种植物_初始化_铲子位置",
         "end": [],
-        "pre_delay": 2000,
         "timeout": -1,
         "next": [
             "frame_wj_过渡3"
