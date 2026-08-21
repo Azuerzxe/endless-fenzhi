@@ -9,22 +9,16 @@
         ]
     },
     "魔甘收尾": {
-        "recognition": "ColorMatch",
-        "lower": [
-            217,
-            215,
-            175
+        "recognition": "TemplateMatch",
+        "template": [
+            "Endless/frame/僵尸头像.png"
         ],
-        "upper": [
-            242,
-            241,
-            211
-        ],
+        "green_mask": true,
         "roi": [
-            613,
-            35,
-            5,
-            13
+            586,
+            15,
+            54,
+            57
         ],
         "action": "DoNothing",
         "pre_delay": 0,
