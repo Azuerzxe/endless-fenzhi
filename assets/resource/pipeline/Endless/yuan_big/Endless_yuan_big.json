@@ -428,10 +428,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动1"
+            "原大_桑葚2_1"
         ]
     },
-    "原大_桑葚滑动1": {
+    "原大_桑葚2_1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -440,10 +440,10 @@
         "pre_delay": 500,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动2"
+            "原大_桑葚2_2"
         ]
     },
-    "原大_桑葚滑动2": {
+    "原大_桑葚2_2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -453,10 +453,10 @@
         "post_delay": 0,
         "next": [
             "原大_识别结算",
-            "原大_桑葚滑动3"
+            "原大_桑葚2_3"
         ]
     },
-    "原大_桑葚滑动3": {
+    "原大_桑葚2_3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -465,10 +465,10 @@
         "pre_delay": 500,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动4"
+            "原大_桑葚2_4"
         ]
     },
-    "原大_桑葚滑动4": {
+    "原大_桑葚2_4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -477,10 +477,10 @@
         "pre_delay": 500,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动5"
+            "原大_桑葚2_5"
         ]
     },
-    "原大_桑葚滑动5": {
+    "原大_桑葚2_5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -489,10 +489,10 @@
         "pre_delay": 500,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动6"
+            "原大_桑葚3_1"
         ]
     },
-    "原大_桑葚滑动6": {
+    "原大_桑葚3_1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -501,10 +501,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动7"
+            "原大_桑葚3_3"
         ]
     },
-    "原大_桑葚滑动7": {
+    "原大_桑葚3_3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -513,10 +513,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动8"
+            "原大_桑葚3_4"
         ]
     },
-    "原大_桑葚滑动8": {
+    "原大_桑葚3_4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -525,10 +525,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动9"
+            "原大_桑葚4_1"
         ]
     },
-    "原大_桑葚滑动9": {
+    "原大_桑葚4_1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -537,10 +537,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动10"
+            "原大_桑葚4_2"
         ]
     },
-    "原大_桑葚滑动10": {
+    "原大_桑葚4_2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -549,10 +549,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动11"
+            "原大_桑葚4_3"
         ]
     },
-    "原大_桑葚滑动11": {
+    "原大_桑葚4_3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -561,10 +561,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动12"
+            "原大_桑葚4_4"
         ]
     },
-    "原大_桑葚滑动12": {
+    "原大_桑葚4_4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -574,10 +574,10 @@
         "post_delay": 0,
         "next": [
             "原大_识别结算",
-            "原大_桑葚滑动13"
+            "原大_桑葚4_5"
         ]
     },
-    "原大_桑葚滑动13": {
+    "原大_桑葚4_5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -586,10 +586,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动14"
+            "原大_桑葚5_1"
         ]
     },
-    "原大_桑葚滑动14": {
+    "原大_桑葚5_1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -598,10 +598,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动15"
+            "原大_桑葚5_2"
         ]
     },
-    "原大_桑葚滑动15": {
+    "原大_桑葚5_2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -610,10 +610,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动16"
+            "原大_桑葚5_3"
         ]
     },
-    "原大_桑葚滑动16": {
+    "原大_桑葚5_3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -622,10 +622,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动17"
+            "原大_桑葚5_4"
         ]
     },
-    "原大_桑葚滑动17": {
+    "原大_桑葚5_4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -634,10 +634,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动18"
+            "原大_桑葚5_5"
         ]
     },
-    "原大_桑葚滑动18": {
+    "原大_桑葚5_5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -646,10 +646,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动19"
+            "原大_桑葚6_2"
         ]
     },
-    "原大_桑葚滑动19": {
+    "原大_桑葚6_2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -658,10 +658,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动20"
+            "原大_桑葚6_3"
         ]
     },
-    "原大_桑葚滑动20": {
+    "原大_桑葚6_3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -670,10 +670,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动21"
+            "原大_桑葚6_5"
         ]
     },
-    "原大_桑葚滑动21": {
+    "原大_桑葚6_5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -682,10 +682,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动22"
+            "原大_桑葚7_1"
         ]
     },
-    "原大_桑葚滑动22": {
+    "原大_桑葚7_1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -695,10 +695,10 @@
         "post_delay": 0,
         "next": [
             "原大_识别结算",
-            "原大_桑葚滑动23"
+            "原大_桑葚7_2"
         ]
     },
-    "原大_桑葚滑动23": {
+    "原大_桑葚7_2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -707,10 +707,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动24"
+            "原大_桑葚7_3"
         ]
     },
-    "原大_桑葚滑动24": {
+    "原大_桑葚7_3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -719,10 +719,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动25"
+            "原大_桑葚7_4"
         ]
     },
-    "原大_桑葚滑动25": {
+    "原大_桑葚7_4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -731,10 +731,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_桑葚滑动26"
+            "原大_桑葚7_5"
         ]
     },
-    "原大_桑葚滑动26": {
+    "原大_桑葚7_5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
@@ -771,10 +771,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动1"
+            "原大_毒藤2_1"
         ]
     },
-    "原大_毒藤滑动1": {
+    "原大_毒藤2_1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -783,10 +783,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动2"
+            "原大_毒藤2_2"
         ]
     },
-    "原大_毒藤滑动2": {
+    "原大_毒藤2_2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -795,10 +795,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动3"
+            "原大_毒藤2_3"
         ]
     },
-    "原大_毒藤滑动3": {
+    "原大_毒藤2_3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -807,10 +807,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动4"
+            "原大_毒藤2_4"
         ]
     },
-    "原大_毒藤滑动4": {
+    "原大_毒藤2_4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -820,10 +820,10 @@
         "post_delay": 0,
         "next": [
             "原大_识别结算",
-            "原大_毒藤滑动5"
+            "原大_毒藤2_5"
         ]
     },
-    "原大_毒藤滑动5": {
+    "原大_毒藤2_5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -832,10 +832,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动6"
+            "原大_毒藤3_1"
         ]
     },
-    "原大_毒藤滑动6": {
+    "原大_毒藤3_1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -844,10 +844,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动7"
+            "原大_毒藤3_3"
         ]
     },
-    "原大_毒藤滑动7": {
+    "原大_毒藤3_3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -856,10 +856,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动8"
+            "原大_毒藤3_4"
         ]
     },
-    "原大_毒藤滑动8": {
+    "原大_毒藤3_4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -868,10 +868,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动9"
+            "原大_毒藤4_1"
         ]
     },
-    "原大_毒藤滑动9": {
+    "原大_毒藤4_1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -880,10 +880,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动10"
+            "原大_毒藤4_2"
         ]
     },
-    "原大_毒藤滑动10": {
+    "原大_毒藤4_2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -892,10 +892,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动11"
+            "原大_毒藤4_3"
         ]
     },
-    "原大_毒藤滑动11": {
+    "原大_毒藤4_3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -904,10 +904,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动12"
+            "原大_毒藤4_4"
         ]
     },
-    "原大_毒藤滑动12": {
+    "原大_毒藤4_4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -916,10 +916,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动13"
+            "原大_毒藤4_5"
         ]
     },
-    "原大_毒藤滑动13": {
+    "原大_毒藤4_5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -928,10 +928,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动14"
+            "原大_毒藤5_1"
         ]
     },
-    "原大_毒藤滑动14": {
+    "原大_毒藤5_1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -941,10 +941,10 @@
         "post_delay": 0,
         "next": [
             "原大_识别结算",
-            "原大_毒藤滑动15"
+            "原大_毒藤5_2"
         ]
     },
-    "原大_毒藤滑动15": {
+    "原大_毒藤5_2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -953,10 +953,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动16"
+            "原大_毒藤5_3"
         ]
     },
-    "原大_毒藤滑动16": {
+    "原大_毒藤5_3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -965,10 +965,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动17"
+            "原大_毒藤5_4"
         ]
     },
-    "原大_毒藤滑动17": {
+    "原大_毒藤5_4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -977,10 +977,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动18"
+            "原大_毒藤5_5"
         ]
     },
-    "原大_毒藤滑动18": {
+    "原大_毒藤5_5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -989,10 +989,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动19"
+            "原大_毒藤6_2"
         ]
     },
-    "原大_毒藤滑动19": {
+    "原大_毒藤6_2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -1001,10 +1001,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动20"
+            "原大_毒藤6_3"
         ]
     },
-    "原大_毒藤滑动20": {
+    "原大_毒藤6_3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -1013,10 +1013,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动21"
+            "原大_毒藤6_5"
         ]
     },
-    "原大_毒藤滑动21": {
+    "原大_毒藤6_5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -1025,10 +1025,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动22"
+            "原大_毒藤7_1"
         ]
     },
-    "原大_毒藤滑动22": {
+    "原大_毒藤7_1": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -1037,10 +1037,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动23"
+            "原大_毒藤7_2"
         ]
     },
-    "原大_毒藤滑动23": {
+    "原大_毒藤7_2": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -1049,10 +1049,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动24"
+            "原大_毒藤7_3"
         ]
     },
-    "原大_毒藤滑动24": {
+    "原大_毒藤7_3": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -1061,10 +1061,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动25"
+            "原大_毒藤7_4"
         ]
     },
-    "原大_毒藤滑动25": {
+    "原大_毒藤7_4": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
@@ -1073,10 +1073,10 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "原大_毒藤滑动26"
+            "原大_毒藤7_5"
         ]
     },
-    "原大_毒藤滑动26": {
+    "原大_毒藤7_5": {
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",

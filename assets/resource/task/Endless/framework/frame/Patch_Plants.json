@@ -115,7 +115,17 @@
                         "卡槽2_2",
                         "卡槽2_3",
                         "卡槽2_4",
-                        "卡槽2_5"
+                        "卡槽2_5",
+                        "卡槽2_6",
+                        "卡槽2_7",
+                        "卡槽2_8",
+                        "卡槽2_9",
+                        "卡槽2_10",
+                        "卡槽2_11",
+                        "卡槽2_12",
+                        "卡槽2_13",
+                        "卡槽2_14",
+                        "卡槽2_15"
                     ]
                 }
             ]
@@ -345,6 +355,456 @@
                 }
             }
         },
+        "卡槽2_6": {
+            "type": "switch",
+            "label": "第6个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡2_补植物6": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽2_6坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽2_6坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡2_补植物6": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽2_7": {
+            "type": "switch",
+            "label": "第7个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡2_补植物7": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽2_7坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽2_7坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡2_补植物7": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽2_8": {
+            "type": "switch",
+            "label": "第8个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡2_补植物8": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽2_8坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽2_8坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡2_补植物8": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽2_9": {
+            "type": "switch",
+            "label": "第9个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡2_补植物9": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽2_9坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽2_9坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡2_补植物9": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽2_10": {
+            "type": "switch",
+            "label": "第10个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡2_补植物10": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽2_10坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽2_10坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡2_补植物10": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽2_11": {
+            "type": "switch",
+            "label": "第11个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡2_补植物11": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽2_11坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽2_11坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡2_补植物11": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽2_12": {
+            "type": "switch",
+            "label": "第12个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡2_补植物12": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽2_12坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽2_12坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡2_补植物12": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽2_13": {
+            "type": "switch",
+            "label": "第13个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡2_补植物13": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽2_13坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽2_13坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡2_补植物13": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽2_14": {
+            "type": "switch",
+            "label": "第14个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡2_补植物14": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽2_14坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽2_14坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡2_补植物14": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽2_15": {
+            "type": "switch",
+            "label": "第15个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡2_补植物15": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽2_15坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽2_15坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡2_补植物15": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
         "frame_卡槽3_补植物": {
             "type": "switch",
             "label": "卡槽3补植物位置",
@@ -368,7 +828,17 @@
                         "卡槽3_2",
                         "卡槽3_3",
                         "卡槽3_4",
-                        "卡槽3_5"
+                        "卡槽3_5",
+                        "卡槽3_6",
+                        "卡槽3_7",
+                        "卡槽3_8",
+                        "卡槽3_9",
+                        "卡槽3_10",
+                        "卡槽3_11",
+                        "卡槽3_12",
+                        "卡槽3_13",
+                        "卡槽3_14",
+                        "卡槽3_15"
                     ]
                 }
             ]
@@ -594,6 +1064,456 @@
             ],
             "pipeline_override": {
                 "frame_wj_卡3_补植物5": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽3_6": {
+            "type": "switch",
+            "label": "第6个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡3_补植物6": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽3_6坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽3_6坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡3_补植物6": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽3_7": {
+            "type": "switch",
+            "label": "第7个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡3_补植物7": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽3_7坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽3_7坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡3_补植物7": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽3_8": {
+            "type": "switch",
+            "label": "第8个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡3_补植物8": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽3_8坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽3_8坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡3_补植物8": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽3_9": {
+            "type": "switch",
+            "label": "第9个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡3_补植物9": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽3_9坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽3_9坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡3_补植物9": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽3_10": {
+            "type": "switch",
+            "label": "第10个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡3_补植物10": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽3_10坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽3_10坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡3_补植物10": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽3_11": {
+            "type": "switch",
+            "label": "第11个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡3_补植物11": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽3_11坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽3_11坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡3_补植物11": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽3_12": {
+            "type": "switch",
+            "label": "第12个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡3_补植物12": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽3_12坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽3_12坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡3_补植物12": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽3_13": {
+            "type": "switch",
+            "label": "第13个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡3_补植物13": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽3_13坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽3_13坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡3_补植物13": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽3_14": {
+            "type": "switch",
+            "label": "第14个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡3_补植物14": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽3_14坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽3_14坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡3_补植物14": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡槽3_15": {
+            "type": "switch",
+            "label": "第15个植物补哪",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_卡3_补植物15": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "选择位置",
+                    "option": [
+                        "卡槽3_15坐标"
+                    ]
+                }
+            ]
+        },
+        "卡槽3_15坐标": {
+            "type": "input",
+            "label": "行列坐标",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "5",
+                    "verify": "^[1-5]$"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_卡3_补植物15": {
                     "end": "种植物_初始化_格子{列}_{行}"
                 }
             }
