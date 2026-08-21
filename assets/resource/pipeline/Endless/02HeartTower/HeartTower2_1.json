@@ -76,7 +76,7 @@
         "end": "种植物_初始化_格子1_1",
         "pre_delay": 0,
         "post_delay": 0,
-        "duration": 100,
+        "duration": 300,
         "next": [
             "2_种蓓蕾2"
         ]
@@ -85,7 +85,7 @@
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
         "end": "种植物_初始化_格子2_1",
-        "duration": 100,
+        "duration": 300,
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
@@ -96,7 +96,7 @@
         "action": "Swipe",
         "begin": "种植物_初始化_第四个槽位",
         "end": "种植物_初始化_格子3_1",
-        "duration": 100,
+        "duration": 300,
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
@@ -109,7 +109,7 @@
         "end": "种植物_初始化_格子1_3",
         "pre_delay": 0,
         "post_delay": 0,
-        "duration": 100,
+        "duration": 400,
         "next": [
             "2_种香蕉2"
         ]
@@ -118,7 +118,7 @@
         "action": "Swipe",
         "begin": "种植物_初始化_第一个槽位",
         "end": "种植物_初始化_格子2_3",
-        "duration": 100,
+        "duration": 400,
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
@@ -131,7 +131,7 @@
         "end": "种植物_初始化_格子3_3",
         "pre_delay": 0,
         "post_delay": 0,
-        "duration": 100,
+        "duration": 400,
         "next": [
             "2_种牛蒡"
         ]
@@ -142,7 +142,7 @@
         "end": "种植物_初始化_格子4_3",
         "pre_delay": 0,
         "post_delay": 0,
-        "duration": 100,
+        "duration": 400,
         "next": [
             "2_球果1"
         ]
@@ -177,7 +177,7 @@
         "end": "种植物_初始化_格子2_4",
         "pre_delay": 0,
         "post_delay": 0,
-        "duration": 100,
+        "duration": 400,
         "next": [
             "2_种豆藤"
         ]
@@ -188,7 +188,7 @@
         "end": "种植物_初始化_格子2_3",
         "pre_delay": 0,
         "post_delay": 0,
-        "duration": 100,
+        "duration": 400,
         "next": [
             "2_种大哥1"
         ]
@@ -197,7 +197,7 @@
         "action": "Swipe",
         "begin": "种植物_初始化_第六个槽位",
         "end": "种植物_初始化_格子4_2",
-        "duration": 100,
+        "duration": 300,
         "next": [
             "2_种大哥2"
         ]
@@ -206,7 +206,7 @@
         "action": "Swipe",
         "begin": "种植物_初始化_第六个槽位",
         "end": "种植物_初始化_格子4_4",
-        "duration": 100,
+        "duration": 300,
         "next": [
             "2_xinta1_点波"
         ]
@@ -248,7 +248,7 @@
         "action": "Swipe",
         "begin": "种植物_初始化_第五个槽位",
         "end": "种植物_初始化_格子4_2",
-        "duration": 100,
+        "duration": 200,
         "next": [
             "2_种电豌2"
         ]
@@ -257,7 +257,7 @@
         "action": "Swipe",
         "begin": "种植物_初始化_第五个槽位",
         "end": "种植物_初始化_格子4_4",
-        "duration": 100,
+        "duration": 200,
         "next": [
             "2_xinta1_识别结算"
         ]
