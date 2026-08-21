@@ -48,6 +48,7 @@
                         "frame_wj_boss_喂豆5-3": {
                             "next": [
                                 "frame_wj_boss_过渡_相机神器2",
+                                "frame_wj_boss_喂豆2",
                                 "frame_wj_boss_喂豆5-3"
                             ]
                         }
