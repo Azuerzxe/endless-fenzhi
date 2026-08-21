@@ -1407,7 +1407,22 @@
                         "卡1种第7次",
                         "卡1种第8次",
                         "卡1种第9次",
-                        "卡1种第10次"
+                        "卡1种第10次",
+                        "卡1种第11次",
+                        "卡1种第12次",
+                        "卡1种第13次",
+                        "卡1种第14次",
+                        "卡1种第15次",
+                        "卡1种第16次",
+                        "卡1种第17次",
+                        "卡1种第18次",
+                        "卡1种第19次",
+                        "卡1种第20次",
+                        "卡1种第21次",
+                        "卡1种第22次",
+                        "卡1种第23次",
+                        "卡1种第24次",
+                        "卡1种第25次"
                     ]
                 }
             ]
@@ -1882,6 +1897,711 @@
                 }
             }
         },
+        "卡1种第11次": {
+            "type": "switch",
+            "label": "第11次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡1_种植物11": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡1种第11次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡1种第11次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡1_种植物11": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡1种第12次": {
+            "type": "switch",
+            "label": "第12次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡1_种植物12": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡1种第12次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡1种第12次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡1_种植物12": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡1种第13次": {
+            "type": "switch",
+            "label": "第13次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡1_种植物13": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡1种第13次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡1种第13次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡1_种植物13": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡1种第14次": {
+            "type": "switch",
+            "label": "第14次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡1_种植物14": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡1种第14次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡1种第14次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡1_种植物14": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡1种第15次": {
+            "type": "switch",
+            "label": "第15次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡1_种植物15": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡1种第15次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡1种第15次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡1_种植物15": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡1种第16次": {
+            "type": "switch",
+            "label": "第16次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡1_种植物16": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡1种第16次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡1种第16次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡1_种植物16": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡1种第17次": {
+            "type": "switch",
+            "label": "第17次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡1_种植物17": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡1种第17次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡1种第17次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡1_种植物17": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡1种第18次": {
+            "type": "switch",
+            "label": "第18次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡1_种植物18": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡1种第18次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡1种第18次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡1_种植物18": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡1种第19次": {
+            "type": "switch",
+            "label": "第19次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡1_种植物19": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡1种第19次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡1种第19次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡1_种植物19": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡1种第20次": {
+            "type": "switch",
+            "label": "第20次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡1_种植物20": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡1种第20次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡1种第20次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡1_种植物20": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡1种第21次": {
+            "type": "switch",
+            "label": "第21次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡1_种植物21": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡1种第21次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡1种第21次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡1_种植物21": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡1种第22次": {
+            "type": "switch",
+            "label": "第22次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡1_种植物22": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡1种第22次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡1种第22次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡1_种植物22": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡1种第23次": {
+            "type": "switch",
+            "label": "第23次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡1_种植物23": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡1种第23次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡1种第23次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡1_种植物23": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡1种第24次": {
+            "type": "switch",
+            "label": "第24次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡1_种植物24": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡1种第24次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡1种第24次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡1_种植物24": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡1种第25次": {
+            "type": "switch",
+            "label": "第25次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡1_种植物25": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡1种第25次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡1种第25次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡1_种植物25": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
         "卡2种植": {
             "type": "switch",
             "label": "卡2种植",
@@ -1910,7 +2630,21 @@
                         "卡2种第7次",
                         "卡2种第8次",
                         "卡2种第9次",
-                        "卡2种第10次"
+                        "卡2种第11次",
+                        "卡2种第12次",
+                        "卡2种第13次",
+                        "卡2种第14次",
+                        "卡2种第15次",
+                        "卡2种第16次",
+                        "卡2种第17次",
+                        "卡2种第18次",
+                        "卡2种第19次",
+                        "卡2种第20次",
+                        "卡2种第21次",
+                        "卡2种第22次",
+                        "卡2种第23次",
+                        "卡2种第24次",
+                        "卡2种第25次"
                     ]
                 }
             ]
@@ -2381,6 +3115,711 @@
             ],
             "pipeline_override": {
                 "frame_wj_custom_卡2_种植物10": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡2种第11次": {
+            "type": "switch",
+            "label": "第11次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡2_种植物11": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡2种第11次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡2种第11次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡2_种植物11": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡2种第12次": {
+            "type": "switch",
+            "label": "第12次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡2_种植物12": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡2种第12次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡2种第12次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡2_种植物12": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡2种第13次": {
+            "type": "switch",
+            "label": "第13次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡2_种植物13": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡2种第13次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡2种第13次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡2_种植物13": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡2种第14次": {
+            "type": "switch",
+            "label": "第14次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡2_种植物14": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡2种第14次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡2种第14次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡2_种植物14": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡2种第15次": {
+            "type": "switch",
+            "label": "第15次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡2_种植物15": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡2种第15次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡2种第15次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡2_种植物15": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡2种第16次": {
+            "type": "switch",
+            "label": "第16次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡2_种植物16": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡2种第16次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡2种第16次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡2_种植物16": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡2种第17次": {
+            "type": "switch",
+            "label": "第17次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡2_种植物17": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡2种第17次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡2种第17次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡2_种植物17": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡2种第18次": {
+            "type": "switch",
+            "label": "第18次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡2_种植物18": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡2种第18次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡2种第18次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡2_种植物18": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡2种第19次": {
+            "type": "switch",
+            "label": "第19次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡2_种植物19": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡2种第19次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡2种第19次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡2_种植物19": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡2种第20次": {
+            "type": "switch",
+            "label": "第20次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡2_种植物20": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡2种第20次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡2种第20次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡2_种植物20": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡2种第21次": {
+            "type": "switch",
+            "label": "第21次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡2_种植物21": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡2种第21次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡2种第21次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡2_种植物21": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡2种第22次": {
+            "type": "switch",
+            "label": "第22次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡2_种植物22": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡2种第22次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡2种第22次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡2_种植物22": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡2种第23次": {
+            "type": "switch",
+            "label": "第23次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡2_种植物23": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡2种第23次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡2种第23次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡2_种植物23": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡2种第24次": {
+            "type": "switch",
+            "label": "第24次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡2_种植物24": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡2种第24次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡2种第24次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡2_种植物24": {
+                    "end": "种植物_初始化_格子{列}_{行}"
+                }
+            }
+        },
+        "卡2种第25次": {
+            "type": "switch",
+            "label": "第25次种植位置",
+            "cases": [
+                {
+                    "name": "No",
+                    "label": "否",
+                    "pipeline_override": {
+                        "frame_wj_custom_卡2_种植物25": {
+                            "action": "DoNothing"
+                        }
+                    }
+                },
+                {
+                    "name": "Yes",
+                    "label": "是",
+                    "option": [
+                        "卡2种第25次坐标"
+                    ]
+                }
+            ]
+        },
+        "卡2种第25次坐标": {
+            "type": "input",
+            "label": "坐标（列-行）",
+            "inputs": [
+                {
+                    "name": "列",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-9]$",
+                    "pattern_msg": "请输入1-9"
+                },
+                {
+                    "name": "行",
+                    "pipeline_type": "string",
+                    "default": "1",
+                    "verify": "^[1-5]$",
+                    "pattern_msg": "请输入1-5"
+                }
+            ],
+            "pipeline_override": {
+                "frame_wj_custom_卡2_种植物25": {
                     "end": "种植物_初始化_格子{列}_{行}"
                 }
             }

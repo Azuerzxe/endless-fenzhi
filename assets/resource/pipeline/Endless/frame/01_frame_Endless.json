@@ -167,7 +167,7 @@
             "frame_wj_过渡2"
         ]
     },
-    "frame_wj_过渡2": {
+    "frame_wj_过渡2": { //植物补种
         "action": "DoNothing",
         "pre_delay": 0,
         "post_delay": 0,
@@ -387,7 +387,7 @@
         "duration": 100,
         "next": [
             "frame_wj_识别结算",
-            "frame_wj_点波"
+            "frame_wj_划飞弹"
         ]
     },
     "frame_wj_识别结算": {
@@ -483,10 +483,10 @@
         "recognition": "OCR",
         "expected": "全部植物",
         "roi": [
-            291,
-            356,
-            1364,
-            120
+            194,
+            237,
+            909,
+            80
         ],
         "action": "Click",
         "pre_delay": 1000,
@@ -498,10 +498,10 @@
         "recognition": "OCR",
         "expected": "橙色植物",
         "roi": [
-            291,
-            356,
-            1364,
-            120
+            194,
+            237,
+            909,
+            80
         ],
         "action": "Click",
         "pre_delay": 1000,
@@ -513,10 +513,10 @@
         "recognition": "OCR",
         "expected": "蓝色植物",
         "roi": [
-            291,
-            356,
-            1364,
-            120
+            194,
+            237,
+            909,
+            80
         ],
         "action": "Click",
         "pre_delay": 1000,
@@ -528,10 +528,10 @@
         "recognition": "OCR",
         "expected": "紫色植物",
         "roi": [
-            291,
-            356,
-            1364,
-            120
+            194,
+            237,
+            909,
+            80
         ],
         "action": "Click",
         "pre_delay": 1000,

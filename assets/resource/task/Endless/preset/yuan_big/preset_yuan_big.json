@@ -43,7 +43,7 @@
                     "name": "Yes",
                     "label": "是",
                     "pipeline_override": {
-                        "原大_毒藤滑动26": {
+                        "原大_毒藤7_5": {
                             "next": [
                                 "原大_开棱镜塔"
                             ]

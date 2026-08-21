@@ -251,6 +251,156 @@
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
+            "frame_wj_custom_卡1_种植物11"
+        ]
+    },
+    "frame_wj_custom_卡1_种植物11": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第一个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡1_种植物12"
+        ]
+    },
+    "frame_wj_custom_卡1_种植物12": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第一个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡1_种植物13"
+        ]
+    },
+    "frame_wj_custom_卡1_种植物13": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第一个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡1_种植物14"
+        ]
+    },
+    "frame_wj_custom_卡1_种植物14": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第一个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡1_种植物15"
+        ]
+    },
+    "frame_wj_custom_卡1_种植物15": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第一个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡1_种植物16"
+        ]
+    },
+    "frame_wj_custom_卡1_种植物16": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第一个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡1_种植物17"
+        ]
+    },
+    "frame_wj_custom_卡1_种植物17": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第一个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡1_种植物18"
+        ]
+    },
+    "frame_wj_custom_卡1_种植物18": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第一个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡1_种植物19"
+        ]
+    },
+    "frame_wj_custom_卡1_种植物19": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第一个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡1_种植物20"
+        ]
+    },
+    "frame_wj_custom_卡1_种植物20": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第一个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡1_种植物21"
+        ]
+    },
+    "frame_wj_custom_卡1_种植物21": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第一个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡1_种植物22"
+        ]
+    },
+    "frame_wj_custom_卡1_种植物22": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第一个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡1_种植物23"
+        ]
+    },
+    "frame_wj_custom_卡1_种植物23": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第一个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡1_种植物24"
+        ]
+    },
+    "frame_wj_custom_卡1_种植物24": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第一个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡1_种植物25"
+        ]
+    },
+    "frame_wj_custom_卡1_种植物25": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第一个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
             "frame_wj_custom_卡2_过渡"
         ]
     },
@@ -353,6 +503,156 @@
         ]
     },
     "frame_wj_custom_卡2_种植物10": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第二个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡2_种植物11"
+        ]
+    },
+    "frame_wj_custom_卡2_种植物11": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第二个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡2_种植物12"
+        ]
+    },
+    "frame_wj_custom_卡2_种植物12": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第二个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡2_种植物13"
+        ]
+    },
+    "frame_wj_custom_卡2_种植物13": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第二个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡2_种植物14"
+        ]
+    },
+    "frame_wj_custom_卡2_种植物14": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第二个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡2_种植物15"
+        ]
+    },
+    "frame_wj_custom_卡2_种植物15": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第二个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡2_种植物16"
+        ]
+    },
+    "frame_wj_custom_卡2_种植物16": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第二个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡2_种植物17"
+        ]
+    },
+    "frame_wj_custom_卡2_种植物17": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第二个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡2_种植物18"
+        ]
+    },
+    "frame_wj_custom_卡2_种植物18": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第二个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡2_种植物19"
+        ]
+    },
+    "frame_wj_custom_卡2_种植物19": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第二个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡2_种植物20"
+        ]
+    },
+    "frame_wj_custom_卡2_种植物20": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第二个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡2_种植物21"
+        ]
+    },
+    "frame_wj_custom_卡2_种植物21": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第二个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡2_种植物22"
+        ]
+    },
+    "frame_wj_custom_卡2_种植物22": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第二个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡2_种植物23"
+        ]
+    },
+    "frame_wj_custom_卡2_种植物23": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第二个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡2_种植物24"
+        ]
+    },
+    "frame_wj_custom_卡2_种植物24": {
+        "action": "Swipe",
+        "begin": "种植物_初始化_第二个槽位",
+        "end": [],
+        "pre_delay": 0,
+        "post_delay": 0,
+        "next": [
+            "frame_wj_custom_卡2_种植物25"
+        ]
+    },
+    "frame_wj_custom_卡2_种植物25": {
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
         "end": [],
