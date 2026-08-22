@@ -626,6 +626,7 @@
             633,
             614
         ],
+        "post_delay": 1000,
         "next": [
             "frame_wj_提示",
             "frame_wj_确定3"
@@ -667,8 +668,9 @@
             633,
             614
         ],
+        "repeat": 3,
         "pre_delay": 1000,
-        "post_delay": 1000,
+        "post_delay": 500,
         "next": [
             "frame_wj_boss_识别开始"
         ]
