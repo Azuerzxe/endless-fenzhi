@@ -30,6 +30,9 @@
             510,
             683
         ],
+        "threshold": [
+            0.99
+        ],
         "next": [
             "[Anchor]无尽框架前期/后期"
         ]
@@ -44,6 +47,9 @@
             26,
             510,
             683
+        ],
+        "threshold": [
+            0.99
         ],
         "next": [
             "[Anchor]无尽框架前期/后期"
@@ -79,6 +85,9 @@
             510,
             683
         ],
+        "threshold": [
+            0.99
+        ],
         "next": [
             "[Anchor]无尽框架前期/后期"
         ]
@@ -87,6 +96,9 @@
         "recognition": "TemplateMatch",
         "template": [
             "Endless/frame/boss/无尽_沙滩boss关.png"
+        ],
+        "threshold": [
+            0.99
         ],
         "roi": [
             759,
@@ -109,6 +121,9 @@
             510,
             683
         ],
+        "threshold": [
+            0.99
+        ],
         "next": [
             "[Anchor]无尽框架前期/后期"
         ]
@@ -123,6 +138,9 @@
             26,
             510,
             683
+        ],
+        "threshold": [
+            0.99
         ],
         "next": [
             "[Anchor]无尽框架前期/后期"
@@ -139,6 +157,9 @@
             510,
             683
         ],
+        "threshold": [
+            0.99
+        ],
         "next": [
             "[Anchor]无尽框架前期/后期"
         ]
@@ -153,6 +174,9 @@
             26,
             510,
             683
+        ],
+        "threshold": [
+            0.99
         ],
         "next": [
             "[Anchor]无尽框架前期/后期"
