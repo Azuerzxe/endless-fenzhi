@@ -1,0 +1,161 @@
+{
+    "无尽通用框架_识别boss关_开始阶段": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Endless/frame/boss/僵王的头.png",
+            "Endless/frame/boss/功夫僵王.png"
+        ],
+        "roi": [
+            169,
+            8,
+            335,
+            69
+        ],
+        "threshold": [
+            0.6
+        ],
+        "green_mask": true,
+        "next": [
+            "[Anchor]无尽框架前期/后期局内"
+        ]
+    },
+    "识别boss关_选卡阶段_埃及": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Endless/frame/boss/无尽_埃及boss关.png"
+        ],
+        "roi": [
+            759,
+            26,
+            510,
+            683
+        ],
+        "next": [
+            "[Anchor]无尽框架前期/后期"
+        ]
+    },
+    "识别boss关_选卡阶段_冰河": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Endless/frame/boss/无尽_冰河boss关.png"
+        ],
+        "roi": [
+            759,
+            26,
+            510,
+            683
+        ],
+        "next": [
+            "[Anchor]无尽框架前期/后期"
+        ]
+    },
+    "识别boss关_选卡阶段_功夫": {
+        "recognition": {
+            "type": "FeatureMatch",
+            "param": {
+                "template": "Endless/frame/boss/无尽_功夫boss关.png",
+                "roi": [
+                    759,
+                    26,
+                    510,
+                    683
+                ],
+                "detector": "SIFT",
+                "ratio": 0.6
+            }
+        },
+        "next": [
+            "[Anchor]无尽框架前期/后期"
+        ]
+    },
+    "识别boss关_选卡阶段_未来": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Endless/frame/boss/无尽_未来boss关.png"
+        ],
+        "roi": [
+            759,
+            26,
+            510,
+            683
+        ],
+        "next": [
+            "[Anchor]无尽框架前期/后期"
+        ]
+    },
+    "识别boss关_选卡阶段_沙滩": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Endless/frame/boss/无尽_沙滩boss关.png"
+        ],
+        "roi": [
+            759,
+            26,
+            510,
+            683
+        ],
+        "next": [
+            "[Anchor]无尽框架前期/后期"
+        ]
+    },
+    "识别boss关_选卡阶段_海盗": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Endless/frame/boss/无尽_海盗boss关.png"
+        ],
+        "roi": [
+            759,
+            26,
+            510,
+            683
+        ],
+        "next": [
+            "[Anchor]无尽框架前期/后期"
+        ]
+    },
+    "识别boss关_选卡阶段_西部": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Endless/frame/boss/无尽_西部boss关.png"
+        ],
+        "roi": [
+            759,
+            26,
+            510,
+            683
+        ],
+        "next": [
+            "[Anchor]无尽框架前期/后期"
+        ]
+    },
+    "识别boss关_选卡阶段_黑暗": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Endless/frame/boss/无尽_黑暗boss关.png"
+        ],
+        "roi": [
+            759,
+            26,
+            510,
+            683
+        ],
+        "next": [
+            "[Anchor]无尽框架前期/后期"
+        ]
+    },
+    "识别boss关_选卡阶段_失落": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "Endless/frame/boss/无尽_失落boss关.png"
+        ],
+        "roi": [
+            759,
+            26,
+            510,
+            683
+        ],
+        "next": [
+            "[Anchor]无尽框架前期/后期"
+        ]
+    }
+}

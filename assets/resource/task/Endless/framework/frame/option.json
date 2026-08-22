@@ -1,26 +1,5 @@
 {
     "option": {
-        "从boss关选卡界面开启": {
-            "type": "switch",
-            "cases": [
-                {
-                    "name": "No"
-                },
-                {
-                    "name": "Yes",
-                    "pipeline_override": {
-                        "frame_wj_识别开始战斗": {
-                            "next": [
-                                "识别能量花位置",
-                                "识别魔音位置",
-                                "识别三叶草位置",
-                                "frame_wj_boss_识别开始"
-                            ]
-                        }
-                    }
-                }
-            ]
-        },
         "fw_boss_是否开相机神器": {
             "type": "switch",
             "label": "boss关是否开相机神器复原植物",

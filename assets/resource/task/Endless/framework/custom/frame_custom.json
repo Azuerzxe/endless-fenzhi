@@ -21,7 +21,6 @@
                     },
                     "option": [
                         "frame_wj_custom_前期使用编队",
-                        "frame_wj_custom_从boss关选卡界面开始",
                         "frame_wj_custom_回到后期",
                         "frame_wj_custom_回到后期切换编队",
                         "frame_wj_custom_是否种守卫菇",
@@ -81,28 +80,6 @@
                     ]
                 }
             }
-        },
-        "frame_wj_custom_从boss关选卡界面开始": {
-            "type": "switch",
-            "label": "从boss关选卡界面开始",
-            "cases": [
-                {
-                    "name": "No",
-                    "label": "否",
-                    "pipeline_override": {}
-                },
-                {
-                    "name": "Yes",
-                    "label": "是",
-                    "pipeline_override": {
-                        "frame_wj_custom_Entry": {
-                            "next": [
-                                "frame_wj_custom_boss_识别开始"
-                            ]
-                        }
-                    }
-                }
-            ]
         },
         "frame_wj_custom_球果切换形态": {
             "type": "switch",

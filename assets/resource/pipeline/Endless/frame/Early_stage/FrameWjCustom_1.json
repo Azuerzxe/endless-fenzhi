@@ -75,9 +75,34 @@
             59
         ],
         "threshold": 0.75,
+        "timeout": -1,
+        "next": [
+            "识别boss关_选卡阶段_埃及",
+            "识别boss关_选卡阶段_冰河",
+            // "识别boss关_选卡阶段_功夫",
+            "识别boss关_选卡阶段_未来",
+            "识别boss关_选卡阶段_沙滩",
+            "识别boss关_选卡阶段_海盗",
+            "识别boss关_选卡阶段_西部",
+            "识别boss关_选卡阶段_黑暗",
+            "识别boss关_选卡阶段_失落",
+            "frame_wj_custom_点击开始战斗"
+        ]
+    },
+    "frame_wj_custom_点击开始战斗": {
+        "recognition": "OCR",
+        "expected": "开始战斗",
+        "roi": [
+            1060,
+            647,
+            201,
+            59
+        ],
+        "threshold": 0.75,
         "action": "Click",
         "timeout": -1,
         "next": [
+            "无尽通用框架_识别boss关_开始阶段",
             "frame_wj_custom_判断是否进入关内"
         ]
     },
@@ -1362,6 +1387,10 @@
     "frame_wj_custom_过渡": {
         "action": "DoNothing",
         "timeout": -1,
+        "anchor": {
+            "无尽框架前期/后期": "frame_wj_custom_boss_识别开始",
+            "无尽框架前期/后期局内": "frame_wj_custom_boss_判断是否进入关内"
+        },
         "next": [
             "frame_wj_custom_识别开始战斗",
             "frame_wj_custom_识别boss关"
