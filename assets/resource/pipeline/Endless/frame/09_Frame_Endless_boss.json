@@ -62,10 +62,10 @@
             "param": {
                 "template": "Endless/frame/boss/无尽_功夫boss关.png",
                 "roi": [
-                    759,
-                    26,
-                    510,
-                    683
+                    1055,
+                    241,
+                    189,
+                    252
                 ],
                 "detector": "SIFT",
                 "ratio": 0.6
