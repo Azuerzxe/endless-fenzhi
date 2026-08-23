@@ -131,6 +131,7 @@
             1171,
             37
         ],
+        "focus": "前期关卡",
         "next": [
             "frame_wj_custom_判断是否种守卫菇",
             "frame_wj_custom_球果_过渡"
@@ -1646,6 +1647,7 @@
         ],
         "threshold": 0.75,
         "action": "Click",
+        "focus": "boss关",
         "next": [
             "frame_wj_custom_boss_判断是否进入关内"
         ]

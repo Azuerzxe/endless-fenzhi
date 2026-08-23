@@ -78,6 +78,7 @@
     },
     "frame_wj_判断是否进入关内": {
         "recognition": "ColorMatch",
+        "focus": "后期关卡",
         "roi": [
             467,
             669,
@@ -686,6 +687,7 @@
             201,
             59
         ],
+        "focus": "boss关",
         "threshold": 0.75,
         "action": "Click",
         "next": [
