@@ -278,7 +278,7 @@
                     "name": "Yes",
                     "label": "是",
                     "pipeline_override": {
-                        "frame_wj_custom_判断是否种守卫菇": {
+                        "frame_wj_custom_过滤文字颜色": {
                             "next": [
                                 "frame_wj_custom_2_Entry"
                             ]
