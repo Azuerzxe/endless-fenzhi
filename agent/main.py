@@ -17,6 +17,7 @@ from maa.toolkit import Toolkit
 
 import my_action
 import my_reco
+import ExpressionRecognition
 
 
 def main():
