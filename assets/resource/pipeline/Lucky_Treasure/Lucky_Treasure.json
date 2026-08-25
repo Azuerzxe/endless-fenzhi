@@ -151,9 +151,47 @@
         ],
         "action": "Click",
         "next": [
-            "幸运宝藏_确定"
+            "幸运宝藏_获取并显示文字"
         ]
     },
+    "幸运宝藏_识别幸运宝藏": {
+        "recognition": "OCR",
+        "expected": [],
+        "roi": [
+            306,
+            118,
+            565,
+            61
+        ]
+    },
+    //=======重要提醒！本项目是会把custom字段分出来到另外一个json文件内部的======
+    //         这里的json仅方便理解，防止遇到“窝看不懂这段代码啊”的情况
+    //       如果你需要修改的话，请寻找相同目录下的“custom_Lucky_Treasure.json”文件
+    // "幸运宝藏_获取并显示文字": {
+    //     "action": "Custom",
+    //     "custom_action": "returnOCR",
+    //     "custom_action_param": {
+    //         "recognition_name": "幸运宝藏_识别幸运宝藏", 
+    //         "return_text": "幸运宝藏：",
+    //         "roi": [
+    //             306,
+    //             118,
+    //             565,
+    //             61
+    //         ],
+    //         "hold_position": [
+    //             387,
+    //             216,
+    //             28,
+    //             21
+    //         ],
+    //         "hold_before": 1.0,
+    //         "wait_before": 300
+    //     },
+    //     "next": [
+    //         "幸运宝藏_确定"
+    //     ]
+    // },
     "幸运宝藏_确定": {
         "recognition": "OCR",
         "expected": [

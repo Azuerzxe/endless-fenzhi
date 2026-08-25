@@ -1,0 +1,27 @@
+{
+    "幸运宝藏_获取并显示文字": {
+        "action": "Custom",
+        "custom_action": "returnOCR",
+        "custom_action_param": {
+            "recognition_name": "幸运宝藏_识别幸运宝藏", // 指向上面的 OCR 节点
+            "return_text": "幸运宝藏：",
+            "roi": [
+                306,
+                118,
+                565,
+                61
+            ],
+            "hold_position": [
+                387,
+                216,
+                28,
+                21
+            ],
+            "hold_before": 1.0,
+            "wait_before": 300
+        },
+        "next": [
+            "幸运宝藏_确定"
+        ]
+    },
+}

@@ -18,6 +18,7 @@ from maa.toolkit import Toolkit
 import my_action
 import my_reco
 import ExpressionRecognition
+import ocr_return_action
 
 
 def main():
