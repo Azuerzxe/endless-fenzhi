@@ -585,6 +585,7 @@
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
+            "埃及1_返回",
             "检查当前是否在主界面"
         ]
     }
