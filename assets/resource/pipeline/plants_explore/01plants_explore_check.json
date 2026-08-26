@@ -179,21 +179,22 @@
             "滑动8"
         ]
     },
-    "检查_海底世界": {
+    "检查_海底/月球": {
         "max_hit": 1,
         "recognition": "TemplateMatch",
         "template": [
-            "plants_explore/海底世界.png"
+            "plants_explore_slide_and_click/海底月球.png"
         ],
         "pre_wait_freezes": 1000,
         "action": "Click",
-        "focus": "[color:darkgray]检查海底世界[/color]",
+        "focus": "[color:darkgray]检查海底/月球[/color]",
         "post_delay": 500,
         "threshold": [
             0.9
         ],
         "next": [
             "点击探险完成",
+            "滑动9",
             "检查完成"
         ]
     },
@@ -248,8 +249,9 @@
             "滑动7",
             "检查_平安/复兴",
             "滑动8",
-            "节点滑动_海底世界",
-            "检查_海底世界",
+            "节点滑动_海底/月球",
+            "检查_海底/月球",
+            "滑动9",
             "检查完成"
         ]
     },

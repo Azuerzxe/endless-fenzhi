@@ -172,7 +172,29 @@
         ],
         "next": [
             "点击探险完成",
-            "节点滑动_海底世界"
+            "节点滑动_海底/月球"
+        ]
+    },
+    "滑动9": {
+        "timeout": 2000,
+        "max_hit": 1,
+        "action": "Swipe",
+        "post_delay": 200,
+        "begin": [
+            402,
+            628,
+            1,
+            1
+        ],
+        "end": [
+            407,
+            308,
+            1,
+            1
+        ],
+        "next": [
+            "点击探险完成",
+            "检查完成"
         ]
     },
     "节点滑动_天空失落-平安复兴": {
@@ -197,11 +219,11 @@
             "检查_天空/失落"
         ]
     },
-    "节点滑动_海底世界": {
+    "节点滑动_海底/月球": {
         "timeout": 4000,
         "max_hit": 1,
         "action": "Swipe",
-        "focus": "[color:darkgray]滑动到海底世界[/color]",
+        "focus": "[color:darkgray]滑动到海底/月球[/color]",
         "post_delay": 200,
         "begin": [
             305,
@@ -216,7 +238,7 @@
             1
         ],
         "next": [
-            "检查_海底世界"
+            "检查_海底/月球"
         ]
     },
     "检查_滑回最顶上": {
@@ -402,7 +424,7 @@
     "探索_海底世界a": {
         "recognition": "TemplateMatch",
         "template": [
-            "plants_explore_slide_and_click/海底世界.png"
+            "plants_explore_slide_and_click/海底月球.png"
         ],
         "action": "Click",
         "method": 10001,
