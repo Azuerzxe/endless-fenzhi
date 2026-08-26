@@ -61,11 +61,17 @@
             "简单"
         ],
         "roi": [
-            673,
-            253,
-            114,
-            61
+            682,
+            294,
+            150,
+            105
         ],
+        //[
+        //     673,
+        //     253,
+        //     114,
+        //     61
+        // ]，新版uibug之前的roi
         "action": "Click",
         "focus": "简单模式",
         "next": [
@@ -74,10 +80,23 @@
         ]
     },
     "埃及1_埃及第一天_开始战斗": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "get_gold_coins/世界_开始战斗.png"
+        "recognition": "OCR",
+        "expected": [
+            "开始战斗"
         ],
+        "roi": [
+            527,
+            657,
+            216,
+            61
+        ],
+        // [
+        //     512,
+        //     510,
+        //     261,
+        //     88
+        // ]
+        //目前应用的roi是为了兼容新版本的uibug，所以老的先留着，防止bug被修了还要重新圈roi
         "focus": "开始战斗",
         "action": "Click",
         "post_wait_freezes": 4000,
@@ -585,6 +604,7 @@
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
+            "埃及1_返回",
             "检查当前是否在主界面"
         ]
     }

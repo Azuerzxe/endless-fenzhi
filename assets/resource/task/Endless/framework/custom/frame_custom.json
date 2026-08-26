@@ -278,7 +278,7 @@
                     "name": "Yes",
                     "label": "是",
                     "pipeline_override": {
-                        "frame_wj_custom_判断是否种守卫菇": {
+                        "frame_wj_custom_过滤文字颜色": {
                             "next": [
                                 "frame_wj_custom_2_Entry"
                             ]
@@ -316,10 +316,15 @@
                 }
             ],
             "pipeline_override": {
-                "frame_wj_custom_判断是否种守卫菇": {
-                    "expected": [
-                        "第{关卡}"
-                    ]
+                "frame_wj_custom_比较天数": {
+                    "recognition": {
+                        "param": {
+                            "custom_recognition": "ExpressionRecognition",
+                            "custom_recognition_param": {
+                                "expression": "{frame_wj_custom_识别天数} >= {关卡}"
+                            }
+                        }
+                    }
                 }
             }
         },

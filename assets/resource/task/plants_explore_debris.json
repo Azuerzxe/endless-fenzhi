@@ -328,7 +328,7 @@
                 }
             ]
         },
-        "海底世界": {
+        "海底/月球": {
             "type": "checkbox",
             "cases": [
                 {
@@ -343,6 +343,22 @@
                     "name": "噗噗鱼藤",
                     "pipeline_override": {
                         "探索_噗噗鱼藤": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "宇宙豌豆",
+                    "pipeline_override": {
+                        "探索_宇宙豌豆": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "重力树",
+                    "pipeline_override": {
+                        "探索_重力树": {
                             "enabled": true
                         }
                     }

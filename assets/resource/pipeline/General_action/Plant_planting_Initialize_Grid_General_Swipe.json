@@ -13,6 +13,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子2_1"
         ]
@@ -31,6 +32,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子3_1"
         ]
@@ -49,6 +51,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子4_1"
         ]
@@ -67,6 +70,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子5_1"
         ]
@@ -85,6 +89,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子6_1"
         ]
@@ -103,6 +108,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子7_1"
         ]
@@ -121,6 +127,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子8_1"
         ]
@@ -139,6 +146,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子9_1"
         ]
@@ -157,6 +165,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子1_2"
         ]
@@ -175,6 +184,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子2_2"
         ]
@@ -193,6 +203,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子3_2"
         ]
@@ -211,6 +222,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子4_2"
         ]
@@ -229,6 +241,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子5_2"
         ]
@@ -247,6 +260,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子6_2"
         ]
@@ -265,6 +279,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子7_2"
         ]
@@ -283,6 +298,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子8_2"
         ]
@@ -301,6 +317,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子9_2"
         ]
@@ -319,6 +336,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子1_3"
         ]
@@ -337,6 +355,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子2_3"
         ]
@@ -355,6 +374,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子3_3"
         ]
@@ -373,6 +393,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子4_3"
         ]
@@ -391,6 +412,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子5_3"
         ]
@@ -409,6 +431,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子6_3"
         ]
@@ -427,6 +450,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子7_3"
         ]
@@ -445,6 +469,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子8_3"
         ]
@@ -463,6 +488,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子9_3"
         ]
@@ -481,6 +507,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子1_4"
         ]
@@ -499,6 +526,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子2_4"
         ]
@@ -517,6 +545,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子3_4"
         ]
@@ -535,6 +564,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子4_4"
         ]
@@ -553,6 +583,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子5_4"
         ]
@@ -571,6 +602,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子6_4"
         ]
@@ -589,6 +621,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子7_4"
         ]
@@ -607,6 +640,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子8_4"
         ]
@@ -625,6 +659,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子9_4"
         ]
@@ -643,6 +678,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子1_5"
         ]
@@ -661,6 +697,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子2_5"
         ]
@@ -679,6 +716,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子3_5"
         ]
@@ -697,6 +735,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子4_5"
         ]
@@ -715,6 +754,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子5_5"
         ]
@@ -733,6 +773,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子6_5"
         ]
@@ -751,6 +792,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子7_5"
         ]
@@ -769,6 +811,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子8_5"
         ]
@@ -787,6 +830,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "种植物_初始化_格子9_5"
         ]
@@ -805,6 +849,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "神器_初始化_神器位置"
         ]
@@ -823,6 +868,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "神器_初始化_葫芦小体型"
         ]
@@ -841,6 +887,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "神器_初始化_葫芦中体型"
         ]
@@ -859,6 +906,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "神器_初始化_葫芦大体型"
         ]
@@ -877,6 +925,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "神器_初始化_相机复制"
         ]
@@ -895,6 +944,7 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "神器_初始化_相机粘贴"
         ]
@@ -913,9 +963,12 @@
         },
         "post_delay": 0,
         "pre_delay": 0,
+        "rate_limit": 0,
         "next": [
             "[Anchor]初始化"
         ]
     },
-    "种植物_初始化_格子{列}_{行}": {} //防止报错特地塞的空占位符，删了其实也不会有啥影响
+    "种植物_初始化_格子{列}_{行}": {
+        "rate_limit": 0
+    }
 }

@@ -137,15 +137,40 @@
         ],
         "focus": "前期关卡",
         "next": [
-            "frame_wj_custom_判断是否种守卫菇",
-            "frame_wj_custom_球果_过渡"
+            "frame_wj_custom_过滤文字颜色"
         ]
     },
-    "frame_wj_custom_判断是否种守卫菇": {
+    "frame_wj_custom_过滤文字颜色": {
+        "recognition": {
+            "type": "ColorMatch",
+            "param": {
+                "method": 40,
+                "lower": [
+                    15,
+                    70,
+                    115
+                ],
+                "upper": [
+                    38,
+                    94,
+                    255
+                ],
+                "roi": [
+                    555,
+                    61,
+                    414,
+                    81
+                ]
+            }
+        },
+        "action": "DoNothing",
+        "next": [
+            "frame_wj_custom_识别天数"
+        ]
+    },
+    "frame_wj_custom_识别天数": {
         "recognition": "OCR",
-        "expected": [
-            ""
-        ],
+        "only_rec": true,
         "replace": [
             [
                 "g",
@@ -162,12 +187,32 @@
             414,
             81
         ],
+        "color_filter": "frame_wj_custom_过滤文字颜色",
         "pre_delay": 0,
         "post_delay": 0,
         "next": [
-            "frame_wj_custom_2_Entry"
+            "frame_wj_custom_比较天数",
+            "frame_wj_custom_球果_过渡"
         ]
     },
+    //=======重要提醒！本项目是会把custom字段分出来到另外一个json文件内部的======
+    //         这里的json仅方便理解，防止遇到“窝看不懂这段代码啊”的情况
+    //       如果你需要修改的话，请寻找相同目录下的“01FrameWjCustom_custom.json”文件
+    //"frame_wj_custom_比较天数": {
+    //     "recognition": {
+    //         "type": "Custom",
+    //         "param": {
+    //             "custom_recognition": "ExpressionRecognition",
+    //             "custom_recognition_param": {
+    //                 "expression": "{frame_wj_custom_识别天数} >= {关卡}"
+    //             }
+    //         }
+    //     },
+    //     "action": "DoNothing",
+    //     "next": [
+    //         "frame_wj_custom_2_Entry"
+    //     ]
+    // },
     "frame_wj_custom_球果_过渡": {
         "action": "DoNothing",
         "pre_delay": 0,

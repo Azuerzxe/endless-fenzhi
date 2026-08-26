@@ -39,6 +39,8 @@
             "[JumpBack]探索_千金藤",
             "[JumpBack]探索_海蘑菇",
             "[JumpBack]探索_噗噗鱼藤",
+            "[JumpBack]探索_宇宙豌豆",
+            "[JumpBack]探索_重力树",
             "结束探索"
         ]
     },
@@ -1309,6 +1311,92 @@
         "action": "DoNothing",
         "next": [
             "探索_选择第二个植物",
+            "探索_探险次数耗尽"
+        ]
+    },
+    "探索_宇宙豌豆": {
+        "enabled": false,
+        "max_hit": 1,
+        "focus": "[color:darkgray]宇宙豌豆[/color]",
+        "next": [
+            "探索_宇宙豌豆世界页面"
+        ]
+    },
+    "探索_宇宙豌豆世界页面": {
+        "action": "Swipe",
+        "begin": [
+            292,
+            637,
+            1,
+            1
+        ],
+        "end": [
+            280,
+            5,
+            1,
+            1
+        ],
+        "end_hold": 500,
+        "post_delay": 1000,
+        "next": [
+            "[JumpBack]探索_海底世界a",
+            "探索_宇宙豌豆页面"
+        ]
+    },
+    "探索_宇宙豌豆页面": {
+        "action": "DoNothing",
+        "next": [
+            "探索_选择第三个植物",
+            "探索_探险次数耗尽"
+        ]
+    },
+    "探索_重力树": {
+        "enabled": false,
+        "max_hit": 1,
+        "focus": "[color:darkgray]重力树[/color]",
+        "next": [
+            "探索_重力树世界页面"
+        ]
+    },
+    "探索_重力树世界页面": {
+        "action": "Swipe",
+        "begin": [
+            292,
+            637,
+            1,
+            1
+        ],
+        "end": [
+            280,
+            5,
+            1,
+            1
+        ],
+        "end_hold": 500,
+        "post_delay": 1000,
+        "next": [
+            "[JumpBack]探索_海底世界a",
+            "探索_重力树页面"
+        ]
+    },
+    "探索_重力树页面": {
+        "action": "Swipe",
+        "begin": [
+            660,
+            637,
+            1,
+            1
+        ],
+        "end": [
+            678,
+            159,
+            1,
+            1
+        ],
+        "end_hold": 500,
+        "post_delay": 1000,
+        "next": [
+            "探索_选择第三个植物",
             "探索_探险次数耗尽"
         ]
     },
