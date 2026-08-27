@@ -261,25 +261,11 @@
         ]
     },
     "功夫13_点击加速": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "General/加速.png"
-        ],
-        "roi": [
-            1144,
-            8,
-            62,
-            64
-        ],
-        "action": "Click",
-        "target_offset": [
-            10,
-            10,
-            -20,
-            -20
-        ],
+        "anchor": {
+            "下一个动作": "功夫13_下一波"
+        },
         "next": [
-            "功夫13_下一波"
+            "通用_加速"
         ]
     },
     "功夫13_下一波": {

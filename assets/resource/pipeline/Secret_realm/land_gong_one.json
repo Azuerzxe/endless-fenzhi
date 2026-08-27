@@ -883,23 +883,12 @@
         ]
     },
     "地宫_1_加速": {
-        "recognition": "TemplateMatch",
-        "template": "General/加速.png",
-        "roi": [
-            1146,
-            9,
-            56,
-            59
-        ],
-        "action": "Click",
-        "target": [
-            1167,
-            37
-        ],
+        "anchor": {
+            "下一个动作": "地宫_1_小关"
+        },
         "next": [
-            "地宫_1_小关"
-        ],
-        "timeout": 100
+            "通用_加速"
+        ]
     },
     "地宫_1_小关": {
         "recognition": "DirectHit",
