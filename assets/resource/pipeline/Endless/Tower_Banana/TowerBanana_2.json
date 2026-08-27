@@ -19,7 +19,7 @@
     "tower_banana_香蕉2": {
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
-        "end": "种植物_初始化_格子1_5",
+        "end": "种植物_初始化_格子1_2",
         "pre_delay": 0,
         "post_delay": 0,
         "duration": 100,
@@ -30,7 +30,7 @@
     "tower_banana_香蕉3": {
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
-        "end": "种植物_初始化_格子1_3",
+        "end": "种植物_初始化_格子1_5",
         "pre_delay": 0,
         "post_delay": 0,
         "duration": 100,
@@ -149,5 +149,5 @@
             "tower_banana_识别结算",
             "tower_banana_喂豆电大"
         ]
-    }
+    },
 }
