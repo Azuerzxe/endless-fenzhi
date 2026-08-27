@@ -280,7 +280,7 @@
                     "pipeline_override": {
                         "frame_wj_custom_过滤文字颜色": {
                             "next": [
-                                "frame_wj_custom_2_Entry"
+                                "frame_wj_custom_识别天数"
                             ]
                         },
                         "frame_wj_custom_点回植物": {
