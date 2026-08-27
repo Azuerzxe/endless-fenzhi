@@ -215,7 +215,7 @@
     "功夫13_识别加速": {
         "recognition": "TemplateMatch",
         "template": [
-            "get_gold_coins/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1144,
@@ -263,7 +263,7 @@
     "功夫13_点击加速": {
         "recognition": "TemplateMatch",
         "template": [
-            "get_gold_coins/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1144,

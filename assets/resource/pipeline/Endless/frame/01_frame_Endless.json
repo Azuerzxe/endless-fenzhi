@@ -226,7 +226,7 @@
     "无尽框架_结算超时_重开_暂停": {
         "recognition": "TemplateMatch",
         "template": [
-            "Land_gong_two/暂停.png"
+            "General/暂停.png"
         ],
         "focus": "[color:DeepSkyBlue]等待超时，疑似僵尸变野或其他情况，重开[/color]",
         "roi": [

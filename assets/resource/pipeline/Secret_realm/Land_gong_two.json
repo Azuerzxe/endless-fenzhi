@@ -130,7 +130,7 @@
     "地宫2无尽_第一关_尝试刷掉灵体": {
         "recognition": "TemplateMatch",
         "template": [
-            "Land_gong_two/暂停.png"
+            "General/暂停.png"
         ],
         "roi": [
             1180,
@@ -306,7 +306,7 @@
     "地宫2无尽_进入关卡_第一关": {
         "recognition": "TemplateMatch",
         "template": [
-            "Land_gong_two/加速.png"
+            "General/加速.png"
         ],
         "next": [
             "地宫2无尽_第一关_种植蓓蕾"
@@ -510,7 +510,7 @@
     "地宫2无尽_等待": {
         "recognition": "TemplateMatch",
         "template": [
-            "Land_gong_two/加速.png"
+            "General/加速.png"
         ],
         "next": [
             "地宫2无尽_无尽模式",
@@ -980,7 +980,7 @@
     },
     "地宫2无尽_加速": {
         "recognition": "TemplateMatch",
-        "template": "Land_gong_two/加速.png",
+        "template": "General/加速.png",
         "roi": [
             1101,
             9,
@@ -1208,7 +1208,7 @@
     "地宫2无尽_小怪_火炬1_4": {
         "recognition": "TemplateMatch",
         "template": [
-            "Land_gong_two/加速.png"
+            "General/加速.png"
         ],
         "action": "Swipe",
         "begin": [
@@ -1447,7 +1447,7 @@
     "地宫2无尽_小怪_滑动2_6": {
         "recognition": "TemplateMatch",
         "template": [
-            "Land_gong_two/加速.png"
+            "General/加速.png"
         ],
         "action": "Swipe",
         "begin": [
@@ -1740,7 +1740,7 @@
     "地宫2无尽_小怪_滑动4_4": {
         "recognition": "TemplateMatch",
         "template": [
-            "Land_gong_two/加速.png"
+            "General/加速.png"
         ],
         "action": "Swipe",
         "begin": [
@@ -2138,7 +2138,7 @@
     "地宫2无尽_小怪_点击7": {
         "recognition": "TemplateMatch",
         "template": [
-            "Land_gong_two/加速.png"
+            "General/加速.png"
         ],
         "action": "Click",
         "target": [
@@ -2511,7 +2511,7 @@
     "地宫2无尽_小怪_滑动9_5": {
         "recognition": "TemplateMatch",
         "template": [
-            "Land_gong_two/加速.png"
+            "General/加速.png"
         ],
         "action": "Swipe",
         "begin": [
@@ -3013,7 +3013,7 @@
     "地宫2无尽_小怪_检查12_4": {
         "recognition": "TemplateMatch",
         "template": [
-            "Land_gong_two/加速.png"
+            "General/加速.png"
         ],
         "next": [
             "地宫2无尽_开始",
@@ -3312,7 +3312,7 @@
     },
     "地宫2无尽_boss_铲子": {
         "recognition": "TemplateMatch",
-        "template": "Land_gong_two/加速.png",
+        "template": "General/加速.png",
         "roi": [
             1146,
             9,
