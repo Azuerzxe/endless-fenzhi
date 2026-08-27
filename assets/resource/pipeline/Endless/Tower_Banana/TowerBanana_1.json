@@ -56,7 +56,7 @@
     "tower_banana_抛花1": {
         "action": "Swipe",
         "begin": "种植物_初始化_第一个槽位",
-        "end": "种植物_初始化_格子9_1",
+        "end": "种植物_初始化_格子2_1",
         "pre_delay": 0,
         "post_delay": 100,
         "duration": 100,
@@ -87,10 +87,10 @@
             183
         ],
         "roi": [
-            475,
-            574,
-            11,
-            9
+            470,
+            339,
+            22,
+            30
         ],
         "pre_delay": 0,
         "post_delay": 0,
@@ -130,7 +130,7 @@
     "tower_banana_香蕉5": {
         "action": "Swipe",
         "begin": "种植物_初始化_第二个槽位",
-        "end": "种植物_初始化_格子1_5",
+        "end": "种植物_初始化_格子1_3",
         "pre_delay": 0,
         "post_delay": 0,
         "duration": 100,
