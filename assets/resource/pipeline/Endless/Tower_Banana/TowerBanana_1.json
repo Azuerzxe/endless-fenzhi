@@ -101,18 +101,24 @@
     },
     "tower_banana_检查2": {
         "recognition": {
-            "type": "FeatureMatch",
+            "type": "ColorMatch",
             "param": {
-                "template": "Endless/Tower_Banana/瓷砖.png",
+                "upper": [
+                    43,
+                    66,
+                    51
+                ],
+                "lower": [
+                    23,
+                    46,
+                    31
+                ],
                 "roi": [
                     609,
                     225,
                     82,
                     75
-                ],
-                "detector": "SIFT",
-                "ratio": 0.6,
-                "count": 4
+                ]
             }
         },
         "action": {
