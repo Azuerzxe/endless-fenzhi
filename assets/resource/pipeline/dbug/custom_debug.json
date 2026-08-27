@@ -16,7 +16,7 @@
     "截图重开": {
         "recognition": "TemplateMatch",
         "template": [
-            "Land_gong_two/暂停.png"
+            "General/暂停.png"
         ],
         "action": "Click",
         "roi": [
@@ -78,7 +78,7 @@
     "用户截图重开": {
         "recognition": "TemplateMatch",
         "template": [
-            "Land_gong_two/暂停.png"
+            "General/暂停.png"
         ],
         "action": "Click",
         "roi": [

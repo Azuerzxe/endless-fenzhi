@@ -263,7 +263,7 @@
     "地宫1无尽_进入关卡_第一关": {
         "recognition": "TemplateMatch",
         "template": [
-            "land_gong_one/加速.png"
+            "General/加速.png"
         ],
         "next": [
             "地宫1无尽_第一关_种植蓓蕾"
@@ -521,7 +521,7 @@
     "地宫1无尽_第一关_等待": {
         "recognition": "TemplateMatch",
         "template": [
-            "land_gong_one/加速.png"
+            "General/加速.png"
         ],
         "next": [
             "地宫1无尽_无尽模式",
@@ -884,7 +884,7 @@
     },
     "地宫_1_加速": {
         "recognition": "TemplateMatch",
-        "template": "land_gong_one/加速.png",
+        "template": "General/加速.png",
         "roi": [
             1146,
             9,
@@ -1027,7 +1027,7 @@
     "地宫_1_阳光收集1": {
         "recognition": "TemplateMatch",
         "template": [
-            "land_gong_one/加速.png"
+            "General/加速.png"
         ],
         "action": "Swipe",
         "begin": [
@@ -1181,7 +1181,7 @@
     "地宫_1_小怪_南瓜2_5": {
         "recognition": "TemplateMatch",
         "template": [
-            "land_gong_one/加速.png"
+            "General/加速.png"
         ],
         "action": "Swipe",
         "begin": [
@@ -1354,7 +1354,7 @@
     "地宫_1_阳光收集2_2": {
         "recognition": "TemplateMatch",
         "template": [
-            "land_gong_one/加速.png"
+            "General/加速.png"
         ],
         "action": "Swipe",
         "begin": [
@@ -1562,7 +1562,7 @@
     "地宫_1_阳光收集3_2": {
         "recognition": "TemplateMatch",
         "template": [
-            "land_gong_one/加速.png"
+            "General/加速.png"
         ],
         "action": "Swipe",
         "begin": [
@@ -1786,7 +1786,7 @@
     "地宫_1_阳光收集4_3": {
         "recognition": "TemplateMatch",
         "template": [
-            "land_gong_one/加速.png"
+            "General/加速.png"
         ],
         "action": "Swipe",
         "begin": [
@@ -2038,7 +2038,7 @@
     "地宫_1_小怪_南瓜2_7_5": {
         "recognition": "TemplateMatch",
         "template": [
-            "land_gong_one/加速.png"
+            "General/加速.png"
         ],
         "action": "Swipe",
         "begin": [
@@ -2326,7 +2326,7 @@
     "地宫_1_小怪_草垛仿9_3": {
         "recognition": "TemplateMatch",
         "template": [
-            "land_gong_one/加速.png"
+            "General/加速.png"
         ],
         "action": "Swipe",
         "begin": [
@@ -2648,7 +2648,7 @@
     "地宫_1_小怪_草垛仿11_3": {
         "recognition": "TemplateMatch",
         "template": [
-            "land_gong_one/加速.png"
+            "General/加速.png"
         ],
         "action": "Swipe",
         "begin": [
@@ -3017,7 +3017,7 @@
     "地宫_1_小怪_向日葵14_3": {
         "recognition": "TemplateMatch",
         "template": [
-            "land_gong_one/加速.png"
+            "General/加速.png"
         ],
         "action": "Swipe",
         "begin": [

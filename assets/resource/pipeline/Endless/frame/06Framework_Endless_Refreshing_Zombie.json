@@ -19,7 +19,7 @@
     "frame_wj_识别僵尸_重开": {
         "recognition": "TemplateMatch",
         "template": [
-            "Land_gong_two/暂停.png"
+            "General/暂停.png"
         ],
         "focus": "刷掉僵尸",
         "roi": [

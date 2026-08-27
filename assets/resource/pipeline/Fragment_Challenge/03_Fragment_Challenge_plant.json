@@ -159,7 +159,7 @@
     "碎片挑战_二倍速": {
         "recognition": "TemplateMatch",
         "template": [
-            "Fragment_Challenge_plant/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1144,
@@ -225,7 +225,7 @@
     "碎片挑战_清一下金币": {
         "recognition": "TemplateMatch",
         "template": [
-            "Fragment_Challenge_plant/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1144,

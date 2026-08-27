@@ -384,7 +384,7 @@
     "序列检查_种植之前_的准备节点": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1133,
@@ -397,7 +397,7 @@
     "序列检查_第一个格子种第1个植物": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1139,
@@ -425,7 +425,7 @@
     "序列检查_第一个格子种第2个植物": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1139,
@@ -453,7 +453,7 @@
     "序列检查_第一个格子种第3个植物": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             49,
@@ -481,7 +481,7 @@
     "序列检查_第一个格子种第4个植物": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             59,
@@ -509,7 +509,7 @@
     "序列检查_第一个格子种第5个植物": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1139,
@@ -537,7 +537,7 @@
     "序列检查_第一个格子种第6个植物": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1139,
@@ -565,7 +565,7 @@
     "序列检查_第一个格子种第7个植物": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1139,
@@ -593,7 +593,7 @@
     "序列检查_第一个格子种第8个植物": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1139,
@@ -2277,7 +2277,7 @@
     "序列检查_开始战斗_种植1": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1139,
@@ -2305,7 +2305,7 @@
     "序列检查_开始战斗_种植2": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1139,
@@ -2333,7 +2333,7 @@
     "序列检查_开始战斗_种植3": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1139,
@@ -2361,7 +2361,7 @@
     "序列检查_开始战斗_种植4": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1139,
@@ -2389,7 +2389,7 @@
     "序列检查_开始战斗_种植5": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1139,
@@ -2417,7 +2417,7 @@
     "序列检查_开始战斗_种植6": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1139,
@@ -2445,7 +2445,7 @@
     "序列检查_开始战斗_种植7": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1139,
@@ -2473,7 +2473,7 @@
     "序列检查_开始战斗_种植8": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1139,
@@ -2501,7 +2501,7 @@
     "序列检查_开始战斗_种植9": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1139,
@@ -2529,7 +2529,7 @@
     "序列检查_局内_使用进化神器": {
         "recognition": "TemplateMatch",
         "template": [
-            "Detection_Order/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1139,

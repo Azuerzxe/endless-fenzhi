@@ -71,7 +71,7 @@
     "巨人危机_种植机枪豌豆_1_1": {
         "recognition": "TemplateMatch",
         "template": [
-            "Fragment_Challenge_plant/二倍速.png"
+            "General/加速.png"
         ],
         "action": "Swipe",
         "begin": [

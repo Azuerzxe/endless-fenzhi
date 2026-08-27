@@ -284,7 +284,7 @@
     "创意庭院_砸罐子_进入_识别二倍速": {
         "recognition": "TemplateMatch",
         "template": [
-            "Fragment_Challenge_plant/二倍速.png"
+            "General/加速.png"
         ],
         "roi": [
             1144,
@@ -524,7 +524,7 @@
     "创意庭院_游玩_识别2倍速": {
         "recognition": "TemplateMatch",
         "template": [
-            "Fragment_Challenge_plant/二倍速.png"
+            "General/加速.png"
         ],
         "action": "Click",
         "target_offset": [
