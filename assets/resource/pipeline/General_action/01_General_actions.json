@@ -1,0 +1,21 @@
+{
+    "通用_加速": {
+        "recognition": "TemplateMatch",
+        "template": "land_gong_one/加速.png",
+        "roi": [
+            1146,
+            9,
+            56,
+            59
+        ],
+        "action": "Click",
+        "target": [
+            1167,
+            37
+        ],
+        "next": [
+            "[Anchor]下一个动作"
+        ],
+        "timeout": 100
+    },
+}

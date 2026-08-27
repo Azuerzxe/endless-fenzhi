@@ -19,6 +19,7 @@ import my_action
 import my_reco
 import ExpressionRecognition
 import ocr_return_action
+import actions
 
 
 def main():
