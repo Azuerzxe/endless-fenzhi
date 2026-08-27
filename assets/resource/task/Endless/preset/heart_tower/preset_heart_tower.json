@@ -22,11 +22,6 @@
                                 "HeartTowerEntry2"
                             ]
                         },
-                        "buji_确定4": {
-                            "next": [
-                                "xinta_boss_识别开始"
-                            ]
-                        },
                         "xinta_boss_瓷砖4": {
                             "end": [
                                 653,

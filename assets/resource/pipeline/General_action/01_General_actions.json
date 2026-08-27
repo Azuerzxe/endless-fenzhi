@@ -35,7 +35,6 @@
         "template": [
             "General/暂停.png"
         ],
-        "focus": "[color:DeepSkyBlue]等待超时，疑似僵尸变野或其他情况，重开[/color]",
         "roi": [
             1180,
             4,
@@ -65,22 +64,6 @@
             "[Anchor]下一个动作"
         ]
     },
-    "通用_识别结算": {
-        "recognition": "OCR",
-        "roi": [
-            716,
-            621,
-            179,
-            50
-        ],
-        "expected": "继续挑战",
-        "action": "Click",
-        "rate_limit": 1000,
-        "timeout": 600000,
-        "next": [
-            "[Anchor]下一个动作"
-        ]
-    },
     "通用_无尽_补给识别": {
         "recognition": "ColorMatch",
         "lower": [
@@ -99,6 +82,7 @@
             17,
             22
         ],
+        "focus": "选择补给",
         "rate_limit": 10,
         "next": [
             "通用_神器补给_查看"

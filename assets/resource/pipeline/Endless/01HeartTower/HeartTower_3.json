@@ -241,8 +241,11 @@
             22
         ],
         "rate_limit": 10,
+        "anchor": {
+            "下一个动作": "xinta_boss_识别开始"
+        },
         "next": [
-            "补给"
+            "通用_无尽_补给识别"
         ]
     },
     "xinta3_喂豆香蕉2": {
@@ -260,87 +263,6 @@
         "duration": 100,
         "next": [
             "xinta3_点波"
-        ]
-    },
-    "补给": {
-        "recognition": "ColorMatch",
-        "lower": [
-            156,
-            223,
-            16
-        ],
-        "upper": [
-            156,
-            223,
-            16
-        ],
-        "roi": [
-            723,
-            56,
-            17,
-            22
-        ],
-        "rate_limit": 10,
-        "action": "Click",
-        "target": [
-            261,
-            375
-        ],
-        "next": [
-            "buji_确定"
-        ]
-    },
-    "buji_确定": {
-        "action": "Click",
-        "target": [
-            633,
-            614
-        ],
-        "next": [
-            "buji_提示",
-            "buji_确定3"
-        ]
-    },
-    "buji_提示": {
-        "recognition": "OCR",
-        "expected": "提示",
-        "roi": [
-            562,
-            242,
-            95,
-            49
-        ],
-        "action": "Click",
-        "target": [
-            595,
-            526
-        ],
-        "next": [
-            "buji_确定3"
-        ]
-    },
-    "buji_确定3": {
-        "action": "Click",
-        "target": [
-            633,
-            614
-        ],
-        "pre_delay": 1000,
-        "post_delay": 1000,
-        "next": [
-            "buji_确定4"
-        ]
-    },
-    "buji_确定4": {
-        "action": "Click",
-        "target": [
-            633,
-            614
-        ],
-        "pre_delay": 1000,
-        "post_delay": 1000,
-        "next": [
-            "xinta_boss_识别开始"
         ]
     },
     "xinta_boss_识别开始": {

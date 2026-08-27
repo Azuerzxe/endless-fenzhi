@@ -83,7 +83,7 @@
                     "pipeline_override": {
                         "frame_wj_识别boss关": {
                             "next": [
-                                "frame_wj_神器补给_查看"
+                                "通用_无尽_补给识别"
                             ]
                         }
                     }
