@@ -1225,6 +1225,57 @@
         "post_delay": 0,
         "pre_delay": 0,
         "next": [
+            "地宫2无尽_阳光收集1"
+        ]
+    },
+    "地宫2无尽_阳光收集1": {
+        "action": "Swipe",
+        "begin": [
+            822,
+            100
+        ],
+        "end": [
+            838,
+            655
+        ],
+        "duration": 100,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "地宫2无尽_阳光收集1_2"
+        ]
+    },
+    "地宫2无尽_阳光收集1_2": {
+        "action": "Swipe",
+        "begin": [
+            924,
+            133
+        ],
+        "end": [
+            924,
+            590
+        ],
+        "duration": 100,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "地宫2无尽_阳光收集1_3"
+        ]
+    },
+    "地宫2无尽_阳光收集1_3": {
+        "action": "Swipe",
+        "begin": [
+            1026,
+            145
+        ],
+        "end": [
+            1035,
+            606
+        ],
+        "duration": 100,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
             "地宫2无尽_小怪_检查1_6"
         ]
     },
@@ -1462,6 +1513,57 @@
         "end": [
             842,
             382
+        ],
+        "duration": 100,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "地宫2无尽_阳光收集2"
+        ]
+    },
+    "地宫2无尽_阳光收集2": {
+        "action": "Swipe",
+        "begin": [
+            822,
+            100
+        ],
+        "end": [
+            838,
+            655
+        ],
+        "duration": 100,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "地宫2无尽_阳光收集2_2"
+        ]
+    },
+    "地宫2无尽_阳光收集2_2": {
+        "action": "Swipe",
+        "begin": [
+            924,
+            133
+        ],
+        "end": [
+            924,
+            590
+        ],
+        "duration": 100,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "地宫2无尽_阳光收集2_3"
+        ]
+    },
+    "地宫2无尽_阳光收集2_3": {
+        "action": "Swipe",
+        "begin": [
+            1026,
+            145
+        ],
+        "end": [
+            1035,
+            606
         ],
         "duration": 100,
         "post_delay": 0,
@@ -1934,6 +2036,57 @@
         "post_delay": 0,
         "pre_delay": 0,
         "next": [
+            "地宫2无尽_阳光收集5"
+        ]
+    },
+    "地宫2无尽_阳光收集5": {
+        "action": "Swipe",
+        "begin": [
+            822,
+            100
+        ],
+        "end": [
+            838,
+            655
+        ],
+        "duration": 100,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "地宫2无尽_阳光收集5_2"
+        ]
+    },
+    "地宫2无尽_阳光收集5_2": {
+        "action": "Swipe",
+        "begin": [
+            924,
+            133
+        ],
+        "end": [
+            924,
+            590
+        ],
+        "duration": 100,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "地宫2无尽_阳光收集5_3"
+        ]
+    },
+    "地宫2无尽_阳光收集5_3": {
+        "action": "Swipe",
+        "begin": [
+            1026,
+            145
+        ],
+        "end": [
+            1035,
+            606
+        ],
+        "duration": 100,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
             "地宫2无尽_小怪_滑动5_4"
         ]
     },
@@ -2085,6 +2238,57 @@
         "end": [
             744,
             147
+        ],
+        "duration": 100,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "地宫2无尽_阳光收集6"
+        ]
+    },
+    "地宫2无尽_阳光收集6": {
+        "action": "Swipe",
+        "begin": [
+            822,
+            100
+        ],
+        "end": [
+            838,
+            655
+        ],
+        "duration": 100,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "地宫2无尽_阳光收集6_2"
+        ]
+    },
+    "地宫2无尽_阳光收集6_2": {
+        "action": "Swipe",
+        "begin": [
+            924,
+            133
+        ],
+        "end": [
+            924,
+            590
+        ],
+        "duration": 100,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "地宫2无尽_阳光收集6_3"
+        ]
+    },
+    "地宫2无尽_阳光收集6_3": {
+        "action": "Swipe",
+        "begin": [
+            1026,
+            145
+        ],
+        "end": [
+            1035,
+            606
         ],
         "duration": 100,
         "post_delay": 0,
@@ -2453,6 +2657,57 @@
         "post_delay": 0,
         "pre_delay": 0,
         "next": [
+            "地宫2无尽_阳光收集9"
+        ]
+    },
+    "地宫2无尽_阳光收集9": {
+        "action": "Swipe",
+        "begin": [
+            822,
+            100
+        ],
+        "end": [
+            838,
+            655
+        ],
+        "duration": 100,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "地宫2无尽_阳光收集9_2"
+        ]
+    },
+    "地宫2无尽_阳光收集9_2": {
+        "action": "Swipe",
+        "begin": [
+            924,
+            133
+        ],
+        "end": [
+            924,
+            590
+        ],
+        "duration": 100,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "地宫2无尽_阳光收集9_3"
+        ]
+    },
+    "地宫2无尽_阳光收集9_3": {
+        "action": "Swipe",
+        "begin": [
+            1026,
+            145
+        ],
+        "end": [
+            1035,
+            606
+        ],
+        "duration": 100,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
             "地宫2无尽_小怪_滑动9_4"
         ]
     },
@@ -2795,6 +3050,57 @@
         "end": [
             659,
             271
+        ],
+        "duration": 100,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "地宫2无尽_阳光收集12"
+        ]
+    },
+    "地宫2无尽_阳光收集12": {
+        "action": "Swipe",
+        "begin": [
+            822,
+            100
+        ],
+        "end": [
+            838,
+            655
+        ],
+        "duration": 100,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "地宫2无尽_阳光收集12_2"
+        ]
+    },
+    "地宫2无尽_阳光收集12_2": {
+        "action": "Swipe",
+        "begin": [
+            924,
+            133
+        ],
+        "end": [
+            924,
+            590
+        ],
+        "duration": 100,
+        "post_delay": 0,
+        "pre_delay": 0,
+        "next": [
+            "地宫2无尽_阳光收集12_3"
+        ]
+    },
+    "地宫2无尽_阳光收集12_3": {
+        "action": "Swipe",
+        "begin": [
+            1026,
+            145
+        ],
+        "end": [
+            1035,
+            606
         ],
         "duration": 100,
         "post_delay": 0,
