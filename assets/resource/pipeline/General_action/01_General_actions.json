@@ -253,10 +253,14 @@
     },
     "通用_确定1": {
         "action": "Click",
-        "target": [
-            633,
-            614
+        "recognition": "OCR",
+        "roi": [
+            301,
+            515,
+            729,
+            186
         ],
+        "expected": "确定",
         "next": [
             "通用_提示",
             "通用_确定3"
@@ -266,10 +270,10 @@
         "recognition": "OCR",
         "expected": "提示",
         "roi": [
-            562,
-            242,
-            95,
-            49
+            338,
+            208,
+            557,
+            385
         ],
         "action": "Click",
         "target": [
@@ -282,10 +286,14 @@
     },
     "通用_确定3": {
         "action": "Click",
-        "target": [
-            633,
-            614
+        "recognition": "OCR",
+        "roi": [
+            301,
+            515,
+            729,
+            186
         ],
+        "expected": "确定",
         "pre_delay": 1000,
         "post_delay": 1000,
         "next": [
@@ -294,10 +302,14 @@
     },
     "通用_确定4": {
         "action": "Click",
-        "target": [
-            633,
-            614
+        "recognition": "OCR",
+        "roi": [
+            301,
+            515,
+            729,
+            186
         ],
+        "expected": "确定",
         "pre_delay": 1000,
         "post_delay": 1000,
         "next": [
