@@ -1,34 +1,23 @@
-# actions/batch_swipe.py
 import json
 import time
 import os
 from maa.custom_action import CustomAction
 from maa.context import Context
+from maa.agent.agent_server import AgentServer
 
 
+@AgentServer.custom_action("BatchSwipe")
 class BatchSwipe(CustomAction):
-    """
-    批量执行滑动/点击/等待操作，零识别开销。
-    坐标使用键名引用，需提前通过 load_coords() 加载坐标映射表。
-    参数格式（JSON 数组）：
-    [
-        {"type": "swipe", "from": "种植物_初始化_第二个槽位", "to": "种植物_初始化_第二个槽位", "duration": 100},
-        {"type": "click", "key": "种植物_初始化_铲子位置"},
-        {"type": "sleep", "time": 0.2}
-    ]
-    若 "to" 省略，表示原地滑动（相当于点击）。
-    """
-    # 坐标映射表：键名 -> (x, y)
     COORDS = {}
 
     @classmethod
     def load_coords(cls, filepath: str):
         """从 JSON 文件加载坐标映射。文件格式：{"键名": [x, y], ...}"""
         if not os.path.exists(filepath):
-            raise FileNotFoundError(f"坐标文件不存在: {filepath}")
+            print(f"[BatchSwipe] 坐标文件不存在: {filepath}")
+            return
         with open(filepath, 'r', encoding='utf-8') as f:
             data = json.load(f)
-        # 兼容 {"键名": [x, y]} 和 {"键名": {"x": x, "y": y}}
         for key, val in data.items():
             if isinstance(val, (list, tuple)) and len(val) >= 2:
                 cls.COORDS[key] = (int(val[0]), int(val[1]))
@@ -38,71 +27,151 @@ class BatchSwipe(CustomAction):
                 print(f"[BatchSwipe] 忽略无效坐标项: {key}: {val}")
 
     def _get_coord(self, key):
-        """根据键名获取坐标，支持直接传入 [x, y] 列表"""
+        """根据键名获取坐标，支持直接传入 [x, y] 列表或坐标字符串（如 'x,y'）"""
         if key is None:
-            raise KeyError("坐标键不能为空")
-        if isinstance(key, (list, tuple)) and len(key) >= 2:
-            return int(key[0]), int(key[1])
+            print("[BatchSwipe] 坐标键为空")
+            return None
+        if isinstance(key, (list, tuple)):
+            if len(key) >= 2:
+                return int(key[0]), int(key[1])
+            else:
+                print(f"[BatchSwipe] 无效的坐标数组: {key}")
+                return None
         if isinstance(key, str):
+            # 尝试解析 "x,y" 格式
+            if ',' in key:
+                parts = key.split(',')
+                if len(parts) >= 2:
+                    return int(parts[0].strip()), int(parts[1].strip())
+            # 从 COORDS 查找
             if key in self.COORDS:
                 return self.COORDS[key]
-            else:
-                raise KeyError(f"未定义的坐标键: {key}")
-        raise KeyError(f"无效的坐标键: {key}")
+            # 尝试解析 JSON 数组字符串
+            if key.startswith('['):
+                arr = json.loads(key)
+                return self._get_coord(arr)
+            print(f"[BatchSwipe] 未定义的坐标键: {key}")
+            return None
+        print(f"[BatchSwipe] 无效的坐标类型: {type(key)}")
+        return None
 
     def _get_controller(self, context: Context):
         """兼容不同版本获取控制器"""
-        # 尝试多种常见路径
         for path in ['tasker.controller', 'controller', '_controller']:
-            try:
-                obj = context
-                for part in path.split('.'):
+            obj = context
+            for part in path.split('.'):
+                if hasattr(obj, part):
                     obj = getattr(obj, part)
-                if obj and hasattr(obj, 'post_swipe'):
-                    return obj
-            except:
-                continue
+                else:
+                    obj = None
+                    break
+            if obj and hasattr(obj, 'post_swipe'):
+                return obj
         return None
 
-    def run(self, context: Context, argv: str) -> bool:
-        try:
-            actions = json.loads(argv)
-            if not isinstance(actions, list):
-                raise ValueError("参数必须是 JSON 数组")
-        except Exception as e:
-            context.logger.error(f"BatchSwipe: 参数解析失败: {e}")
+    def _parse_actions(self, param_str: str):
+        """解析参数，支持 JSON 数组或紧凑命令序列"""
+        param_str = param_str.strip()
+        if not param_str:
+            return []
+        # 如果以 '[' 开头，按 JSON 数组解析
+        if param_str.startswith('['):
+            data = json.loads(param_str)
+            if isinstance(data, list):
+                return data
+            else:
+                print("[BatchSwipe] JSON 数组格式错误")
+                return None
+        # 否则按分号分隔的紧凑命令解析
+        actions = []
+        for cmd in param_str.split(';'):
+            cmd = cmd.strip()
+            if not cmd:
+                continue
+            # 格式：动作类型:参数
+            if ':' not in cmd:
+                print(f"[BatchSwipe] 无效的命令: {cmd}")
+                return None
+            act_type, args_str = cmd.split(':', 1)
+            act_type = act_type.strip().lower()
+            args = args_str.split(',')
+            if act_type == 'swipe':
+                if len(args) < 2:
+                    print(f"[BatchSwipe] swipe 参数不足: {cmd}")
+                    return None
+                act = {'type': 'swipe', 'from': args[0].strip(), 'to': args[1].strip()}
+                if len(args) >= 3:
+                    act['duration'] = int(args[2].strip())
+                actions.append(act)
+            elif act_type == 'click':
+                if len(args) < 1:
+                    print(f"[BatchSwipe] click 参数不足: {cmd}")
+                    return None
+                act = {'type': 'click', 'target': args[0].strip()}
+                actions.append(act)
+            elif act_type == 'sleep':
+                if len(args) < 1:
+                    print(f"[BatchSwipe] sleep 参数不足: {cmd}")
+                    return None
+                act = {'type': 'sleep', 'seconds': float(args[0].strip())}
+                actions.append(act)
+            else:
+                print(f"[BatchSwipe] 未知动作类型: {act_type}")
+                return None
+        return actions
+
+    def run(self, context: Context, argv: CustomAction.RunArg) -> bool:
+        param_str = argv.custom_action_param
+        if not param_str:
+            print("[BatchSwipe] 参数为空")
+            return False
+
+        # 去除可能包裹的外层双引号
+        param_str = param_str.strip()
+        if len(param_str) >= 2 and param_str.startswith('"') and param_str.endswith('"'):
+            param_str = param_str[1:-1]
+
+        if not param_str:
+            print("[BatchSwipe] 参数为空")
             return False
 
         controller = self._get_controller(context)
         if controller is None:
-            context.logger.error("BatchSwipe: 无法获取控制器")
+            print("[BatchSwipe] 无法获取控制器")
+            return False
+
+        actions = self._parse_actions(param_str)
+        if actions is None:
             return False
 
         for act in actions:
-            try:
-                act_type = act.get('type', '').lower()
-                if act_type == 'swipe':
-                    from_key = act.get('from', act.get('begin'))
-                    to_key = act.get('to', act.get('end'))
-                    x1, y1 = self._get_coord(from_key)
-                    if to_key:
-                        x2, y2 = self._get_coord(to_key)
-                    else:
-                        x2, y2 = x1, y1   # 原地滑动
-                    duration = int(act.get('duration', 500))
-                    controller.post_swipe(x1, y1, x2, y2, duration).wait()
-                elif act_type == 'click':
-                    key = act.get('key', act.get('name'))
-                    x, y = self._get_coord(key)
-                    controller.post_click(x, y).wait()
-                elif act_type == 'sleep':
-                    time.sleep(float(act.get('time', 0.2)))
+            act_type = act.get('type', '').lower()
+            if act_type == 'swipe':
+                coord_from = self._get_coord(act.get('from'))
+                if coord_from is None:
+                    return False
+                x1, y1 = coord_from
+
+                to_key = act.get('to')
+                if to_key:
+                    coord_to = self._get_coord(to_key)
+                    if coord_to is None:
+                        return False
+                    x2, y2 = coord_to
                 else:
-                    context.logger.warning(f"BatchSwipe: 未知动作类型 '{act_type}'，已跳过")
-            except KeyError as e:
-                context.logger.error(f"BatchSwipe: 缺少坐标键 {e}")
-                return False
-            except Exception as e:
-                context.logger.error(f"BatchSwipe: 动作执行失败: {e}")
+                    x2, y2 = x1, y1
+
+                duration = int(act.get('duration', 500))
+                controller.post_swipe(x1, y1, x2, y2, duration).wait()
+            elif act_type == 'click':
+                coord = self._get_coord(act.get('target'))
+                if coord is None:
+                    return False
+                x, y = coord
+                controller.post_click(x, y).wait()
+            elif act_type == 'sleep':
+                time.sleep(float(act.get('seconds', 0.2)))
+            else:
+                print(f"[BatchSwipe] 未知动作类型: {act_type}")
                 return False
         return True

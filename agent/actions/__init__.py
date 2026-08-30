@@ -1,5 +1,5 @@
 # actions/__init__.py
 from .batch_swipe import BatchSwipe
+from .single_action import SingleAction
 
-# 如果 MaaFramework 需要显式导出，可在此添加
-__all__ = ['BatchSwipe']
+__all__ = ['BatchSwipe', 'SingleAction']
