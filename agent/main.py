@@ -15,6 +15,7 @@ sys.path.insert(0, str(project_root_dir / "agent"))
 from maa.agent.agent_server import AgentServer
 from maa.toolkit import Toolkit
 from actions.single_action import SingleAction
+from actions.batch_swipe import BatchSwipe
 
 import my_action
 import my_reco
@@ -23,6 +24,7 @@ import ocr_return_action
 import actions
 
 SingleAction.load_coords('./assets/resource/coords.json')
+BatchSwipe.load_coords('./assets/resource/coords.json')
 
 
 

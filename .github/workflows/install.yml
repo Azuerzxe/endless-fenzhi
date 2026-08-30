@@ -106,8 +106,8 @@ jobs:
 
       - name: Write changelog to announcement file
         run: |
-          mkdir -p announcement
-          echo "${{ steps.git-cliff.outputs.content }}" > announcement/CHANGES.md
+         mkdir -p announcement
+         cp CHANGES.md announcement/
 
       - name: Upload announcement artifact
         uses: actions/upload-artifact@v4

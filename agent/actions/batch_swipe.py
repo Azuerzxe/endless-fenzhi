@@ -161,7 +161,7 @@ class BatchSwipe(CustomAction):
                 else:
                     x2, y2 = x1, y1
 
-                duration = int(act.get('duration', 500))
+                duration = int(act.get('duration', 100))
                 controller.post_swipe(x1, y1, x2, y2, duration).wait()
             elif act_type == 'click':
                 coord = self._get_coord(act.get('target'))
