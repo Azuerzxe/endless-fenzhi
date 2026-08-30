@@ -1,8 +1,4 @@
 {
-    "原大_海盗_不可使用": {
-        "focus": "[color:Red]当前世界不可用此阵容！[/color]",
-        "action": "StopTask"
-    },
     "原大_海盗_无尽": {
         "action": "DoNothing",
         "anchor": {
