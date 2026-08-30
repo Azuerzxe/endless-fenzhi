@@ -20,12 +20,12 @@
                         },
                         "无尽挑战_海盗港湾": {
                             "next": [
-                                "原大_无尽_海盗"
+                                "原大_无尽_海盗" //命中就会执行yuan_big\Endless_yuan_big_haidao.json
                             ]
                         },
                         "无尽挑战_狂野西部": {
                             "next": [
-                                "原大_无尽_西部"
+                                "原大_无尽_西部" //命中就会执行yuan_big\Endless_yuan_big_xibu.json
                             ]
                         },
                         "无尽挑战_功夫世界": {
