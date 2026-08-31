@@ -2,6 +2,14 @@
     "debug_连续种植_1_1-2-3-4-5": {
         "action": "Custom",
         "custom_action": "BatchSwipe",
-        "custom_action_param": "swipe:种植物_初始化_第一个槽位,种植物_初始化_格子1_1,100;sleep:0.1;swipe:种植物_初始化_第一个槽位,种植物_初始化_格子1_2,100;sleep:0.1;swipe:种植物_初始化_第一个槽位,种植物_初始化_格子1_3,100;sleep:0.1;swipe:种植物_初始化_第一个槽位,种植物_初始化_格子1_4,100;sleep:0.1;swipe:种植物_初始化_第一个槽位,种植物_初始化_格子1_5,100;sleep:0.1"
+        "custom_action_param": "swipe:种植物_初始化_第一个槽位,种植物_初始化_格子1_1,100;sleep:0.1;swipe:种植物_初始化_第一个槽位,种植物_初始化_格子1_2,100;sleep:0.1;swipe:种植物_初始化_第一个槽位,种植物_初始化_格子1_3,100;sleep:0.1;swipe:种植物_初始化_第一个槽位,种植物_初始化_格子1_4,100;sleep:0.1;swipe:种植物_初始化_第一个槽位,种植物_初始化_格子1_5,100;sleep:0.1",
+        "next": [
+            "debug_普通种植1_1"
+        ]
+    },
+    "debug_普通种植1_1": {
+        "action": "Custom",
+        "custom_action": "SingleAction",
+        "custom_action_param": "S:种植物_初始化_第一个槽位,种植物_初始化_格子1_1"
     }
 }

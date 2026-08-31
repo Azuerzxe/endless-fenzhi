@@ -11,6 +11,7 @@ class SingleAction(CustomAction):
 
     @classmethod
     def load_coords(cls, filepath: str):
+        """加载坐标映射文件，格式：{"键名": [x, y], ...}"""
         if not os.path.exists(filepath):
             print(f"[SingleAction] 坐标文件不存在: {filepath}")
             return
@@ -30,7 +31,7 @@ class SingleAction(CustomAction):
             print("[SingleAction] 坐标键为空")
             return None
         if isinstance(key, (list, tuple)):
-            if len(key) >= 4:
+            if len(key) >= 4:  # 区域
                 return int(key[0] + key[2] / 2), int(key[1] + key[3] / 2)
             elif len(key) >= 2:
                 return int(key[0]), int(key[1])
@@ -56,6 +57,7 @@ class SingleAction(CustomAction):
         return None
 
     def _get_controller(self, context: Context):
+        """兼容不同版本获取控制器"""
         for path in ['tasker.controller', 'controller', '_controller']:
             obj = context
             for part in path.split('.'):
@@ -102,8 +104,13 @@ class SingleAction(CustomAction):
             if parts[0].strip() in self.COORDS:
                 from_key = parts[0].strip()
                 rest = parts[1:]
-                if len(rest) == 2:
-                    # 终点是键名或字符串，duration 是最后一个
+
+                # rest 可能长度为 1（只有终点，无 duration）或 2（终点 + duration）或 3（终点 x,y + duration）
+                if len(rest) == 1:
+                    # 终点是键名或 x,y 字符串，无 duration
+                    to_key = rest[0].strip()
+                elif len(rest) == 2:
+                    # 终点是键名或 x,y，最后一个是 duration
                     to_key = rest[0].strip()
                     if rest[1].strip().isdigit():
                         duration = int(rest[1].strip())
@@ -111,7 +118,7 @@ class SingleAction(CustomAction):
                         print("[SingleAction] 无效的 duration")
                         return False
                 elif len(rest) == 3:
-                    # 终点是 "x,y" 坐标对
+                    # 终点是 "x,y" 坐标对，最后一个是 duration
                     to_key = f"{rest[0].strip()},{rest[1].strip()}"
                     if rest[2].strip().isdigit():
                         duration = int(rest[2].strip())
@@ -126,7 +133,12 @@ class SingleAction(CustomAction):
                 if len(parts) >= 4 and parts[1].strip().isdigit():
                     from_key = f"{parts[0].strip()},{parts[1].strip()}"
                     rest = parts[2:]
-                    if len(rest) == 2:
+
+                    if len(rest) == 1:
+                        # 终点是键名，无 duration
+                        to_key = rest[0].strip()
+                    elif len(rest) == 2:
+                        # 终点是键名 + duration
                         to_key = rest[0].strip()
                         if rest[1].strip().isdigit():
                             duration = int(rest[1].strip())
@@ -134,6 +146,7 @@ class SingleAction(CustomAction):
                             print("[SingleAction] 无效的 duration")
                             return False
                     elif len(rest) == 3:
+                        # 终点是 x,y + duration
                         to_key = f"{rest[0].strip()},{rest[1].strip()}"
                         if rest[2].strip().isdigit():
                             duration = int(rest[2].strip())
