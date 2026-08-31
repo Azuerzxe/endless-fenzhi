@@ -405,7 +405,7 @@
                     "pipeline_override": {
                         "突发情况处理": {
                             "next": [
-                                "重开",
+                                "失败重开",
                                 "识别成功，启动！",
                                 "判断游戏是否胜利",
                                 "判断游戏是否失败",
@@ -425,7 +425,12 @@
             "default_case": "不停止",
             "cases": [
                 {
-                    "name": "不停止"
+                    "name": "不停止",
+                    "pipeline_override": {
+                        "返回主界面_停止任务": {
+                            "enabled": false
+                        }
+                    }
                 },
                 {
                     "name": "到达大师锅后停止",
@@ -439,7 +444,7 @@
                     "name": "胜利十把后停止",
                     "pipeline_override": {
                         "重开": {
-                            "enabled": false
+                            "enabled": true
                         },
                         "只重开十次": {
                             "enabled": true
