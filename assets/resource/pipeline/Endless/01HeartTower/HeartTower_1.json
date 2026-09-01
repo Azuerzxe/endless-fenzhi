@@ -305,22 +305,11 @@
             481
         ],
         "duration": 200,
+        "anchor": {
+            "下一个动作": "2关"
+        },
         "next": [
-            "xinta1_识别结算"
-        ]
-    },
-    "xinta1_识别结算": {
-        "recognition": "OCR",
-        "roi": [
-            716,
-            621,
-            179,
-            50
-        ],
-        "expected": "继续挑战",
-        "action": "Click",
-        "next": [
-            "2关"
+            "通用_无尽_识别结算"
         ]
     }
 }

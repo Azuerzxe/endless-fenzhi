@@ -122,6 +122,9 @@
         "target": "神器_初始化_葫芦大体型",
         "pre_delay": 0,
         "post_delay": 1300,
+        "anchor": {
+            "下一个动作": "2_xinta3_过渡"
+        },
         "next": [
             "2_xinta3_点波"
         ]
@@ -139,7 +142,7 @@
         "repeat": 70,
         "repeat_delay": 20,
         "next": [
-            "2_xinta3_识别结算",
+            "通用_无尽_识别结算",
             "2_xinta3_喂豆香蕉1"
         ]
     },
@@ -167,26 +170,26 @@
         "repeat": 70,
         "repeat_delay": 20,
         "next": [
-            "2_xinta3_识别结算",
+            "通用_无尽_识别结算",
             "2_xinta3_识别开始战斗",
             "2_xinta3_识别boss关",
             "2_xinta3_喂豆香蕉2"
         ]
     },
-    "2_xinta3_识别结算": {
-        "recognition": "OCR",
-        "roi": [
-            693,
-            616,
-            212,
-            55
-        ],
-        "expected": "继续挑战",
-        "action": "Click",
-        "next": [
-            "2_xinta3_过渡"
-        ]
-    },
+    // "2_xinta3_识别结算": {
+    //     "recognition": "OCR",
+    //     "roi": [
+    //         693,
+    //         616,
+    //         212,
+    //         55
+    //     ],
+    //     "expected": "继续挑战",
+    //     "action": "Click",
+    //     "next": [
+    //         "2_xinta3_过渡"
+    //     ]
+    // },
     "2_xinta3_过渡": {
         "action": "DoNothing",
         "timeout": -1,

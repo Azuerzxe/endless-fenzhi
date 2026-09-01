@@ -309,22 +309,25 @@
         "repeat": 40,
         "post_delay": 0,
         "pre_delay": 0,
+        "anchor": {
+            "下一个动作": "2_3_149关"
+        },
         "next": [
-            "2_xinta2_识别结算"
+            "通用_无尽_识别结算"
         ]
     },
-    "2_xinta2_识别结算": {
-        "recognition": "OCR",
-        "roi": [
-            693,
-            616,
-            212,
-            55
-        ],
-        "expected": "继续挑战",
-        "action": "Click",
-        "next": [
-            "2_3_149关"
-        ]
-    }
+    // "2_xinta2_识别结算": {
+    //     "recognition": "OCR",
+    //     "roi": [
+    //         693,
+    //         616,
+    //         212,
+    //         55
+    //     ],
+    //     "expected": "继续挑战",
+    //     "action": "Click",
+    //     "next": [
+    //         "2_3_149关"
+    //     ]
+    // }
 }

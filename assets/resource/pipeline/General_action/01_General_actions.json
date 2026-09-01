@@ -1,4 +1,18 @@
 {
+    "通用_无尽_识别结算": {
+        "recognition": "OCR",
+        "roi": [
+            694,
+            528,
+            225,
+            167
+        ],
+        "expected": "继续挑战",
+        "action": "Click",
+        "next": [
+            "[Anchor]下一个动作"
+        ]
+    },
     "通用_点波": {
         "action": "Click",
         "target": [
