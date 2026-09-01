@@ -37,16 +37,16 @@
         },
         "是否开启点波": {
             "type": "switch",
-            "label": "开启可能导致卡旗,慎重选择",
+            "label": "是否开启点波",
             "cases": [
-                {
-                    "name": "No",
-                    "label": "否",
-                    "pipeline_override": {}
-                },
                 {
                     "name": "Yes",
                     "label": "是",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "No",
+                    "label": "否",
                     "pipeline_override": {
                         "frame_wj_点波": {
                             "action": "DoNothing"

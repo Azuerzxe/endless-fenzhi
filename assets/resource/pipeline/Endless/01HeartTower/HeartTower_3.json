@@ -149,6 +149,9 @@
         "target": "神器_初始化_葫芦大体型",
         "pre_delay": 0,
         "post_delay": 1300,
+        "anchor": {
+            "下一个动作": "xinta3_过渡"
+        },
         "next": [
             "xinta3_点波"
         ]
@@ -164,7 +167,7 @@
         "repeat": 70,
         "repeat_delay": 20,
         "next": [
-            "xinta3_识别结算",
+            "通用_无尽_识别结算",
             "xinta3_喂豆香蕉1"
         ]
     },
@@ -196,24 +199,24 @@
         "repeat": 70,
         "repeat_delay": 20,
         "next": [
-            "xinta3_识别结算",
+            "通用_无尽_识别结算",
             "xinta3_喂豆香蕉2"
         ]
     },
-    "xinta3_识别结算": {
-        "recognition": "OCR",
-        "roi": [
-            716,
-            621,
-            179,
-            50
-        ],
-        "expected": "继续挑战",
-        "action": "Click",
-        "next": [
-            "xinta3_过渡"
-        ]
-    },
+    // "xinta3_识别结算": {
+    //     "recognition": "OCR",
+    //     "roi": [
+    //         716,
+    //         621,
+    //         179,
+    //         50
+    //     ],
+    //     "expected": "继续挑战",
+    //     "action": "Click",
+    //     "next": [
+    //         "xinta3_过渡"
+    //     ]
+    // },
     "xinta3_过渡": {
         "action": "DoNothing",
         "timeout": -1,
@@ -578,23 +581,26 @@
         "pre_delay": 100,
         "post_delay": 100,
         "duration": 100,
+        "anchor": {
+            "下一个动作": "xinta3_识别开始战斗"
+        },
         "next": [
-            "xinta_boss_识别结算"
+            "通用_无尽_识别结算"
         ]
     },
-    "xinta_boss_识别结算": {
-        "recognition": "OCR",
-        "roi": [
-            716,
-            621,
-            179,
-            50
-        ],
-        "expected": "继续挑战",
-        "rate_limit": 500,
-        "action": "Click",
-        "next": [
-            "xinta3_识别开始战斗"
-        ]
-    }
+    // "xinta_boss_识别结算": {
+    //     "recognition": "OCR",
+    //     "roi": [
+    //         716,
+    //         621,
+    //         179,
+    //         50
+    //     ],
+    //     "expected": "继续挑战",
+    //     "rate_limit": 500,
+    //     "action": "Click",
+    //     "next": [
+    //         "xinta3_识别开始战斗"
+    //     ]
+    // }
 }
