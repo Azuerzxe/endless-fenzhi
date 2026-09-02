@@ -457,10 +457,9 @@
     },
     "点击登录_taptap": {
         "timeout": 30000,
-        "recognition": "TemplateMatch",
-        "template": [
-            "Start_game/taptap登录.png",
-            "Start_game/taptap登录_免绑包.png"
+        "recognition": "OCR",
+        "expected": [
+            "登录"
         ],
         "pre_wait_freezes": {
             "time": 2000,
