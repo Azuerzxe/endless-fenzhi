@@ -86,5 +86,37 @@
                 }
             ]
         },
+        "装扮转基因": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "免广告卡_装扮转基因": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "红水晶": {
+            "type": "switch",
+            "cases": [
+                {
+                    "name": "No"
+                },
+                {
+                    "name": "Yes",
+                    "pipeline_override": {
+                        "免广告卡_红水晶": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
     }
 }

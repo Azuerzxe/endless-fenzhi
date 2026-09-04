@@ -1,0 +1,134 @@
+{
+    "红水晶_点击入口": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "video_card_red_crystal/商店入口.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "红水晶_点击水晶商店"
+        ]
+    },
+    "红水晶_点击水晶商店": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "video_card_red_crystal/水晶商店.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "红水晶_点击加号"
+        ]
+    },
+    "红水晶_点击加号": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "video_card_red_crystal/加号.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "红水晶_第一次_观看广告"
+        ]
+    },
+    "红水晶_第一次_观看广告": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "video_card_red_crystal/观看广告1.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "红水晶_第一次_确定"
+        ]
+    },
+    "红水晶_第一次_确定": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "video_card_red_crystal/确定1.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "红水晶_第二次_观看广告"
+        ]
+    },
+    "红水晶_第二次_观看广告": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "video_card_red_crystal/观看广告1.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "红水晶_第二次_确定"
+        ]
+    },
+    "红水晶_第二次_确定": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "video_card_red_crystal/确定1.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "红水晶_第三次_观看广告"
+        ]
+    },
+    "红水晶_第三次_观看广告": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "video_card_red_crystal/观看广告1.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "红水晶_第三次_确定"
+        ]
+    },
+    "红水晶_第三次_确定": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "video_card_red_crystal/确定1.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "红水晶_第一次关闭"
+        ]
+    },
+    "红水晶_第一次关闭": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "video_card_red_crystal/关闭1.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "红水晶_第二次关闭"
+        ]
+    },
+    "红水晶_第二次关闭": {
+        "timeout": 10000,
+        "recognition": "TemplateMatch",
+        "template": [
+            "video_card_red_crystal/关闭2.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "有免广告卡_前置检查"
+        ]
+    }
+}
