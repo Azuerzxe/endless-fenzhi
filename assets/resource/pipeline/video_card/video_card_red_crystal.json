@@ -8,7 +8,8 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
-            "红水晶_点击水晶商店"
+            "红水晶_点击水晶商店",
+            "红水晶_点击入口"
         ]
     },
     "红水晶_点击水晶商店": {
@@ -20,7 +21,8 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
-            "红水晶_点击加号"
+            "红水晶_点击加号",
+            "红水晶_点击水晶商店"
         ]
     },
     "红水晶_点击加号": {
@@ -32,98 +34,71 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
-            "红水晶_第一次_观看广告"
+            "红水晶_计数"
         ]
     },
-    "红水晶_第一次_观看广告": {
+    "红水晶_计数": {
+        "max_hit": 3,
+        "post_wait_freezes": 1000,
+        "next": [
+            "红水晶_观看广告",
+            "有免广告卡_前置检查"
+        ]
+    },
+    "红水晶_观看广告": {
         "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": [
-            "video_card_red_crystal/观看广告1.png"
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "expected": [
+                    "观看广告"
+                ],
+                "roi": [
+                    303,
+                    468,
+                    164,
+                    63
+                ],
+                "method": 10001,
+            },
+            {
+                "recognition": "ColorMatch",
+                "lower": [
+                    41,
+                    219,
+                    41
+                ],
+                "upper": [
+                    82,
+                    227,
+                    82
+                ],
+                "roi": [
+                    303,
+                    468,
+                    164,
+                    63
+                ],
+            }
         ],
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
-            "红水晶_第一次_确定"
+            "红水晶_确定"
         ]
     },
-    "红水晶_第一次_确定": {
+    "红水晶_确定": {
         "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": [
-            "video_card_red_crystal/确定1.png"
+        "recognition": "OCR",
+        "expected": [
+            "确定"
         ],
-        "action": "Click",
-        "post_wait_freezes": 500,
-        "next": [
-            "红水晶_第二次_观看广告"
-        ]
-    },
-    "红水晶_第二次_观看广告": {
-        "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": [
-            "video_card_red_crystal/观看广告1.png"
-        ],
-        "action": "Click",
-        "post_wait_freezes": 500,
-        "next": [
-            "红水晶_第二次_确定"
-        ]
-    },
-    "红水晶_第二次_确定": {
-        "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": [
-            "video_card_red_crystal/确定1.png"
-        ],
-        "action": "Click",
-        "post_wait_freezes": 500,
-        "next": [
-            "红水晶_第三次_观看广告"
-        ]
-    },
-    "红水晶_第三次_观看广告": {
-        "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": [
-            "video_card_red_crystal/观看广告1.png"
-        ],
-        "action": "Click",
-        "post_wait_freezes": 500,
-        "next": [
-            "红水晶_第三次_确定"
-        ]
-    },
-    "红水晶_第三次_确定": {
-        "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": [
-            "video_card_red_crystal/确定1.png"
-        ],
-        "action": "Click",
-        "post_wait_freezes": 500,
-        "next": [
-            "红水晶_第一次关闭"
-        ]
-    },
-    "红水晶_第一次关闭": {
-        "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": [
-            "video_card_red_crystal/关闭1.png"
-        ],
-        "action": "Click",
-        "post_wait_freezes": 500,
-        "next": [
-            "红水晶_第二次关闭"
-        ]
-    },
-    "红水晶_第二次关闭": {
-        "timeout": 10000,
-        "recognition": "TemplateMatch",
-        "template": [
-            "video_card_red_crystal/关闭2.png"
+        "roi": [
+            544,
+            552,
+            192,
+            62
         ],
         "action": "Click",
         "post_wait_freezes": 500,
